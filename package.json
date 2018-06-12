@@ -4,15 +4,18 @@
   "private": true,
   "devDependencies": {
     "babel-preset-react-native-stage-0": "^1.0.1",
+    "babel-preset-stage-2": "^6.24.1",
     "jest": "^23.1.0",
     "jest-react-native": "^18.0.0",
     "react-test-renderer": "16.3.1"
   },
   "scripts": {
-    "start": "react-native start",
-    "android": "react-native run-android",
+    "start": "react-native start --port=8088",
+    "android": "react-native run-android && adb reverse tcp:8081 tcp:8088",
     "ios": "react-native run-ios",
-    "test": "jest"
+    "test": "jest",
+    "debug": "react-devtools",
+    "log-android": "react-native log-android"
   },
   "jest": {
     "preset": "react-native"
