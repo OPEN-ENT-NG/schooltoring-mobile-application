@@ -19,10 +19,9 @@
   },
   "scripts": {
     "start": "react-native start --port=8088",
-    "android": "react-native run-android",
+    "android": "react-native run-android && adb reverse tcp:8081 tcp:8088",
     "ios": "react-native run-ios",
     "test": "jest",
-    "debug": "react-devtools",
     "android:log": "react-native log-android"
   },
   "jest": {

@@ -1,7 +1,11 @@
 {
-  "expo": {
-    "sdkVersion": "27.0.0"
-  },
   "name": "Schooltoring",
-  "displayName": "Schooltoring Mobile Application"
+  "displayName": "Schooltoring",
+  "version": "0.0.1",
+  "auth": {
+    "endpoint" : "http://ent3-core.gdapublic.fr",
+    "client_id": "Schooltoring-App",
+    "secret": "secret",
+    "scope": "userbook userinfo directory"
+  }
 }
