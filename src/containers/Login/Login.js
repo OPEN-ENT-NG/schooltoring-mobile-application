@@ -1,18 +1,48 @@
 import React, { Component } from "react";
-import { TextInput, View, Image, Text, Button, StatusBar } from "react-native";
+import {
+  TextInput,
+  View,
+  Image,
+  Text,
+  Button,
+  ActivityIndicator,
+  Switch,
+  Keyboard
+} from "react-native";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
+
+import { login } from "../../store/actions/auth";
 
 import styles from "./styles";
 import { COLORS } from "../../styles/common";
 
-export default class Login extends Component {
+class Login extends Component {
+  state = {
+    username: "pascal.fautrero",
+    password: "azerty123",
+    rememberMe: false
+  };
+
   constructor(props) {
     super(props);
 
+    this.login = this.login.bind(this);
     this.getError = this.getError.bind(this);
   }
 
+  login(e) {
+    e.preventDefault();
+    Keyboard.dismiss();
+    this.props.logUser(
+      this.state.username,
+      this.state.password,
+      this.state.rememberMe
+    );
+  }
+
   getError() {
-    if (false) {
+    if (this.props.error) {
       return (
         <Text style={styles.errorMessage}>
           Une erreur s'est glissée dans ton identifiant ou ton mot de passe
@@ -24,10 +54,6 @@ export default class Login extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <StatusBar
-          backgroundColor={COLORS.BACKGROUND}
-          barStyle="dark-content"
-        />
         <View style={styles.logoContainer}>
           <Image
             style={styles.logo}
@@ -38,18 +64,34 @@ export default class Login extends Component {
         <View>
           <View style={styles.formContainer}>
             {this.getError()}
-            <TextInput placeholder="Nom d'utilisateur" />
+            <TextInput
+              placeholder="Nom d'utilisateur"
+              value={this.state.username}
+              onChangeText={username => this.setState({ username })}
+            />
             <TextInput
               secureTextEntry={true}
               placeholder="Mot de passe"
-              style={{ marginBottom: 15 }}
+              value={this.state.password}
+              onChangeText={password => this.setState({ password })}
             />
-            <Button
-              style={styles.submit}
-              color={COLORS.PRIMARY}
-              title="Se connecter"
-              onPress={() => false}
-            />
+            <View style={styles.remember}>
+              <Switch
+                value={this.state.rememberMe}
+                onValueChange={rememberMe => this.setState({ rememberMe })}
+              />
+              <Text style={{ marginTop: 5 }}>Se souvenir de moi</Text>
+            </View>
+            {this.props.loading ? (
+              <ActivityIndicator size="large" color={COLORS.PRIMARY} />
+            ) : (
+              <Button
+                style={styles.submit}
+                color={COLORS.PRIMARY}
+                title="Se connecter"
+                onPress={this.login}
+              />
+            )}
           </View>
         </View>
         <View style={styles.illustrationContainer}>
@@ -74,3 +116,16 @@ export default class Login extends Component {
     );
   }
 }
+
+const mapStateToProps = ({ auth }) => ({
+  loading: auth.loading.form
+});
+
+const mapDispatchToProps = dispatch => {
+  return bindActionCreators({ logUser: login }, dispatch);
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Login);

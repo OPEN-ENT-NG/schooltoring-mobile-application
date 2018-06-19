@@ -10,7 +10,7 @@ export default StyleSheet.create({
   },
   logoContainer: {
     alignSelf: "center",
-    marginTop: 100
+    marginTop: 70
   },
   logo: {
     width: 75,
@@ -53,5 +53,9 @@ export default StyleSheet.create({
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center"
+  },
+  remember: {
+    marginBottom: 15,
+    flexDirection: "row"
   }
 });

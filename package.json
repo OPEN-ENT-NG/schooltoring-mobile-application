@@ -15,20 +15,29 @@
     "jest": "^23.1.0",
     "jest-react-native": "^18.0.0",
     "prettier": "^1.13.5",
-    "react-test-renderer": "16.3.1"
+    "react-test-renderer": "16.3.1",
+    "redux-logger": "^3.0.6"
   },
   "scripts": {
     "start": "react-native start --port=8088",
     "android": "react-native run-android && adb reverse tcp:8081 tcp:8088",
     "ios": "react-native run-ios",
     "test": "jest",
-    "android:log": "react-native log-android"
+    "android:log": "react-native log-android",
+    "android:dev": "npm run android && npm run android:log"
   },
   "jest": {
     "preset": "react-native"
   },
   "dependencies": {
+    "axios": "^0.18.0",
+    "base-64": "^0.1.0",
     "react": "16.3.1",
-    "react-native": "~0.55.2"
+    "react-native": "~0.55.2",
+    "react-navigation": "^2.3.1",
+    "react-navigation-redux-helpers": "^2.0.2",
+    "react-redux": "^5.0.7",
+    "redux": "^4.0.0",
+    "redux-thunk": "^2.3.0"
   }
 }

@@ -1,10 +1,42 @@
 import React, { Component } from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
 
+import { fetchLogin } from "./store/actions/auth";
+
+import Loader from "./components/Loader/Loader";
+import Main from "./containers/Main/Main";
 import Login from "./containers/Login/Login";
 
-export default class App extends Component {
+export class App extends Component {
+  componentDidMount() {
+    this.props.fetchLogin();
+  }
+
   render() {
-    return <Login />;
+    if (this.props.loading) {
+      return <Loader />;
+    }
+
+    return this.props.isLoggedIn ? (
+      <Main />
+    ) : (
+      <Login error={this.props.error} />
+    );
   }
 }
+
+const mapStateToProps = ({ auth }) => ({
+  isLoggedIn: auth.isLoggedIn,
+  loading: auth.loading.fetch,
+  error: auth.error
+});
+
+const mapDispatchToProps = dispatch => {
+  return bindActionCreators({ fetchLogin }, dispatch);
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(App);
