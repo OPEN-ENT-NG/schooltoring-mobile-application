@@ -1,5 +1,4 @@
 import { NavigationActions } from "react-navigation";
-import store from "../store/store";
 
 const navigator = {};
 

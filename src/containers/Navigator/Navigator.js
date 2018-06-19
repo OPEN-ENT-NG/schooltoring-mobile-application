@@ -1,22 +1,22 @@
 import {
   createSwitchNavigator,
-  createStackNavigator,
   createBottomTabNavigator
 } from "react-navigation";
 
-import Login from "../Login/Login";
-import AuthLoader from "../AuthLoader/AuthLoader";
-import Main from "../Main/Main";
+import Home from "../Home/Home";
+import Requests from "../Requests/Requests";
+import Messages from "../Messages/Messages";
+import Profile from "../Profile/Profile";
 
 import NavigationService from "../../api/Navigation";
 
-const AppNavigator = createBottomTabNavigator({ Main });
+const Navigator = createBottomTabNavigator({
+  Home,
+  Requests,
+  Messages,
+  Profile
+});
 
-const MainNavigator = createSwitchNavigator(
-  { AuthLoader, App: AppNavigator, Login },
-  { initialRouteName: "AuthLoader" }
-);
+NavigationService.register(Navigator);
 
-NavigationService.register(MainNavigator);
-
-export default MainNavigator;
+export default Navigator;

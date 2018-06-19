@@ -57,7 +57,7 @@ async function reconnectUser() {
       refreshData.token_type,
       refreshData.access_token
     );
-    storeAuthenticationData(refresh_token);
+    storeAuthenticationData(refreshData);
   } catch (err) {
     throw err;
   }
