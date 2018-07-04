@@ -4,6 +4,8 @@ import { View, Text, Button } from "react-native";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 
+import I18n from "../../api/I18n";
+
 import { logout } from "../../store/actions/auth";
 
 export class Profile extends Component {
@@ -23,7 +25,7 @@ export class Profile extends Component {
     return (
       <View>
         <Text>Profile</Text>
-        <Button title="Se déconnecter" onPress={this.logout} />
+        <Button title={I18n.t("disconnect")} onPress={this.logout} />
       </View>
     );
   }
