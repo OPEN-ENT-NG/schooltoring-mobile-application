@@ -75,7 +75,7 @@ async function isAlreadyLoggedIn() {
 async function getAuthenticationData() {
   try {
     const data = await AsyncStorage.getItem("auth@token");
-    return JSON.parse(data);
+    return data !== null ? JSON.parse(data) : {};
   } catch (err) {
     throw err;
   }
@@ -95,8 +95,17 @@ async function storeAuthenticationData(authData) {
   }
 }
 
+async function disconnectUser() {
+  try {
+    AsyncStorage.removeItem("auth@token");
+  } catch (err) {
+    throw err;
+  }
+}
+
 export default {
   getAccessToken,
   reconnectUser,
-  isAlreadyLoggedIn
+  isAlreadyLoggedIn,
+  disconnectUser
 };

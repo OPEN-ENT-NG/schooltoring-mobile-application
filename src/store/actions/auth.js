@@ -23,6 +23,26 @@ export function login(username, password, rememberMe) {
   };
 }
 
+export function logout() {
+  return async dispatch => {
+    dispatch({
+      type: actions.FORM_LOADING
+    });
+    try {
+      await OAuth2.disconnectUser();
+      dispatch({
+        type: actions.LOGOUT
+      });
+    } catch (err) {
+      dispatch({
+        type: actions.LOGIN,
+        error: true
+      });
+      throw err;
+    }
+  };
+}
+
 export function fetchLogin() {
   return async dispatch => {
     dispatch({
