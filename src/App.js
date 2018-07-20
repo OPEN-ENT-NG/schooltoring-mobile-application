@@ -7,6 +7,7 @@ import { fetchLogin } from "./store/actions/auth";
 import Loader from "./components/Loader/Loader";
 import Main from "./containers/Main/Main";
 import Login from "./containers/Login/Login";
+import Setup from "./containers/Setup/Setup";
 
 export class App extends Component {
   componentDidMount() {
@@ -19,17 +20,22 @@ export class App extends Component {
     }
 
     return this.props.isLoggedIn ? (
-      <Main />
+      this.props.hasProfile ? (
+        <Main />
+      ) : (
+        <Setup />
+      )
     ) : (
       <Login error={this.props.error} />
     );
   }
 }
 
-const mapStateToProps = ({ auth }) => ({
+const mapStateToProps = ({ auth, user }) => ({
   isLoggedIn: auth.isLoggedIn,
-  loading: auth.loading.fetch,
-  error: auth.error
+  loading: auth.loading.fetch || user.loading,
+  error: auth.error || user.error,
+  hasProfile: user.profile
 });
 
 const mapDispatchToProps = dispatch => {

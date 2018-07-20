@@ -9,8 +9,8 @@ I18n.translations = {
   fr
 };
 
-I18n.defaultLocale = "en";
-I18n.locale = "en";
+I18n.defaultLocale = "fr";
+I18n.locale = "fr";
 I18n.currentLocale();
 
 export default I18n;

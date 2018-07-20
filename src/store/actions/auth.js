@@ -1,7 +1,8 @@
-import oAuth2 from "../../api/OAuth2";
-
 import actions from "../definitions/auth";
 import OAuth2 from "../../api/OAuth2";
+import UserInfos from "../../api/UserInfos";
+import Subjects from "../../api/Subjects";
+import Profile from "../../api/Profile";
 
 export function login(username, password, rememberMe) {
   return async dispatch => {
@@ -9,10 +10,11 @@ export function login(username, password, rememberMe) {
       type: actions.FORM_LOADING
     });
     try {
-      await oAuth2.getAccessToken(username, password, rememberMe);
-      dispatch({
-        type: actions.LOGIN
-      });
+      await OAuth2.getAccessToken(username, password, rememberMe);
+      let userinfo = await UserInfos.getUser();
+      let subjects = await Subjects.getSubjects(userinfo.structures[0]);
+      let profile = await Profile.getProfile();
+      dispatch({ type: actions.LOGIN, userinfo, subjects, profile });
     } catch (err) {
       dispatch({
         type: actions.LOGOUT,
@@ -51,9 +53,10 @@ export function fetchLogin() {
     const isAlreadyLoggedIn = await OAuth2.isAlreadyLoggedIn();
     if (isAlreadyLoggedIn) {
       await OAuth2.reconnectUser();
-      dispatch({
-        type: actions.LOGIN
-      });
+      let userinfo = await UserInfos.getUser();
+      let subjects = await Subjects.getSubjects(userinfo.structures[0]);
+      let profile = await Profile.getProfile();
+      dispatch({ type: actions.LOGIN, userinfo, subjects, profile });
     } else {
       dispatch({
         type: actions.LOGOUT

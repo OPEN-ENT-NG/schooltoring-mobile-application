@@ -6,6 +6,6 @@
     "endpoint" : "http://ent3-core.gdapublic.fr",
     "client_id": "Schooltoring-App",
     "secret": "secret",
-    "scope": "userbook userinfo directory"
+    "scope": "userbook userinfo directory workspace schooltoring"
   }
 }
