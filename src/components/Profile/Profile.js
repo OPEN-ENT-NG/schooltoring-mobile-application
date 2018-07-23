@@ -7,7 +7,7 @@ import I18n from "../../api/I18n";
 
 import { Avatar } from "../Avatar/Avatar";
 import { SecondaryButton } from "../SecondaryButton/SecondaryButton";
-import { SubjectBadge } from "../SubjectBadge/SubjectBadge";
+import SubjectBadge from "../SubjectBadge/SubjectBadge";
 import Touchable from "../Touchable/Touchable";
 
 import { COLORS } from "../../styles/common";
