@@ -43,7 +43,7 @@ export default class Profile extends Component {
       <View style={{ flex: 1 }}>
         <ScrollView contentContainerStyle={styles.container}>
           <View style={styles.top}>
-            <Avatar size={80} source={this.props.screenProps.userinfo.avatar} />
+            <Avatar size={80} />
 
             <View style={styles.topRight}>
               <Text style={styles.name}>

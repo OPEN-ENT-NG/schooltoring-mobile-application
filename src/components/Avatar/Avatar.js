@@ -1,9 +1,13 @@
 import React, { Component } from "react";
 import { Image, View } from "react-native";
+import { connect } from "react-redux";
+import axios from "axios";
+
 import PropTypes from "prop-types";
 
-export default class Avatar extends Component {
+class Avatar extends Component {
   render() {
+    // console.error(`${global.config.auth.endpoint}${this.props.avatarSrc}`);
     return (
       <View style={this.props.style}>
         <Image
@@ -13,9 +17,9 @@ export default class Avatar extends Component {
             borderRadius: this.props.size
           }}
           source={
-            this.props.source.includes("http")
+            this.props.avatarSrc
               ? {
-                  uri: this.props.source,
+                  uri: `${global.config.auth.endpoint}${this.props.avatarSrc}`,
                   headers: {
                     Authorization:
                       axios.defaults.headers.common["Authorization"]
@@ -29,8 +33,16 @@ export default class Avatar extends Component {
   }
 }
 
+const mapStateToProps = ({ user }) => ({
+  avatarSrc: user.userinfo.avatar
+});
+
+export default connect(
+  mapStateToProps,
+  null
+)(Avatar);
+
 Avatar.propTypes = {
   style: PropTypes.object,
-  size: PropTypes.number.isRequired,
-  source: PropTypes.string.isRequired
+  size: PropTypes.number.isRequired
 };
