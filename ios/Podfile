@@ -1,0 +1,34 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'Schooltoring' do
+  # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
+  # use_frameworks!
+
+  # Pods for Schooltoring
+  pod 'AppCenter/Crashes', '~> 1.8.0'
+  pod 'AppCenter/Analytics', '~> 1.8.0'
+  pod 'AppCenterReactNativeShared', '~> 1.7.1'
+
+  
+
+  platform :ios, '9.0'
+  target 'SchooltoringTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+end
+
+target 'Schooltoring-tvOS' do
+  # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
+  # use_frameworks!
+
+  # Pods for Schooltoring-tvOS
+
+  target 'Schooltoring-tvOSTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+end

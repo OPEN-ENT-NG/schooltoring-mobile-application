@@ -24,3 +24,4 @@ android/app/src/main/assets
 android/build
 .vscode/settings.json
 .history
+ios/build

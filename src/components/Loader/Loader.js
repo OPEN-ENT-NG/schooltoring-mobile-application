@@ -8,7 +8,7 @@ export default class Loader extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <ActivityIndicator color={COLORS.SECONDARY} size={50} />
+        <ActivityIndicator color={COLORS.SECONDARY} size={"large"} />
       </View>
     );
   }

@@ -25,6 +25,7 @@
   },
   "scripts": {
     "start": "react-native start --port=8088",
+    "start:default": "react-native start",
     "android": "react-native run-android && adb reverse tcp:8081 tcp:8088",
     "ios": "react-native run-ios",
     "test": "jest --verbose",
@@ -32,6 +33,12 @@
     "android:dev": "npm run android && npm run android:log"
   },
   "jest": {
+    "preset": "react-native",
+    "setupFiles": [
+      "<rootDir>/node_modules/appcenter/test/AppCenterMock.js",
+      "<rootDir>/node_modules/appcenter-analytics/test/AppCenterAnalyticsMock.js",
+      "<rootDir>/node_modules/appcenter-crashes/test/AppCenterCrashesMock.js"
+    ],
     "preset":"react-native",
     "snapshotSerializers": [
       "enzyme-to-json/serializer"
@@ -42,6 +49,9 @@
     }
   },
   "dependencies": {
+    "appcenter": "^1.7.1",
+    "appcenter-analytics": "^1.7.1",
+    "appcenter-crashes": "^1.7.1",
     "axios": "^0.18.0",
     "base-64": "^0.1.0",
     "prop-types": "^15.6.2",
