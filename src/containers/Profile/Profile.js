@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import { View, Text, Button } from "react-native";
+import { View } from "react-native";
 
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 
-import I18n from "../../api/I18n";
+import ProfileComp from "../../components/Profile/Profile";
 
 import { logout } from "../../store/actions/auth";
 
@@ -23,19 +23,24 @@ export class Profile extends Component {
 
   render() {
     return (
-      <View>
-        <Text>Profile</Text>
-        <Button title={I18n.t("disconnect")} onPress={this.logout} />
+      <View style={{ flex: 1 }}>
+        <ProfileComp {...this.props} />
       </View>
     );
   }
 }
+
+const mapStateToProps = ({ subjects, user }) => ({
+  subjects: subjects.list,
+  userinfo: user.userinfo,
+  profile: user.profile
+});
 
 function mapDispatchToProps(dispatch) {
   return bindActionCreators({ logoutUser: logout }, dispatch);
 }
 
 export default connect(
-  null,
+  mapStateToProps,
   mapDispatchToProps
 )(Profile);

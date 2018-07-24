@@ -22,8 +22,6 @@ export default class Profile extends Component {
   }
 
   renderSubject(item, backgroundColor) {
-    console.log(item);
-
     return (
       <SubjectBadge
         key={item => item}
@@ -36,7 +34,6 @@ export default class Profile extends Component {
   }
 
   renderAvailability(item) {
-    console.log(item);
     return (
       <View
         key={item => item}
@@ -71,6 +68,16 @@ export default class Profile extends Component {
               <Text style={styles.titleText}>
                 {this.props.userinfo.classNames[0].split("$")[1]}
               </Text>
+              {this.props.showTopButtons && (
+                <View style={styles.topRightButtons}>
+                  <Icon style={styles.titleIcon} name="stars" size={30} />
+                  <Text style={[styles.titleText, { marginRight: 20 }]}>
+                    {I18n.t("badges")}
+                  </Text>
+                  <Icon style={styles.titleIcon} name="favorite" size={30} />
+                  <Text style={styles.titleText}>{I18n.t("favorites")}</Text>
+                </View>
+              )}
             </View>
           </View>
 
@@ -102,13 +109,15 @@ export default class Profile extends Component {
             />
           </View>
         </ScrollView>
-        <View style={styles.buttonView}>
-          <SecondaryButton
-            style={styles.button}
-            onPress={() => this.props.saveProfile()}
-            title={I18n.t("save")}
-          />
-        </View>
+        {!this.props.showTopButtons && (
+          <View style={styles.buttonView}>
+            <SecondaryButton
+              style={styles.button}
+              onPress={() => this.props.saveProfile()}
+              title={I18n.t("save")}
+            />
+          </View>
+        )}
       </View>
     );
   }

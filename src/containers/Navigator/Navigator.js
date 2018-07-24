@@ -17,7 +17,7 @@ const Navigator = createBottomTabNavigator(
     Home,
     Requests,
     Messages,
-    Profile
+    Profile: { screen: props => <Profile {...props} showTopButtons={true} /> }
   },
   {
     navigationOptions: ({ navigation }) => {

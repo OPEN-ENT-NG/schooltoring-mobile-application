@@ -5,6 +5,8 @@ export default {
   save: "ENREGISTRER",
   needHelp: "J'ai besoin d'aide",
   offerHelp: "Je peux aider",
+  badges: "Badges",
+  favorites: "Favoris",
   strength: { title: "Mes points forts" },
   weakness: { title: "Mes points faibles" },
   availability: {
