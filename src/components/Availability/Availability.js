@@ -12,7 +12,7 @@ import styles from "./styles";
 
 import I18n from "../../api/I18n";
 
-import { SecondaryButton } from "../SecondaryButton/SecondaryButton";
+import SecondaryButton from "../SecondaryButton/SecondaryButton";
 
 export default class Availability extends Component {
   constructor(props) {
@@ -105,8 +105,3 @@ export default class Availability extends Component {
     );
   }
 }
-
-Availability.propTypes = {
-  navigation: PropTypes.object.isRequired,
-  onChangeScreen: PropTypes.func.isRequired
-};
