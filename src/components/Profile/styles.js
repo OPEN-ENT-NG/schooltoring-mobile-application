@@ -1,7 +1,12 @@
 import { StyleSheet } from "react-native";
 import { COLORS } from "../../styles/common";
 
+const text = { color: COLORS.TEXT };
+
 export default StyleSheet.create({
+  flex: {
+    flex: 1
+  },
   container: {
     paddingHorizontal: 30,
     paddingVertical: 15,
@@ -22,24 +27,27 @@ export default StyleSheet.create({
     marginLeft: 15,
     justifyContent: "space-evenly"
   },
-  main: {
-    flex: 1
+  topRightButtons: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-evenly"
   },
-
   name: {
+    ...text,
     fontWeight: "bold",
     fontSize: 26
   },
-
   title: {
     flexDirection: "row",
     alignItems: "center",
     marginBottom: 10
   },
   titleText: {
+    ...text,
     fontSize: 20
   },
   titleIcon: {
+    ...text,
     fontSize: 25,
     marginRight: 5,
     marginLeft: 5
@@ -50,7 +58,6 @@ export default StyleSheet.create({
     justifyContent: "flex-start",
     flexWrap: "wrap"
   },
-
   item: {
     justifyContent: "center",
     alignItems: "center",
@@ -62,7 +69,6 @@ export default StyleSheet.create({
     color: COLORS.WHITE,
     fontSize: 20
   },
-
   buttonView: {
     flexDirection: "row",
     justifyContent: "flex-end",

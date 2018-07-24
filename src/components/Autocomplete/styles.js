@@ -10,7 +10,8 @@ export default StyleSheet.create({
     marginTop: 50,
     backgroundColor: COLORS.WHITE,
     position: "absolute",
-    zIndex: 10
+    zIndex: 10,
+    width: "100%"
   },
   item: {
     padding: 20

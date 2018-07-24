@@ -2,54 +2,22 @@ import React, { Component } from "react";
 import { View, Text, ScrollView } from "react-native";
 import PropTypes from "prop-types";
 
-import Icon from "react-native-vector-icons/MaterialIcons";
 import I18n from "../../api/I18n";
 
-import Header from "../Header/Header";
 import SecondaryButton from "../SecondaryButton/SecondaryButton";
 import Autocomplete from "../Autocomplete/Autocomplete";
 import SubjectBadge from "../SubjectBadge/SubjectBadge";
 
-import { styleStrength, styleWeakness, styleStructure } from "./styles";
+import styles from "./styles";
 import { COLORS } from "../../styles/common";
 
 export default class StrengthWeakness extends Component {
-  static navigationOptions = ({ navigation }) => {
-    return {
-      header: (
-        <Header
-          navigation={navigation}
-          headerStyle={
-            navigation.state.routeName === "Strength"
-              ? styleStrength.header
-              : styleWeakness.header
-          }
-          noBack={navigation.state.params && navigation.state.params.noBack}
-        >
-          <View style={styleStructure.header}>
-            <Icon
-              style={styleStructure.title}
-              name={
-                navigation.state.routeName === "Strength"
-                  ? "thumb-up"
-                  : "thumb-down"
-              }
-            />
-            <Text style={styleStructure.title}>
-              {I18n.t(`${navigation.state.routeName.toLowerCase()}.title`)}
-            </Text>
-          </View>
-        </Header>
-      )
-    };
-  };
-
   constructor(props) {
     super(props);
 
     this.state = {
       subjects:
-        props.screenProps.profile[
+        props.profile[
           props.navigation.state.routeName === "Strength"
             ? "strengths"
             : "weaknesses"
@@ -69,35 +37,53 @@ export default class StrengthWeakness extends Component {
     return this.chooseStrengthWeakness("strengths", "weaknesses");
   }
 
+  getSubjectsByIds(data) {
+    return this.props.subjects.filter(({ subjectId }) =>
+      data.find(({ subject_id }) => subject_id === subjectId)
+    );
+  }
+
   render() {
     return (
       <View style={{ flex: 1 }}>
-        <View style={styleStructure.container}>
+        <View style={styles.container}>
           <Autocomplete
             placeholder="Choisissez les matières concernées"
-            data={this.props.screenProps.subjects}
+            data={this.props.subjects}
             getItemKey={item => item.subjectId}
             onItemPress={item => {
-              let studentSubjects = [...this.state.subjects, item];
+              let studentSubjects = [
+                ...this.state.subjects,
+                { subject_id: item.subjectId }
+              ];
               this.setState({ subjects: studentSubjects });
             }}
-            renderItem={subject => <Text>{subject.subjectLabel}</Text>}
+            renderItem={subject => (
+              <Text style={styles.subjectLabel}>{subject.subjectLabel}</Text>
+            )}
             filterItem={(item, filter) =>
               item.subjectLabel.toLowerCase().includes(filter.toLowerCase()) &&
-              !this.state.subjects.includes(item)
+              !this.state.subjects.includes({ subject_id: item.subjectId })
             }
+            underlineColor={this.chooseStrengthWeakness(
+              COLORS.PRIMARY,
+              COLORS.SECONDARY
+            )}
           />
 
           <ScrollView
-            contentContainerStyle={styleStructure.list}
+            contentContainerStyle={styles.list}
             keyboardShouldPersistTaps="handled"
           >
-            {this.state.subjects.map(subject => (
+            {this.getSubjectsByIds(this.state.subjects).map(subject => (
               <SubjectBadge
                 key={subject.subjectId}
                 onPress={() => {
                   let newState = this.state.subjects;
-                  newState.splice(newState.indexOf(subject), 1);
+                  newState.splice(
+                    newState.indexOf({ subject_id: subject.subjectId }),
+                    1
+                  );
                   this.setState({ subjects: newState });
                 }}
                 style={{
@@ -111,13 +97,10 @@ export default class StrengthWeakness extends Component {
             ))}
           </ScrollView>
         </View>
-        <View style={styleStructure.buttonView}>
+        <View style={styles.buttonView}>
           <SecondaryButton
             onPress={() => {
-              this.props.screenProps.onChangeScreen(
-                this.getProfileProperty(),
-                []
-              );
+              this.props.onChangeScreen(this.getProfileProperty(), []);
               this.props.navigation.push(
                 this.chooseStrengthWeakness("Weakness", "Availability")
               );
@@ -126,7 +109,7 @@ export default class StrengthWeakness extends Component {
           />
           <SecondaryButton
             onPress={() => {
-              this.props.screenProps.onChangeScreen(
+              this.props.onChangeScreen(
                 this.getProfileProperty(),
                 this.state.subjects
               );

@@ -13,21 +13,11 @@ import styles from "./styles";
 import I18n from "../../api/I18n";
 
 import SecondaryButton from "../SecondaryButton/SecondaryButton";
-import Header from "../Header/Header";
 
 export default class Availability extends Component {
-  static navigationOptions = ({ navigation }) => ({
-    header: (
-      <Header
-        navigation={navigation}
-        title={I18n.t(`${navigation.state.routeName.toLowerCase()}.title`)}
-      />
-    )
-  });
-
   constructor(props) {
     super(props);
-    this.state = props.screenProps.profile.availabilities || {
+    this.state = props.profile.availabilities || {
       monday: true,
       tuesday: true,
       wednesday: true,
@@ -89,7 +79,7 @@ export default class Availability extends Component {
           <SecondaryButton
             style={styles.button}
             onPress={() => {
-              this.props.screenProps.onChangeScreen("availabilities", {
+              this.props.onChangeScreen("availabilities", {
                 monday: false,
                 tuesday: false,
                 wednesday: false,
@@ -105,10 +95,7 @@ export default class Availability extends Component {
           <SecondaryButton
             style={styles.button}
             onPress={() => {
-              this.props.screenProps.onChangeScreen(
-                "availabilities",
-                this.state
-              );
+              this.props.onChangeScreen("availabilities", this.state);
               this.props.navigation.push("Profile");
             }}
             title={I18n.t("next")}

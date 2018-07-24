@@ -6,7 +6,6 @@ import PropTypes from "prop-types";
 import I18n from "../../api/I18n";
 
 import Avatar from "../Avatar/Avatar";
-import Header from "../Header/Header";
 import SecondaryButton from "../SecondaryButton/SecondaryButton";
 import SubjectBadge from "../SubjectBadge/SubjectBadge";
 
@@ -14,25 +13,47 @@ import { COLORS } from "../../styles/common";
 import styles from "./styles";
 
 export default class Profile extends Component {
-  static navigationOptions = ({ navigation }) => ({
-    header: (
-      <Header
-        navigation={navigation}
-        title={I18n.t(`${navigation.state.routeName.toLowerCase()}.title`)}
-      />
-    )
-  });
+  getSubjectsName(data) {
+    return this.props.subjects
+      .filter(({ subjectId }) =>
+        data.find(({ subject_id }) => subject_id === subjectId)
+      )
+      .map(({ subjectLabel }) => subjectLabel);
+  }
 
-  renderStrengthWeaknessItem(subject_id, colors) {
+  renderSubject(item, backgroundColor) {
+    console.log(item);
+
+    return (
+      <SubjectBadge
+        key={item => item}
+        style={{
+          backgroundColor: backgroundColor
+        }}
+        title={item}
+      />
+    );
+  }
+
+  renderAvailability(item) {
+    console.log(item);
     return (
       <View
-        key={subject_id}
-        style={{ backgroundColor: colors, padding: 5, margin: 3 }}
+        key={item => item}
+        style={[
+          styles.item,
+          {
+            backgroundColor:
+              this.props.profile.availabilities[item] === true
+                ? COLORS.NEGATIVE
+                : COLORS.GREY
+          }
+        ]}
       >
-        <Text style={{ color: COLORS.WHITE }}>
-          {this.props.screenProps.subjects
-            .find(item => item.subjectId == subject_id)
-            .subjectLabel.toUpperCase()}
+        <Text style={styles.itemText}>
+          {I18n.t(`availability.${item}`)
+            .charAt(0)
+            .toUpperCase()}
         </Text>
       </View>
     );
@@ -40,28 +61,25 @@ export default class Profile extends Component {
 
   render() {
     return (
-      <View style={{ flex: 1 }}>
+      <View style={styles.flex}>
         <ScrollView contentContainerStyle={styles.container}>
           <View style={styles.top}>
-            <Avatar size={80} />
+            <Avatar size={120} />
 
             <View style={styles.topRight}>
-              <Text style={styles.name}>
-                {this.props.screenProps.userinfo.username}
-              </Text>
-              <Text>
-                {this.props.screenProps.userinfo.classNames[0].split("$")[1]}
+              <Text style={styles.name}>{this.props.userinfo.username}</Text>
+              <Text style={styles.titleText}>
+                {this.props.userinfo.classNames[0].split("$")[1]}
               </Text>
             </View>
           </View>
 
-          <View style={styles.main}>
+          <View style={styles.flex}>
             <ProfileItem
               title={I18n.t("strength.title")}
               edit={() => this.props.navigation.push("Strength")}
-              data={this.props.screenProps.profile.strengths}
-              getKey={item => item.subjectId}
-              itemColor={COLORS.PRIMARY}
+              data={this.getSubjectsName(this.props.profile.strengths)}
+              renderItem={item => this.renderSubject(item, COLORS.PRIMARY)}
             />
 
             <View style={styles.divider} />
@@ -69,9 +87,8 @@ export default class Profile extends Component {
             <ProfileItem
               title={I18n.t("weakness.title")}
               edit={() => this.props.navigation.push("Weakness")}
-              data={this.props.screenProps.profile.weaknesses}
-              getKey={item => item.subjectId}
-              itemColor={COLORS.SECONDARY}
+              data={this.getSubjectsName(this.props.profile.weaknesses)}
+              renderItem={item => this.renderSubject(item, COLORS.SECONDARY)}
             />
 
             <View style={styles.divider} />
@@ -79,36 +96,16 @@ export default class Profile extends Component {
             <ProfileItem
               title={I18n.t("availability.title")}
               edit={() => this.props.navigation.push("Availability")}
-              data={Object.keys(this.props.screenProps.profile.availabilities)}
+              data={Object.keys(this.props.profile.availabilities)}
               listStyle={{ justifyContent: "space-evenly" }}
-              renderItem={item => (
-                <View
-                  key={item => item}
-                  style={[
-                    styles.item,
-                    {
-                      backgroundColor:
-                        this.props.screenProps.profile.availabilities[item] ===
-                        true
-                          ? COLORS.NEGATIVE
-                          : COLORS.GREY
-                    }
-                  ]}
-                >
-                  <Text style={styles.itemText}>
-                    {I18n.t(`availability.${item}`)
-                      .charAt(0)
-                      .toUpperCase()}
-                  </Text>
-                </View>
-              )}
+              renderItem={item => this.renderAvailability(item)}
             />
           </View>
         </ScrollView>
         <View style={styles.buttonView}>
           <SecondaryButton
             style={styles.button}
-            onPress={() => this.props.screenProps.saveProfile()}
+            onPress={() => this.props.saveProfile()}
             title={I18n.t("save")}
           />
         </View>
@@ -128,20 +125,7 @@ const ProfileItem = props => {
       </View>
 
       <View style={[styles.list, props.listStyle]}>
-        {props.data.map(
-          item =>
-            props.hasOwnProperty("renderItem") ? (
-              props.renderItem(item)
-            ) : (
-              <SubjectBadge
-                key={item => props.getKey(item)}
-                style={{
-                  backgroundColor: props.itemColor
-                }}
-                title={item.subjectLabel}
-              />
-            )
-        )}
+        {props.data.map(item => props.renderItem(item))}
       </View>
     </View>
   );

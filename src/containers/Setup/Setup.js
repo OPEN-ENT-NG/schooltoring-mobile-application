@@ -4,12 +4,16 @@ import { createStackNavigator } from "react-navigation";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 
+import I18n from "react-native-i18n";
+
 import { saveProfile } from "../../store/actions/profile";
 
 import StrengthWeakness from "../../components/StrengthWeakness/StrengthWeakness";
 import Availability from "../../components/Availability/Availability";
 import Profile from "../../components/Profile/Profile";
+import Header from "../../components/Header/Header";
 
+import { COLORS } from "../../styles/common";
 import styles from "./styles";
 
 export class Setup extends Component {
@@ -32,14 +36,7 @@ export class Setup extends Component {
   }
 
   saveProfile() {
-    let profile = this.state.profile;
-    profile.strengths = profile.strengths.map(item => {
-      return { subject_id: item.subjectId };
-    });
-    profile.weaknesses = profile.weaknesses.map(item => {
-      return { subject_id: item.subjectId };
-    });
-    this.props.saveProfile(profile);
+    this.props.saveProfile(this.state.profile);
   }
 
   render() {
@@ -57,21 +54,58 @@ export class Setup extends Component {
   }
 }
 
+const paramsToProps = SomeComponent => {
+  // turns this.props.navigation.state.params into this.params.<x>
+  return class extends Component {
+    static navigationOptions = SomeComponent.navigationOptions;
+    render() {
+      const { navigation, ...otherProps } = this.props;
+      const { screenProps } = otherProps;
+      return <SomeComponent navigation={navigation} {...screenProps} />;
+    }
+  };
+};
+
+const getHeader = navigation => {
+  let routeName = navigation.state.routeName;
+  let noBack = navigation.state.params && navigation.state.params.noBack;
+  return (
+    <Header
+      navigation={navigation}
+      backgroundColor={
+        routeName === "Strength"
+          ? COLORS.PRIMARY
+          : routeName === "Weakness"
+            ? COLORS.SECONDARY
+            : null
+      }
+      noBack={noBack}
+      title={I18n.t(`${routeName.toLowerCase()}.title`)}
+      iconName={
+        routeName === "Strength"
+          ? "thumb-up"
+          : routeName === "Weakness"
+            ? "thumb-down"
+            : null
+      }
+    />
+  );
+};
+
 const Stack = createStackNavigator(
   {
-    Strength: StrengthWeakness,
-    Weakness: StrengthWeakness,
-    Availability,
-    Profile
+    Strength: paramsToProps(StrengthWeakness),
+    Weakness: paramsToProps(StrengthWeakness),
+    Availability: paramsToProps(Availability),
+    Profile: paramsToProps(Profile)
   },
   {
     initialRouteName: "Strength",
     initialRouteParams: { noBack: true },
     cardStyle: styles.container,
-    navigationOptions: {
-      headerStyle: styles.header,
-      headerTitleStyle: styles.titles
-    }
+    navigationOptions: ({ navigation }) => ({
+      header: getHeader(navigation)
+    })
   }
 );
 

@@ -1,33 +1,22 @@
 import React from "react";
-import { View, Text, TouchableWithoutFeedback, StyleSheet } from "react-native";
+import { View, Text, TouchableWithoutFeedback } from "react-native";
 import { StackActions } from "react-navigation";
 
 import Icon from "react-native-vector-icons/MaterialIcons";
 
-import styles from "./styles";
-import { COLORS } from "../../styles/common";
+import getStyle from "./styles";
 
 export default props => {
-  const headerStyle = [styles.header, props.headerStyle];
-  const titleStyle = [styles.title, props.titleStyle];
   const dispatchPop = () => {
     props.navigation.dispatch(StackActions.pop());
   };
 
-  const extractTextColor = headerStyle => {
-    let color =
-      StyleSheet.flatten(headerStyle).backgroundColor == COLORS.LIGHT_GREY
-        ? COLORS.TEXT
-        : COLORS.WHITE;
-    return {
-      color: color
-    };
-  };
+  const styles = getStyle(props.backgroundColor);
 
   return (
-    <View style={headerStyle}>
+    <View style={styles.header}>
       {(props.hasOwnProperty("noBack") && props.noBack) || (
-        <View style={styles.back}>
+        <View>
           <TouchableWithoutFeedback
             hitSlop={{
               top: 20,
@@ -37,19 +26,13 @@ export default props => {
             }}
             onPress={dispatchPop}
           >
-            <Icon
-              name="arrow-back"
-              style={[titleStyle, extractTextColor(headerStyle)]}
-            />
+            <Icon name="arrow-back" style={styles.title} />
           </TouchableWithoutFeedback>
         </View>
       )}
       <View style={styles.titleContainer}>
-        {props.children || (
-          <Text style={[titleStyle, extractTextColor(headerStyle)]}>
-            {props.title}
-          </Text>
-        )}
+        {props.iconName && <Icon style={styles.title} name={props.iconName} />}
+        <Text style={styles.title}>{props.title}</Text>
       </View>
     </View>
   );

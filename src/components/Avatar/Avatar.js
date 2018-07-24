@@ -7,7 +7,6 @@ import PropTypes from "prop-types";
 
 class Avatar extends Component {
   render() {
-    // console.error(`${global.config.auth.endpoint}${this.props.avatarSrc}`);
     return (
       <View style={this.props.style}>
         <Image

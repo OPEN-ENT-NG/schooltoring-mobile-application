@@ -47,6 +47,7 @@ export default class Autocomplete extends Component {
           onChangeText={filter => this.updateList(filter)}
           value={this.state.filter}
           style={styles.input}
+          underlineColorAndroid={this.props.underlineColor}
         />
         <ScrollView
           style={[

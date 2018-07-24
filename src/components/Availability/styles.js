@@ -1,5 +1,11 @@
 import { StyleSheet } from "react-native";
 
+import { COLORS } from "../../styles/common";
+
+const text = {
+  color: COLORS.TEXT
+};
+
 export default StyleSheet.create({
   container: {
     paddingHorizontal: 30,
@@ -17,6 +23,7 @@ export default StyleSheet.create({
     marginRight: 20
   },
   itemText: {
+    ...text,
     fontSize: 18
   },
   list: {
@@ -24,6 +31,7 @@ export default StyleSheet.create({
     justifyContent: "space-around"
   },
   title: {
+    ...text,
     fontSize: 18,
     marginBottom: 40,
     flex: 0
