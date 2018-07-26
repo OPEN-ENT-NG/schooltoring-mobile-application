@@ -3,7 +3,6 @@ import { StyleSheet } from "react-native";
 import { COLORS } from "../../styles/common";
 
 const half = {
-  flex: 1,
   flexDirection: "row",
   alignItems: "center",
   padding: 20
@@ -25,9 +24,15 @@ export default StyleSheet.create({
   },
   text: {
     color: "white",
-    fontSize: 28
+    fontSize: 24,
+    width: "60%"
   },
-
+  textLeft: {
+    textAlign: "left"
+  },
+  textRight: {
+    textAlign: "right"
+  },
   topHalf: {
     ...half,
     backgroundColor: COLORS.SECONDARY,
