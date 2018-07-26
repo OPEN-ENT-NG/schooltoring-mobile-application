@@ -1,4 +1,4 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet, Platform } from "react-native";
 
 import { COLORS } from "../../styles/common";
 
@@ -27,7 +27,16 @@ export default StyleSheet.create({
     alignSelf: "center"
   },
   input: {
-    backgroundColor: COLORS.WHITE
+    height: 50,
+    ...Platform.select({
+      ios: {
+        borderWidth: 1,
+        borderColor: COLORS.GREY,
+        marginBottom: 15,
+        padding: 10,
+        borderRadius: 3
+      }
+    })
   },
   errorMessage: {
     color: COLORS.SECONDARY
@@ -57,5 +66,12 @@ export default StyleSheet.create({
   remember: {
     marginBottom: 15,
     flexDirection: "row"
+  },
+  rememberSwitch: {
+    ...Platform.select({
+      ios: {
+        marginRight: 10
+      }
+    })
   }
 });

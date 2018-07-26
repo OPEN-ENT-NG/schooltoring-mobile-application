@@ -19,7 +19,7 @@ import { COLORS } from "../../styles/common";
 
 class Login extends Component {
   state = {
-    username: "pascal.fautrero",
+    username: "yanis.albon",
     password: "azerty123",
     rememberMe: false
   };
@@ -65,11 +65,13 @@ class Login extends Component {
           <View style={styles.formContainer}>
             {this.getError()}
             <TextInput
+              style={styles.input}
               placeholder="Nom d'utilisateur"
               value={this.state.username}
               onChangeText={username => this.setState({ username })}
             />
             <TextInput
+              style={styles.input}
               secureTextEntry={true}
               placeholder="Mot de passe"
               value={this.state.password}
@@ -77,6 +79,7 @@ class Login extends Component {
             />
             <View style={styles.remember}>
               <Switch
+                style={styles.rememberSwitch}
                 value={this.state.rememberMe}
                 onValueChange={rememberMe => this.setState({ rememberMe })}
               />
