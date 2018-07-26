@@ -1,4 +1,4 @@
-package com.schooltoring;
+package fr.idf.schooltoring;
 
 import com.facebook.react.ReactActivity;
 

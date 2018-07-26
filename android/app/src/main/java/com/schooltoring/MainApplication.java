@@ -1,4 +1,4 @@
-package com.schooltoring;
+package fr.idf.schooltoring;
 
 import android.app.Application;
 
