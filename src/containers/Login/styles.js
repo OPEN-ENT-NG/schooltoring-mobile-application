@@ -26,18 +26,6 @@ export default StyleSheet.create({
     width: "80%",
     alignSelf: "center"
   },
-  input: {
-    height: 50,
-    ...Platform.select({
-      ios: {
-        borderWidth: 1,
-        borderColor: COLORS.GREY,
-        marginBottom: 15,
-        padding: 10,
-        borderRadius: 3
-      }
-    })
-  },
   errorMessage: {
     color: COLORS.SECONDARY
   },

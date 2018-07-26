@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import {
-  TextInput,
   View,
   Image,
   Text,
@@ -14,6 +13,7 @@ import { bindActionCreators } from "redux";
 
 import { login } from "../../store/actions/auth";
 
+import InputText from "../../components/InputText/InputText";
 import styles from "./styles";
 import { COLORS } from "../../styles/common";
 
@@ -64,14 +64,12 @@ class Login extends Component {
         <View>
           <View style={styles.formContainer}>
             {this.getError()}
-            <TextInput
-              style={styles.input}
+            <InputText
               placeholder="Nom d'utilisateur"
               value={this.state.username}
               onChangeText={username => this.setState({ username })}
             />
-            <TextInput
-              style={styles.input}
+            <InputText
               secureTextEntry={true}
               placeholder="Mot de passe"
               value={this.state.password}

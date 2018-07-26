@@ -7,11 +7,10 @@ export default StyleSheet.create({
     backgroundColor: COLORS.WHITE
   },
   list: {
-    marginTop: 50,
     backgroundColor: COLORS.WHITE,
     position: "absolute",
     zIndex: 10,
-    width: "100%"
+    position: "relative"
   },
   item: {
     padding: 20

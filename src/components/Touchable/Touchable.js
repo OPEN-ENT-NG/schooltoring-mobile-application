@@ -2,9 +2,9 @@ import React from "react";
 import {
   TouchableNativeFeedback,
   TouchableOpacity,
-  Platform,
-  View
+  Platform
 } from "react-native";
+import PropTypes from "prop-types";
 
 const Touchable = props => {
   return Platform.OS === "android" ? (
@@ -16,6 +16,10 @@ const Touchable = props => {
       {props.children}
     </TouchableOpacity>
   );
+};
+
+Touchable.propTypes = {
+  onPress: PropTypes.func.isRequired
 };
 
 export default Touchable;

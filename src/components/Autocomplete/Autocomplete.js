@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 import {
   View,
-  TextInput,
   ScrollView,
   TouchableNativeFeedback,
   Dimensions
 } from "react-native";
 import PropTypes from "prop-types";
+import InputText from "../InputText/InputText";
+import Touchable from "../Touchable/Touchable";
 
 import styles from "./styles";
 
@@ -27,22 +28,22 @@ export default class Autocomplete extends Component {
 
   renderItem(item) {
     return (
-      <TouchableNativeFeedback
-        key={this.props.getItemKey(item)}
+      <Touchable
+        id={this.props.getItemKey(item)}
         onPress={() => {
           this.props.onItemPress(item);
           this.setState({ filter: "", output: [] });
         }}
       >
         <View style={styles.item}>{this.props.renderItem(item)}</View>
-      </TouchableNativeFeedback>
+      </Touchable>
     );
   }
 
   render() {
     return (
       <View style={[this.props.style, styles.container]}>
-        <TextInput
+        <InputText
           placeholder={this.props.placeholder}
           onChangeText={filter => this.updateList(filter)}
           value={this.state.filter}
