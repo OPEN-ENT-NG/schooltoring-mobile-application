@@ -10,7 +10,8 @@ export const Avatar = props => (
           style={{
             height: props.size,
             width: props.size,
-            borderRadius: props.size
+            borderRadius: props.size / 2,
+            overflow: "hidden"
           }}
           source={
             props.src

@@ -7,19 +7,25 @@ import {
 } from "react-native";
 import PropTypes from "prop-types";
 
+import Touchable from "../Touchable/Touchable";
+
 import styles from "./styles";
 
-export const SubjectBadge = props => {
-  return (
-    <TouchableWithoutFeedback
-      onPress={() => props.hasOwnProperty("onPress") && props.onPress()}
-    >
-      <View style={[styles.item, props.style]}>
-        <Text style={styles.itemText}>{props.title}</Text>
-      </View>
-    </TouchableWithoutFeedback>
-  );
-};
+export default class SubjectBadge extends Component {
+  render() {
+    return (
+      <Touchable
+        onPress={() =>
+          this.props.hasOwnProperty("onPress") && this.props.onPress()
+        }
+      >
+        <View style={[styles.item, this.props.style]}>
+          <Text style={styles.itemText}>{this.props.title}</Text>
+        </View>
+      </Touchable>
+    );
+  }
+}
 
 SubjectBadge.propTypes = {
   onPress: PropTypes.func,

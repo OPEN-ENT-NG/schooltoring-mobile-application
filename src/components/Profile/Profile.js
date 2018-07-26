@@ -7,8 +7,8 @@ import I18n from "../../api/I18n";
 
 import { Avatar } from "../Avatar/Avatar";
 import { SecondaryButton } from "../SecondaryButton/SecondaryButton";
-import SubjectBadge from "../SubjectBadge/SubjectBadge";
-import Touchable from '../Touchable/Touchable';
+import { SubjectBadge } from "../SubjectBadge/SubjectBadge";
+import Touchable from "../Touchable/Touchable";
 
 import { COLORS } from "../../styles/common";
 import styles from "./styles";
@@ -134,7 +134,37 @@ export const Profile = props => {
             title={I18n.t("save")}
           />
         </View>
-      )}
+      </View>
+    );
+  }
+}
+
+const ProfileItem = props => {
+  return (
+    <View>
+      <View style={styles.title}>
+        <Text style={styles.titleText}>{props.title}</Text>
+        <Touchable onPress={() => props.edit()}>
+          <Icon style={styles.titleIcon} name="create" />
+        </Touchable>
+      </View>
+
+      <View style={[styles.list, props.listStyle]}>
+        {props.data.map(
+          item =>
+            props.hasOwnProperty("renderItem") ? (
+              props.renderItem(item)
+            ) : (
+              <SubjectBadge
+                key={item => props.getKey(item)}
+                style={{
+                  backgroundColor: props.itemColor
+                }}
+                title={item.subjectLabel}
+              />
+            )
+        )}
+      </View>
     </View>
   );
 };
