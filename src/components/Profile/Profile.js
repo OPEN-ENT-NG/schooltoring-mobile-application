@@ -105,7 +105,8 @@ export const Profile = props => {
 
           <View style={styles.flex}>
             <ProfileItem
-              id="strengths-section"title={I18n.t("strength.title")}
+              id="strengths-section"
+              title={I18n.t("strength.title")}
               edit={() => props.navigation.push("Strength")}
               data={getSubjectsName(props.profile.strengths)}
               renderItem={item => renderSubject(item, COLORS.PRIMARY)}
@@ -114,7 +115,8 @@ export const Profile = props => {
           <View style={styles.divider} />
 
             <ProfileItem
-              id="weaknesses-section"title={I18n.t("weakness.title")}
+              id="weaknesses-section"
+              title={I18n.t("weakness.title")}
               edit={() => props.navigation.push("Weakness")}
               data={getSubjectsName(props.profile.weaknesses)}
               renderItem={item => renderSubject(item, COLORS.SECONDARY)}
@@ -143,37 +145,6 @@ export const Profile = props => {
       )}
     </View>
   );
-};
-
-Profile.propTypes = {
-  subjects: PropTypes.arrayOf(
-    PropTypes.shape({
-      subjectId: PropTypes.string,
-      subjectCode: PropTypes.string,
-      subjectLabel: PropTypes.string
-    })
-  ).isRequired,
-  profile: PropTypes.shape({
-    availabilities: PropTypes.shape({
-      monday: PropTypes.bool.isRequired,
-      tuesday: PropTypes.bool.isRequired,
-      wednesday: PropTypes.bool.isRequired,
-      thursday: PropTypes.bool.isRequired,
-      friday: PropTypes.bool.isRequired,
-      saturday: PropTypes.bool.isRequired,
-      sunday: PropTypes.bool.isRequired
-    }),
-    weaknesses: PropTypes.arrayOf(
-      PropTypes.shape({ subject_id: PropTypes.string.isRequired })
-    ),
-    strengths: PropTypes.arrayOf(
-      PropTypes.shape({ subject_id: PropTypes.string.isRequired })
-    )
-  }).isRequired,
-  userinfo: PropTypes.object.isRequired,
-  navigation: PropTypes.object.isRequired,
-  showTopButtons: PropTypes.bool,
-  saveProfile: PropTypes.func
 };
 
 Profile.propTypes = {
