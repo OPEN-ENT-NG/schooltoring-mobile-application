@@ -27,6 +27,7 @@
     "start": "react-native start --port=8088",
     "start:default": "react-native start",
     "android": "react-native run-android && adb reverse tcp:8081 tcp:8088",
+    "android:default": "react-native run-android",
     "ios": "react-native run-ios",
     "test": "jest --verbose",
     "android:log": "react-native log-android",
