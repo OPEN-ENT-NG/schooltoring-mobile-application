@@ -16,7 +16,7 @@ import { Avatar } from "../../components/Avatar/Avatar";
 const getAvatar = () => {
   let state = store.getState();
   if (state.user.userinfo.hasOwnProperty("avatar")) {
-    return `${global.config.auth.endpoint}${state.user.userinfo.avatar}`;
+    return state.user.userinfo.avatar;
   } else {
     return null;
   }

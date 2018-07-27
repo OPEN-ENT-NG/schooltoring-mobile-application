@@ -10,16 +10,17 @@ export const Avatar = props => (
       style={{
         height: props.size,
         width: props.size,
-        borderRadius: props.size
+        borderRadius: props.size / 2,
+        overflow: "hidden"
       }}
       source={
         props.src
           ? {
-              uri: `${props.src}`,
-              headers: {
-                Authorization: axios.defaults.headers.common["Authorization"]
-              }
+            uri: `${global.config.auth.endpoint}${props.src}`,
+            headers: {
+              Authorization: axios.defaults.headers.common["Authorization"]
             }
+          }
           : require("../../assets/img/no-avatar.png")
       }
     />

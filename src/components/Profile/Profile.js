@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import { View, Text, ScrollView, TouchableNativeFeedback } from "react-native";
+import React from "react";
+import { View, Text, ScrollView} from "react-native";
 import Icon from "react-native-vector-icons/MaterialIcons";
 import PropTypes from "prop-types";
 
@@ -7,7 +7,8 @@ import I18n from "../../api/I18n";
 
 import { Avatar } from "../Avatar/Avatar";
 import { SecondaryButton } from "../SecondaryButton/SecondaryButton";
-import { SubjectBadge } from "../SubjectBadge/SubjectBadge";
+import SubjectBadge from "../SubjectBadge/SubjectBadge";
+import Touchable from '../Touchable/Touchable';
 
 import { COLORS } from "../../styles/common";
 import styles from "./styles";
@@ -56,14 +57,14 @@ export const Profile = props => {
     );
   };
 
-  ProfileItem = props => {
+  const ProfileItem = props => {
     return (
       <View>
         <View style={styles.title}>
           <Text style={styles.titleText}>{props.title}</Text>
-          <TouchableNativeFeedback onPress={() => props.edit()}>
+          <Touchable onPress={() => props.edit()}>
             <Icon style={styles.titleIcon} name="create" />
-          </TouchableNativeFeedback>
+          </Touchable>
         </View>
 
         <View style={[styles.list, props.listStyle]}>
@@ -77,10 +78,7 @@ export const Profile = props => {
     <View style={styles.flex}>
       <ScrollView contentContainerStyle={styles.container}>
         <View style={styles.top}>
-          <Avatar
-            size={120}
-            src={`${global.config.auth.endpoint}${props.userinfo.avatar}`}
-          />
+          <Avatar size={120} src={props.userinfo.avatar} />
 
           <View style={styles.topRight}>
             <Text style={styles.name}>{props.userinfo.username}</Text>
@@ -169,5 +167,5 @@ Profile.propTypes = {
   userinfo: PropTypes.object.isRequired,
   navigation: PropTypes.object.isRequired,
   showTopButtons: PropTypes.bool,
-  saveProfile: PropTypes.func.isRequired
+  saveProfile: PropTypes.func
 };
