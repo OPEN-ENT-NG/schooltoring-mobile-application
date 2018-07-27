@@ -1,12 +1,13 @@
 import React from "react";
 import { View, Text, TouchableWithoutFeedback } from "react-native";
 import { StackActions } from "react-navigation";
+import PropTypes from "prop-types";
 
 import Icon from "react-native-vector-icons/MaterialIcons";
 
 import getStyle from "./styles";
 
-export default props => {
+export const Header = props => {
   const dispatchPop = () => {
     props.navigation.dispatch(StackActions.pop());
   };
@@ -37,4 +38,18 @@ export default props => {
       </View>
     </View>
   );
+};
+
+Header.propTypes = {
+  noBack: PropTypes.bool,
+  navigation: function(props, propName, componentName) {
+    if (
+      props["noBack"] === true &&
+      (props[propName] == undefined || typeof props[propName] != "object")
+    ) {
+      return new Error("Please provide a navigation object!");
+    }
+  },
+  iconName: PropTypes.string,
+  title: PropTypes.string.isRequired
 };
