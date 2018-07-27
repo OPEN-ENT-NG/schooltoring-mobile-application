@@ -20,7 +20,6 @@ yarn-error.log*
 Schooltoring-Mobile-Application.yml
 android/app/build
 android/.gradle
-android/app/src/main/assets
 android/build
 .vscode/settings.json
 .history
