@@ -4,7 +4,7 @@ import { View } from "react-native";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 
-import ProfileComp from "../../components/Profile/Profile";
+import { Profile as ProfileComp } from "../../components/Profile/Profile";
 
 import { logout } from "../../store/actions/auth";
 

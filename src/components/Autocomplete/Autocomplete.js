@@ -66,7 +66,7 @@ export default class Autocomplete extends Component {
 Autocomplete.propTypes = {
   style: PropTypes.object,
   placeholder: PropTypes.string,
-  data: PropTypes.arrayOf(PropTypes.object).isRequired,
+  data: PropTypes.array.isRequired,
   filterItem: PropTypes.func.isRequired,
   getItemKey: PropTypes.func.isRequired,
   onItemPress: PropTypes.func.isRequired,

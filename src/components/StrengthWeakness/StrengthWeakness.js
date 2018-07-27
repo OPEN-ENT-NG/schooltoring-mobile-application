@@ -4,9 +4,9 @@ import PropTypes from "prop-types";
 
 import I18n from "../../api/I18n";
 
-import SecondaryButton from "../SecondaryButton/SecondaryButton";
+import { SecondaryButton } from "../SecondaryButton/SecondaryButton";
 import Autocomplete from "../Autocomplete/Autocomplete";
-import SubjectBadge from "../SubjectBadge/SubjectBadge";
+import { SubjectBadge } from "../SubjectBadge/SubjectBadge";
 
 import styles from "./styles";
 import { COLORS } from "../../styles/common";
@@ -124,3 +124,15 @@ export default class StrengthWeakness extends Component {
     );
   }
 }
+
+StrengthWeakness.propTypes = {
+  navigation: PropTypes.object.isRequired,
+  subjects: PropTypes.arrayOf(
+    PropTypes.shape({
+      subjectId: PropTypes.string,
+      subjectLabel: PropTypes.string,
+      subjectCode: PropTypes.string
+    })
+  ).isRequired,
+  onChangeScreen: PropTypes.func.isRequired
+};

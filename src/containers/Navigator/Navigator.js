@@ -7,10 +7,20 @@ import Home from "../Home/Home";
 import Requests from "../Requests/Requests";
 import Messages from "../Messages/Messages";
 import Profile from "../Profile/Profile";
+import store from "../../store/store";
 
 import { COLORS } from "../../styles/common";
 import NavigationService from "../../api/Navigation";
-import Avatar from "../../components/Avatar/Avatar";
+import { Avatar } from "../../components/Avatar/Avatar";
+
+const getAvatar = () => {
+  let state = store.getState();
+  if (state.user.userinfo.hasOwnProperty("avatar")) {
+    return state.user.userinfo.avatar;
+  } else {
+    return null;
+  }
+};
 
 const Navigator = createBottomTabNavigator(
   {
@@ -36,7 +46,7 @@ const Navigator = createBottomTabNavigator(
               return <Icon name="chat" color={COLORS.TEXT} size={25} />;
             }
             case "Profile": {
-              return <Avatar color={COLORS.TEXT} size={30} />;
+              return <Avatar color={COLORS.TEXT} size={30} src={getAvatar()} />;
             }
           }
         }
