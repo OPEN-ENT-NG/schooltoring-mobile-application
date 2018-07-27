@@ -17,7 +17,6 @@
     "eslint-plugin-react": "^7.9.1",
     "jest": "^23.1.0",
     "jest-react-native": "^18.0.0",
-    "jest-serializer-enzyme": "^1.0.0",
     "prettier": "^1.13.5",
     "react-addons-test-utils": "^15.6.2",
     "react-dom": "^16.4.1",
@@ -35,7 +34,7 @@
     "android:dev": "npm run android && npm run android:log"
   },
   "jest": {
-    "preset": "react-native",
+    "preset":"react-native",
     "setupFiles": [
       "<rootDir>/node_modules/appcenter/test/AppCenterMock.js",
       "<rootDir>/node_modules/appcenter-analytics/test/AppCenterAnalyticsMock.js",
