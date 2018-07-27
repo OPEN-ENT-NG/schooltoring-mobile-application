@@ -6,7 +6,7 @@ import I18n from "../../api/I18n";
 
 import { SecondaryButton } from "../SecondaryButton/SecondaryButton";
 import Autocomplete from "../Autocomplete/Autocomplete";
-import { SubjectBadge } from "../SubjectBadge/SubjectBadge";
+import SubjectBadge from "../SubjectBadge/SubjectBadge";
 
 import styles from "./styles";
 import { COLORS } from "../../styles/common";
