@@ -1,0 +1,327 @@
+{
+  "userinfo":{
+     "classNames":[
+        "VERSAILLES-7133$2DE4"
+     ],
+     "username":"Yanis ALBON",
+     "structureNames":[
+        "LPO-JEAN PERRIN-ac-VERSAILLES"
+     ],
+     "avatar":"/workspace/document/49a54de3-51f8-464b-81bb-a377f508f382"
+  },
+  "profile":{
+     "availabilities":{
+        "monday":false,
+        "tuesday":true,
+        "wednesday":false,
+        "thursday":true,
+        "friday":false,
+        "saturday":false,
+        "sunday":true
+     },
+     "strengths":[
+        {
+           "subject_id":"1474348-1517929209848"
+        },
+        {
+           "subject_id":"1475567-1517929209848"
+        },
+        {
+           "subject_id":"1475795-1517929209848"
+        }
+     ],
+     "weaknesses":[
+        {
+           "subject_id":"1473484-1517929209848"
+        },
+        {
+           "subject_id":"1474348-1517929209848"
+        },
+        {
+           "subject_id":"1475762-1517929209848"
+        }
+     ]
+  },
+  "subjects":[
+     {
+        "subjectId":"1473675-1517929209848",
+        "subjectCode":"VERSAILLES-073700",
+        "subjectLabel":"ENSEIGNEMTS TECHNOLOGIQUES TRANSVERSAUX"
+     },
+     {
+        "subjectId":"1473612-1517929209848",
+        "subjectCode":"VERSAILLES-278300",
+        "subjectLabel":"ARTS APPLIQUES ET CULTURES ARTISTIQUES"
+     },
+     {
+        "subjectId":"1473613-1517929209848",
+        "subjectCode":"VERSAILLES-074400",
+        "subjectLabel":"ENSEIGN. GENERAUX LIES A LA SPECIALITE"
+     },
+     {
+        "subjectId":"1473484-1517929209848",
+        "subjectCode":"VERSAILLES-030602",
+        "subjectLabel":"ESPAGNOL LV2"
+     },
+     {
+        "subjectId":"1473748-1517929209848",
+        "subjectCode":"VERSAILLES-232200",
+        "subjectLabel":"CONST.STR.MAT.APPLIQ. ELECTROTECHNIQUE"
+     },
+     {
+        "subjectId":"1473746-1517929209848",
+        "subjectCode":"VERSAILLES-207900",
+        "subjectLabel":"CONDUITE  ET REALISATION  PROJET CLIENT"
+     },
+     {
+        "subjectId":"1473747-1517929209848",
+        "subjectCode":"VERSAILLES-207800",
+        "subjectLabel":"CONCEPTION DES SYSTEMES AUTOMATIQUES"
+     },
+     {
+        "subjectId":"1473259-1517929209848",
+        "subjectCode":"VERSAILLES-006600",
+        "subjectLabel":"ACCOMPAGNEMENT PERSONNALISE"
+     },
+     {
+        "subjectId":"1473258-1517929209848",
+        "subjectCode":"VERSAILLES-062300",
+        "subjectLabel":"PHYSIQUE-CHIMIE"
+     },
+     {
+        "subjectId":"1475595-1517929209848",
+        "subjectCode":"VERSAILLES-221800",
+        "subjectLabel":"ELECTRONIQUE ET COMMUNICATIONS"
+     },
+     {
+        "subjectId":"1475582-1517929209848",
+        "subjectCode":"VERSAILLES-065700",
+        "subjectLabel":"PHYSIQUE"
+     },
+     {
+        "subjectId":"1475583-1517929209848",
+        "subjectCode":"VERSAILLES-231200",
+        "subjectLabel":"ELECTRICITE"
+     },
+     {
+        "subjectId":"1475581-1517929209848",
+        "subjectCode":"VERSAILLES-308700",
+        "subjectLabel":"MESURE ET INSTRUMENTATION"
+     },
+     {
+        "subjectId":"1475567-1517929209848",
+        "subjectCode":"VERSAILLES-068100",
+        "subjectLabel":"SCIENCES PHYSIQUES ET CHIMIE APPLIQUEE"
+     },
+     {
+        "subjectId":"1475566-1517929209848",
+        "subjectCode":"VERSAILLES-220700",
+        "subjectLabel":"ESSAI DE SYSTEMES"
+     },
+     {
+        "subjectId":"1475710-1517929209848",
+        "subjectCode":"VERSAILLES-341700",
+        "subjectLabel":"VENTE(TP,PRESENTATION,EXPR.,COMPORTEMENT"
+     },
+     {
+        "subjectId":"1475847-1517929209848",
+        "subjectCode":"VERSAILLES-308600",
+        "subjectLabel":"CHIMIE-BIOCHIMIE-SCIENCES DU VIVANT"
+     },
+     {
+        "subjectId":"1475846-1517929209848",
+        "subjectCode":"VERSAILLES-062900",
+        "subjectLabel":"SCIENCES DE LA VIE ET DE LA TERRE"
+     },
+     {
+        "subjectId":"1475794-1517929209848",
+        "subjectCode":"VERSAILLES-003300",
+        "subjectLabel":"TRAVAUX INITIAT.PERSONNEL ENCADRES"
+     },
+     {
+        "subjectId":"1475795-1517929209848",
+        "subjectCode":"VERSAILLES-068700",
+        "subjectLabel":"SCIENCES INDUSTRIELLES DE L'INGENIEUR"
+     },
+     {
+        "subjectId":"1475762-1517929209848",
+        "subjectCode":"VERSAILLES-043700",
+        "subjectLabel":"HISTOIRE-GEOGRAPHIE"
+     },
+     {
+        "subjectId":"1475236-1517929209848",
+        "subjectCode":"VERSAILLES-043800",
+        "subjectLabel":"ENSEIGNEMENT MORAL ET CIVIQUE"
+     },
+     {
+        "subjectId":"1475234-1517929209848",
+        "subjectCode":"VERSAILLES-022700",
+        "subjectLabel":"FRANCAIS PHILOSOPHIE"
+     },
+     {
+        "subjectId":"1475235-1517929209848",
+        "subjectCode":"VERSAILLES-010300",
+        "subjectLabel":"PHILOSOPHIE"
+     },
+     {
+        "subjectId":"1474924-1517929209848",
+        "subjectCode":"VERSAILLES-023400",
+        "subjectLabel":"CULTURE GENERALE ET EXPRESSION"
+     },
+     {
+        "subjectId":"1474925-1517929209848",
+        "subjectCode":"VERSAILLES-020700",
+        "subjectLabel":"FRANCAIS"
+     },
+     {
+        "subjectId":"1474923-1517929209848",
+        "subjectCode":"VERSAILLES-005200",
+        "subjectLabel":"CULTURE GENERALE ET EXPRESSION"
+     },
+     {
+        "subjectId":"1474895-1517929209848",
+        "subjectCode":"VERSAILLES-030201",
+        "subjectLabel":"ANGLAIS LV1"
+     },
+     {
+        "subjectId":"1474348-1517929209848",
+        "subjectCode":"VERSAILLES-061300",
+        "subjectLabel":"MATHEMATIQUES"
+     },
+     {
+        "subjectId":"1480227-1517929209848",
+        "subjectCode":"VERSAILLES-002300",
+        "subjectLabel":"TRAVAUX PERSONNELS ENCADRES"
+     },
+     {
+        "subjectId":"1480819-1517929209848",
+        "subjectCode":"VERSAILLES-383400",
+        "subjectLabel":"ECONOMIE-DROIT"
+     },
+     {
+        "subjectId":"1480821-1517929209848",
+        "subjectCode":"VERSAILLES-380400",
+        "subjectLabel":"ECONOMIE ET GESTION"
+     },
+     {
+        "subjectId":"1480820-1517929209848",
+        "subjectCode":"VERSAILLES-383000",
+        "subjectLabel":"PRINCIPES FONDAMENT. ECONOMIE & GESTION"
+     },
+     {
+        "subjectId":"1480822-1517929209848",
+        "subjectCode":"VERSAILLES-432200",
+        "subjectLabel":"ECONOMIE ET GESTION DE L'ENTREPRISE"
+     },
+     {
+        "subjectId":"1480729-1517929209848",
+        "subjectCode":"VERSAILLES-373100",
+        "subjectLabel":"INFORMATIQUE ET SCIENCES DU NUMERIQUE"
+     },
+     {
+        "subjectId":"1480937-1517929209848",
+        "subjectCode":"VERSAILLES-231400",
+        "subjectLabel":"TECHNOLOGIE SCHEMA ET FABRICATION"
+     },
+     {
+        "subjectId":"1480938-1517929209848",
+        "subjectCode":"VERSAILLES-231300",
+        "subjectLabel":"CONSTRUCTION (ELECTROTECHNIQUE)"
+     },
+     {
+        "subjectId":"1477513-1517929209848",
+        "subjectCode":"VERSAILLES-242000",
+        "subjectLabel":"SYSTEMES D'INFORMATION ET NUMERIQUE"
+     },
+     {
+        "subjectId":"1477371-1517929209848",
+        "subjectCode":"VERSAILLES-207300",
+        "subjectLabel":"GENIE MECANIQUE"
+     },
+     {
+        "subjectId":"1477152-1517929209848",
+        "subjectCode":"VERSAILLES-501100",
+        "subjectLabel":"ENSEIGNEMENT TECHNOLOGIQUE EN LV1"
+     },
+     {
+        "subjectId":"1477852-1517929209848",
+        "subjectCode":"VERSAILLES-181700",
+        "subjectLabel":"ENERGIES ET ENVIRONNEMENT"
+     },
+     {
+        "subjectId":"1477779-1517929209848",
+        "subjectCode":"VERSAILLES-073600",
+        "subjectLabel":"INNOVATION TECHNOLOGIQUE ET ECO-CONCEPT."
+     },
+     {
+        "subjectId":"1476487-1517929209848",
+        "subjectCode":"VERSAILLES-240500",
+        "subjectLabel":"INFORMATIQUE"
+     },
+     {
+        "subjectId":"1476436-1517929209848",
+        "subjectCode":"VERSAILLES-062400",
+        "subjectLabel":"SCIENCES PHYSIQUES"
+     },
+     {
+        "subjectId":"1476027-1517929209848",
+        "subjectCode":"VERSAILLES-230700",
+        "subjectLabel":"ELECTROTECHNIQUE"
+     },
+     {
+        "subjectId":"1476565-1517929209848",
+        "subjectCode":"VERSAILLES-100100",
+        "subjectLabel":"EDUCATION PHYSIQUE ET SPORTIVE"
+     },
+     {
+        "subjectId":"1479468-1517929209848",
+        "subjectCode":"VERSAILLES-312800",
+        "subjectLabel":"PREVENTION-SANTE-ENVIRONNEMENT"
+     },
+     {
+        "subjectId":"1479278-1517929209848",
+        "subjectCode":"VERSAILLES-212000",
+        "subjectLabel":"MECANIQUE ET VIBRATIONS"
+     },
+     {
+        "subjectId":"1479277-1517929209848",
+        "subjectCode":"VERSAILLES-181400",
+        "subjectLabel":"THERMODYNAMIQUE ET THERMIQUE"
+     },
+     {
+        "subjectId":"1479276-1517929209848",
+        "subjectCode":"VERSAILLES-061900",
+        "subjectLabel":"OPTIQUE OPTOELECTRONIQUE ET IMAGERIE"
+     },
+     {
+        "subjectId":"1480091-1517929209848",
+        "subjectCode":"VERSAILLES-030102",
+        "subjectLabel":"ALLEMAND LV2"
+     },
+     {
+        "subjectId":"1479696-1517929209848",
+        "subjectCode":"VERSAILLES-063300",
+        "subjectLabel":"CHIMIE"
+     },
+     {
+        "subjectId":"1478196-1517929209848",
+        "subjectCode":"VERSAILLES-222100",
+        "subjectLabel":"GENIE ELECTRIQUE"
+     },
+     {
+        "subjectId":"1478613-1517929209848",
+        "subjectCode":"VERSAILLES-232100",
+        "subjectLabel":"SCIENCES APPLIQUEES ELECTRIQ ELECTRONIQ"
+     },
+     {
+        "subjectId":"1478714-1517929209848",
+        "subjectCode":"VERSAILLES-373700",
+        "subjectLabel":"INFORMATIQUE ET CREATION NUMERIQUE"
+     },
+     {
+        "subjectId":"1478744-1517929209848",
+        "subjectCode":"VERSAILLES-069700",
+        "subjectLabel":"SCIENCES PHYSIQUES ET CHIMIQUES EN LABO."
+     }
+  ]
+}
