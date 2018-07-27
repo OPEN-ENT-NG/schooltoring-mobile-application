@@ -1,10 +1,7 @@
-import React from "react";
+import React, { Component } from "react";
 import {
   View,
-  Text,
-  TouchableNativeFeedback,
-  TouchableWithoutFeedback
-} from "react-native";
+  Text} from "react-native";
 import PropTypes from "prop-types";
 
 import Touchable from "../Touchable/Touchable";

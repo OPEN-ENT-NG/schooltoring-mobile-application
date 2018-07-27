@@ -24,7 +24,7 @@
     "redux-logger": "^3.0.6"
   },
   "scripts": {
-    "start": "react-native start --port=8088",
+    "start": "react-native start --port=8088 --reset-cache",
     "start:default": "react-native start",
     "android": "react-native run-android && adb reverse tcp:8081 tcp:8088",
     "android:default": "react-native run-android",
@@ -38,7 +38,10 @@
     "setupFiles": [
       "<rootDir>/node_modules/appcenter/test/AppCenterMock.js",
       "<rootDir>/node_modules/appcenter-analytics/test/AppCenterAnalyticsMock.js",
-      "<rootDir>/node_modules/appcenter-crashes/test/AppCenterCrashesMock.js"
+      "<rootDir>/node_modules/appcenter-crashes/test/AppCenterCrashesMock.js",
+      "<rootDir>\\node_modules\\appcenter\\test\\AppCenterMock.js",
+      "<rootDir>\\node_modules\\appcenter-analytics\\test\\AppCenterAnalyticsMock.js",
+      "<rootDir>\\node_modules\\appcenter-crashes\\test\\AppCenterCrashesMock.js"
     ],
     "preset":"react-native",
     "snapshotSerializers": [
