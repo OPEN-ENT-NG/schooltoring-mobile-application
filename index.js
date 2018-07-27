@@ -12,16 +12,6 @@ import config from "./app.json";
 global.config = config;
 global.appcenter = new AppCenter();
 
-/*if (!__DEV__) {
-  Analytics.setEnabled(true);
-}
-
-Crashes.setListener({
-  shouldProcess: function() {
-    return true;
-  }
-});*/
-
 const Schooltoring = () => {
   return (
     <Provider store={store}>
