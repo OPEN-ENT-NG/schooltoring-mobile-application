@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Avatar renders if size and src given 1`] = `
+<Component>
+  <Image
+    source={
+      Object {
+        "headers": Object {
+          "Authorization": undefined,
+        },
+        "uri": "https://www.planetminecraft.com/files/resource_media/screenshot/1231/Megaman8bit_3126288_thumb.jpg",
+      }
+    }
+    style={
+      Object {
+        "borderRadius": 30,
+        "height": 30,
+        "width": 30,
+      }
+    }
+  />
+</Component>
+`;
+
+exports[`Avatar renders if size given 1`] = `
+<Component>
+  <Image
+    source={
+      Object {
+        "process": [Function],
+      }
+    }
+    style={
+      Object {
+        "borderRadius": 30,
+        "height": 30,
+        "width": 30,
+      }
+    }
+  />
+</Component>
+`;
+
+exports[`Error logged if no size given 1`] = `
+<Component>
+  <Image
+    source={
+      Object {
+        "process": [Function],
+      }
+    }
+    style={
+      Object {
+        "borderRadius": undefined,
+        "height": undefined,
+        "width": undefined,
+      }
+    }
+  />
+</Component>
+`;

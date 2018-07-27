@@ -77,7 +77,10 @@ export const Profile = props => {
     <View style={styles.flex}>
       <ScrollView contentContainerStyle={styles.container}>
         <View style={styles.top}>
-          <Avatar size={120} src={props.userinfo.avatar} />
+          <Avatar
+            size={120}
+            src={`${global.config.auth.endpoint}${props.userinfo.avatar}`}
+          />
 
           <View style={styles.topRight}>
             <Text style={styles.name}>{props.userinfo.username}</Text>

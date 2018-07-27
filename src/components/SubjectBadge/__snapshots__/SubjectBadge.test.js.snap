@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Error logged if no title given 1`] = `
+<TouchableWithoutFeedback
+  onPress={[Function]}
+>
+  <Component
+    style={
+      Array [
+        Object {
+          "alignSelf": "flex-start",
+          "margin": 5,
+          "padding": 5,
+        },
+        undefined,
+      ]
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "#ffffff",
+        }
+      }
+    />
+  </Component>
+</TouchableWithoutFeedback>
+`;
+
+exports[`SubjectBadge renders without crashing 1`] = `
+<TouchableWithoutFeedback
+  onPress={[Function]}
+>
+  <Component
+    style={
+      Array [
+        Object {
+          "alignSelf": "flex-start",
+          "margin": 5,
+          "padding": 5,
+        },
+        undefined,
+      ]
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "#ffffff",
+        }
+      }
+    >
+      Test
+    </Text>
+  </Component>
+</TouchableWithoutFeedback>
+`;

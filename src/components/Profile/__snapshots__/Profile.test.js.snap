@@ -1,0 +1,159 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Profile renders without crashing 1`] = `
+<Component
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <ScrollView
+    contentContainerStyle={
+      Object {
+        "flexGrow": 1,
+        "justifyContent": "space-evenly",
+        "paddingHorizontal": 30,
+        "paddingVertical": 15,
+      }
+    }
+  >
+    <Component
+      style={
+        Object {
+          "flex": 0,
+          "flexDirection": "row",
+          "marginBottom": 20,
+        }
+      }
+    >
+      <Avatar
+        size={120}
+        src="http://ent3-core.gdapublic.fr/workspace/document/49a54de3-51f8-464b-81bb-a377f508f382"
+      />
+      <Component
+        style={
+          Object {
+            "justifyContent": "space-evenly",
+            "marginLeft": 15,
+          }
+        }
+      >
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "color": "#232323",
+              "fontSize": 26,
+              "fontWeight": "bold",
+            }
+          }
+        >
+          Yanis ALBON
+        </Text>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "color": "#232323",
+              "fontSize": 20,
+            }
+          }
+        >
+          2DE4
+        </Text>
+      </Component>
+    </Component>
+    <Component
+      style={
+        Object {
+          "flex": 1,
+        }
+      }
+    >
+      <ProfileItem
+        data={
+          Array [
+            "SCIENCES PHYSIQUES ET CHIMIE APPLIQUEE",
+            "SCIENCES INDUSTRIELLES DE L'INGENIEUR",
+            "MATHEMATIQUES",
+          ]
+        }
+        edit={[Function]}
+        renderItem={[Function]}
+        title="Mes points forts"
+      />
+      <Component
+        style={
+          Object {
+            "borderBottomColor": "#ebebeb",
+            "borderBottomWidth": 1,
+            "marginVertical": 20,
+          }
+        }
+      />
+      <ProfileItem
+        data={
+          Array [
+            "ESPAGNOL LV2",
+            "HISTOIRE-GEOGRAPHIE",
+            "MATHEMATIQUES",
+          ]
+        }
+        edit={[Function]}
+        renderItem={[Function]}
+        title="Mes points faibles"
+      />
+      <Component
+        style={
+          Object {
+            "borderBottomColor": "#ebebeb",
+            "borderBottomWidth": 1,
+            "marginVertical": 20,
+          }
+        }
+      />
+      <ProfileItem
+        data={
+          Array [
+            "monday",
+            "tuesday",
+            "wednesday",
+            "thursday",
+            "friday",
+            "saturday",
+            "sunday",
+          ]
+        }
+        edit={[Function]}
+        listStyle={
+          Object {
+            "justifyContent": "space-evenly",
+          }
+        }
+        renderItem={[Function]}
+        title="Mes dispos"
+      />
+    </Component>
+  </ScrollView>
+  <Component
+    style={
+      Object {
+        "flex": 0,
+        "flexDirection": "row",
+        "justifyContent": "flex-end",
+        "padding": 15,
+      }
+    }
+  >
+    <SecondaryButton
+      onPress={[Function]}
+      title="ENREGISTRER"
+    />
+  </Component>
+</Component>
+`;

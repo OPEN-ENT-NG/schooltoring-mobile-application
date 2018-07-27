@@ -15,7 +15,7 @@ export const Avatar = props => (
       source={
         props.src
           ? {
-              uri: `${global.config.auth.endpoint}${props.src}`,
+              uri: `${props.src}`,
               headers: {
                 Authorization: axios.defaults.headers.common["Authorization"]
               }

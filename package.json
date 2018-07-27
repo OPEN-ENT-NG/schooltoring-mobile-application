@@ -7,6 +7,7 @@
     "babel-preset-react-native-stage-0": "^1.0.1",
     "babel-preset-stage-2": "^6.24.1",
     "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
     "enzyme-to-json": "^3.3.4",
     "eslint": "^4.19.1",
     "eslint-config-airbnb": "^16.1.0",
@@ -16,7 +17,6 @@
     "eslint-plugin-react": "^7.9.1",
     "jest": "^23.1.0",
     "jest-react-native": "^18.0.0",
-    "jest-serializer-enzyme": "^1.0.0",
     "prettier": "^1.13.5",
     "react-addons-test-utils": "^15.6.2",
     "react-dom": "^16.4.1",
@@ -27,17 +27,18 @@
     "start": "react-native start --port=8088",
     "android": "react-native run-android && adb reverse tcp:8081 tcp:8088",
     "ios": "react-native run-ios",
-    "test": "jest",
+    "test": "jest --verbose",
     "android:log": "react-native log-android",
     "android:dev": "npm run android && npm run android:log"
   },
   "jest": {
-    "preset": "react-native",
+    "preset":"react-native",
     "snapshotSerializers": [
-      "./node_modules/jest-serializer-enzyme"
+      "enzyme-to-json/serializer"
     ],
+    "setupFiles": ["<rootDir>/src/jest/setup.js"],
     "moduleNameMapper": {
-      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/src/assetsTransformer.js"
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/src/jest/assetsTransformer.js"
     }
   },
   "dependencies": {
