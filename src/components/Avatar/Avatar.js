@@ -16,11 +16,11 @@ export const Avatar = props => (
       source={
         props.src
           ? {
-            uri: `${global.config.auth.endpoint}${props.src}`,
-            headers: {
-              Authorization: axios.defaults.headers.common["Authorization"]
+              uri: `${props.src}`,
+              headers: {
+                Authorization: axios.defaults.headers.common["Authorization"]
+              }
             }
-          }
           : require("../../assets/img/no-avatar.png")
       }
     />
