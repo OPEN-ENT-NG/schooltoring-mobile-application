@@ -12,6 +12,10 @@ export function login(username, password, rememberMe) {
     try {
       await OAuth2.getAccessToken(username, password, rememberMe);
       let userinfo = await UserInfos.getUser();
+      if (userinfo.type.toUpperCase() !== "STUDENT") {
+        dispatch({ type: actions.FORBIDDEN });
+        return;
+      }
       let subjects = await Subjects.getSubjects(userinfo.structures[0]);
       let profile = await Profile.getProfile();
       dispatch({ type: actions.LOGIN, userinfo, subjects, profile });
@@ -54,6 +58,10 @@ export function fetchLogin() {
     if (isAlreadyLoggedIn) {
       await OAuth2.reconnectUser();
       let userinfo = await UserInfos.getUser();
+      if (userinfo.type.toUpperCase() !== "STUDENT") {
+        dispatch({ type: actions.FORBIDDEN });
+        return;
+      }
       let subjects = await Subjects.getSubjects(userinfo.structures[0]);
       let profile = await Profile.getProfile();
       dispatch({ type: actions.LOGIN, userinfo, subjects, profile });

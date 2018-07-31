@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render Error page should render without crashing 1`] = `
+<Component
+  style={
+    Object {
+      "alignItems": "center",
+      "flex": 1,
+      "flexDirection": "column",
+      "justifyContent": "center",
+    }
+  }
+>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+  >
+    Error message
+  </Text>
+  <Image
+    source={
+      Object {
+        "process": [Function],
+      }
+    }
+    style={
+      Object {
+        "bottom": 0,
+        "height": 217,
+        "left": "10%",
+        "position": "absolute",
+        "width": 200,
+      }
+    }
+  />
+</Component>
+`;

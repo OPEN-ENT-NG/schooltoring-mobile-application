@@ -6,7 +6,8 @@ const defaultState = {
     fetch: false,
     form: false
   },
-  error: false
+  error: false,
+  forbidden: false
 };
 
 export default function reducer(state = defaultState, action) {
@@ -47,6 +48,17 @@ export default function reducer(state = defaultState, action) {
           fetch: false,
           form: false
         }
+      };
+    }
+    case AuthActions.FORBIDDEN: {
+      return {
+        ...state,
+        isLoggedIn: true,
+        loading: {
+          fetch: false,
+          form: false
+        },
+        forbidden: true
       };
     }
     default:
