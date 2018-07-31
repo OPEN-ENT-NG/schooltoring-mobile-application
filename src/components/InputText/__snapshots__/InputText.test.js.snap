@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render InputText should render without crashing 1`] = `
+<TextInput
+  allowFontScaling={true}
+  onChangeText={[Function]}
+  placeholder="Placeholder text"
+  secureTextEntry={false}
+  style={
+    Object {
+      "borderColor": "#929292",
+      "borderRadius": 3,
+      "borderWidth": 1,
+      "height": 50,
+      "marginBottom": 15,
+      "padding": 10,
+    }
+  }
+  value=""
+/>
+`;
