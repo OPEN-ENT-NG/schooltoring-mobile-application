@@ -1,10 +1,5 @@
 import React, { Component } from "react";
-import {
-  View,
-  ScrollView,
-  TouchableNativeFeedback,
-  Dimensions
-} from "react-native";
+import { View, ScrollView, Dimensions } from "react-native";
 import PropTypes from "prop-types";
 import InputText from "../InputText/InputText";
 import Touchable from "../Touchable/Touchable";

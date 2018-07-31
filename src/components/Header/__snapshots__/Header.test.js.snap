@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Error logged when no props title given 1`] = `
+exports[`Render Header should render without crashing 1`] = `
 <Component
   style={
     Object {
@@ -22,70 +22,7 @@ exports[`Error logged when no props title given 1`] = `
           "top": 20,
         }
       }
-      onPress={[Function]}
-    >
-      <Icon
-        allowFontScaling={false}
-        name="arrow-back"
-        size={12}
-        style={
-          Object {
-            "color": "#232323",
-            "fontSize": 25,
-            "marginLeft": 10,
-          }
-        }
-      />
-    </TouchableWithoutFeedback>
-  </Component>
-  <Component
-    style={
-      Object {
-        "alignItems": "center",
-        "flex": 1,
-        "flexDirection": "row",
-        "justifyContent": "flex-end",
-      }
-    }
-  >
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
-      style={
-        Object {
-          "color": "#232323",
-          "fontSize": 25,
-          "marginLeft": 10,
-        }
-      }
-    />
-  </Component>
-</Component>
-`;
-
-exports[`Header renders without crashing with given title 1`] = `
-<Component
-  style={
-    Object {
-      "alignItems": "center",
-      "backgroundColor": "#ebebeb",
-      "flexDirection": "row",
-      "justifyContent": "flex-end",
-      "padding": 10,
-    }
-  }
->
-  <Component>
-    <TouchableWithoutFeedback
-      hitSlop={
-        Object {
-          "bottom": 20,
-          "left": 20,
-          "right": 40,
-          "top": 20,
-        }
-      }
+      id="header-back-button"
       onPress={[Function]}
     >
       <Icon
@@ -125,112 +62,6 @@ exports[`Header renders without crashing with given title 1`] = `
       }
     >
       Test
-    </Text>
-  </Component>
-</Component>
-`;
-
-exports[`Header renders without crashing with given title and back/navigation parameter 1`] = `
-<Component
-  style={
-    Object {
-      "alignItems": "center",
-      "backgroundColor": "#ebebeb",
-      "flexDirection": "row",
-      "justifyContent": "flex-end",
-      "padding": 10,
-    }
-  }
->
-  <Component
-    style={
-      Object {
-        "alignItems": "center",
-        "flex": 1,
-        "flexDirection": "row",
-        "justifyContent": "flex-end",
-      }
-    }
-  >
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
-      style={
-        Object {
-          "color": "#232323",
-          "fontSize": 25,
-          "marginLeft": 10,
-        }
-      }
-    >
-      Test
-    </Text>
-  </Component>
-</Component>
-`;
-
-exports[`Rendered title is the same than the title prop given 1`] = `
-<Component
-  style={
-    Object {
-      "alignItems": "center",
-      "backgroundColor": "#ebebeb",
-      "flexDirection": "row",
-      "justifyContent": "flex-end",
-      "padding": 10,
-    }
-  }
->
-  <Component>
-    <TouchableWithoutFeedback
-      hitSlop={
-        Object {
-          "bottom": 20,
-          "left": 20,
-          "right": 40,
-          "top": 20,
-        }
-      }
-      onPress={[Function]}
-    >
-      <Icon
-        allowFontScaling={false}
-        name="arrow-back"
-        size={12}
-        style={
-          Object {
-            "color": "#232323",
-            "fontSize": 25,
-            "marginLeft": 10,
-          }
-        }
-      />
-    </TouchableWithoutFeedback>
-  </Component>
-  <Component
-    style={
-      Object {
-        "alignItems": "center",
-        "flex": 1,
-        "flexDirection": "row",
-        "justifyContent": "flex-end",
-      }
-    }
-  >
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
-      style={
-        Object {
-          "color": "#232323",
-          "fontSize": 25,
-          "marginLeft": 10,
-        }
-      }
-    >
-      test
     </Text>
   </Component>
 </Component>

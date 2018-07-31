@@ -1,6 +1,26 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Avatar renders if size and src given 1`] = `
+exports[`Render An error should be logged if no size given 1`] = `
+<Component>
+  <Image
+    source={
+      Object {
+        "process": [Function],
+      }
+    }
+    style={
+      Object {
+        "borderRadius": NaN,
+        "height": undefined,
+        "overflow": "hidden",
+        "width": undefined,
+      }
+    }
+  />
+</Component>
+`;
+
+exports[`Render Avatar should render with given source and size 1`] = `
 <Component>
   <Image
     source={
@@ -13,8 +33,9 @@ exports[`Avatar renders if size and src given 1`] = `
     }
     style={
       Object {
-        "borderRadius": 30,
+        "borderRadius": 15,
         "height": 30,
+        "overflow": "hidden",
         "width": 30,
       }
     }
@@ -22,7 +43,7 @@ exports[`Avatar renders if size and src given 1`] = `
 </Component>
 `;
 
-exports[`Avatar renders if size given 1`] = `
+exports[`Render Avatar should render without crashing 1`] = `
 <Component>
   <Image
     source={
@@ -32,28 +53,10 @@ exports[`Avatar renders if size given 1`] = `
     }
     style={
       Object {
-        "borderRadius": 30,
+        "borderRadius": 15,
         "height": 30,
+        "overflow": "hidden",
         "width": 30,
-      }
-    }
-  />
-</Component>
-`;
-
-exports[`Error logged if no size given 1`] = `
-<Component>
-  <Image
-    source={
-      Object {
-        "process": [Function],
-      }
-    }
-    style={
-      Object {
-        "borderRadius": undefined,
-        "height": undefined,
-        "width": undefined,
       }
     }
   />

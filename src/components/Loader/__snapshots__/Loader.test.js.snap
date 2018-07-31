@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render Loader should render without crashing 1`] = `
+<Component
+  style={
+    Object {
+      "alignItems": "center",
+      "flex": 1,
+      "flexDirection": "column",
+      "justifyContent": "center",
+    }
+  }
+>
+  <ActivityIndicator
+    animating={true}
+    color="#e91e63"
+    hidesWhenStopped={true}
+    size="large"
+  />
+</Component>
+`;

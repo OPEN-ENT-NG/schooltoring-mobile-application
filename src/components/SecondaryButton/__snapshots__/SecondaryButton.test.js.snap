@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Error logged if no onPress or title given 1`] = `
+exports[`Render An error should be logged if no onPress or title given 1`] = `
 <TouchableOpacity
   activeOpacity={0.2}
   hitSlop={
@@ -38,47 +38,7 @@ exports[`Error logged if no onPress or title given 1`] = `
 </TouchableOpacity>
 `;
 
-exports[`SecondaryButton renders without crashing 1`] = `
-<TouchableOpacity
-  activeOpacity={0.2}
-  hitSlop={
-    Object {
-      "bottom": 10,
-      "left": 10,
-      "right": 10,
-      "top": 10,
-    }
-  }
-  onPress={[Function]}
-  style={
-    Array [
-      Object {},
-      Object {
-        "alignItems": "center",
-        "flexDirection": "row",
-        "justifyContent": "center",
-        "padding": 10,
-      },
-    ]
-  }
->
-  <Text
-    accessible={true}
-    allowFontScaling={true}
-    ellipsizeMode="tail"
-    style={
-      Object {
-        "color": "#17b6b0",
-        "fontSize": 18,
-      }
-    }
-  >
-    Test
-  </Text>
-</TouchableOpacity>
-`;
-
-exports[`onPress function properly called 1`] = `
+exports[`Render SecondaryButton should render without crashing 1`] = `
 <TouchableOpacity
   activeOpacity={0.2}
   hitSlop={

@@ -29,25 +29,26 @@
     "android": "react-native run-android && adb reverse tcp:8081 tcp:8088",
     "android:default": "react-native run-android",
     "ios": "react-native run-ios",
-    "test": "jest --verbose",
+    "test": "jest --verbose --silent",
+    "test:updateSnapshot": "jest --updateSnapshot",
+    "test:watch": "jest --watch --verbose --silent",
     "android:log": "react-native log-android",
     "android:dev": "npm run android && npm run android:log"
   },
   "jest": {
-    "preset":"react-native",
+    "preset": "react-native",
     "setupFiles": [
       "<rootDir>/node_modules/appcenter/test/AppCenterMock.js",
       "<rootDir>/node_modules/appcenter-analytics/test/AppCenterAnalyticsMock.js",
       "<rootDir>/node_modules/appcenter-crashes/test/AppCenterCrashesMock.js",
       "<rootDir>\\node_modules\\appcenter\\test\\AppCenterMock.js",
       "<rootDir>\\node_modules\\appcenter-analytics\\test\\AppCenterAnalyticsMock.js",
-      "<rootDir>\\node_modules\\appcenter-crashes\\test\\AppCenterCrashesMock.js"
+      "<rootDir>\\node_modules\\appcenter-crashes\\test\\AppCenterCrashesMock.js",
+      "<rootDir>/src/jest/setup.js"
     ],
-    "preset":"react-native",
     "snapshotSerializers": [
       "enzyme-to-json/serializer"
     ],
-    "setupFiles": ["<rootDir>/src/jest/setup.js"],
     "moduleNameMapper": {
       "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/src/jest/assetsTransformer.js"
     }

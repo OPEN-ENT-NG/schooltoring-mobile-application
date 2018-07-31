@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, ScrollView} from "react-native";
+import { View, Text, ScrollView } from "react-native";
 import Icon from "react-native-vector-icons/MaterialIcons";
 import PropTypes from "prop-types";
 
@@ -8,7 +8,7 @@ import I18n from "../../api/I18n";
 import { Avatar } from "../Avatar/Avatar";
 import { SecondaryButton } from "../SecondaryButton/SecondaryButton";
 import SubjectBadge from "../SubjectBadge/SubjectBadge";
-import Touchable from '../Touchable/Touchable';
+import Touchable from "../Touchable/Touchable";
 
 import { COLORS } from "../../styles/common";
 import styles from "./styles";
@@ -59,7 +59,7 @@ export const Profile = props => {
 
   const ProfileItem = props => {
     return (
-      <View>
+      <View id={props.id}>
         <View style={styles.title}>
           <Text style={styles.titleText}>{props.title}</Text>
           <Touchable onPress={() => props.edit()}>
@@ -84,8 +84,10 @@ export const Profile = props => {
           />
 
           <View style={styles.topRight}>
-            <Text style={styles.name}>{props.userinfo.username}</Text>
-            <Text style={styles.titleText}>
+            <Text style={styles.name} id="username-field">
+              {props.userinfo.username}
+            </Text>
+            <Text style={styles.titleText} id="classname-field">
               {props.userinfo.classNames[0].split("$")[1]}
             </Text>
             {props.showTopButtons && (
@@ -103,6 +105,7 @@ export const Profile = props => {
 
         <View style={styles.flex}>
           <ProfileItem
+            id="strengths-section"
             title={I18n.t("strength.title")}
             edit={() => props.navigation.push("Strength")}
             data={getSubjectsName(props.profile.strengths)}
@@ -112,6 +115,7 @@ export const Profile = props => {
           <View style={styles.divider} />
 
           <ProfileItem
+            id="weaknesses-section"
             title={I18n.t("weakness.title")}
             edit={() => props.navigation.push("Weakness")}
             data={getSubjectsName(props.profile.weaknesses)}
@@ -121,6 +125,7 @@ export const Profile = props => {
           <View style={styles.divider} />
 
           <ProfileItem
+            id="availabilities-section"
             title={I18n.t("availability.title")}
             edit={() => props.navigation.push("Availability")}
             data={Object.keys(props.profile.availabilities)}

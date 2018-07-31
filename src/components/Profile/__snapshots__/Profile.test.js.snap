@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Profile renders without crashing 1`] = `
+exports[`Render Profile should render without crashing 1`] = `
 <Component
   style={
     Object {
@@ -43,6 +43,7 @@ exports[`Profile renders without crashing 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
+          id="username-field"
           style={
             Object {
               "color": "#232323",
@@ -51,12 +52,13 @@ exports[`Profile renders without crashing 1`] = `
             }
           }
         >
-          Yanis ALBON
+          John DOE
         </Text>
         <Text
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
+          id="classname-field"
           style={
             Object {
               "color": "#232323",
@@ -84,6 +86,7 @@ exports[`Profile renders without crashing 1`] = `
           ]
         }
         edit={[Function]}
+        id="strengths-section"
         renderItem={[Function]}
         title="Mes points forts"
       />
@@ -101,10 +104,11 @@ exports[`Profile renders without crashing 1`] = `
           Array [
             "ESPAGNOL LV2",
             "HISTOIRE-GEOGRAPHIE",
-            "MATHEMATIQUES",
+            "ECONOMIE-DROIT",
           ]
         }
         edit={[Function]}
+        id="weaknesses-section"
         renderItem={[Function]}
         title="Mes points faibles"
       />
@@ -130,6 +134,7 @@ exports[`Profile renders without crashing 1`] = `
           ]
         }
         edit={[Function]}
+        id="availabilities-section"
         listStyle={
           Object {
             "justifyContent": "space-evenly",

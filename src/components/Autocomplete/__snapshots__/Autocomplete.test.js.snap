@@ -1,0 +1,74 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render An error should be logged if no required props are given 1`] = `
+<Component
+  style={
+    Array [
+      undefined,
+      undefined,
+    ]
+  }
+>
+  <InputText
+    onChangeText={[Function]}
+    style={
+      Object {
+        "backgroundColor": "#ffffff",
+      }
+    }
+    value=""
+  />
+  <ScrollView
+    keyboardShouldPersistTaps="handled"
+    style={
+      Array [
+        Object {
+          "backgroundColor": "#ffffff",
+          "position": "relative",
+          "zIndex": 10,
+        },
+        Object {
+          "maxHeight": 933.8,
+        },
+      ]
+    }
+  />
+</Component>
+`;
+
+exports[`Render Autocomplete should render without crashing 1`] = `
+<Component
+  style={
+    Array [
+      undefined,
+      undefined,
+    ]
+  }
+>
+  <InputText
+    onChangeText={[Function]}
+    placeholder="placeholder text"
+    style={
+      Object {
+        "backgroundColor": "#ffffff",
+      }
+    }
+    value=""
+  />
+  <ScrollView
+    keyboardShouldPersistTaps="handled"
+    style={
+      Array [
+        Object {
+          "backgroundColor": "#ffffff",
+          "position": "relative",
+          "zIndex": 10,
+        },
+        Object {
+          "maxHeight": 933.8,
+        },
+      ]
+    }
+  />
+</Component>
+`;

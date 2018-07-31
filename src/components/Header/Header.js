@@ -26,6 +26,7 @@ export const Header = props => {
               bottom: 20
             }}
             onPress={dispatchPop}
+            id="header-back-button"
           >
             <Icon name="arrow-back" style={styles.title} />
           </TouchableWithoutFeedback>

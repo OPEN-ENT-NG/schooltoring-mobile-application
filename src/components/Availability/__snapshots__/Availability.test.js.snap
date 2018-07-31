@@ -1,0 +1,409 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render Availability should render without crashing 1`] = `
+<Component
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <Component
+    style={
+      Object {
+        "flex": 1,
+        "justifyContent": "space-evenly",
+        "paddingHorizontal": 30,
+        "paddingVertical": 15,
+      }
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "#232323",
+          "flex": 0,
+          "fontSize": 18,
+          "marginBottom": 40,
+        }
+      }
+    >
+      Les jours où je suis le plus disponible
+    </Text>
+    <ScrollView
+      contentContainerStyle={
+        Object {
+          "flex": 1,
+          "justifyContent": "space-around",
+        }
+      }
+    >
+      <Component
+        key="monday"
+        style={
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "height": 60,
+            "justifyContent": "flex-start",
+          }
+        }
+      >
+        <Switch
+          disabled={false}
+          onValueChange={[Function]}
+          style={
+            Object {
+              "marginRight": 20,
+            }
+          }
+          value={false}
+        />
+        <TouchableWithoutFeedback
+          hitSlop={
+            Object {
+              "bottom": 20,
+              "left": 20,
+              "right": 40,
+              "top": 20,
+            }
+          }
+          onPress={[Function]}
+        >
+          <Component>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "#232323",
+                  "fontSize": 18,
+                }
+              }
+            >
+              Lundi
+            </Text>
+          </Component>
+        </TouchableWithoutFeedback>
+      </Component>
+      <Component
+        key="tuesday"
+        style={
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "height": 60,
+            "justifyContent": "flex-start",
+          }
+        }
+      >
+        <Switch
+          disabled={false}
+          onValueChange={[Function]}
+          style={
+            Object {
+              "marginRight": 20,
+            }
+          }
+          value={true}
+        />
+        <TouchableWithoutFeedback
+          hitSlop={
+            Object {
+              "bottom": 20,
+              "left": 20,
+              "right": 40,
+              "top": 20,
+            }
+          }
+          onPress={[Function]}
+        >
+          <Component>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "#232323",
+                  "fontSize": 18,
+                }
+              }
+            >
+              Mardi
+            </Text>
+          </Component>
+        </TouchableWithoutFeedback>
+      </Component>
+      <Component
+        key="wednesday"
+        style={
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "height": 60,
+            "justifyContent": "flex-start",
+          }
+        }
+      >
+        <Switch
+          disabled={false}
+          onValueChange={[Function]}
+          style={
+            Object {
+              "marginRight": 20,
+            }
+          }
+          value={false}
+        />
+        <TouchableWithoutFeedback
+          hitSlop={
+            Object {
+              "bottom": 20,
+              "left": 20,
+              "right": 40,
+              "top": 20,
+            }
+          }
+          onPress={[Function]}
+        >
+          <Component>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "#232323",
+                  "fontSize": 18,
+                }
+              }
+            >
+              Mercredi
+            </Text>
+          </Component>
+        </TouchableWithoutFeedback>
+      </Component>
+      <Component
+        key="thursday"
+        style={
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "height": 60,
+            "justifyContent": "flex-start",
+          }
+        }
+      >
+        <Switch
+          disabled={false}
+          onValueChange={[Function]}
+          style={
+            Object {
+              "marginRight": 20,
+            }
+          }
+          value={true}
+        />
+        <TouchableWithoutFeedback
+          hitSlop={
+            Object {
+              "bottom": 20,
+              "left": 20,
+              "right": 40,
+              "top": 20,
+            }
+          }
+          onPress={[Function]}
+        >
+          <Component>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "#232323",
+                  "fontSize": 18,
+                }
+              }
+            >
+              Jeudi
+            </Text>
+          </Component>
+        </TouchableWithoutFeedback>
+      </Component>
+      <Component
+        key="friday"
+        style={
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "height": 60,
+            "justifyContent": "flex-start",
+          }
+        }
+      >
+        <Switch
+          disabled={false}
+          onValueChange={[Function]}
+          style={
+            Object {
+              "marginRight": 20,
+            }
+          }
+          value={false}
+        />
+        <TouchableWithoutFeedback
+          hitSlop={
+            Object {
+              "bottom": 20,
+              "left": 20,
+              "right": 40,
+              "top": 20,
+            }
+          }
+          onPress={[Function]}
+        >
+          <Component>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "#232323",
+                  "fontSize": 18,
+                }
+              }
+            >
+              Vendredi
+            </Text>
+          </Component>
+        </TouchableWithoutFeedback>
+      </Component>
+      <Component
+        key="saturday"
+        style={
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "height": 60,
+            "justifyContent": "flex-start",
+          }
+        }
+      >
+        <Switch
+          disabled={false}
+          onValueChange={[Function]}
+          style={
+            Object {
+              "marginRight": 20,
+            }
+          }
+          value={false}
+        />
+        <TouchableWithoutFeedback
+          hitSlop={
+            Object {
+              "bottom": 20,
+              "left": 20,
+              "right": 40,
+              "top": 20,
+            }
+          }
+          onPress={[Function]}
+        >
+          <Component>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "#232323",
+                  "fontSize": 18,
+                }
+              }
+            >
+              Samedi
+            </Text>
+          </Component>
+        </TouchableWithoutFeedback>
+      </Component>
+      <Component
+        key="sunday"
+        style={
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "height": 60,
+            "justifyContent": "flex-start",
+          }
+        }
+      >
+        <Switch
+          disabled={false}
+          onValueChange={[Function]}
+          style={
+            Object {
+              "marginRight": 20,
+            }
+          }
+          value={true}
+        />
+        <TouchableWithoutFeedback
+          hitSlop={
+            Object {
+              "bottom": 20,
+              "left": 20,
+              "right": 40,
+              "top": 20,
+            }
+          }
+          onPress={[Function]}
+        >
+          <Component>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "#232323",
+                  "fontSize": 18,
+                }
+              }
+            >
+              Dimanche
+            </Text>
+          </Component>
+        </TouchableWithoutFeedback>
+      </Component>
+    </ScrollView>
+  </Component>
+  <Component
+    style={
+      Object {
+        "flex": 0,
+        "flexDirection": "row",
+        "justifyContent": "flex-end",
+        "padding": 15,
+      }
+    }
+  >
+    <SecondaryButton
+      onPress={[Function]}
+      title="PASSER"
+    />
+    <SecondaryButton
+      onPress={[Function]}
+      title="SUIVANT"
+    />
+  </Component>
+</Component>
+`;
