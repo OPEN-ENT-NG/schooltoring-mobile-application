@@ -1,5 +1,12 @@
 import React, { Component } from "react";
-import { View, Text, Image, Dimensions, StatusBar } from "react-native";
+import {
+  View,
+  Text,
+  Image,
+  Dimensions,
+  StatusBar,
+  Platform
+} from "react-native";
 import Touchable from "../../components/Touchable/Touchable";
 import styles from "./styles";
 
@@ -17,7 +24,18 @@ export default class Home extends Component {
         height: screen.height
       }
     };
+
+    this._navListener = this.props.navigation.addListener("didFocus", () => {
+      StatusBar.setBarStyle("light-content");
+      Platform.OS === "android" &&
+        StatusBar.setBackgroundColor(COLORS.SECONDARY);
+    });
   }
+
+  componentWillUnmount() {
+    this._navListener.remove();
+  }
+
   render() {
     return (
       <View
@@ -36,10 +54,6 @@ export default class Home extends Component {
           });
         }}
       >
-        <StatusBar
-          backgroundColor={COLORS.SECONDARY}
-          barStyle="light-content"
-        />
         <Touchable onPress={() => true}>
           <View
             style={[
