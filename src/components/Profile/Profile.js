@@ -90,37 +90,47 @@ export const Profile = props => {
             <Text style={styles.titleText} id="classname-field">
               {props.userinfo.classNames[0].split("$")[1]}
             </Text>
-            {props.showTopButtons && (
-              <View style={styles.topRightButtons}>
-                <Icon style={styles.titleIcon} name="stars" size={30} />
-                <Text style={[styles.titleText, { marginRight: 20 }]}>
-                  {I18n.t("badges")}
-                </Text>
-                <Icon style={styles.titleIcon} name="favorite" size={30} />
-                <Text style={styles.titleText}>{I18n.t("favorites")}</Text>
-              </View>
-            )}
           </View>
         </View>
+        {props.showTopButtons && (
+          <View style={{ width: "100%", flexDirection: "row" }}>
+            <View style={styles.topRightButtons}>
+              <Touchable onPress={() => false}>
+                <View style={styles.topRightButton}>
+                  <Icon style={styles.titleIcon} name="stars" size={30} />
+                  <Text style={[styles.titleText, { marginRight: 20 }]}>
+                    {I18n.t("badges")}
+                  </Text>
+                </View>
+              </Touchable>
+              <Touchable onPress={() => false}>
+                <View style={styles.topRightButton}>
+                  <Icon style={styles.titleIcon} name="favorite" size={30} />
+                  <Text style={styles.titleText}>{I18n.t("favorites")}</Text>
+                </View>
+              </Touchable>
+            </View>
+          </View>
+        )}
 
-          <View style={styles.flex}>
-            <ProfileItem
-              id="strengths-section"
-              title={I18n.t("strength.title")}
-              edit={() => props.navigation.push("Strength")}
-              data={getSubjectsName(props.profile.strengths)}
-              renderItem={item => renderSubject(item, COLORS.PRIMARY)}
-            />
+        <View style={styles.flex}>
+          <ProfileItem
+            id="strengths-section"
+            title={I18n.t("strength.title")}
+            edit={() => props.navigation.push("Strength")}
+            data={getSubjectsName(props.profile.strengths)}
+            renderItem={item => renderSubject(item, COLORS.PRIMARY)}
+          />
 
           <View style={styles.divider} />
 
-            <ProfileItem
-              id="weaknesses-section"
-              title={I18n.t("weakness.title")}
-              edit={() => props.navigation.push("Weakness")}
-              data={getSubjectsName(props.profile.weaknesses)}
-              renderItem={item => renderSubject(item, COLORS.SECONDARY)}
-            />
+          <ProfileItem
+            id="weaknesses-section"
+            title={I18n.t("weakness.title")}
+            edit={() => props.navigation.push("Weakness")}
+            data={getSubjectsName(props.profile.weaknesses)}
+            renderItem={item => renderSubject(item, COLORS.SECONDARY)}
+          />
 
           <View style={styles.divider} />
 

@@ -1,4 +1,4 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet, Dimensions } from "react-native";
 import { COLORS } from "../../styles/common";
 
 const text = { color: COLORS.TEXT };
@@ -20,8 +20,7 @@ export default StyleSheet.create({
   },
   top: {
     flexDirection: "row",
-    flex: 0,
-    marginBottom: 20
+    flex: 0
   },
   topRight: {
     marginLeft: 15,
@@ -29,8 +28,13 @@ export default StyleSheet.create({
   },
   topRightButtons: {
     flexDirection: "row",
+    marginBottom: 15
+  },
+  topRightButton: {
+    width: (Dimensions.get("screen").width - 60) / 2,
+    flexDirection: "row",
     alignItems: "center",
-    justifyContent: "space-evenly"
+    padding: 15
   },
   name: {
     ...text,

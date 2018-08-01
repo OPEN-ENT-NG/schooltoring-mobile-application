@@ -23,7 +23,6 @@ exports[`Render Profile should render without crashing 1`] = `
         Object {
           "flex": 0,
           "flexDirection": "row",
-          "marginBottom": 20,
         }
       }
     >
