@@ -21,7 +21,7 @@ export default class Home extends Component {
     this.state = {
       view: {
         width: screen.width,
-        height: screen.height
+        height: screen.height - 70
       }
     };
 

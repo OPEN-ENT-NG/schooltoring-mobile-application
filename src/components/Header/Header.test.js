@@ -3,7 +3,7 @@ import { Text } from "react-native";
 import { shallow } from "enzyme";
 
 import { COLORS } from "../../styles/common";
-import { Header } from "./Header";
+import Header from "./Header";
 
 jest.mock("react-navigation", () => ({
   StackActions: {

@@ -8,27 +8,46 @@ import state from "../../jest/state.json";
 
 let newState;
 const navigation = {
-  push: jest.fn()
+  push: jest.fn(),
+  pop: jest.fn()
 };
 let onChangeScreen = jest.fn().mockImplementation((screen, state) => {
   newState = state;
 });
 
-let rendered, switches, days;
-
-describe("Render", () => {
-  rendered = shallow(
+const rendered = shallow(
     <Availability
       {...state}
       navigation={navigation}
       onChangeScreen={onChangeScreen}
     />
+  ),
+  switches = rendered.find(Switch),
+  days = Object.keys(state.profile.availabilities),
+  renderedWithSaveButton = shallow(
+    <Availability
+      {...state}
+      navigation={navigation}
+      onChangeScreen={onChangeScreen}
+      saveButton={true}
+    />
   );
-  switches = rendered.find(Switch);
-  days = Object.keys(state.profile.availabilities);
 
-  test("Availability should render without crashing", () => {
+describe("Render", () => {
+  test("Availability without save button should render without crashing", () => {
     expect(rendered).toMatchSnapshot();
+  });
+
+  test("Availability with save button should render without crashing", () => {
+    expect(renderedWithSaveButton).toMatchSnapshot();
+  });
+
+  test("Availaibility without save button should render 2 Secondary Buttons", () => {
+    expect(rendered.find("SecondaryButton").length).toEqual(2);
+  });
+
+  test("Availability with save button should render only 1 Secondary Button", () => {
+    expect(renderedWithSaveButton.find("SecondaryButton").length).toEqual(1);
   });
   test(`${days.length} switch should be rendered`, () => {
     expect(switches.length).toEqual(days.length);
@@ -46,6 +65,7 @@ describe("Render", () => {
 describe("Interactions", () => {
   const skipButton = rendered.find("SecondaryButton").at(0);
   const nextButton = rendered.find("SecondaryButton").at(1);
+  const saveButton = renderedWithSaveButton.find("SecondaryButton").first();
 
   test("Changing switch values should update state", () => {
     let item, newState;
@@ -83,5 +103,14 @@ describe("Interactions", () => {
     days.forEach(day => {
       expect(newState[day]).toBeFalsy();
     });
+  });
+
+  test("Press 'Save' button should trigger onChangeScreen function and navigator.pop function", () => {
+    onChangeScreen.mockReset();
+    navigation.pop.mockReset();
+    saveButton.props().onPress();
+
+    expect(onChangeScreen).toHaveBeenCalled();
+    expect(navigation.pop).toHaveBeenCalled();
   });
 });

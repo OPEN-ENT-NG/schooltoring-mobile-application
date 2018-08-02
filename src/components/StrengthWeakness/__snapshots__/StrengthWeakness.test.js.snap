@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Render StrengthWeakness should render without crashing 1`] = `
+exports[`Render StrengthWeakness with no save button should render without crashing 1`] = `
 <Component
   style={
     Object {
@@ -322,7 +322,7 @@ exports[`Render StrengthWeakness should render without crashing 1`] = `
       keyboardShouldPersistTaps="handled"
     >
       <SubjectBadge
-        key="1475567-1517929209848"
+        key="0"
         onPress={[Function]}
         style={
           Object {
@@ -332,7 +332,7 @@ exports[`Render StrengthWeakness should render without crashing 1`] = `
         title="SCIENCES PHYSIQUES ET CHIMIE APPLIQUEE"
       />
       <SubjectBadge
-        key="1475795-1517929209848"
+        key="1"
         onPress={[Function]}
         style={
           Object {
@@ -342,7 +342,7 @@ exports[`Render StrengthWeakness should render without crashing 1`] = `
         title="SCIENCES INDUSTRIELLES DE L'INGENIEUR"
       />
       <SubjectBadge
-        key="1474348-1517929209848"
+        key="2"
         onPress={[Function]}
         style={
           Object {
@@ -370,6 +370,377 @@ exports[`Render StrengthWeakness should render without crashing 1`] = `
     <SecondaryButton
       onPress={[Function]}
       title="SUIVANT"
+    />
+  </Component>
+</Component>
+`;
+
+exports[`Render StrengthWeakness with save button should render without crashing 1`] = `
+<Component
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <Component
+    style={
+      Object {
+        "flex": 1,
+        "justifyContent": "space-evenly",
+        "paddingHorizontal": 30,
+        "paddingVertical": 15,
+      }
+    }
+  >
+    <Autocomplete
+      data={
+        Array [
+          Object {
+            "subjectCode": "ZIP-073700",
+            "subjectId": "1473675-1517929209848",
+            "subjectLabel": "ENSEIGNEMTS TECHNOLOGIQUES TRANSVERSAUX",
+          },
+          Object {
+            "subjectCode": "ZIP-278300",
+            "subjectId": "1473612-1517929209848",
+            "subjectLabel": "ARTS APPLIQUES ET CULTURES ARTISTIQUES",
+          },
+          Object {
+            "subjectCode": "ZIP-074400",
+            "subjectId": "1473613-1517929209848",
+            "subjectLabel": "ENSEIGN. GENERAUX LIES A LA SPECIALITE",
+          },
+          Object {
+            "subjectCode": "ZIP-030602",
+            "subjectId": "1473484-1517929209848",
+            "subjectLabel": "ESPAGNOL LV2",
+          },
+          Object {
+            "subjectCode": "ZIP-232200",
+            "subjectId": "1473748-1517929209848",
+            "subjectLabel": "CONST.STR.MAT.APPLIQ. ELECTROTECHNIQUE",
+          },
+          Object {
+            "subjectCode": "ZIP-207900",
+            "subjectId": "1473746-1517929209848",
+            "subjectLabel": "CONDUITE  ET REALISATION  PROJET CLIENT",
+          },
+          Object {
+            "subjectCode": "ZIP-207800",
+            "subjectId": "1473747-1517929209848",
+            "subjectLabel": "CONCEPTION DES SYSTEMES AUTOMATIQUES",
+          },
+          Object {
+            "subjectCode": "ZIP-006600",
+            "subjectId": "1473259-1517929209848",
+            "subjectLabel": "ACCOMPAGNEMENT PERSONNALISE",
+          },
+          Object {
+            "subjectCode": "ZIP-062300",
+            "subjectId": "1473258-1517929209848",
+            "subjectLabel": "PHYSIQUE-CHIMIE",
+          },
+          Object {
+            "subjectCode": "ZIP-221800",
+            "subjectId": "1475595-1517929209848",
+            "subjectLabel": "ELECTRONIQUE ET COMMUNICATIONS",
+          },
+          Object {
+            "subjectCode": "ZIP-065700",
+            "subjectId": "1475582-1517929209848",
+            "subjectLabel": "PHYSIQUE",
+          },
+          Object {
+            "subjectCode": "ZIP-231200",
+            "subjectId": "1475583-1517929209848",
+            "subjectLabel": "ELECTRICITE",
+          },
+          Object {
+            "subjectCode": "ZIP-308700",
+            "subjectId": "1475581-1517929209848",
+            "subjectLabel": "MESURE ET INSTRUMENTATION",
+          },
+          Object {
+            "subjectCode": "ZIP-068100",
+            "subjectId": "1475567-1517929209848",
+            "subjectLabel": "SCIENCES PHYSIQUES ET CHIMIE APPLIQUEE",
+          },
+          Object {
+            "subjectCode": "ZIP-220700",
+            "subjectId": "1475566-1517929209848",
+            "subjectLabel": "ESSAI DE SYSTEMES",
+          },
+          Object {
+            "subjectCode": "ZIP-341700",
+            "subjectId": "1475710-1517929209848",
+            "subjectLabel": "VENTE(TP,PRESENTATION,EXPR.,COMPORTEMENT",
+          },
+          Object {
+            "subjectCode": "ZIP-308600",
+            "subjectId": "1475847-1517929209848",
+            "subjectLabel": "CHIMIE-BIOCHIMIE-SCIENCES DU VIVANT",
+          },
+          Object {
+            "subjectCode": "ZIP-062900",
+            "subjectId": "1475846-1517929209848",
+            "subjectLabel": "SCIENCES DE LA VIE ET DE LA TERRE",
+          },
+          Object {
+            "subjectCode": "ZIP-003300",
+            "subjectId": "1475794-1517929209848",
+            "subjectLabel": "TRAVAUX INITIAT.PERSONNEL ENCADRES",
+          },
+          Object {
+            "subjectCode": "ZIP-068700",
+            "subjectId": "1475795-1517929209848",
+            "subjectLabel": "SCIENCES INDUSTRIELLES DE L'INGENIEUR",
+          },
+          Object {
+            "subjectCode": "ZIP-043700",
+            "subjectId": "1475762-1517929209848",
+            "subjectLabel": "HISTOIRE-GEOGRAPHIE",
+          },
+          Object {
+            "subjectCode": "ZIP-043800",
+            "subjectId": "1475236-1517929209848",
+            "subjectLabel": "ENSEIGNEMENT MORAL ET CIVIQUE",
+          },
+          Object {
+            "subjectCode": "ZIP-022700",
+            "subjectId": "1475234-1517929209848",
+            "subjectLabel": "FRANCAIS PHILOSOPHIE",
+          },
+          Object {
+            "subjectCode": "ZIP-010300",
+            "subjectId": "1475235-1517929209848",
+            "subjectLabel": "PHILOSOPHIE",
+          },
+          Object {
+            "subjectCode": "ZIP-023400",
+            "subjectId": "1474924-1517929209848",
+            "subjectLabel": "CULTURE GENERALE ET EXPRESSION",
+          },
+          Object {
+            "subjectCode": "ZIP-020700",
+            "subjectId": "1474925-1517929209848",
+            "subjectLabel": "FRANCAIS",
+          },
+          Object {
+            "subjectCode": "ZIP-005200",
+            "subjectId": "1474923-1517929209848",
+            "subjectLabel": "CULTURE GENERALE ET EXPRESSION",
+          },
+          Object {
+            "subjectCode": "ZIP-030201",
+            "subjectId": "1474895-1517929209848",
+            "subjectLabel": "ANGLAIS LV1",
+          },
+          Object {
+            "subjectCode": "ZIP-061300",
+            "subjectId": "1474348-1517929209848",
+            "subjectLabel": "MATHEMATIQUES",
+          },
+          Object {
+            "subjectCode": "ZIP-002300",
+            "subjectId": "1480227-1517929209848",
+            "subjectLabel": "TRAVAUX PERSONNELS ENCADRES",
+          },
+          Object {
+            "subjectCode": "ZIP-383400",
+            "subjectId": "1480819-1517929209848",
+            "subjectLabel": "ECONOMIE-DROIT",
+          },
+          Object {
+            "subjectCode": "ZIP-380400",
+            "subjectId": "1480821-1517929209848",
+            "subjectLabel": "ECONOMIE ET GESTION",
+          },
+          Object {
+            "subjectCode": "ZIP-383000",
+            "subjectId": "1480820-1517929209848",
+            "subjectLabel": "PRINCIPES FONDAMENT. ECONOMIE & GESTION",
+          },
+          Object {
+            "subjectCode": "ZIP-432200",
+            "subjectId": "1480822-1517929209848",
+            "subjectLabel": "ECONOMIE ET GESTION DE L'ENTREPRISE",
+          },
+          Object {
+            "subjectCode": "ZIP-373100",
+            "subjectId": "1480729-1517929209848",
+            "subjectLabel": "INFORMATIQUE ET SCIENCES DU NUMERIQUE",
+          },
+          Object {
+            "subjectCode": "ZIP-231400",
+            "subjectId": "1480937-1517929209848",
+            "subjectLabel": "TECHNOLOGIE SCHEMA ET FABRICATION",
+          },
+          Object {
+            "subjectCode": "ZIP-231300",
+            "subjectId": "1480938-1517929209848",
+            "subjectLabel": "CONSTRUCTION (ELECTROTECHNIQUE)",
+          },
+          Object {
+            "subjectCode": "ZIP-242000",
+            "subjectId": "1477513-1517929209848",
+            "subjectLabel": "SYSTEMES D'INFORMATION ET NUMERIQUE",
+          },
+          Object {
+            "subjectCode": "ZIP-207300",
+            "subjectId": "1477371-1517929209848",
+            "subjectLabel": "GENIE MECANIQUE",
+          },
+          Object {
+            "subjectCode": "ZIP-501100",
+            "subjectId": "1477152-1517929209848",
+            "subjectLabel": "ENSEIGNEMENT TECHNOLOGIQUE EN LV1",
+          },
+          Object {
+            "subjectCode": "ZIP-181700",
+            "subjectId": "1477852-1517929209848",
+            "subjectLabel": "ENERGIES ET ENVIRONNEMENT",
+          },
+          Object {
+            "subjectCode": "ZIP-073600",
+            "subjectId": "1477779-1517929209848",
+            "subjectLabel": "INNOVATION TECHNOLOGIQUE ET ECO-CONCEPT.",
+          },
+          Object {
+            "subjectCode": "ZIP-240500",
+            "subjectId": "1476487-1517929209848",
+            "subjectLabel": "INFORMATIQUE",
+          },
+          Object {
+            "subjectCode": "ZIP-062400",
+            "subjectId": "1476436-1517929209848",
+            "subjectLabel": "SCIENCES PHYSIQUES",
+          },
+          Object {
+            "subjectCode": "ZIP-230700",
+            "subjectId": "1476027-1517929209848",
+            "subjectLabel": "ELECTROTECHNIQUE",
+          },
+          Object {
+            "subjectCode": "ZIP-100100",
+            "subjectId": "1476565-1517929209848",
+            "subjectLabel": "EDUCATION PHYSIQUE ET SPORTIVE",
+          },
+          Object {
+            "subjectCode": "ZIP-312800",
+            "subjectId": "1479468-1517929209848",
+            "subjectLabel": "PREVENTION-SANTE-ENVIRONNEMENT",
+          },
+          Object {
+            "subjectCode": "ZIP-212000",
+            "subjectId": "1479278-1517929209848",
+            "subjectLabel": "MECANIQUE ET VIBRATIONS",
+          },
+          Object {
+            "subjectCode": "ZIP-181400",
+            "subjectId": "1479277-1517929209848",
+            "subjectLabel": "THERMODYNAMIQUE ET THERMIQUE",
+          },
+          Object {
+            "subjectCode": "ZIP-061900",
+            "subjectId": "1479276-1517929209848",
+            "subjectLabel": "OPTIQUE OPTOELECTRONIQUE ET IMAGERIE",
+          },
+          Object {
+            "subjectCode": "ZIP-030102",
+            "subjectId": "1480091-1517929209848",
+            "subjectLabel": "ALLEMAND LV2",
+          },
+          Object {
+            "subjectCode": "ZIP-063300",
+            "subjectId": "1479696-1517929209848",
+            "subjectLabel": "CHIMIE",
+          },
+          Object {
+            "subjectCode": "ZIP-222100",
+            "subjectId": "1478196-1517929209848",
+            "subjectLabel": "GENIE ELECTRIQUE",
+          },
+          Object {
+            "subjectCode": "ZIP-232100",
+            "subjectId": "1478613-1517929209848",
+            "subjectLabel": "SCIENCES APPLIQUEES ELECTRIQ ELECTRONIQ",
+          },
+          Object {
+            "subjectCode": "ZIP-373700",
+            "subjectId": "1478714-1517929209848",
+            "subjectLabel": "INFORMATIQUE ET CREATION NUMERIQUE",
+          },
+          Object {
+            "subjectCode": "ZIP-069700",
+            "subjectId": "1478744-1517929209848",
+            "subjectLabel": "SCIENCES PHYSIQUES ET CHIMIQUES EN LABO.",
+          },
+        ]
+      }
+      filterItem={[Function]}
+      getItemKey={[Function]}
+      onItemPress={[Function]}
+      placeholder="Choisissez les matières concernées"
+      renderItem={[Function]}
+      underlineColor="#17b6b0"
+    />
+    <ScrollView
+      contentContainerStyle={
+        Object {
+          "flexDirection": "row",
+          "flexGrow": 1,
+          "flexWrap": "wrap",
+          "justifyContent": "flex-start",
+        }
+      }
+      keyboardShouldPersistTaps="handled"
+    >
+      <SubjectBadge
+        key="0"
+        onPress={[Function]}
+        style={
+          Object {
+            "backgroundColor": "#17b6b0",
+          }
+        }
+        title="SCIENCES PHYSIQUES ET CHIMIE APPLIQUEE"
+      />
+      <SubjectBadge
+        key="1"
+        onPress={[Function]}
+        style={
+          Object {
+            "backgroundColor": "#17b6b0",
+          }
+        }
+        title="SCIENCES INDUSTRIELLES DE L'INGENIEUR"
+      />
+      <SubjectBadge
+        key="2"
+        onPress={[Function]}
+        style={
+          Object {
+            "backgroundColor": "#17b6b0",
+          }
+        }
+        title="MATHEMATIQUES"
+      />
+    </ScrollView>
+  </Component>
+  <Component
+    style={
+      Object {
+        "flex": 0,
+        "flexDirection": "row",
+        "justifyContent": "flex-end",
+        "padding": 15,
+      }
+    }
+  >
+    <SecondaryButton
+      onPress={[Function]}
+      title="ENREGISTRER"
     />
   </Component>
 </Component>

@@ -21,3 +21,18 @@ export function saveProfile(param) {
     }
   };
 }
+
+export function updateProfile(param) {
+  return async dispatch => {
+    try {
+      await Profile.updateProfile(param);
+      let returnValue = await Profile.getProfile();
+      dispatch({
+        type: actions.PROFILE_SAVED,
+        profile: returnValue
+      });
+    } catch (err) {
+      throw err;
+    }
+  };
+}

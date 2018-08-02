@@ -7,7 +7,7 @@ import Icon from "react-native-vector-icons/MaterialIcons";
 
 import getStyle from "./styles";
 
-export const Header = props => {
+const Header = props => {
   const dispatchPop = () => {
     props.navigation.dispatch(StackActions.pop());
   };
@@ -53,3 +53,5 @@ Header.propTypes = {
   iconName: PropTypes.string,
   title: PropTypes.string.isRequired
 };
+
+export default Header;

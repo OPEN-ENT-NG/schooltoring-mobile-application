@@ -11,7 +11,7 @@ import { saveProfile } from "../../store/actions/profile";
 import StrengthWeakness from "../../components/StrengthWeakness/StrengthWeakness";
 import Availability from "../../components/Availability/Availability";
 import { Profile } from "../../components/Profile/Profile";
-import { Header } from "../../components/Header/Header";
+import Header from "../../components/Header/Header";
 
 import { COLORS } from "../../styles/common";
 import styles from "./styles";
@@ -56,12 +56,17 @@ export class Setup extends Component {
 
 const paramsToProps = SomeComponent => {
   // turns this.props.navigation.state.params into this.params.<x>
-  // console.error(SomeComponent);
   return class extends Component {
     render() {
       const { navigation, ...otherProps } = this.props;
       const { screenProps } = otherProps;
-      return <SomeComponent navigation={navigation} {...screenProps} />;
+      return (
+        <SomeComponent
+          navigation={navigation}
+          {...screenProps}
+          saveButton={false}
+        />
+      );
     }
   };
 };

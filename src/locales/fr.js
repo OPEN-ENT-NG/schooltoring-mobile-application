@@ -1,12 +1,14 @@
 export default {
-  disconnect: "Déconnexion",
+  logout: "Déconnexion",
   skip: "PASSER",
   next: "SUIVANT",
+  cancel: "Annuler",
   save: "ENREGISTRER",
   needHelp: "J'ai besoin d'aide",
   offerHelp: "Je peux aider",
   badges: "Badges",
   favorites: "Favoris",
+  notifications: "Notifications",
   strength: { title: "Mes points forts" },
   weakness: { title: "Mes points faibles" },
   availability: {

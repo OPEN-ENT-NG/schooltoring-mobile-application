@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render PopupMenu should render without crashing 1`] = `
+<Component>
+  <TouchableOpacity
+    activeOpacity={0.2}
+    onPress={[Function]}
+  >
+    <Icon
+      allowFontScaling={false}
+      color="grey"
+      name="more-vert"
+      size={24}
+    />
+  </TouchableOpacity>
+</Component>
+`;

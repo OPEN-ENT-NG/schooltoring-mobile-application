@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View, Text, ScrollView } from "react-native";
+import { View, Text, ScrollView, StatusBar } from "react-native";
 import PropTypes from "prop-types";
 
 import I18n from "../../api/I18n";
@@ -15,13 +15,16 @@ export default class StrengthWeakness extends Component {
   constructor(props) {
     super(props);
 
+    let profileValue =
+      props.navigation.state.routeName === "Strength"
+        ? "strengths"
+        : "weaknesses";
+
     this.state = {
       subjects:
-        props.profile[
-          props.navigation.state.routeName === "Strength"
-            ? "strengths"
-            : "weaknesses"
-        ] || []
+        profileValue.toString() in props.profile
+          ? [...props.profile[profileValue]]
+          : []
     };
   }
 
@@ -75,51 +78,66 @@ export default class StrengthWeakness extends Component {
             contentContainerStyle={styles.list}
             keyboardShouldPersistTaps="handled"
           >
-            {this.getSubjectsByIds(this.state.subjects).map(subject => (
-              <SubjectBadge
-                key={subject.subjectId}
-                onPress={() => {
-                  let newState = this.state.subjects;
-                  newState.splice(
-                    newState.indexOf({ subject_id: subject.subjectId }),
-                    1
-                  );
-                  this.setState({ subjects: newState });
-                }}
-                style={{
-                  backgroundColor: this.chooseStrengthWeakness(
-                    COLORS.PRIMARY,
-                    COLORS.SECONDARY
-                  )
-                }}
-                title={subject.subjectLabel}
-              />
-            ))}
+            {this.getSubjectsByIds(this.state.subjects).map(
+              (subject, index) => (
+                <SubjectBadge
+                  key={index}
+                  onPress={() => {
+                    let newState = this.state.subjects.filter(
+                      element => element.subject_id !== subject.subjectId
+                    );
+                    this.setState({ subjects: newState });
+                  }}
+                  style={{
+                    backgroundColor: this.chooseStrengthWeakness(
+                      COLORS.PRIMARY,
+                      COLORS.SECONDARY
+                    )
+                  }}
+                  title={subject.subjectLabel}
+                />
+              )
+            )}
           </ScrollView>
         </View>
-        <View style={styles.buttonView}>
-          <SecondaryButton
-            onPress={() => {
-              this.props.onChangeScreen(this.getProfileProperty(), []);
-              this.props.navigation.push(
-                this.chooseStrengthWeakness("Weakness", "Availability")
-              );
-            }}
-            title={I18n.t("skip")}
-          />
-          <SecondaryButton
-            onPress={() => {
-              this.props.onChangeScreen(
-                this.getProfileProperty(),
-                this.state.subjects
-              );
-              this.props.navigation.push(
-                this.chooseStrengthWeakness("Weakness", "Availability")
-              );
-            }}
-            title={I18n.t("next")}
-          />
-        </View>
+        {this.props.saveButton ? (
+          <View style={styles.buttonView}>
+            <SecondaryButton
+              onPress={() => {
+                this.props.onChangeScreen(
+                  this.getProfileProperty(),
+                  this.state.subjects
+                );
+                this.props.navigation.pop();
+              }}
+              title={I18n.t("save")}
+            />
+          </View>
+        ) : (
+          <View style={styles.buttonView}>
+            <SecondaryButton
+              onPress={() => {
+                this.props.onChangeScreen(this.getProfileProperty(), []);
+                this.props.navigation.push(
+                  this.chooseStrengthWeakness("Weakness", "Availability")
+                );
+              }}
+              title={I18n.t("skip")}
+            />
+            <SecondaryButton
+              onPress={() => {
+                this.props.onChangeScreen(
+                  this.getProfileProperty(),
+                  this.state.subjects
+                );
+                this.props.navigation.push(
+                  this.chooseStrengthWeakness("Weakness", "Availability")
+                );
+              }}
+              title={I18n.t("next")}
+            />
+          </View>
+        )}
       </View>
     );
   }
@@ -134,5 +152,7 @@ StrengthWeakness.propTypes = {
       subjectCode: PropTypes.string
     })
   ).isRequired,
-  onChangeScreen: PropTypes.func.isRequired
+  saveButton: PropTypes.bool.isRequired,
+  onChangeScreen: PropTypes.func,
+  onSave: PropTypes.func
 };

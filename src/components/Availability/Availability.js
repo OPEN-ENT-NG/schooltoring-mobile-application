@@ -17,15 +17,18 @@ import { SecondaryButton } from "../SecondaryButton/SecondaryButton";
 export default class Availability extends Component {
   constructor(props) {
     super(props);
-    this.state = props.profile.availabilities || {
-      monday: true,
-      tuesday: true,
-      wednesday: true,
-      thursday: true,
-      friday: true,
-      saturday: true,
-      sunday: true
-    };
+    this.state =
+      "availabilities" in props.profile
+        ? { ...props.profile.availabilities }
+        : {
+            monday: true,
+            tuesday: true,
+            wednesday: true,
+            thursday: true,
+            friday: true,
+            saturday: true,
+            sunday: true
+          };
 
     this.renderDay = this.renderDay.bind(this);
     this.setDayValue = this.setDayValue.bind(this);
@@ -75,32 +78,45 @@ export default class Availability extends Component {
             {Object.keys(this.state).map(day => this.renderDay(day))}
           </ScrollView>
         </View>
-        <View style={styles.buttonView}>
-          <SecondaryButton
-            style={styles.button}
-            onPress={() => {
-              this.props.onChangeScreen("availabilities", {
-                monday: false,
-                tuesday: false,
-                wednesday: false,
-                thursday: false,
-                friday: false,
-                saturday: false,
-                sunday: false
-              });
-              this.props.navigation.push("Profile");
-            }}
-            title={I18n.t("skip")}
-          />
-          <SecondaryButton
-            style={styles.button}
-            onPress={() => {
-              this.props.onChangeScreen("availabilities", this.state);
-              this.props.navigation.push("Profile");
-            }}
-            title={I18n.t("next")}
-          />
-        </View>
+        {this.props.saveButton ? (
+          <View style={styles.buttonView}>
+            <SecondaryButton
+              style={styles.button}
+              onPress={() => {
+                this.props.onChangeScreen("availabilities", this.state);
+                this.props.navigation.pop();
+              }}
+              title={I18n.t("save")}
+            />
+          </View>
+        ) : (
+          <View style={styles.buttonView}>
+            <SecondaryButton
+              style={styles.button}
+              onPress={() => {
+                this.props.onChangeScreen("availabilities", {
+                  monday: false,
+                  tuesday: false,
+                  wednesday: false,
+                  thursday: false,
+                  friday: false,
+                  saturday: false,
+                  sunday: false
+                });
+                this.props.navigation.push("Profile");
+              }}
+              title={I18n.t("skip")}
+            />
+            <SecondaryButton
+              style={styles.button}
+              onPress={() => {
+                this.props.onChangeScreen("availabilities", this.state);
+                this.props.navigation.push("Profile");
+              }}
+              title={I18n.t("next")}
+            />
+          </View>
+        )}
       </View>
     );
   }
@@ -108,5 +124,6 @@ export default class Availability extends Component {
 
 Availability.propTypes = {
   navigation: PropTypes.object.isRequired,
-  onChangeScreen: PropTypes.func.isRequired
+  onChangeScreen: PropTypes.func,
+  saveButton: PropTypes.bool.isRequired
 };
