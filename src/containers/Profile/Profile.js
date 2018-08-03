@@ -1,10 +1,6 @@
 import React, { Component } from "react";
 import { View, StatusBar, Platform } from "react-native";
-import {
-  createStackNavigator,
-  NavigationActions,
-  StackActions
-} from "react-navigation";
+import { createStackNavigator } from "react-navigation";
 
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
@@ -12,7 +8,6 @@ import { connect } from "react-redux";
 import { Profile as ProfileComp } from "../../components/Profile/Profile";
 import StrengthWeakness from "../../components/StrengthWeakness/StrengthWeakness";
 import Availability from "../../components/Availability/Availability";
-import PopupMenu from "../../components/PopupMenu/PopupMenu";
 import Header from "../../components/Header/Header";
 
 import { logout } from "../../store/actions/auth";
@@ -38,9 +33,13 @@ const paramsToProps = SomeComponent => {
   };
 };
 
-const getHeader = navigation => {
+const getHeader = (navigation, screenProps) => {
   let routeName = navigation.state.routeName;
   let noBack = navigation.getParam("noBack", false);
+  const rightActions = {
+    actions: [I18n.t("logout")],
+    onPress: screenProps.onRightActionsPress
+  };
   switch (routeName) {
     case "Strength": {
       return (
@@ -50,6 +49,7 @@ const getHeader = navigation => {
           noBack={noBack}
           title={I18n.t(`${routeName.toLowerCase()}.title`)}
           iconName="thumb-up"
+          rightActions={rightActions}
         />
       );
     }
@@ -61,6 +61,7 @@ const getHeader = navigation => {
           noBack={noBack}
           title={I18n.t(`${routeName.toLowerCase()}.title`)}
           iconName="thumb-down"
+          rightActions={rightActions}
         />
       );
     }
@@ -70,6 +71,17 @@ const getHeader = navigation => {
           navigation={navigation}
           noBack={noBack}
           title={I18n.t(`${routeName.toLowerCase()}.title`)}
+          rightActions={rightActions}
+        />
+      );
+    }
+    default: {
+      return (
+        <Header
+          navigation={navigation}
+          noBack={noBack}
+          title={I18n.t(`${routeName.toLowerCase()}.title`)}
+          rightActions={rightActions}
         />
       );
     }
@@ -87,9 +99,8 @@ const Stack = createStackNavigator(
     initialRouteName: "Profile",
     initialRouteParams: { noBack: true },
     cardStyle: { backgroundColor: COLORS.BACKGROUND },
-    navigationOptions: ({ navigation }) => ({
-      header:
-        navigation.state.routeName !== "Profile" ? getHeader(navigation) : null
+    navigationOptions: ({ navigation, screenProps }) => ({
+      header: getHeader(navigation, screenProps)
     })
   }
 );
@@ -108,8 +119,8 @@ export class Profile extends Component {
     };
 
     this.logout = this.logout.bind(this);
-    this.onPopupMenuPress = this.onPopupMenuPress.bind(this);
     this.updateProfile = this.updateProfile.bind(this);
+    this.onPopupMenuPress = this.onPopupMenuPress.bind(this);
   }
 
   componentWillUnmount() {
@@ -120,12 +131,6 @@ export class Profile extends Component {
     this.props.logoutUser();
   }
 
-  onPopupMenuPress(index) {
-    if (index === 1) {
-      this.logout();
-    }
-  }
-
   updateProfile(key, value) {
     const profile = { ...this.state.profile };
     profile[key] = value;
@@ -133,12 +138,17 @@ export class Profile extends Component {
     this.props.updateProfile(profile);
   }
 
+  onPopupMenuPress(index) {
+    if (index === 0) {
+      this.props.logout();
+    }
+  }
+
   render() {
     return (
       <View
         style={{
-          flex: 1,
-          paddingTop: this.props.navigation.state === "Profile" ? 20 : 0
+          flex: 1
         }}
       >
         <Stack
@@ -146,13 +156,10 @@ export class Profile extends Component {
             subjects: this.props.subjects,
             profile: this.state.profile,
             userinfo: this.props.userinfo,
-            onChangeScreen: this.updateProfile
+            onChangeScreen: this.updateProfile,
+            onRightActionsPress: this.onPopupMenuPress
           }}
         />
-        {/*<PopupMenu
-          actions={[I18n.t("notifications"), I18n.t("logout")]}
-          onPress={this.onPopupMenuPress}
-        />*/}
       </View>
     );
   }
@@ -165,7 +172,7 @@ const mapStateToProps = ({ subjects, user }) => ({
 });
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ logoutUser: logout, updateProfile }, dispatch);
+  return bindActionCreators({ logout, updateProfile }, dispatch);
 }
 
 export default connect(

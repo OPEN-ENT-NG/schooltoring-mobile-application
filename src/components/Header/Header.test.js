@@ -16,6 +16,15 @@ const navigation = {
   dispatch: callback
 };
 
+const rightActions = {
+  action: ["Notification", "Deconnexion"],
+  onPress: jest.fn()
+};
+
+const renderedWithRightActions = shallow(
+  <Header title="Test" navigation={navigation} rightActions={rightActions} />
+);
+
 describe("Render", () => {
   test("Header should render without crashing", () => {
     const rendered = shallow(<Header title="Test" navigation={navigation} />);
@@ -60,6 +69,19 @@ describe("Render", () => {
     );
 
     expect(rendered.props().style.backgroundColor).toEqual(COLORS.PRIMARY);
+  });
+
+  test("Header with rightActions should render without crashing", () => {
+    expect(renderedWithRightActions).toMatchSnapshot();
+  });
+
+  test("Header with rightActions should display an icon button", () => {
+    expect(
+      renderedWithRightActions
+        .find("PopupMenu")
+        .dive()
+        .find("Icon").length
+    ).toEqual(1);
   });
 });
 
