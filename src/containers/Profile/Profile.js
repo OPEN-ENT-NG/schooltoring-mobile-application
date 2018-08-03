@@ -100,7 +100,7 @@ export class Profile extends Component {
     this._navListener = this.props.navigation.addListener("didFocus", () => {
       StatusBar.setBarStyle("dark-content");
       Platform.OS === "android" &&
-        StatusBar.setBackgroundColor(COLORS.BACKGROUND);
+        StatusBar.setBackgroundColor(COLORS.LIGHT_GREY);
     });
 
     this.state = {
@@ -129,6 +129,7 @@ export class Profile extends Component {
   updateProfile(key, value) {
     const profile = { ...this.state.profile };
     profile[key] = value;
+    this.setState({ profile });
     this.props.updateProfile(profile);
   }
 
@@ -143,7 +144,7 @@ export class Profile extends Component {
         <Stack
           screenProps={{
             subjects: this.props.subjects,
-            profile: this.props.profile,
+            profile: this.state.profile,
             userinfo: this.props.userinfo,
             onChangeScreen: this.updateProfile
           }}
