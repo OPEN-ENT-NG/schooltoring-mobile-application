@@ -14,7 +14,7 @@ export const Avatar = props => (
         overflow: "hidden"
       }}
       source={
-        props.src
+        props.src && props.src.indexOf("no-avatar.jpg") === -1
           ? {
               uri: `${props.src}`,
               headers: {
