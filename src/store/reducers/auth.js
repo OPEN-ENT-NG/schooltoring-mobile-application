@@ -44,6 +44,7 @@ export default function reducer(state = defaultState, action) {
       return {
         ...state,
         isLoggedIn: false,
+        error: action.error || false,
         loading: {
           fetch: false,
           form: false
