@@ -4,10 +4,8 @@ exports[`Render Error page should render without crashing 1`] = `
 <Component
   style={
     Object {
-      "alignItems": "center",
       "flex": 1,
       "flexDirection": "column",
-      "justifyContent": "center",
     }
   }
 >
@@ -27,10 +25,10 @@ exports[`Render Error page should render without crashing 1`] = `
     style={
       Object {
         "bottom": 0,
-        "height": 217,
-        "left": "10%",
+        "height": 301,
+        "left": -30,
         "position": "absolute",
-        "width": 200,
+        "width": 280,
       }
     }
   />

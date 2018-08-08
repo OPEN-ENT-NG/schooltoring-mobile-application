@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import { View, Text, ScrollView, StatusBar } from "react-native";
+import { View, Text, ScrollView } from "react-native";
 import PropTypes from "prop-types";
 
 import I18n from "../../api/I18n";
 
-import { SecondaryButton } from "../SecondaryButton/SecondaryButton";
+import SecondaryButton from "../SecondaryButton/SecondaryButton";
 import Autocomplete from "../Autocomplete/Autocomplete";
 import SubjectBadge from "../SubjectBadge/SubjectBadge";
 
@@ -82,6 +82,10 @@ export default class StrengthWeakness extends Component {
               (subject, index) => (
                 <SubjectBadge
                   key={index}
+                  color={this.chooseStrengthWeakness(
+                    COLORS.PRIMARY,
+                    COLORS.SECONDARY
+                  )}
                   onPress={() => {
                     let newState = this.state.subjects.filter(
                       element => element.subject_id !== subject.subjectId

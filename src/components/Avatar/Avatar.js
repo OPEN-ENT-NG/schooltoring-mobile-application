@@ -4,7 +4,7 @@ import axios from "axios";
 
 import PropTypes from "prop-types";
 
-export const Avatar = props => (
+const Avatar = props => (
   <View style={props.style}>
     <Image
       style={{
@@ -32,3 +32,5 @@ Avatar.propTypes = {
   style: PropTypes.object,
   src: PropTypes.string
 };
+
+export default Avatar;

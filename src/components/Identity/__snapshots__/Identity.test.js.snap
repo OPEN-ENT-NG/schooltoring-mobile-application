@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render It should render without crashing 1`] = `
+<Component
+  style={
+    Object {
+      "flex": 0,
+      "flexDirection": "row",
+    }
+  }
+>
+  <Avatar
+    size={120}
+    src="http://ent3-core.gdapublic.fr/workspace/document/49a54de3-51f8-464b-81bb-a377f508f382"
+  />
+  <Component
+    style={
+      Object {
+        "justifyContent": "space-evenly",
+        "marginLeft": 15,
+      }
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      id="username-field"
+      style={
+        Object {
+          "color": "#232323",
+          "fontSize": 26,
+          "fontWeight": "bold",
+        }
+      }
+    >
+      John DOE
+    </Text>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      id="classname-field"
+      style={
+        Object {
+          "color": "#232323",
+          "fontSize": 20,
+        }
+      }
+    >
+      2DE4
+    </Text>
+  </Component>
+</Component>
+`;

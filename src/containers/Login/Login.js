@@ -19,8 +19,8 @@ import { COLORS } from "../../styles/common";
 
 class Login extends Component {
   state = {
-    username: "yanis.albon",
-    password: "azerty123",
+    username: "",
+    password: "",
     rememberMe: false
   };
 

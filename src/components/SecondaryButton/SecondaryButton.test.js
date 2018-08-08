@@ -1,8 +1,9 @@
 import React from "react";
-import { TouchableOpacity, Text } from "react-native";
+import { Text } from "react-native";
 import { shallow } from "enzyme";
 
-import { SecondaryButton } from "./SecondaryButton";
+import SecondaryButton from "./SecondaryButton";
+import Touchable from "../Touchable/Touchable";
 
 describe("Render", () => {
   test("SecondaryButton should render without crashing", () => {
@@ -36,7 +37,7 @@ describe("Interactions", () => {
     const component = shallow(
       <SecondaryButton onPress={mockCallBack} title="Test" />
     );
-    component.find(TouchableOpacity).prop("onPress")();
+    component.find(Touchable).prop("onPress")();
     expect(mockCallBack).toHaveBeenCalled();
   });
 });

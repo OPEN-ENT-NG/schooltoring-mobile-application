@@ -1,0 +1,653 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render Strength match should render without crashing 1`] = `
+<Component>
+  <Component
+    style={
+      Array [
+        Object {
+          "height": "30%",
+        },
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "justifyContent": "center",
+        },
+      ]
+    }
+  >
+    <Identity
+      avatar={
+        Object {
+          "size": 120,
+          "src": "/workspace/document/916c2df5-13d2-48cf-9f54-4402c36d4af0",
+        }
+      }
+      userinfo={
+        Object {
+          "avatar": "/workspace/document/916c2df5-13d2-48cf-9f54-4402c36d4af0",
+          "classNames": Array [
+            "VERSAILLES-7133$BTS1TPIL",
+          ],
+          "id": "49abe348-0b13-4ce0-ac8c-01fa7b7e8f68",
+          "username": "Amel AMAIRI",
+        }
+      }
+    />
+  </Component>
+  <Component
+    style={
+      Array [
+        Object {
+          "backgroundColor": "#e3f2fd",
+          "padding": 20,
+        },
+        Object {
+          "height": "40%",
+        },
+        Object {
+          "justifyContent": "space-evenly",
+        },
+      ]
+    }
+  >
+    <Component
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "justifyContent": "center",
+          },
+          Object {
+            "marginVertical": 15,
+          },
+          Object {
+            "marginBottom": 40,
+          },
+        ]
+      }
+    >
+      <SubjectBadge
+        color="#17b6b0"
+        key="1474925-1517929209848"
+        title="FRANCAIS"
+      />
+      <SubjectBadge
+        color="#17b6b0"
+        key="1480091-1517929209848"
+        title="ALLEMAND LV2"
+      />
+      <SubjectBadge
+        color="#17b6b0"
+        key="1474895-1517929209848"
+        title="ANGLAIS LV1"
+      />
+    </Component>
+    <Component
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "justifyContent": "center",
+          },
+          Object {
+            "marginVertical": 15,
+          },
+        ]
+      }
+    >
+      <DayBadge
+        available={true}
+        key="monday"
+        label="L"
+        style={
+          Object {
+            "marginHorizontal": 3,
+          }
+        }
+      />
+      <DayBadge
+        available={false}
+        key="tuesday"
+        label="M"
+        style={
+          Object {
+            "marginHorizontal": 3,
+          }
+        }
+      />
+      <DayBadge
+        available={false}
+        key="wednesday"
+        label="M"
+        style={
+          Object {
+            "marginHorizontal": 3,
+          }
+        }
+      />
+      <DayBadge
+        available={false}
+        key="thursday"
+        label="J"
+        style={
+          Object {
+            "marginHorizontal": 3,
+          }
+        }
+      />
+      <DayBadge
+        available={false}
+        key="friday"
+        label="V"
+        style={
+          Object {
+            "marginHorizontal": 3,
+          }
+        }
+      />
+      <DayBadge
+        available={false}
+        key="saturday"
+        label="S"
+        style={
+          Object {
+            "marginHorizontal": 3,
+          }
+        }
+      />
+      <DayBadge
+        available={false}
+        key="sunday"
+        label="D"
+        style={
+          Object {
+            "marginHorizontal": 3,
+          }
+        }
+      />
+    </Component>
+  </Component>
+  <Component
+    style={
+      Array [
+        Object {
+          "height": "30%",
+        },
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "justifyContent": "center",
+        },
+      ]
+    }
+  >
+    <Component
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "justifyContent": "center",
+          },
+          Object {
+            "flex": 1,
+            "justifyContent": "flex-end",
+          },
+        ]
+      }
+    >
+      <Component
+        style={
+          Array [
+            Object {
+              "width": "25%",
+            },
+            Object {
+              "alignItems": "center",
+              "flexDirection": "row",
+              "justifyContent": "center",
+            },
+          ]
+        }
+      >
+        <SecondaryButton
+          onPress={[MockFunction]}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#e91e63",
+              "borderRadius": 33,
+              "flexDirection": "row",
+              "height": 66,
+              "justifyContent": "center",
+              "width": 66,
+            }
+          }
+        >
+          <Icon
+            allowFontScaling={false}
+            name="clear"
+            size={12}
+            style={
+              Object {
+                "color": "#ffffff",
+                "fontSize": 30,
+              }
+            }
+          />
+        </SecondaryButton>
+      </Component>
+      <Component
+        style={
+          Array [
+            Object {
+              "width": "25%",
+            },
+            Object {
+              "alignItems": "center",
+              "flexDirection": "row",
+              "justifyContent": "center",
+            },
+          ]
+        }
+      >
+        <SecondaryButton
+          onPress={[MockFunction]}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#17b6b0",
+              "borderRadius": 33,
+              "flexDirection": "row",
+              "height": 66,
+              "justifyContent": "center",
+              "width": 66,
+            }
+          }
+        >
+          <Icon
+            allowFontScaling={false}
+            name="chat"
+            size={12}
+            style={
+              Object {
+                "color": "#ffffff",
+                "fontSize": 30,
+              }
+            }
+          />
+        </SecondaryButton>
+      </Component>
+      <Component
+        style={
+          Array [
+            Object {
+              "width": "25%",
+            },
+            Object {
+              "alignItems": "center",
+              "flexDirection": "row",
+              "justifyContent": "center",
+            },
+          ]
+        }
+      >
+        <SecondaryButton
+          onPress={[MockFunction]}
+          style={
+            Object {
+              "alignItems": "center",
+              "borderRadius": 33,
+              "flexDirection": "row",
+              "height": 66,
+              "justifyContent": "center",
+              "width": 66,
+            }
+          }
+        >
+          <Icon
+            allowFontScaling={false}
+            name="favorite"
+            size={12}
+            style={
+              Object {
+                "color": "#929292",
+                "fontSize": 24,
+              }
+            }
+          />
+        </SecondaryButton>
+      </Component>
+    </Component>
+  </Component>
+</Component>
+`;
+
+exports[`Render Weaknesse match should render without crashing 1`] = `
+<Component>
+  <Component
+    style={
+      Array [
+        Object {
+          "height": "30%",
+        },
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "justifyContent": "center",
+        },
+      ]
+    }
+  >
+    <Identity
+      avatar={
+        Object {
+          "size": 120,
+          "src": "/workspace/document/916c2df5-13d2-48cf-9f54-4402c36d4af0",
+        }
+      }
+      userinfo={
+        Object {
+          "avatar": "/workspace/document/916c2df5-13d2-48cf-9f54-4402c36d4af0",
+          "classNames": Array [
+            "VERSAILLES-7133$BTS1TPIL",
+          ],
+          "id": "49abe348-0b13-4ce0-ac8c-01fa7b7e8f68",
+          "username": "Amel AMAIRI",
+        }
+      }
+    />
+  </Component>
+  <Component
+    style={
+      Array [
+        Object {
+          "backgroundColor": "#e3f2fd",
+          "padding": 20,
+        },
+        Object {
+          "height": "40%",
+        },
+        Object {
+          "justifyContent": "space-evenly",
+        },
+      ]
+    }
+  >
+    <Component
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "justifyContent": "center",
+          },
+          Object {
+            "marginVertical": 15,
+          },
+          Object {
+            "marginBottom": 40,
+          },
+        ]
+      }
+    >
+      <SubjectBadge
+        color="#e91e63"
+        key="1474925-1517929209848"
+        title="FRANCAIS"
+      />
+      <SubjectBadge
+        color="#e91e63"
+        key="1480091-1517929209848"
+        title="ALLEMAND LV2"
+      />
+      <SubjectBadge
+        color="#e91e63"
+        key="1474895-1517929209848"
+        title="ANGLAIS LV1"
+      />
+    </Component>
+    <Component
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "justifyContent": "center",
+          },
+          Object {
+            "marginVertical": 15,
+          },
+        ]
+      }
+    >
+      <DayBadge
+        available={true}
+        key="monday"
+        label="L"
+        style={
+          Object {
+            "marginHorizontal": 3,
+          }
+        }
+      />
+      <DayBadge
+        available={false}
+        key="tuesday"
+        label="M"
+        style={
+          Object {
+            "marginHorizontal": 3,
+          }
+        }
+      />
+      <DayBadge
+        available={false}
+        key="wednesday"
+        label="M"
+        style={
+          Object {
+            "marginHorizontal": 3,
+          }
+        }
+      />
+      <DayBadge
+        available={false}
+        key="thursday"
+        label="J"
+        style={
+          Object {
+            "marginHorizontal": 3,
+          }
+        }
+      />
+      <DayBadge
+        available={false}
+        key="friday"
+        label="V"
+        style={
+          Object {
+            "marginHorizontal": 3,
+          }
+        }
+      />
+      <DayBadge
+        available={false}
+        key="saturday"
+        label="S"
+        style={
+          Object {
+            "marginHorizontal": 3,
+          }
+        }
+      />
+      <DayBadge
+        available={false}
+        key="sunday"
+        label="D"
+        style={
+          Object {
+            "marginHorizontal": 3,
+          }
+        }
+      />
+    </Component>
+  </Component>
+  <Component
+    style={
+      Array [
+        Object {
+          "height": "30%",
+        },
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "justifyContent": "center",
+        },
+      ]
+    }
+  >
+    <Component
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "justifyContent": "center",
+          },
+          Object {
+            "flex": 1,
+            "justifyContent": "flex-end",
+          },
+        ]
+      }
+    >
+      <Component
+        style={
+          Array [
+            Object {
+              "width": "25%",
+            },
+            Object {
+              "alignItems": "center",
+              "flexDirection": "row",
+              "justifyContent": "center",
+            },
+          ]
+        }
+      >
+        <SecondaryButton
+          onPress={[MockFunction]}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#e91e63",
+              "borderRadius": 33,
+              "flexDirection": "row",
+              "height": 66,
+              "justifyContent": "center",
+              "width": 66,
+            }
+          }
+        >
+          <Icon
+            allowFontScaling={false}
+            name="clear"
+            size={12}
+            style={
+              Object {
+                "color": "#ffffff",
+                "fontSize": 30,
+              }
+            }
+          />
+        </SecondaryButton>
+      </Component>
+      <Component
+        style={
+          Array [
+            Object {
+              "width": "25%",
+            },
+            Object {
+              "alignItems": "center",
+              "flexDirection": "row",
+              "justifyContent": "center",
+            },
+          ]
+        }
+      >
+        <SecondaryButton
+          onPress={[MockFunction]}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#17b6b0",
+              "borderRadius": 33,
+              "flexDirection": "row",
+              "height": 66,
+              "justifyContent": "center",
+              "width": 66,
+            }
+          }
+        >
+          <Icon
+            allowFontScaling={false}
+            name="chat"
+            size={12}
+            style={
+              Object {
+                "color": "#ffffff",
+                "fontSize": 30,
+              }
+            }
+          />
+        </SecondaryButton>
+      </Component>
+      <Component
+        style={
+          Array [
+            Object {
+              "width": "25%",
+            },
+            Object {
+              "alignItems": "center",
+              "flexDirection": "row",
+              "justifyContent": "center",
+            },
+          ]
+        }
+      >
+        <SecondaryButton
+          onPress={[MockFunction]}
+          style={
+            Object {
+              "alignItems": "center",
+              "borderRadius": 33,
+              "flexDirection": "row",
+              "height": 66,
+              "justifyContent": "center",
+              "width": 66,
+            }
+          }
+        >
+          <Icon
+            allowFontScaling={false}
+            name="favorite"
+            size={12}
+            style={
+              Object {
+                "color": "#929292",
+                "fontSize": 24,
+              }
+            }
+          />
+        </SecondaryButton>
+      </Component>
+    </Component>
+  </Component>
+</Component>
+`;

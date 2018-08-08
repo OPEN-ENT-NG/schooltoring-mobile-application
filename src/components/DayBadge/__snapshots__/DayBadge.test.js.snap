@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render DayBadge should render without crashing 1`] = `
+<Component
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#929292",
+        "height": 30,
+        "justifyContent": "center",
+        "width": 30,
+      },
+      Object {
+        "backgroundColor": "#ff6f00",
+      },
+      undefined,
+    ]
+  }
+>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "color": "#ffffff",
+        "flex": 1,
+        "fontSize": 20,
+      }
+    }
+  >
+    L
+  </Text>
+</Component>
+`;

@@ -12,13 +12,13 @@ const messageComponent = (
 
 describe("Render", () => {
   test("Error page should render without crashing", () => {
-    const rendered = shallow(<Error message={message} />);
+    const rendered = shallow(<Error message={message} critical={true} />);
 
     expect(rendered).toMatchSnapshot();
   });
 
   test("Error page should render a simple text", () => {
-    const rendered = shallow(<Error message={message} />);
+    const rendered = shallow(<Error message={message} critical={true} />);
 
     expect(
       rendered
@@ -29,7 +29,9 @@ describe("Render", () => {
   });
 
   test("Error page should render a React Component", () => {
-    const rendered = shallow(<Error message={messageComponent} />);
+    const rendered = shallow(
+      <Error message={messageComponent} critical={true} />
+    );
 
     expect(
       rendered.find("[id='error-message-component']").exists()

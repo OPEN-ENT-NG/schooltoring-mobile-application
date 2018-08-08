@@ -322,6 +322,7 @@ exports[`Render StrengthWeakness with no save button should render without crash
       keyboardShouldPersistTaps="handled"
     >
       <SubjectBadge
+        color="#17b6b0"
         key="0"
         onPress={[Function]}
         style={
@@ -332,6 +333,7 @@ exports[`Render StrengthWeakness with no save button should render without crash
         title="SCIENCES PHYSIQUES ET CHIMIE APPLIQUEE"
       />
       <SubjectBadge
+        color="#17b6b0"
         key="1"
         onPress={[Function]}
         style={
@@ -342,6 +344,7 @@ exports[`Render StrengthWeakness with no save button should render without crash
         title="SCIENCES INDUSTRIELLES DE L'INGENIEUR"
       />
       <SubjectBadge
+        color="#17b6b0"
         key="2"
         onPress={[Function]}
         style={
@@ -697,6 +700,7 @@ exports[`Render StrengthWeakness with save button should render without crashing
       keyboardShouldPersistTaps="handled"
     >
       <SubjectBadge
+        color="#17b6b0"
         key="0"
         onPress={[Function]}
         style={
@@ -707,6 +711,7 @@ exports[`Render StrengthWeakness with save button should render without crashing
         title="SCIENCES PHYSIQUES ET CHIMIE APPLIQUEE"
       />
       <SubjectBadge
+        color="#17b6b0"
         key="1"
         onPress={[Function]}
         style={
@@ -717,6 +722,7 @@ exports[`Render StrengthWeakness with save button should render without crashing
         title="SCIENCES INDUSTRIELLES DE L'INGENIEUR"
       />
       <SubjectBadge
+        color="#17b6b0"
         key="2"
         onPress={[Function]}
         style={

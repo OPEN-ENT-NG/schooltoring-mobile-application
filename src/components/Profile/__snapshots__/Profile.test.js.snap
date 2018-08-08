@@ -18,57 +18,26 @@ exports[`Render Profile should render without crashing 1`] = `
       }
     }
   >
-    <Component
-      style={
+    <Identity
+      avatar={
         Object {
-          "flex": 0,
-          "flexDirection": "row",
+          "size": 120,
+          "src": "/workspace/document/49a54de3-51f8-464b-81bb-a377f508f382",
         }
       }
-    >
-      <Avatar
-        size={120}
-        src="http://ent3-core.gdapublic.fr/workspace/document/49a54de3-51f8-464b-81bb-a377f508f382"
-      />
-      <Component
-        style={
-          Object {
-            "justifyContent": "space-evenly",
-            "marginLeft": 15,
-          }
+      userinfo={
+        Object {
+          "avatar": "/workspace/document/49a54de3-51f8-464b-81bb-a377f508f382",
+          "classNames": Array [
+            "ZIP-29017$2DE4",
+          ],
+          "structureNames": Array [
+            "Westview Middle School",
+          ],
+          "username": "John DOE",
         }
-      >
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
-          id="username-field"
-          style={
-            Object {
-              "color": "#232323",
-              "fontSize": 26,
-              "fontWeight": "bold",
-            }
-          }
-        >
-          John DOE
-        </Text>
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
-          id="classname-field"
-          style={
-            Object {
-              "color": "#232323",
-              "fontSize": 20,
-            }
-          }
-        >
-          2DE4
-        </Text>
-      </Component>
-    </Component>
+      }
+    />
     <Component
       style={
         Object {

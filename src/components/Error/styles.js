@@ -3,16 +3,21 @@ import { StyleSheet } from "react-native";
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    flexDirection: "column",
-    justifyContent: "center",
-    alignItems: "center"
+    flexDirection: "column"
   },
-  image: {
-    width: 200,
-    height: 217,
+  imageCritical: {
+    width: 280,
+    height: 301,
     position: "absolute",
     bottom: 0,
-    left: "10%"
+    left: -30
+  },
+  imageUncritical: {
+    width: 262,
+    height: 301,
+    position: "absolute",
+    bottom: 0,
+    right: -30
   }
 });
 

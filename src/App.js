@@ -17,7 +17,7 @@ const errorStyles = StyleSheet.create({
   container: {
     width: "90%",
     alignSelf: "center",
-    marginBottom: 100
+    marginVertical: 50
   },
   primaryText: {
     color: COLORS.SECONDARY,

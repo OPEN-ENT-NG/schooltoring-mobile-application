@@ -11,7 +11,7 @@ import store from "../../store/store";
 
 import { COLORS } from "../../styles/common";
 import NavigationService from "../../api/Navigation";
-import { Avatar } from "../../components/Avatar/Avatar";
+import Avatar from "../../components/Avatar/Avatar";
 
 const getAvatar = () => {
   let state = store.getState();

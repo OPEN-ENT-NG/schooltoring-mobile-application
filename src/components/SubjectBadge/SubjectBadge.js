@@ -6,24 +6,18 @@ import Touchable from "../Touchable/Touchable";
 
 import styles from "./styles";
 
-export default class SubjectBadge extends Component {
-  render() {
-    return (
-      <Touchable
-        onPress={() =>
-          this.props.hasOwnProperty("onPress") && this.props.onPress()
-        }
-      >
-        <View style={[styles.item, this.props.style]}>
-          <Text style={styles.itemText}>{this.props.title}</Text>
-        </View>
-      </Touchable>
-    );
-  }
-}
+const SubjectBadge = props => (
+  <Touchable onPress={() => props.hasOwnProperty("onPress") && props.onPress()}>
+    <View style={[styles.item, { backgroundColor: props.color }]}>
+      <Text style={styles.itemText}>{props.title}</Text>
+    </View>
+  </Touchable>
+);
 
 SubjectBadge.propTypes = {
   onPress: PropTypes.func,
-  style: PropTypes.object,
+  color: PropTypes.string,
   title: PropTypes.string.isRequired
 };
+
+export default SubjectBadge;

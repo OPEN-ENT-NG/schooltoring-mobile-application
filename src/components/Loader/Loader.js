@@ -1,15 +1,18 @@
-import React, { Component } from "react";
+import React from "react";
 import { View, ActivityIndicator } from "react-native";
+import Proptypes from "prop-types";
 
 import { COLORS } from "../../styles/common";
 import styles from "./styles";
 
-export default class Loader extends Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <ActivityIndicator color={COLORS.SECONDARY} size={"large"} />
-      </View>
-    );
-  }
-}
+const Loader = props => (
+  <View style={styles.container}>
+    <ActivityIndicator color={props.color || COLORS.SECONDARY} size={"large"} />
+  </View>
+);
+
+Loader.proptypes = {
+  color: Proptypes.string
+};
+
+export default Loader;

@@ -12,7 +12,7 @@ import styles from "./styles";
 
 import I18n from "../../api/I18n";
 
-import { SecondaryButton } from "../SecondaryButton/SecondaryButton";
+import SecondaryButton from "../SecondaryButton/SecondaryButton";
 
 export default class Availability extends Component {
   constructor(props) {
@@ -81,7 +81,6 @@ export default class Availability extends Component {
         {this.props.saveButton ? (
           <View style={styles.buttonView}>
             <SecondaryButton
-              style={styles.button}
               onPress={() => {
                 this.props.onChangeScreen("availabilities", this.state);
                 this.props.navigation.pop();
@@ -92,7 +91,6 @@ export default class Availability extends Component {
         ) : (
           <View style={styles.buttonView}>
             <SecondaryButton
-              style={styles.button}
               onPress={() => {
                 this.props.onChangeScreen("availabilities", {
                   monday: false,
@@ -108,7 +106,6 @@ export default class Availability extends Component {
               title={I18n.t("skip")}
             />
             <SecondaryButton
-              style={styles.button}
               onPress={() => {
                 this.props.onChangeScreen("availabilities", this.state);
                 this.props.navigation.push("Profile");

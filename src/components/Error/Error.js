@@ -12,16 +12,24 @@ const Error = props => {
       ) : (
         props.message
       )}
-      <Image
-        source={require("../../assets/img/gars1b.png")}
-        style={styles.image}
-      />
+      {props.critical ? (
+        <Image
+          source={require("../../assets/img/gars1b.png")}
+          style={styles.imageCritical}
+        />
+      ) : (
+        <Image
+          source={require("../../assets/img/fille1.png")}
+          style={styles.imageUncritical}
+        />
+      )}
     </View>
   );
 };
 
 Error.propTypes = {
-  message: PropTypes.any.isRequired
+  message: PropTypes.any.isRequired,
+  critical: PropTypes.bool.isRequired
 };
 
 export default Error;

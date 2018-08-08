@@ -1,17 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Render An error should be logged if no onPress or title given 1`] = `
-<TouchableOpacity
-  activeOpacity={0.2}
-  hitSlop={
-    Object {
-      "bottom": 10,
-      "left": 10,
-      "right": 10,
-      "top": 10,
-    }
-  }
-  onPress={[Function]}
+<Component
   style={
     Array [
       Object {},
@@ -24,32 +14,34 @@ exports[`Render An error should be logged if no onPress or title given 1`] = `
     ]
   }
 >
-  <Text
-    accessible={true}
-    allowFontScaling={true}
-    ellipsizeMode="tail"
-    style={
+  <Touchable
+    hitSlop={
       Object {
-        "color": "#17b6b0",
-        "fontSize": 18,
+        "bottom": 10,
+        "left": 10,
+        "right": 10,
+        "top": 10,
       }
     }
-  />
-</TouchableOpacity>
+    onPress={[Function]}
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "#17b6b0",
+          "fontSize": 18,
+        }
+      }
+    />
+  </Touchable>
+</Component>
 `;
 
 exports[`Render SecondaryButton should render without crashing 1`] = `
-<TouchableOpacity
-  activeOpacity={0.2}
-  hitSlop={
-    Object {
-      "bottom": 10,
-      "left": 10,
-      "right": 10,
-      "top": 10,
-    }
-  }
-  onPress={[Function]}
+<Component
   style={
     Array [
       Object {},
@@ -62,18 +54,30 @@ exports[`Render SecondaryButton should render without crashing 1`] = `
     ]
   }
 >
-  <Text
-    accessible={true}
-    allowFontScaling={true}
-    ellipsizeMode="tail"
-    style={
+  <Touchable
+    hitSlop={
       Object {
-        "color": "#17b6b0",
-        "fontSize": 18,
+        "bottom": 10,
+        "left": 10,
+        "right": 10,
+        "top": 10,
       }
     }
+    onPress={[Function]}
   >
-    Test
-  </Text>
-</TouchableOpacity>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "#17b6b0",
+          "fontSize": 18,
+        }
+      }
+    >
+      Test
+    </Text>
+  </Touchable>
+</Component>
 `;

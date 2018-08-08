@@ -18,14 +18,6 @@ export default StyleSheet.create({
     borderBottomWidth: 1,
     marginVertical: 20
   },
-  top: {
-    flexDirection: "row",
-    flex: 0
-  },
-  topRight: {
-    marginLeft: 15,
-    justifyContent: "space-evenly"
-  },
   topRightButtons: {
     flexDirection: "row",
     marginBottom: 15
@@ -36,19 +28,10 @@ export default StyleSheet.create({
     alignItems: "center",
     padding: 15
   },
-  name: {
-    ...text,
-    fontWeight: "bold",
-    fontSize: 26
-  },
   title: {
     flexDirection: "row",
     alignItems: "center",
     marginBottom: 10
-  },
-  titleText: {
-    ...text,
-    fontSize: 20
   },
   titleIcon: {
     ...text,
@@ -61,17 +44,6 @@ export default StyleSheet.create({
     flexDirection: "row",
     justifyContent: "flex-start",
     flexWrap: "wrap"
-  },
-  item: {
-    justifyContent: "center",
-    alignItems: "center",
-    width: 30,
-    height: 30
-  },
-  itemText: {
-    flex: 1,
-    color: COLORS.WHITE,
-    fontSize: 20
   },
   buttonView: {
     flexDirection: "row",

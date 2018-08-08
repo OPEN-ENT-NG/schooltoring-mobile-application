@@ -1,0 +1,146 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render It should render without crashing 1`] = `
+<Component
+  onLayout={[Function]}
+  style={
+    Object {
+      "alignItems": "center",
+      "flex": 1,
+      "flexDirection": "column",
+      "justifyContent": "center",
+    }
+  }
+>
+  <Touchable
+    onPress={[Function]}
+  >
+    <Component
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#e91e63",
+            "flexDirection": "row",
+            "justifyContent": "flex-start",
+            "padding": 20,
+          },
+          Object {
+            "height": 632,
+            "width": 750,
+          },
+        ]
+      }
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "white",
+              "fontSize": 24,
+              "width": "60%",
+            },
+            Object {
+              "textAlign": "left",
+            },
+          ]
+        }
+      >
+        [missing "en.needHelp" translation]
+      </Text>
+      <Component
+        style={
+          Object {
+            "bottom": 0,
+            "position": "absolute",
+            "right": 10,
+          }
+        }
+      >
+        <Image
+          resizeMode="contain"
+          source={
+            Object {
+              "process": [Function],
+            }
+          }
+          style={
+            Object {
+              "height": 250,
+              "width": 202,
+            }
+          }
+        />
+      </Component>
+    </Component>
+  </Touchable>
+  <Touchable
+    onPress={[Function]}
+  >
+    <Component
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#17b6b0",
+            "flexDirection": "row",
+            "justifyContent": "flex-end",
+            "padding": 20,
+          },
+          Object {
+            "height": 632,
+            "width": 750,
+          },
+        ]
+      }
+    >
+      <Component
+        style={
+          Object {
+            "bottom": 0,
+            "left": 10,
+            "position": "absolute",
+          }
+        }
+      >
+        <Image
+          resizeMode="contain"
+          source={
+            Object {
+              "process": [Function],
+            }
+          }
+          style={
+            Object {
+              "height": 250,
+              "width": 232,
+            }
+          }
+        />
+      </Component>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "white",
+              "fontSize": 24,
+              "width": "60%",
+            },
+            Object {
+              "textAlign": "right",
+            },
+          ]
+        }
+      >
+        [missing "en.offerHelp" translation]
+      </Text>
+    </Component>
+  </Touchable>
+</Component>
+`;

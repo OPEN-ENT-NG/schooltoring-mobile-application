@@ -5,10 +5,11 @@ import PropTypes from "prop-types";
 
 import I18n from "../../api/I18n";
 
-import { Avatar } from "../Avatar/Avatar";
-import { SecondaryButton } from "../SecondaryButton/SecondaryButton";
+import Identity from "../Identity/Identity";
+import SecondaryButton from "../SecondaryButton/SecondaryButton";
 import SubjectBadge from "../SubjectBadge/SubjectBadge";
 import Touchable from "../Touchable/Touchable";
+import DayBadge from "../DayBadge/DayBadge";
 
 import { COLORS } from "../../styles/common";
 import styles from "./styles";
@@ -23,37 +24,18 @@ export const Profile = props => {
   };
 
   renderSubject = (item, backgroundColor) => {
-    return (
-      <SubjectBadge
-        key={item}
-        style={{
-          backgroundColor: backgroundColor
-        }}
-        title={item}
-      />
-    );
+    return <SubjectBadge key={item} color={backgroundColor} title={item} />;
   };
 
   renderAvailability = item => {
     return (
-      <View
+      <DayBadge
         key={item}
-        style={[
-          styles.item,
-          {
-            backgroundColor:
-              props.profile.availabilities[item] === true
-                ? COLORS.NEGATIVE
-                : COLORS.GREY
-          }
-        ]}
-      >
-        <Text style={styles.itemText}>
-          {I18n.t(`availability.${item}`)
-            .charAt(0)
-            .toUpperCase()}
-        </Text>
-      </View>
+        label={I18n.t(`availability.${item}`)
+          .charAt(0)
+          .toUpperCase()}
+        available={props.profile.availabilities[item]}
+      />
     );
   };
 
@@ -77,21 +59,10 @@ export const Profile = props => {
   return (
     <View style={styles.flex}>
       <ScrollView contentContainerStyle={styles.container}>
-        <View style={styles.top}>
-          <Avatar
-            size={120}
-            src={`${global.config.auth.endpoint}${props.userinfo.avatar}`}
-          />
-
-          <View style={styles.topRight}>
-            <Text style={styles.name} id="username-field">
-              {props.userinfo.username}
-            </Text>
-            <Text style={styles.titleText} id="classname-field">
-              {props.userinfo.classNames[0].split("$")[1]}
-            </Text>
-          </View>
-        </View>
+        <Identity
+          userinfo={props.userinfo}
+          avatar={{ size: 120, src: props.userinfo.avatar }}
+        />
         {props.showTopButtons && (
           <View style={{ width: "100%", flexDirection: "row" }}>
             <View style={styles.topRightButtons}>

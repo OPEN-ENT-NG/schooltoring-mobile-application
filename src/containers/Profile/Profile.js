@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View, StatusBar, Platform } from "react-native";
+import { View } from "react-native";
 import { createStackNavigator } from "react-navigation";
 
 import { bindActionCreators } from "redux";
@@ -49,7 +49,6 @@ const getHeader = (navigation, screenProps) => {
           noBack={noBack}
           title={I18n.t(`${routeName.toLowerCase()}.title`)}
           iconName="thumb-up"
-          rightActions={rightActions}
         />
       );
     }
@@ -61,7 +60,6 @@ const getHeader = (navigation, screenProps) => {
           noBack={noBack}
           title={I18n.t(`${routeName.toLowerCase()}.title`)}
           iconName="thumb-down"
-          rightActions={rightActions}
         />
       );
     }
@@ -71,7 +69,6 @@ const getHeader = (navigation, screenProps) => {
           navigation={navigation}
           noBack={noBack}
           title={I18n.t(`${routeName.toLowerCase()}.title`)}
-          rightActions={rightActions}
         />
       );
     }
@@ -108,11 +105,6 @@ const Stack = createStackNavigator(
 export class Profile extends Component {
   constructor(props) {
     super(props);
-    this._navListener = this.props.navigation.addListener("didFocus", () => {
-      StatusBar.setBarStyle("dark-content");
-      Platform.OS === "android" &&
-        StatusBar.setBackgroundColor(COLORS.LIGHT_GREY);
-    });
 
     this.state = {
       profile: props.profile || {}

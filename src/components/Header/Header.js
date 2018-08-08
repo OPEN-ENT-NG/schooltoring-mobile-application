@@ -37,7 +37,7 @@ const Header = props => {
         {props.iconName && <Icon style={styles.title} name={props.iconName} />}
         <Text style={styles.title}>{props.title}</Text>
       </View>
-      {props.rightActions ? (
+      {props.hasOwnProperty("rightActions") && props.rightActions ? (
         <PopupMenu
           actions={props.rightActions.actions}
           onPress={props.rightActions.onPress}

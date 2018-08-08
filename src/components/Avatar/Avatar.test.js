@@ -1,7 +1,7 @@
 import React from "react";
 import { shallow } from "enzyme";
 
-import { Avatar } from "./Avatar";
+import Avatar from "./Avatar";
 
 import stateMocked from "../../jest/state.json";
 

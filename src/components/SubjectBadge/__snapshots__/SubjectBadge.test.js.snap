@@ -12,7 +12,9 @@ exports[`Render Error logged if no title given 1`] = `
           "margin": 5,
           "padding": 5,
         },
-        undefined,
+        Object {
+          "backgroundColor": undefined,
+        },
       ]
     }
   >
@@ -42,7 +44,9 @@ exports[`Render SubjectBadge renders without crashing 1`] = `
           "margin": 5,
           "padding": 5,
         },
-        undefined,
+        Object {
+          "backgroundColor": undefined,
+        },
       ]
     }
   >
