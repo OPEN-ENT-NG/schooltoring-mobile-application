@@ -4,18 +4,28 @@ exports[`Render It should render without crashing 1`] = `
 <Component
   style={
     Object {
-      "flex": 0,
+      "flex": 1,
       "flexDirection": "row",
     }
   }
 >
-  <Avatar
-    size={120}
-    src="http://ent3-core.gdapublic.fr/workspace/document/49a54de3-51f8-464b-81bb-a377f508f382"
-  />
   <Component
     style={
       Object {
+        "padding": 10,
+      }
+    }
+  >
+    <Avatar
+      size={120}
+      src="http://ent3-core.gdapublic.fr/workspace/document/49a54de3-51f8-464b-81bb-a377f508f382"
+    />
+  </Component>
+  <Component
+    style={
+      Object {
+        "flex": 1,
+        "flexGrow": 1,
         "justifyContent": "space-evenly",
         "marginLeft": 15,
       }

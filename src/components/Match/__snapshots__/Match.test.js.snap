@@ -19,7 +19,7 @@ exports[`Render Strength match should render without crashing 1`] = `
     <Identity
       avatar={
         Object {
-          "size": 120,
+          "size": 100,
           "src": "/workspace/document/916c2df5-13d2-48cf-9f54-4402c36d4af0",
         }
       }
@@ -63,6 +63,7 @@ exports[`Render Strength match should render without crashing 1`] = `
             "marginVertical": 15,
           },
           Object {
+            "flexWrap": "wrap",
             "marginBottom": 40,
           },
         ]
@@ -345,7 +346,7 @@ exports[`Render Weaknesse match should render without crashing 1`] = `
     <Identity
       avatar={
         Object {
-          "size": 120,
+          "size": 100,
           "src": "/workspace/document/916c2df5-13d2-48cf-9f54-4402c36d4af0",
         }
       }
@@ -389,6 +390,7 @@ exports[`Render Weaknesse match should render without crashing 1`] = `
             "marginVertical": 15,
           },
           Object {
+            "flexWrap": "wrap",
             "marginBottom": 40,
           },
         ]
