@@ -27,7 +27,8 @@ export default StyleSheet.create({
     alignSelf: "center"
   },
   errorMessage: {
-    color: COLORS.SECONDARY
+    color: COLORS.SECONDARY,
+    marginVertical: 10
   },
   collectivite: {
     alignSelf: "center",
