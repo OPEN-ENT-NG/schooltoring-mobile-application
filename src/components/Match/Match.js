@@ -50,7 +50,11 @@ class Match extends Component {
           ]}
         >
           <View
-            style={[styles.center, styles.marginVertical, { marginBottom: 40 }]}
+            style={[
+              styles.center,
+              styles.marginVertical,
+              { marginBottom: 40, flexWrap: "wrap" }
+            ]}
           >
             {this.props.features.map(feature => (
               <SubjectBadge
