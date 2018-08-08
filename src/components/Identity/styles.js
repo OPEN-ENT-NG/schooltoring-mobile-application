@@ -23,5 +23,8 @@ export default StyleSheet.create({
   titleText: {
     ...text,
     fontSize: 20
+  },
+  avatarContainer: {
+    padding: 10
   }
 });

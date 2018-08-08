@@ -8,10 +8,12 @@ import styles from "./styles";
 
 const Identity = props => (
   <View style={styles.top}>
-    <Avatar
-      size={props.avatar.size}
-      src={`${global.config.auth.endpoint}${props.avatar.src}`}
-    />
+    <View style={styles.avatarContainer}>
+      <Avatar
+        size={props.avatar.size}
+        src={`${global.config.auth.endpoint}${props.avatar.src}`}
+      />
+    </View>
 
     <View style={styles.topRight}>
       <Text style={styles.name} id="username-field">

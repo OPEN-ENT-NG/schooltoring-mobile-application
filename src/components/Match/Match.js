@@ -39,7 +39,7 @@ class Match extends Component {
         <View style={[styles.height30, styles.center]}>
           <Identity
             userinfo={this.props.userinfo}
-            avatar={{ size: 120, src: this.props.userinfo.avatar }}
+            avatar={{ size: 100, src: this.props.userinfo.avatar }}
           />
         </View>
         <View
