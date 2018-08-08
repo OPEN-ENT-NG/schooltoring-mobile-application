@@ -7,11 +7,13 @@ const text = { color: COLORS.TEXT };
 export default StyleSheet.create({
   top: {
     flexDirection: "row",
-    flex: 0
+    flex: 1
   },
   topRight: {
     marginLeft: 15,
-    justifyContent: "space-evenly"
+    justifyContent: "space-evenly",
+    flexGrow: 1,
+    flex: 1
   },
   name: {
     ...text,
