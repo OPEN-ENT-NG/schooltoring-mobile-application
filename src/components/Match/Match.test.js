@@ -97,7 +97,7 @@ describe("Render", () => {
   test("Match should render 3 SecondaryButtons", () =>
     expect(renderedStrengths.find("SecondaryButton").length).toEqual(3));
 
-  test("Match should render 3 buttons with respectively 'clear', 'chat' and 'favorite' as Icon", () => {
+  test("Match should render 3 buttons with respectively 'clear', 'send' and 'favorite' as Icon", () => {
     const buttons = renderedStrengths.find("SecondaryButton");
 
     expect(
@@ -113,7 +113,7 @@ describe("Render", () => {
         .children()
         .find("Icon")
         .props().name
-    ).toEqual("chat");
+    ).toEqual("send");
     expect(
       buttons
         .at(2)

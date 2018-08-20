@@ -4,8 +4,10 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 
 import { fetchMatches } from "../../store/actions/match";
+import { postRequest } from "../../store/actions/request";
 import I18n from "../../api/I18n";
 
+import NavigationService from "../../api/Navigation";
 import Match from "../../components/Match/Match";
 import Loader from "../../components/Loader/Loader";
 import Error from "../../components/Error/Error";
@@ -97,9 +99,20 @@ class MatchList extends Component {
         userinfo={this.props.list[this.state.currentIndex].userinfo}
         features={this.props.list[this.state.currentIndex].features}
         availabilities={this.props.list[this.state.currentIndex].availabilities}
-        state="STRENGTH"
+        state={this.props.navigation.state.routeName}
         onClear={() => this.skipProfile()}
-        onChat={() => false}
+        onChat={async () => {
+          let request = await this.props.postRequest(
+            this.props.navigation.state.routeName,
+            this.props.list[this.state.currentIndex].userinfo.id
+          );
+          NavigationService.navigate("Messages", {
+            state: this.props.navigation.state.routeName,
+            requestId: request.id,
+            userinfo: this.props.list[this.state.currentIndex].userinfo,
+            state: this.props.navigation.state.routeName
+          });
+        }}
         onFavorite={() => false}
       />
     );
@@ -112,7 +125,7 @@ const mapStateToProps = ({ matches }) => ({
 });
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ fetchMatches }, dispatch);
+  return bindActionCreators({ fetchMatches, postRequest }, dispatch);
 }
 
 export default connect(

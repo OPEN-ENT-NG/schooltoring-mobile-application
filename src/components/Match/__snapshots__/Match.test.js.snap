@@ -70,17 +70,17 @@ exports[`Render Strength match should render without crashing 1`] = `
       }
     >
       <SubjectBadge
-        color="#17b6b0"
+        color="#e91e63"
         key="1474925-1517929209848"
         title="FRANCAIS"
       />
       <SubjectBadge
-        color="#17b6b0"
+        color="#e91e63"
         key="1480091-1517929209848"
         title="ALLEMAND LV2"
       />
       <SubjectBadge
-        color="#17b6b0"
+        color="#e91e63"
         key="1474895-1517929209848"
         title="ANGLAIS LV1"
       />
@@ -271,7 +271,7 @@ exports[`Render Strength match should render without crashing 1`] = `
         >
           <Icon
             allowFontScaling={false}
-            name="chat"
+            name="send"
             size={12}
             style={
               Object {
@@ -397,17 +397,17 @@ exports[`Render Weaknesse match should render without crashing 1`] = `
       }
     >
       <SubjectBadge
-        color="#e91e63"
+        color="#17b6b0"
         key="1474925-1517929209848"
         title="FRANCAIS"
       />
       <SubjectBadge
-        color="#e91e63"
+        color="#17b6b0"
         key="1480091-1517929209848"
         title="ALLEMAND LV2"
       />
       <SubjectBadge
-        color="#e91e63"
+        color="#17b6b0"
         key="1474895-1517929209848"
         title="ANGLAIS LV1"
       />
@@ -598,7 +598,7 @@ exports[`Render Weaknesse match should render without crashing 1`] = `
         >
           <Icon
             allowFontScaling={false}
-            name="chat"
+            name="send"
             size={12}
             style={
               Object {

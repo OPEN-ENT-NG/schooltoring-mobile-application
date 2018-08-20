@@ -1,0 +1,118 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render Conversation should render without crashing 1`] = `
+<Touchable
+  onPress={[MockFunction]}
+>
+  <Component
+    style={
+      Object {
+        "flexDirection": "row",
+        "paddingHorizontal": 10,
+      }
+    }
+  >
+    <Component
+      style={
+        Object {
+          "alignItems": "center",
+          "alignSelf": "flex-start",
+          "flex": 1,
+          "marginHorizontal": 5,
+          "paddingVertical": 20,
+        }
+      }
+    >
+      <Avatar
+        size={60}
+        src="http://ent3-core.gdapublic.fr/workspace/document/49a54de3-51f8-464b-81bb-a377f508f382"
+      />
+    </Component>
+    <Component
+      style={
+        Object {
+          "borderBottomColor": "#000",
+          "borderBottomWidth": 0.5,
+          "flex": 4,
+          "justifyContent": "space-evenly",
+        }
+      }
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        id="username-field"
+        style={
+          Object {
+            "color": "#232323",
+            "fontSize": 20,
+            "fontWeight": "bold",
+          }
+        }
+      >
+        John DOE
+      </Text>
+      <Component
+        style={
+          Object {
+            "flexDirection": "row",
+            "justifyContent": "space-evenly",
+          }
+        }
+      >
+        <Icon
+          allowFontScaling={false}
+          color="#e91e63"
+          name="chat"
+          size={12}
+          style={
+            Object {
+              "fontSize": 20,
+              "marginRight": 10,
+            }
+          }
+        />
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          id="message-field"
+          numberOfLines={1}
+          style={
+            Object {
+              "color": "#232323",
+              "flex": 5,
+              "flexWrap": "wrap",
+              "fontSize": 16,
+            }
+          }
+        >
+          Test message 1
+        </Text>
+        <Component
+          style={
+            Object {
+              "alignItems": "flex-end",
+              "flexGrow": 2,
+            }
+          }
+        >
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "#232323",
+              }
+            }
+          >
+            lun.
+          </Text>
+        </Component>
+      </Component>
+    </Component>
+  </Component>
+</Touchable>
+`;

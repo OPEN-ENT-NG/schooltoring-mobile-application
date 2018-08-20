@@ -1,0 +1,173 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render RequestBadge match should render without crashing 1`] = `
+<Component
+  style={
+    Object {
+      "alignItems": "stretch",
+      "backgroundColor": "#e3f2fd",
+      "flex": 1,
+      "flexDirection": "row",
+      "margin": 20,
+      "shadowColor": "#929292",
+      "shadowOffset": Object {
+        "height": 2,
+        "width": 2,
+      },
+      "shadowOpacity": 1,
+      "shadowRadius": 2,
+    }
+  }
+>
+  <Component
+    style={
+      Object {
+        "alignItems": "flex-start",
+        "flex": 1,
+        "justifyContent": "center",
+      }
+    }
+  >
+    <Avatar
+      size={80}
+      src="http://ent3-core.gdapublic.fr/workspace/document/49a54de3-51f8-464b-81bb-a377f508f382"
+    />
+  </Component>
+  <Component
+    style={
+      Object {
+        "backgroundColor": "#ffffff",
+        "flex": 5,
+        "flexDirection": "row",
+        "padding": 3,
+        "shadowColor": "#929292",
+        "shadowOffset": Object {
+          "height": -1,
+          "width": -2,
+        },
+        "shadowOpacity": 0.5,
+        "shadowRadius": 1,
+      }
+    }
+  >
+    <Component
+      style={
+        Object {
+          "flex": 4,
+          "justifyContent": "space-evenly",
+          "marginLeft": 15,
+        }
+      }
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        id="username-field"
+        style={
+          Object {
+            "color": "#232323",
+            "fontSize": 26,
+            "fontWeight": "bold",
+          }
+        }
+      >
+        John DOE
+      </Text>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        id="classname-field"
+        style={
+          Object {
+            "color": "#232323",
+            "fontSize": 20,
+          }
+        }
+      >
+        2DE4
+      </Text>
+      <Component
+        style={
+          Object {
+            "flexDirection": "row",
+            "flexWrap": "wrap",
+          }
+        }
+      >
+        <SubjectBadge
+          color="#ebebeb"
+          key="1474925-1517929209848"
+          title="FRANCAIS"
+        />
+        <SubjectBadge
+          color="#ebebeb"
+          key="1480091-1517929209848"
+          title="ALLEMAND LV2"
+        />
+        <SubjectBadge
+          color="#ebebeb"
+          key="1474895-1517929209848"
+          title="ANGLAIS LV1"
+        />
+      </Component>
+    </Component>
+    <Component
+      style={
+        Object {
+          "justifyContent": "space-around",
+          "padding": 15,
+        }
+      }
+    >
+      <SecondaryButton
+        onPress={[MockFunction]}
+        style={
+          Object {
+            "backgroundColor": "#e91e63",
+            "borderRadius": 25,
+            "height": 50,
+            "width": 50,
+          }
+        }
+      >
+        <Icon
+          allowFontScaling={false}
+          name="clear"
+          size={12}
+          style={
+            Object {
+              "color": "#ffffff",
+              "fontSize": 25,
+            }
+          }
+        />
+      </SecondaryButton>
+      <SecondaryButton
+        onPress={[MockFunction]}
+        style={
+          Object {
+            "backgroundColor": "#17b6b0",
+            "borderRadius": 25,
+            "height": 50,
+            "width": 50,
+          }
+        }
+      >
+        <Icon
+          allowFontScaling={false}
+          name="chat"
+          size={12}
+          style={
+            Object {
+              "color": "#ffffff",
+              "fontSize": 25,
+            }
+          }
+        />
+      </SecondaryButton>
+    </Component>
+  </Component>
+</Component>
+`;

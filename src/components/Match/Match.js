@@ -61,9 +61,9 @@ class Match extends Component {
                 key={feature.subjectId}
                 title={feature.subjectLabel}
                 color={
-                  this.props.state === "STRENGTH"
-                    ? COLORS.PRIMARY
-                    : COLORS.SECONDARY
+                  this.props.state.toUpperCase() === "STRENGTH"
+                    ? COLORS.SECONDARY
+                    : COLORS.PRIMARY
                 }
               />
             ))}
@@ -95,7 +95,7 @@ class Match extends Component {
                 onPress={this.props.onChat}
                 style={styles.acceptButton}
               >
-                <Icon name="chat" style={styles.roundButtonIcon} />
+                <Icon name="send" style={styles.roundButtonIcon} />
               </SecondaryButton>
             </View>
             <View style={[styles.width25, styles.center]}>

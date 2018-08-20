@@ -1,0 +1,121 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render Left message should render without crashing 1`] = `
+<Component
+  style={
+    Array [
+      Object {
+        "alignItems": "flex-end",
+        "paddingVertical": 5,
+      },
+      Object {
+        "flexDirection": "row",
+      },
+    ]
+  }
+>
+  <Component
+    style={
+      Object {
+        "justifyContent": "center",
+        "paddingHorizontal": 10,
+      }
+    }
+  >
+    <Avatar
+      size={60}
+      src="http://ent3-core.gdapublic.fr/workspace/document/49a54de3-51f8-464b-81bb-a377f508f382"
+    />
+  </Component>
+  <Component
+    style={
+      Array [
+        Object {
+          "borderTopLeftRadius": 5,
+          "borderTopRightRadius": 5,
+          "maxWidth": "50%",
+          "minWidth": "25%",
+          "padding": 10,
+        },
+        Object {
+          "backgroundColor": "#17b6b0",
+          "borderBottomRightRadius": 5,
+        },
+      ]
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "#232323",
+        }
+      }
+    >
+      Test message
+    </Text>
+  </Component>
+</Component>
+`;
+
+exports[`Render Right message should render without crashing 1`] = `
+<Component
+  style={
+    Array [
+      Object {
+        "alignItems": "flex-end",
+        "paddingVertical": 5,
+      },
+      Object {
+        "flexDirection": "row-reverse",
+      },
+    ]
+  }
+>
+  <Component
+    style={
+      Object {
+        "justifyContent": "center",
+        "paddingHorizontal": 10,
+      }
+    }
+  >
+    <Avatar
+      size={60}
+      src="http://ent3-core.gdapublic.fr/workspace/document/49a54de3-51f8-464b-81bb-a377f508f382"
+    />
+  </Component>
+  <Component
+    style={
+      Array [
+        Object {
+          "borderTopLeftRadius": 5,
+          "borderTopRightRadius": 5,
+          "maxWidth": "50%",
+          "minWidth": "25%",
+          "padding": 10,
+        },
+        Object {
+          "backgroundColor": "#17b6b0",
+          "borderBottomLeftRadius": 5,
+        },
+      ]
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "#232323",
+        }
+      }
+    >
+      Test message
+    </Text>
+  </Component>
+</Component>
+`;

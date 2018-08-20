@@ -9,6 +9,26 @@ export default {
   badges: "Badges",
   favorites: "Favoris",
   notifications: "Notifications",
+  locale: {
+    monthsShort: [
+      "janv.",
+      "févr.",
+      "mars",
+      "avr.",
+      "mai",
+      "juin",
+      "juil.",
+      "août",
+      "sept.",
+      "oct.",
+      "nov.",
+      "déc."
+    ],
+    weekdaysShort: ["dim.", "lun.", "mar.", "mer.", "jeu.", "ven.", "sam."],
+    calendar: {
+      lastDay: "[Hier]"
+    }
+  },
   strength: {
     title: "Mes points forts",
     header: "Ils peuvent t'aider",
@@ -37,5 +57,8 @@ export default {
   },
   profile: {
     title: "Profil"
+  },
+  conversation: {
+    placeholder: "Saisissez un message"
   }
 };
