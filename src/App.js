@@ -2,14 +2,17 @@ import React, { Component } from "react";
 import { Text, View, StyleSheet } from "react-native";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
+import firebase from "../node_modules/react-native-firebase/dist/index";
 
 import { fetchLogin } from "./store/actions/auth";
+import ConversationAction from "./store/definitions/conversation";
 
 import Loader from "./components/Loader/Loader";
 import Main from "./containers/Main/Main";
 import Login from "./containers/Login/Login";
 import Setup from "./containers/Setup/Setup";
 import Error from "./components/Error/Error";
+import store from "./store/store";
 
 import { COLORS } from "./styles/common";
 
@@ -32,8 +35,32 @@ const errorStyles = StyleSheet.create({
 });
 
 export class App extends Component {
-  componentDidMount() {
+  async componentDidMount() {
+    const enabled = await firebase.messaging().hasPermission();
+    if (enabled) {
+      this.registerNotificationListener();
+    } else {
+      await firebase.messaging().requestPermission();
+      this.registerNotificationListener();
+    }
+
     this.props.fetchLogin();
+  }
+
+  registerNotificationListener() {
+    this.notificationListener = firebase
+      .notifications()
+      .onNotification(notification => {
+        store.dispatch({
+          type: ConversationAction.NEW_MESSAGE,
+          message: {
+            owner: notification._data.owner,
+            date: notification._data.date,
+            text: notification._body
+          },
+          request: notification._data.request
+        });
+      });
   }
 
   getForbiddenMessage() {

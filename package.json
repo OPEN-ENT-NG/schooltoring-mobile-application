@@ -1,5 +1,5 @@
 {
-  "name": "Schooltoring-Mobile-Application",
+  "name": "Schooltoring",
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
@@ -25,7 +25,7 @@
   },
   "scripts": {
     "start": "react-native start --port=8088 --reset-cache",
-    "start:default": "react-native start",
+    "start:default": "react-native start --reset-cache",
     "android": "react-native run-android && adb reverse tcp:8081 tcp:8088",
     "android:default": "react-native run-android",
     "ios": "react-native run-ios",
@@ -41,7 +41,8 @@
       "<rootDir>/node_modules/appcenter/test/AppCenterMock.js",
       "<rootDir>/node_modules/appcenter-analytics/test/AppCenterAnalyticsMock.js",
       "<rootDir>/node_modules/appcenter-crashes/test/AppCenterCrashesMock.js",
-      "<rootDir>/src/jest/setup.js"
+      "<rootDir>/src/jest/setup.js",
+      "<rootDir>/node_modules/appcenter-push/test/AppCenterPushMock.js"
     ],
     "snapshotSerializers": [
       "enzyme-to-json/serializer"
@@ -59,8 +60,9 @@
     "moment": "^2.22.2",
     "prop-types": "^15.6.2",
     "react": "16.3.1",
-    "react-native": "~0.55.2",
+    "react-native": "0.55.4",
     "react-native-autocomplete-input": "^3.5.0",
+    "react-native-firebase": "^4.3.8",
     "react-native-i18n": "^2.0.12",
     "react-native-vector-icons": "^4.6.0",
     "react-navigation": "^2.3.1",

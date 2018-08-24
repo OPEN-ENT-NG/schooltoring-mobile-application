@@ -1,6 +1,7 @@
 import { AsyncStorage } from "react-native";
 import axios from "axios";
 import Base64 from "base-64";
+import firebase from "react-native-firebase";
 
 async function getAuth(grantType, authParams) {
   try {
@@ -37,7 +38,7 @@ async function getAccessToken(username, password, rememberMe) {
       `username=${username}&password=${password}`
     );
     setDefaultAuthorizationHeader(authData.token_type, authData.access_token);
-
+    await registerFCM();
     if (rememberMe) {
       storeAuthenticationData(authData);
     }
@@ -57,6 +58,7 @@ async function reconnectUser() {
       refreshData.token_type,
       refreshData.access_token
     );
+    await registerFCM();
     storeAuthenticationData(refreshData);
   } catch (err) {
     throw err;
@@ -97,7 +99,38 @@ async function storeAuthenticationData(authData) {
 
 async function disconnectUser() {
   try {
+    await deleteFCM();
     AsyncStorage.removeItem("auth@token");
+  } catch (err) {
+    throw err;
+  }
+}
+
+async function registerFCM() {
+  try {
+    const fcmToken = await firebase.messaging().getToken();
+    const request = {
+      method: "PUT",
+      url: `${
+        global.config.auth.endpoint
+      }/timeline/pushNotif/fcmToken?fcmToken=${fcmToken}`
+    };
+    const { data } = await axios(request);
+    return data;
+  } catch (err) {
+    throw err;
+  }
+}
+
+async function deleteFCM() {
+  try {
+    await axios.delete(
+      `${
+        global.config.auth.endpoint
+      }/timeline/pushNotif/fcmToken?fcmToken=${await firebase
+        .messaging()
+        .getToken()}`
+    );
   } catch (err) {
     throw err;
   }
