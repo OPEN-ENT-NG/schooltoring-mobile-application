@@ -6,6 +6,7 @@ import { bindActionCreators } from "redux";
 import { fetchMatches } from "../../store/actions/match";
 import { postRequest } from "../../store/actions/request";
 import I18n from "../../api/I18n";
+import EventTracker from "../../api/EventTracker";
 
 import NavigationService from "../../api/Navigation";
 import Match from "../../components/Match/Match";
@@ -100,11 +101,29 @@ class MatchList extends Component {
         features={this.props.list[this.state.currentIndex].features}
         availabilities={this.props.list[this.state.currentIndex].availabilities}
         state={this.props.navigation.state.routeName}
-        onClear={() => this.skipProfile()}
+        onClear={() => {
+          this.skipProfile();
+          let category =
+            this.props.navigation.state.routeName.toUpperCase() === "STRENGTH"
+              ? EventTracker.category.SEEK_HELP
+              : EventTracker.category.OFFER_HELP;
+          EventTracker.trackEvent(
+            EventTracker.events[category].skip,
+            EventTracker.category[category]
+          );
+        }}
         onChat={async () => {
           let request = await this.props.postRequest(
             this.props.navigation.state.routeName,
             this.props.list[this.state.currentIndex].userinfo.id
+          );
+          let category =
+            this.props.navigation.state.routeName.toUpperCase() === "STRENGTH"
+              ? EventTracker.category.SEEK_HELP
+              : EventTracker.category.OFFER_HELP;
+          EventTracker.trackEvent(
+            EventTracker.events[category].request,
+            EventTracker.category[category]
           );
           NavigationService.navigate("Messages", {
             state: this.props.navigation.state.routeName,

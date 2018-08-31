@@ -1,4 +1,5 @@
 import axios from "axios";
+import EventTracker from "../api/EventTracker";
 
 async function getConversations() {
   try {
@@ -39,6 +40,10 @@ async function postMessage(requestId, message) {
       data: message
     };
     await axios(request);
+    EventTracker.trackEvent(
+      EventTracker.events.MESSAGE.SEND,
+      EventTracker.category.MESSAGE
+    );
   } catch (err) {
     throw err;
   }

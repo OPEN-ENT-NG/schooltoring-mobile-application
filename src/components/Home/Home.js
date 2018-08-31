@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { View, Text, Image, Dimensions } from "react-native";
 import Proptypes from "prop-types";
+import EventTracker from "../../api/EventTracker";
 
 import Touchable from "../../components/Touchable/Touchable";
 import styles from "./styles";
@@ -42,7 +43,15 @@ export default class Home extends Component {
           });
         }}
       >
-        <Touchable onPress={() => this.props.navigation.push("Strength")}>
+        <Touchable
+          onPress={() => {
+            EventTracker.trackEvent(
+              EventTracker.events.SEEK_HELP.click,
+              EventTracker.category.SEEK_HELP
+            );
+            this.props.navigation.push("Strength");
+          }}
+        >
           <View
             style={[
               styles.topHalf,
@@ -64,7 +73,15 @@ export default class Home extends Component {
             </View>
           </View>
         </Touchable>
-        <Touchable onPress={() => this.props.navigation.push("Weakness")}>
+        <Touchable
+          onPress={() => {
+            EventTracker.trackEvent(
+              EventTracker.events.OFFER_HELP.click,
+              EventTracker.category.OFFER_HELP
+            );
+            this.props.navigation.push("Weakness");
+          }}
+        >
           <View
             style={[
               styles.bottomHalf,

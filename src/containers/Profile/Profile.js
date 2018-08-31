@@ -13,6 +13,7 @@ import Header from "../../components/Header/Header";
 import { logout } from "../../store/actions/auth";
 import { updateProfile } from "../../store/actions/profile";
 import I18n from "../../api/I18n";
+import EventTracker from "../../api/EventTracker";
 
 import { COLORS } from "../../styles/common";
 
@@ -123,11 +124,15 @@ export class Profile extends Component {
     this.props.logoutUser();
   }
 
-  updateProfile(key, value) {
+  async updateProfile(key, value) {
     const profile = { ...this.state.profile };
     profile[key] = value;
     this.setState({ profile });
-    this.props.updateProfile(profile);
+    await this.props.updateProfile(profile);
+    EventTracker.trackEvent(
+      EventTracker.events.PROFILE[key.toUpperCase()],
+      EventTracker.category.PROFILE
+    );
   }
 
   onPopupMenuPress(index) {

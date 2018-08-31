@@ -12,7 +12,7 @@ import {
 import NavigationService from "../../api/Navigation";
 import RequestBadge from "../../components/RequestBadge/RequestBadge";
 import Loader from "../../components/Loader/Loader";
-import { COLORS } from "../../styles/common";
+import EventTracker from "../../api/EventTracker";
 
 export class Requests extends Component {
   constructor(props) {
@@ -36,6 +36,11 @@ export class Requests extends Component {
             state={request.state}
             onAccept={async () => {
               await this.props.acceptRequest(request.id);
+              let event =
+                request.state.toUpperCase() === "STRENGTH"
+                  ? EventTracker.events.REQUEST.SEEK_ACCEPT
+                  : EventTracker.events.REQUEST.OFFER_ACCEPT;
+              EventTracker.trackEvent(event, EventTracker.category.REQUEST);
               NavigationService.navigate("Messages", {
                 state: request.state,
                 requestId: request.id,
@@ -43,7 +48,14 @@ export class Requests extends Component {
                 state: request.state
               });
             }}
-            onRefuse={() => this.props.refuseRequest(request)}
+            onRefuse={async () => {
+              await this.props.refuseRequest(request);
+              let event =
+                request.state.toUpperCase() === "STRENGTH"
+                  ? EventTracker.events.REQUEST.SEEK_REFUSE
+                  : EventTracker.events.REQUEST.OFFER_REFUSE;
+              EventTracker.trackEvent(event, EventTracker.category.REQUEST);
+            }}
           />
         ))}
       </ScrollView>
