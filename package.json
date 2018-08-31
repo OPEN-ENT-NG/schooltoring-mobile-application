@@ -55,6 +55,7 @@
     "appcenter": "^1.7.1",
     "appcenter-analytics": "^1.7.1",
     "appcenter-crashes": "^1.7.1",
+    "appcenter-push": "^1.8.0",
     "axios": "^0.18.0",
     "base-64": "^0.1.0",
     "moment": "^2.22.2",
