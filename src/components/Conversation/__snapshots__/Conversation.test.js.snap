@@ -108,7 +108,7 @@ exports[`Render Conversation should render without crashing 1`] = `
               }
             }
           >
-            lun.
+            20 Aug 2018
           </Text>
         </Component>
       </Component>

@@ -5,6 +5,8 @@ import { connect } from "react-redux";
 
 import { fetchConversations } from "../../store/actions/conversation";
 
+import moment from "moment";
+import I18n from "react-native-i18n";
 import Conversation from "../../components/Conversation/Conversation";
 import Loader from "../../components/Loader/Loader";
 import { COLORS } from "../../styles/common";
@@ -15,6 +17,31 @@ class Conversations extends Component {
 
     this.props.fetchConversations();
   }
+
+  getDate = timestamp => {
+    moment.updateLocale("fr", I18n.t("locale"));
+    let now = moment();
+    let date = moment(timestamp);
+
+    if (date.isSame(now, "day")) {
+      return date.format("HH:mm");
+    } else if (
+      date.isBefore(moment().startOf("day")) &&
+      date.isAfter(
+        moment()
+          .subtract(1, "d")
+          .startOf("day")
+      )
+    ) {
+      return date.calendar(now);
+    } else if (date.isSame(now, "week")) {
+      return date.format("ddd");
+    } else if (date.isSame(now, "year")) {
+      return date.format("DD MMM");
+    } else {
+      return date.format("DD MMM Y");
+    }
+  };
 
   render() {
     if (this.props.loading || this.props.error) {
@@ -29,7 +56,7 @@ class Conversations extends Component {
               key={conversation.id}
               state={conversation.state}
               userinfo={conversation.userinfo}
-              date={conversation.date}
+              date={this.getDate(conversation.date)}
               message={conversation.message}
               onPress={() =>
                 this.props.navigation.navigate("Messages", {

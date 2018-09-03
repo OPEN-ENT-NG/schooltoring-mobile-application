@@ -1,7 +1,7 @@
 import React from "react";
 import { shallow } from "enzyme";
+import moment from "moment";
 
-import { COLORS } from "../../styles/common";
 import state from "../../jest/state.json";
 import Conversation from "./Conversation";
 
@@ -18,7 +18,7 @@ const rendered = shallow(
   <Conversation
     state={conversation.state}
     userinfo={conversation.userinfo}
-    date={conversation.date}
+    date={moment(conversation.date).format("DD MMM Y")}
     message={conversation.message}
     onPress={onPress}
   />
@@ -27,18 +27,6 @@ const rendered = shallow(
 describe("Render", () => {
   test("Conversation should render without crashing", () =>
     expect(rendered).toMatchSnapshot());
-
-  test(`Avatar source should be '${global.config.auth.endpoint}${
-    conversation.userinfo.avatar
-  }'`, () => {
-    expect(
-      rendered
-        .find("Avatar")
-        .dive()
-        .find("Image")
-        .props().source.uri
-    ).toEqual(`${global.config.auth.endpoint}${conversation.userinfo.avatar}`);
-  });
 
   test(`Username and message should be respectively '${
     conversation.userinfo.username
