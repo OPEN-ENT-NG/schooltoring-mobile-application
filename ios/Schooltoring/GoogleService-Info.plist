@@ -21,7 +21,7 @@
 	<key>PROJECT_ID</key>
 	<string>%IOS_PROJECT_ID%</string>
 	<key>STORAGE_BUCKET</key>
-	<string>%IOS_PROJECT_ID.appspot.com%</string>
+	<string>%IOS_PROJECT_ID%.appspot.com%</string>
 	<key>IS_ADS_ENABLED</key>
 	<true></true>
 	<key>IS_ANALYTICS_ENABLED</key>

@@ -6,6 +6,7 @@ import { connect } from "react-redux";
 import { fetchConversations } from "../../store/actions/conversation";
 
 import moment from "moment";
+import fr from "moment/locale/fr";
 import I18n from "react-native-i18n";
 import Conversation from "../../components/Conversation/Conversation";
 import Loader from "../../components/Loader/Loader";
@@ -19,7 +20,7 @@ class Conversations extends Component {
   }
 
   getDate = timestamp => {
-    moment.updateLocale("fr", I18n.t("locale"));
+    moment.locale(fr, I18n.t("locale"));
     let now = moment();
     let date = moment(timestamp);
 

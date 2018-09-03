@@ -41,8 +41,7 @@
       "<rootDir>/node_modules/appcenter/test/AppCenterMock.js",
       "<rootDir>/node_modules/appcenter-analytics/test/AppCenterAnalyticsMock.js",
       "<rootDir>/node_modules/appcenter-crashes/test/AppCenterCrashesMock.js",
-      "<rootDir>/src/jest/setup.js",
-      "<rootDir>/node_modules/appcenter-push/test/AppCenterPushMock.js"
+      "<rootDir>/src/jest/setup.js"
     ],
     "snapshotSerializers": [
       "enzyme-to-json/serializer"
@@ -52,10 +51,9 @@
     }
   },
   "dependencies": {
-    "appcenter": "^1.7.1",
-    "appcenter-analytics": "^1.7.1",
-    "appcenter-crashes": "^1.7.1",
-    "appcenter-push": "^1.8.0",
+    "appcenter": "^1.8.0",
+    "appcenter-analytics": "^1.8.0",
+    "appcenter-crashes": "^1.8.0",
     "axios": "^0.18.0",
     "base-64": "^0.1.0",
     "moment": "^2.22.2",
