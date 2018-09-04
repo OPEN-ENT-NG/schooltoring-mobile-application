@@ -10,6 +10,7 @@ import { COLORS } from "../../styles/common";
 import Avatar from "../Avatar/Avatar";
 import SubjectBadge from "../SubjectBadge/SubjectBadge";
 import SecondaryButton from "../SecondaryButton/SecondaryButton";
+import Loader from "../Loader/Loader";
 
 const getColor = state => {
   return state === "STRENGTH"
@@ -58,6 +59,9 @@ const RequestBadge = props => {
           </SecondaryButton>
         </View>
       </View>
+      {props.loading && (
+        <Loader style={styles.loader} color={getColor(props.state)} />
+      )}
     </View>
   );
 };

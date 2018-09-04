@@ -5,7 +5,8 @@ import { COLORS } from "../../styles/common";
 const roundButton = {
   width: 50,
   height: 50,
-  borderRadius: 25
+  borderRadius: 25,
+  margin: 5
 };
 
 const shadowBadge =
@@ -90,5 +91,11 @@ export default StyleSheet.create({
   roundButtonIcon: {
     fontSize: 25,
     color: COLORS.WHITE
+  },
+  loader: {
+    ...StyleSheet.absoluteFillObject,
+    backgroundColor: "rgba(255, 255, 255, 0.8)",
+    elevation: 1000,
+    zIndex: 5
   }
 });

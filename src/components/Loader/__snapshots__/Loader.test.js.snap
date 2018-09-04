@@ -3,12 +3,15 @@
 exports[`Render Loader should render without crashing 1`] = `
 <Component
   style={
-    Object {
-      "alignItems": "center",
-      "flex": 1,
-      "flexDirection": "column",
-      "justifyContent": "center",
-    }
+    Array [
+      Object {
+        "alignItems": "center",
+        "flex": 1,
+        "flexDirection": "column",
+        "justifyContent": "center",
+      },
+      undefined,
+    ]
   }
 >
   <ActivityIndicator

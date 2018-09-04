@@ -49,6 +49,10 @@ function updateRequest(requestId, status) {
   return async dispatch => {
     try {
       await Request.putRequest(requestId, status);
+      dispatch({
+        type: actions.REQUEST_ANSWERED,
+        requestId
+      });
     } catch (err) {
       dispatch({
         type: actions.REQUESTS_ERROR

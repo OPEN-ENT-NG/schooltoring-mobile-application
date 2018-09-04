@@ -152,7 +152,7 @@ class Messages extends Component {
               onPress={async () => {
                 if (!this.state.message) return;
                 this.textInput.clear();
-                await this.props.postMessage(
+                this.props.postMessage(
                   this.props.navigation.getParam("requestId"),
                   { text: this.state.message }
                 );

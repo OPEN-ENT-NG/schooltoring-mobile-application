@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { ScrollView, View } from "react-native";
+import { ScrollView } from "react-native";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 
@@ -18,7 +18,16 @@ export class Requests extends Component {
   constructor(props) {
     super(props);
 
+    this.state = {};
+
+    this.toggleLoading = this.toggleLoading.bind(this);
     this.props.fetchRequests();
+  }
+
+  toggleLoading(requestId) {
+    let newState = { ...this.state };
+    newState[requestId] = !newState[requestId];
+    this.setState(newState);
   }
 
   render() {
@@ -34,8 +43,11 @@ export class Requests extends Component {
             subjects={request.features}
             userinfo={request.userinfo}
             state={request.state}
+            loading={this.state[request.id]}
             onAccept={async () => {
+              this.toggleLoading(request.id);
               await this.props.acceptRequest(request.id);
+              this.toggleLoading(request.id);
               let event =
                 request.state.toUpperCase() === "STRENGTH"
                   ? EventTracker.events.REQUEST.SEEK_ACCEPT
@@ -49,7 +61,9 @@ export class Requests extends Component {
               });
             }}
             onRefuse={async () => {
-              await this.props.refuseRequest(request);
+              this.toggleLoading(request.id);
+              await this.props.refuseRequest(request.id);
+              this.toggleLoading(request.id);
               let event =
                 request.state.toUpperCase() === "STRENGTH"
                   ? EventTracker.events.REQUEST.SEEK_REFUSE

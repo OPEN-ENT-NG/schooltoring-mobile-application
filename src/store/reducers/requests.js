@@ -31,6 +31,12 @@ export default function reducer(state = defaultState, action) {
         error: true
       };
     }
+    case RequestActions.REQUEST_ANSWERED: {
+      return {
+        ...state,
+        list: state.list.filter(item => item.id != action.requestId)
+      };
+    }
     default:
       return state;
   }
