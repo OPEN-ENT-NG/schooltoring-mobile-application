@@ -58,6 +58,8 @@ export default {
   profile: {
     title: "Profil"
   },
+  conversations: "Conversations",
+  requests: "Requêtes",
   conversation: {
     placeholder: "Saisissez un message"
   }

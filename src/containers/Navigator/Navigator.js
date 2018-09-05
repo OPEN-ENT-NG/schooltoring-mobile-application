@@ -1,7 +1,11 @@
 import React from "react";
-import { createBottomTabNavigator } from "react-navigation";
+import {
+  createBottomTabNavigator,
+  createStackNavigator
+} from "react-navigation";
 
 import Icon from "react-native-vector-icons/MaterialIcons";
+import I18n from "react-native-i18n";
 
 import Home from "../Home/Home";
 import Requests from "../Requests/Requests";
@@ -11,6 +15,7 @@ import store from "../../store/store";
 
 import { COLORS } from "../../styles/common";
 import Avatar from "../../components/Avatar/Avatar";
+import Header from "../../components/Header/Header";
 
 const getAvatar = () => {
   let state = store.getState();
@@ -24,7 +29,20 @@ const getAvatar = () => {
 const Navigator = createBottomTabNavigator(
   {
     Home,
-    Requests,
+    Requests: createStackNavigator({
+      Requests: {
+        screen: Requests,
+        navigationOptions: ({ navigation }) => ({
+          header: (
+            <Header
+              navigation={navigation}
+              noBack={true}
+              title={I18n.t(navigation.state.routeName.toLowerCase())}
+            />
+          )
+        })
+      }
+    }),
     Chat,
     Profile: { screen: props => <Profile {...props} showTopButtons={true} /> }
   },

@@ -13,6 +13,7 @@ import NavigationService from "../../api/Navigation";
 import RequestBadge from "../../components/RequestBadge/RequestBadge";
 import Loader from "../../components/Loader/Loader";
 import EventTracker from "../../api/EventTracker";
+import { COLORS } from "../../styles/common";
 
 export class Requests extends Component {
   constructor(props) {
@@ -36,7 +37,7 @@ export class Requests extends Component {
     }
 
     return (
-      <ScrollView style={{ flex: 1 }}>
+      <ScrollView style={{ flex: 1, backgroundColor: COLORS.BACKGROUND }}>
         {this.props.list.map(request => (
           <RequestBadge
             key={request.id}
