@@ -96,10 +96,7 @@ class Messages extends Component {
           {children}
         </KeyboardAvoidingView>
       ),
-      android: (
-        // <ScrollView keyboardDismissMode="interactive">{children}</ScrollView>
-        <KeyboardAvoidingView enabled>{children}</KeyboardAvoidingView>
-      )
+      android: <KeyboardAvoidingView enabled>{children}</KeyboardAvoidingView>
     });
   }
 
@@ -113,9 +110,16 @@ class Messages extends Component {
     }
 
     const view = (
-      <View>
+      <View
+        style={{
+          width: "100%",
+          height: "100%"
+        }}
+      >
         <FlatList
-          style={{ marginBottom: Platform.OS === "android" ? 65 : 58 }}
+          style={{
+            flex: 1
+          }}
           inverted={true}
           data={this.props.list[this.props.navigation.getParam("requestId")]}
           extraData={

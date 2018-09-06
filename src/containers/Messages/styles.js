@@ -1,4 +1,4 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet, Dimensions } from "react-native";
 import { COLORS } from "../../styles/common";
 
 export default StyleSheet.create({
@@ -8,14 +8,15 @@ export default StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     backgroundColor: COLORS.WHITE,
-    position: "absolute",
-    bottom: 0
+    width: "100%",
+    maxHeight: Dimensions.get("window").height * 0.2
   },
   input: {
-    flex: 8
+    flex: 1,
+    fontSize: 16
   },
   icon: {
-    justifyContent: "flex-end",
-    padding: 5
+    padding: 5,
+    flex: 0
   }
 });
