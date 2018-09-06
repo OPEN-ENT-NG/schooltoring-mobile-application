@@ -146,8 +146,8 @@ class Messages extends Component {
           <TextInput
             placeholder={I18n.t("conversation.placeholder")}
             style={styles.input}
-            ref={ref => (this.textInput = ref)}
             onChangeText={message => this.setState({ message })}
+            value={this.state.message}
             underlineColorAndroid="transparent"
             multiline={true}
           />
@@ -155,7 +155,7 @@ class Messages extends Component {
             <TouchableWithoutFeedback
               onPress={async () => {
                 if (!this.state.message) return;
-                this.textInput.clear();
+                this.setState({ message: "" });
                 this.props.postMessage(
                   this.props.navigation.getParam("requestId"),
                   { text: this.state.message }
