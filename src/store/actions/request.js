@@ -36,11 +36,11 @@ export function postRequest(state, userId) {
 }
 
 export function acceptRequest(requestId) {
-  return updateRequest(requestId, "ACCEPTED");
+  return updateRequest(requestId, "ACCEPT");
 }
 
 export function refuseRequest(requestId) {
-  return updateRequest(requestId, "CANCELED");
+  return updateRequest(requestId, "CANCEL");
 }
 
 function updateRequest(requestId, status) {
