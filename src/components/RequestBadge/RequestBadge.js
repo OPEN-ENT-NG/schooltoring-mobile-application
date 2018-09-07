@@ -13,11 +13,7 @@ import SecondaryButton from "../SecondaryButton/SecondaryButton";
 import Loader from "../Loader/Loader";
 
 const getColor = state => {
-  return state === "STRENGTH"
-    ? COLORS.PRIMARY
-    : state === "WEAKNESS"
-      ? COLORS.SECONDARY
-      : COLORS.LIGHT_GREY;
+  return state === "STRENGTH" ? COLORS.SECONDARY : COLORS.PRIMARY;
 };
 
 const RequestBadge = props => {

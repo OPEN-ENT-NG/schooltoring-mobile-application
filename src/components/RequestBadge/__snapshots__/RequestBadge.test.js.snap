@@ -97,17 +97,17 @@ exports[`Render RequestBadge match should render without crashing 1`] = `
         }
       >
         <SubjectBadge
-          color="#ebebeb"
+          color="#17b6b0"
           key="1474925-1517929209848"
           title="FRANCAIS"
         />
         <SubjectBadge
-          color="#ebebeb"
+          color="#17b6b0"
           key="1480091-1517929209848"
           title="ALLEMAND LV2"
         />
         <SubjectBadge
-          color="#ebebeb"
+          color="#17b6b0"
           key="1474895-1517929209848"
           title="ANGLAIS LV1"
         />
@@ -128,6 +128,7 @@ exports[`Render RequestBadge match should render without crashing 1`] = `
             "backgroundColor": "#e91e63",
             "borderRadius": 25,
             "height": 50,
+            "margin": 5,
             "width": 50,
           }
         }
@@ -151,6 +152,7 @@ exports[`Render RequestBadge match should render without crashing 1`] = `
             "backgroundColor": "#17b6b0",
             "borderRadius": 25,
             "height": 50,
+            "margin": 5,
             "width": 50,
           }
         }
