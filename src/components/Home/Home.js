@@ -21,10 +21,6 @@ export default class Home extends Component {
     };
   }
 
-  componentWillUnmount() {
-    this._navListener.remove();
-  }
-
   render() {
     return (
       <View

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { ScrollView } from "react-native";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
+import { createStackNavigator } from "react-navigation";
 
 import {
   fetchRequests,
@@ -12,10 +13,12 @@ import {
 import NavigationService from "../../api/Navigation";
 import RequestBadge from "../../components/RequestBadge/RequestBadge";
 import Loader from "../../components/Loader/Loader";
+import Header from "../../components/Header/Header";
 import EventTracker from "../../api/EventTracker";
+import I18n from "../../api/I18n";
 import { COLORS } from "../../styles/common";
 
-export class Requests extends Component {
+class RequestsComponent extends Component {
   constructor(props) {
     super(props);
 
@@ -37,7 +40,7 @@ export class Requests extends Component {
     }
 
     return (
-      <ScrollView style={{ flex: 1, backgroundColor: COLORS.BACKGROUND }}>
+      <ScrollView style={{ flex: 1 }}>
         {this.props.list.map(request => (
           <RequestBadge
             key={request.id}
@@ -92,7 +95,31 @@ function mapDispatchToProps(dispatch) {
   );
 }
 
-export default connect(
+const Requests = connect(
   mapStateToProps,
   mapDispatchToProps
-)(Requests);
+)(RequestsComponent);
+
+const RequestsStack = createStackNavigator(
+  { Requests },
+  {
+    cardStyle: {
+      backgroundColor: COLORS.BACKGROUND
+    },
+    navigationOptions: ({ navigation }) => ({
+      header: (
+        <Header
+          navigation={navigation}
+          noBack={true}
+          title={I18n.t(navigation.state.routeName.toLowerCase())}
+        />
+      )
+    })
+  }
+);
+
+export default class RequestsNavigator extends Component {
+  render() {
+    return <RequestsStack />;
+  }
+}

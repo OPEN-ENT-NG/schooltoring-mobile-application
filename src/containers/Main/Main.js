@@ -9,7 +9,7 @@ export default class Main extends Component {
     return (
       <View style={{ flex: 1 }}>
         <Navigator
-          ref={navigatorRef => NavigationService.register(navigatorRef)}
+          ref={navigatorRef => NavigationService.register("root", navigatorRef)}
         />
       </View>
     );

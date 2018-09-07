@@ -6,6 +6,7 @@ import MatchList from "../MatchList/MatchList";
 import Header from "../../components/Header/Header";
 
 import I18n from "../../api/I18n";
+import NavigationService from "../../api/Navigation";
 import { COLORS } from "../../styles/common";
 
 const getHeader = navigation => {
@@ -38,7 +39,7 @@ const getHeader = navigation => {
   }
 };
 
-const Stack = createStackNavigator(
+const HomeStack = createStackNavigator(
   {
     Home: Home,
     Weakness: MatchList,
@@ -56,6 +57,10 @@ const Stack = createStackNavigator(
 
 export default class HomeNavigator extends Component {
   render() {
-    return <Stack />;
+    return (
+      <HomeStack
+        ref={navigatorRef => NavigationService.register("Home", navigatorRef)}
+      />
+    );
   }
 }

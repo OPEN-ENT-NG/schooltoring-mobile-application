@@ -14,7 +14,7 @@ import { logout } from "../../store/actions/auth";
 import { updateProfile } from "../../store/actions/profile";
 import I18n from "../../api/I18n";
 import EventTracker from "../../api/EventTracker";
-
+import NavigationService from "../../api/Navigation";
 import { COLORS } from "../../styles/common";
 
 const paramsToProps = SomeComponent => {
@@ -116,10 +116,6 @@ export class Profile extends Component {
     this.onPopupMenuPress = this.onPopupMenuPress.bind(this);
   }
 
-  componentWillUnmount() {
-    this._navListener.remove();
-  }
-
   logout(evt) {
     this.props.logoutUser();
   }
@@ -149,6 +145,9 @@ export class Profile extends Component {
         }}
       >
         <Stack
+          ref={navigatorRef =>
+            NavigationService.register("Profile", navigatorRef)
+          }
           screenProps={{
             subjects: this.props.subjects,
             profile: this.state.profile,

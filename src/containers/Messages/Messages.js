@@ -20,21 +20,10 @@ import store from "../../store/store";
 import styles from "./styles";
 import { COLORS } from "../../styles/common";
 
-import Header from "../../components/Header/Header";
 import Message from "../../components/Message/Message";
 import Loader from "../../components/Loader/Loader";
 
 class Messages extends Component {
-  static navigationOptions = ({ navigation }) => ({
-    header: (
-      <Header
-        navigation={navigation}
-        noBack={false}
-        title={navigation.getParam("userinfo").username}
-      />
-    )
-  });
-
   constructor(props) {
     super(props);
 

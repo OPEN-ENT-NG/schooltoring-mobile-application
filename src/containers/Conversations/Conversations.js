@@ -49,31 +49,27 @@ class Conversations extends Component {
       return <Loader />;
     }
 
-    if (this.props.list.length > 0) {
-      return (
-        <ScrollView style={{ flex: 1 }}>
-          {this.props.list.map(conversation => (
-            <Conversation
-              key={conversation.id}
-              state={conversation.state}
-              userinfo={conversation.userinfo}
-              date={this.getDate(conversation.date)}
-              message={conversation.message}
-              onPress={() =>
-                this.props.navigation.navigate("Messages", {
-                  state: conversation.state,
-                  requestId: conversation.id,
-                  userinfo: conversation.userinfo,
-                  state: conversation.state
-                })
-              }
-            />
-          ))}
-        </ScrollView>
-      );
-    } else {
-      return <View style={{ flex: 1, backgroundColor: COLORS.LIGHT_GREY }} />;
-    }
+    return (
+      <ScrollView style={{ flex: 1 }}>
+        {this.props.list.map(conversation => (
+          <Conversation
+            key={conversation.id}
+            state={conversation.state}
+            userinfo={conversation.userinfo}
+            date={this.getDate(conversation.date)}
+            message={conversation.message}
+            onPress={() =>
+              this.props.navigation.navigate("Messages", {
+                state: conversation.state,
+                requestId: conversation.id,
+                userinfo: conversation.userinfo,
+                state: conversation.state
+              })
+            }
+          />
+        ))}
+      </ScrollView>
+    );
   }
 }
 

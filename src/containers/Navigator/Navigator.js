@@ -1,11 +1,7 @@
 import React from "react";
-import {
-  createBottomTabNavigator,
-  createStackNavigator
-} from "react-navigation";
+import { createBottomTabNavigator } from "react-navigation";
 
 import Icon from "react-native-vector-icons/MaterialIcons";
-import I18n from "react-native-i18n";
 
 import Home from "../Home/Home";
 import Requests from "../Requests/Requests";
@@ -15,7 +11,7 @@ import store from "../../store/store";
 
 import { COLORS } from "../../styles/common";
 import Avatar from "../../components/Avatar/Avatar";
-import Header from "../../components/Header/Header";
+import NavigationService from "../../api/Navigation";
 
 const getAvatar = () => {
   let state = store.getState();
@@ -29,20 +25,7 @@ const getAvatar = () => {
 const Navigator = createBottomTabNavigator(
   {
     Home,
-    Requests: createStackNavigator({
-      Requests: {
-        screen: Requests,
-        navigationOptions: ({ navigation }) => ({
-          header: (
-            <Header
-              navigation={navigation}
-              noBack={true}
-              title={I18n.t(navigation.state.routeName.toLowerCase())}
-            />
-          )
-        })
-      }
-    }),
+    Requests,
     Chat,
     Profile: { screen: props => <Profile {...props} showTopButtons={true} /> }
   },
@@ -73,6 +56,9 @@ const Navigator = createBottomTabNavigator(
             return <Avatar color={COLORS.TEXT} size={30} src={getAvatar()} />;
           }
         }
+      },
+      tabBarOnPress: ({ navigation }) => {
+        NavigationService.navigate(navigation.state.routeName);
       }
     })
   }

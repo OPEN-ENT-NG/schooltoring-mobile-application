@@ -1,7 +1,5 @@
 import actions from "../definitions/request";
 import Request from "../../api/Request";
-import NavigationService from "../../api/Navigation";
-import { COLORS } from "../../styles/common";
 
 export function fetchRequests() {
   return async dispatch => {
