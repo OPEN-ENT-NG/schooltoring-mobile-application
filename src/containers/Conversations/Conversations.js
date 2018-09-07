@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { ScrollView, View } from "react-native";
+import { FlatList } from "react-native";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 
@@ -10,7 +10,6 @@ import fr from "moment/locale/fr";
 import I18n from "react-native-i18n";
 import Conversation from "../../components/Conversation/Conversation";
 import Loader from "../../components/Loader/Loader";
-import { COLORS } from "../../styles/common";
 
 class Conversations extends Component {
   constructor(props) {
@@ -50,25 +49,29 @@ class Conversations extends Component {
     }
 
     return (
-      <ScrollView style={{ flex: 1 }}>
-        {this.props.list.map(conversation => (
+      <FlatList
+        style={{ flex: 1 }}
+        onRefresh={this.props.fetchConversations}
+        refreshing={this.props.loading}
+        keyExtractor={item => item.id.toString()}
+        data={this.props.list}
+        renderItem={({ item }) => (
           <Conversation
-            key={conversation.id}
-            state={conversation.state}
-            userinfo={conversation.userinfo}
-            date={this.getDate(conversation.date)}
-            message={conversation.message}
+            state={item.state}
+            userinfo={item.userinfo}
+            date={this.getDate(item.date)}
+            message={item.message}
             onPress={() =>
               this.props.navigation.navigate("Messages", {
-                state: conversation.state,
-                requestId: conversation.id,
-                userinfo: conversation.userinfo,
-                state: conversation.state
+                state: item.state,
+                requestId: item.id,
+                userinfo: item.userinfo,
+                state: item.state
               })
             }
           />
-        ))}
-      </ScrollView>
+        )}
+      />
     );
   }
 }

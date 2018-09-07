@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { ScrollView } from "react-native";
+import { FlatList } from "react-native";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 import { createStackNavigator } from "react-navigation";
@@ -40,28 +40,32 @@ class RequestsComponent extends Component {
     }
 
     return (
-      <ScrollView style={{ flex: 1 }}>
-        {this.props.list.map(request => (
+      <FlatList
+        style={{ flex: 1 }}
+        data={this.props.list}
+        onRefresh={this.props.fetchRequests}
+        refreshing={this.props.loading}
+        keyExtractor={item => item.id.toString()}
+        renderItem={({ item }) => (
           <RequestBadge
-            key={request.id}
-            subjects={request.features}
-            userinfo={request.userinfo}
-            state={request.state}
-            loading={this.state[request.id]}
+            subjects={item.features}
+            userinfo={item.userinfo}
+            state={item.state}
+            loading={this.state[item.id]}
             onAccept={async () => {
-              this.toggleLoading(request.id);
-              await this.props.acceptRequest(request.id);
-              this.toggleLoading(request.id);
+              this.toggleLoading(item.id);
+              await this.props.acceptRequest(item.id);
+              this.toggleLoading(item.id);
               let event =
-                request.state.toUpperCase() === "STRENGTH"
+                item.state.toUpperCase() === "STRENGTH"
                   ? EventTracker.events.REQUEST.SEEK_ACCEPT
                   : EventTracker.events.REQUEST.OFFER_ACCEPT;
               EventTracker.trackEvent(event, EventTracker.category.REQUEST);
               NavigationService.navigate("Messages", {
-                state: request.state,
-                requestId: request.id,
-                userinfo: request.userinfo,
-                state: request.state
+                state: item.state,
+                requestId: item.id,
+                userinfo: item.userinfo,
+                state: item.state
               });
             }}
             onRefuse={async () => {
@@ -75,8 +79,8 @@ class RequestsComponent extends Component {
               EventTracker.trackEvent(event, EventTracker.category.REQUEST);
             }}
           />
-        ))}
-      </ScrollView>
+        )}
+      />
     );
   }
 }
