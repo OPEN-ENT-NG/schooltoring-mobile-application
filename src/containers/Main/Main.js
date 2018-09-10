@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { View } from "react-native";
 
 import Navigator from "../Navigator/Navigator";
+import Modal from "../Modal/Modal";
 import NavigationService from "../../api/Navigation";
 
 export default class Main extends Component {
@@ -11,6 +12,7 @@ export default class Main extends Component {
         <Navigator
           ref={navigatorRef => NavigationService.register("root", navigatorRef)}
         />
+        <Modal />
       </View>
     );
   }

@@ -22,17 +22,17 @@ export function fetchConversations() {
   };
 }
 
-export function fetchMessages(requestId, page) {
+export function fetchMessages(conversationId, page) {
   return async dispatch => {
     dispatch({
       type: actions.LOADING_MESSAGES
     });
     try {
-      const list = await Conversation.getMessages(requestId, page);
+      const list = await Conversation.getMessages(conversationId, page);
       dispatch({
         type: actions.FETCH_MESSAGES,
         list,
-        requestId,
+        conversationId,
         endReached: list.length < 20
       });
     } catch (err) {
@@ -44,10 +44,10 @@ export function fetchMessages(requestId, page) {
   };
 }
 
-export function postMessage(requestId, message) {
+export function postMessage(conversationId, message) {
   return async dispatch => {
     try {
-      await Conversation.postMessage(requestId, message);
+      await Conversation.postMessage(conversationId, message);
     } catch (err) {
       dispatch({
         type: actions.MESSAGES_ERROR

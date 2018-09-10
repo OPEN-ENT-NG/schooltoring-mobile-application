@@ -64,7 +64,7 @@ class Conversations extends Component {
             onPress={() =>
               this.props.navigation.navigate("Messages", {
                 state: item.state,
-                requestId: item.id,
+                conversationId: item.id,
                 userinfo: item.userinfo,
                 state: item.state
               })

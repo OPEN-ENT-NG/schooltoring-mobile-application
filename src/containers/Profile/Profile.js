@@ -1,6 +1,9 @@
 import React, { Component } from "react";
-import { View } from "react-native";
-import { createStackNavigator } from "react-navigation";
+import {
+  createStackNavigator,
+  NavigationActions,
+  StackActions
+} from "react-navigation";
 
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
@@ -14,8 +17,9 @@ import { logout } from "../../store/actions/auth";
 import { updateProfile } from "../../store/actions/profile";
 import I18n from "../../api/I18n";
 import EventTracker from "../../api/EventTracker";
-import NavigationService from "../../api/Navigation";
 import { COLORS } from "../../styles/common";
+
+import NavigationService from "../../api/Navigation";
 
 const paramsToProps = SomeComponent => {
   return class extends Component {
@@ -76,8 +80,7 @@ const getHeader = (navigation, screenProps) => {
     default: {
       return (
         <Header
-          navigation={navigation}
-          noBack={noBack}
+          noBack={true}
           title={I18n.t(`${routeName.toLowerCase()}.title`)}
           rightActions={rightActions}
         />
@@ -116,7 +119,7 @@ export class Profile extends Component {
     this.onPopupMenuPress = this.onPopupMenuPress.bind(this);
   }
 
-  logout(evt) {
+  logout() {
     this.props.logoutUser();
   }
 
@@ -139,24 +142,18 @@ export class Profile extends Component {
 
   render() {
     return (
-      <View
-        style={{
-          flex: 1
+      <Stack
+        ref={navigatorRef =>
+          NavigationService.register("profile", navigatorRef)
+        }
+        screenProps={{
+          subjects: this.props.subjects,
+          profile: this.state.profile,
+          userinfo: this.props.userinfo,
+          onChangeScreen: this.updateProfile,
+          onRightActionsPress: this.onPopupMenuPress
         }}
-      >
-        <Stack
-          ref={navigatorRef =>
-            NavigationService.register("Profile", navigatorRef)
-          }
-          screenProps={{
-            subjects: this.props.subjects,
-            profile: this.state.profile,
-            userinfo: this.props.userinfo,
-            onChangeScreen: this.updateProfile,
-            onRightActionsPress: this.onPopupMenuPress
-          }}
-        />
-      </View>
+      />
     );
   }
 }

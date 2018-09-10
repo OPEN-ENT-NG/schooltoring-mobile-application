@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import { createStackNavigator } from "react-navigation";
 
 import Home from "../../components/Home/Home";
@@ -6,7 +6,6 @@ import MatchList from "../MatchList/MatchList";
 import Header from "../../components/Header/Header";
 
 import I18n from "../../api/I18n";
-import NavigationService from "../../api/Navigation";
 import { COLORS } from "../../styles/common";
 
 const getHeader = navigation => {
@@ -39,7 +38,7 @@ const getHeader = navigation => {
   }
 };
 
-const HomeStack = createStackNavigator(
+export default createStackNavigator(
   {
     Home: Home,
     Weakness: MatchList,
@@ -54,13 +53,3 @@ const HomeStack = createStackNavigator(
     })
   }
 );
-
-export default class HomeNavigator extends Component {
-  render() {
-    return (
-      <HomeStack
-        ref={navigatorRef => NavigationService.register("Home", navigatorRef)}
-      />
-    );
-  }
-}

@@ -7,31 +7,32 @@ function register(navigatorName, navigatorRef) {
 }
 
 function navigate(routeName, params) {
-  let action = null;
-  if (routeName in navigator) {
-    action = navigator[routeName].dispatch(
+  navigator.root.dispatch(
+    NavigationActions.navigate({
+      routeName,
+      params
+    })
+  );
+}
+
+function resetProfile() {
+  if ("profile" in navigator) {
+    navigator["profile"].dispatch(
       StackActions.reset({
         index: 0,
         key: null,
         actions: [
           NavigationActions.navigate({
-            routeName: navigator[routeName].state.nav.routes[0].routeName
+            routeName: "Profile"
           })
         ]
       })
     );
   }
-
-  navigator.root.dispatch(
-    NavigationActions.navigate({
-      routeName,
-      params,
-      action
-    })
-  );
 }
 
 export default {
   register,
-  navigate
+  navigate,
+  resetProfile
 };

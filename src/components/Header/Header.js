@@ -48,10 +48,17 @@ const Header = props => {
 };
 
 Header.propTypes = {
-  noBack: PropTypes.bool,
+  noBack: function(props, propName) {
+    if (
+      props["navigation"] == true &&
+      (props[propName] == undefined || typeof props[propName] != "boolean")
+    ) {
+      return new Error("Please provide a noBack boolean");
+    }
+  },
   navigation: function(props, propName) {
     if (
-      props["noBack"] === true &&
+      props["noBack"] === false &&
       (props[propName] == undefined || typeof props[propName] != "object")
     ) {
       return new Error("Please provide a navigation object!");

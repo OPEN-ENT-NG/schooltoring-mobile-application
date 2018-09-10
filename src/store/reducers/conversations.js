@@ -42,9 +42,9 @@ export default function reducer(state = defaultState, action) {
         error_messages: false,
         endReached: action.endReached
       };
-      newState.messages[action.requestId] =
-        action.requestId in newState.messages
-          ? [...newState.messages[action.requestId], ...action.list]
+      newState.messages[action.conversationId] =
+        action.conversationId in newState.messages
+          ? [...newState.messages[action.conversationId], ...action.list]
           : action.list;
       return newState;
     }

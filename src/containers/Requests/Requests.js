@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { FlatList } from "react-native";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
-import { createStackNavigator } from "react-navigation";
+import { createStackNavigator, NavigationActions } from "react-navigation";
 
 import {
   fetchRequests,
@@ -104,7 +104,7 @@ const Requests = connect(
   mapDispatchToProps
 )(RequestsComponent);
 
-const RequestsStack = createStackNavigator(
+export default createStackNavigator(
   { Requests },
   {
     cardStyle: {
@@ -121,9 +121,3 @@ const RequestsStack = createStackNavigator(
     })
   }
 );
-
-export default class RequestsNavigator extends Component {
-  render() {
-    return <RequestsStack />;
-  }
-}

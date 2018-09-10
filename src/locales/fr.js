@@ -9,6 +9,11 @@ export default {
   badges: "Badges",
   favorites: "Favoris",
   notifications: "Notifications",
+  sent: {
+    title: "Demande d'aide envoyée !",
+    message:
+      "Si [name] accepte votre demande, il pourra prendre contact avec toi. D'ici là, tu peux continuer ta recherche.\nBon courage !"
+  },
   locale: {
     monthsShort: [
       "janv.",

@@ -1,0 +1,94 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render Modal should render without crashing 1`] = `
+<Component
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "rgba(10, 10, 10, 0.6)",
+      "bottom": 0,
+      "height": "100%",
+      "justifyContent": "center",
+      "left": 0,
+      "position": "absolute",
+      "right": 0,
+      "top": 0,
+      "width": "100%",
+    }
+  }
+>
+  <Component
+    style={
+      Object {
+        "borderRadius": 5,
+        "overflow": "hidden",
+        "width": "70%",
+      }
+    }
+  >
+    <Component
+      style={
+        Object {
+          "backgroundColor": "#17b6b0",
+          "padding": 15,
+        }
+      }
+    >
+      <Image
+        resizeMode="contain"
+        source={
+          Object {
+            "process": [Function],
+          }
+        }
+        style={
+          Object {
+            "width": "100%",
+          }
+        }
+      />
+    </Component>
+    <Component
+      style={
+        Object {
+          "backgroundColor": "#fafafa",
+          "padding": 10,
+        }
+      }
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        id="title"
+        style={
+          Object {
+            "color": "#232323",
+            "fontWeight": "bold",
+            "margin": 5,
+          }
+        }
+      >
+        title
+      </Text>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        id="text"
+        style={
+          Object {
+            "margin": 5,
+          }
+        }
+      >
+        text
+      </Text>
+      <SecondaryButton
+        onPress={[MockFunction]}
+        title="OK"
+      />
+    </Component>
+  </Component>
+</Component>
+`;

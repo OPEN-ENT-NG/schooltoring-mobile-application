@@ -1,5 +1,9 @@
 import React from "react";
-import { createBottomTabNavigator } from "react-navigation";
+import {
+  createBottomTabNavigator,
+  StackActions,
+  NavigationActions
+} from "react-navigation";
 
 import Icon from "react-native-vector-icons/MaterialIcons";
 
@@ -11,6 +15,7 @@ import store from "../../store/store";
 
 import { COLORS } from "../../styles/common";
 import Avatar from "../../components/Avatar/Avatar";
+
 import NavigationService from "../../api/Navigation";
 
 const getAvatar = () => {
@@ -27,7 +32,7 @@ const Navigator = createBottomTabNavigator(
     Home,
     Requests,
     Chat,
-    Profile: { screen: props => <Profile {...props} showTopButtons={true} /> }
+    Profile
   },
   {
     tabBarOptions: {
@@ -57,8 +62,23 @@ const Navigator = createBottomTabNavigator(
           }
         }
       },
-      tabBarOnPress: ({ navigation }) => {
-        NavigationService.navigate(navigation.state.routeName);
+      tabBarOnPress: ({ navigation, defaultHandler }) => {
+        defaultHandler();
+        if (navigation.state.routeName != "Profile") {
+          navigation.dispatch(
+            StackActions.reset({
+              index: 0,
+              key: null,
+              actions: [
+                NavigationActions.navigate({
+                  routeName: navigation.state.routes[0].routeName
+                })
+              ]
+            })
+          );
+        } else {
+          NavigationService.resetProfile();
+        }
       }
     })
   }

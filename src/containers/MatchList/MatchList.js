@@ -5,10 +5,10 @@ import { bindActionCreators } from "redux";
 
 import { fetchMatches } from "../../store/actions/match";
 import { postRequest } from "../../store/actions/request";
+import { toggleModal } from "../../store/actions/modal";
 import I18n from "../../api/I18n";
 import EventTracker from "../../api/EventTracker";
 
-import NavigationService from "../../api/Navigation";
 import Match from "../../components/Match/Match";
 import Loader from "../../components/Loader/Loader";
 import Error from "../../components/Error/Error";
@@ -113,7 +113,7 @@ class MatchList extends Component {
           );
         }}
         onChat={async () => {
-          let request = await this.props.postRequest(
+          await this.props.postRequest(
             this.props.navigation.state.routeName,
             this.props.list[this.state.currentIndex].userinfo.id
           );
@@ -125,12 +125,15 @@ class MatchList extends Component {
             EventTracker.events[category].request,
             EventTracker.category[category]
           );
-          NavigationService.navigate("Messages", {
-            state: this.props.navigation.state.routeName,
-            requestId: request.id,
-            userinfo: this.props.list[this.state.currentIndex].userinfo,
-            state: this.props.navigation.state.routeName
-          });
+          this.props.toggleModal(
+            I18n.t("sent.title"),
+            I18n.t("sent.message").replace(
+              "[name]",
+              this.props.list[this.state.currentIndex].userinfo.username
+            ),
+            require("../../assets/img/send.png")
+          );
+          this.skipProfile();
         }}
         onFavorite={() => false}
       />
@@ -144,7 +147,10 @@ const mapStateToProps = ({ matches }) => ({
 });
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ fetchMatches, postRequest }, dispatch);
+  return bindActionCreators(
+    { fetchMatches, postRequest, toggleModal },
+    dispatch
+  );
 }
 
 export default connect(

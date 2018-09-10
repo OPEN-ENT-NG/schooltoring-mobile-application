@@ -32,8 +32,10 @@ class Messages extends Component {
       message: ""
     };
 
-    if (!props.list.hasOwnProperty(props.navigation.getParam("requestId"))) {
-      props.fetchMessages(props.navigation.getParam("requestId"));
+    if (
+      !props.list.hasOwnProperty(props.navigation.getParam("conversationId"))
+    ) {
+      props.fetchMessages(props.navigation.getParam("conversationId"));
     }
 
     this.loadMore = this.loadMore.bind(this);
@@ -42,26 +44,16 @@ class Messages extends Component {
   loadMore() {
     this.setState({ page: this.state.page + 1 }, () => {
       this.props.fetchMessages(
-        this.props.navigation.getParam("requestId"),
+        this.props.navigation.getParam("conversationId"),
         this.state.page
       );
     });
   }
 
-  getColors() {
-    return this.props.navigation.getParam("state").toUpperCase() === "WEAKNESS"
-      ? { primary: COLORS.PRIMARY_EXTRA_LIGHT, secondary: COLORS.PRIMARY_LIGTH }
-      : {
-          primary: COLORS.SECONDARY_EXTRA_LIGHT,
-          secondary: COLORS.SECONDARY_LIGHT
-        };
-  }
-
   getOwnerColor(ownerId) {
-    let colors = this.getColors();
     return ownerId === this.props.userinfo.userId
-      ? colors.primary
-      : colors.secondary;
+      ? COLORS.PRIMARY_EXTRA_LIGHT
+      : COLORS.PRIMARY_LIGTH;
   }
 
   getOwnerAvatar(ownerId) {
@@ -92,10 +84,10 @@ class Messages extends Component {
   render() {
     if (
       (this.props.loading &&
-        !this.props.list[this.props.navigation.getParam("requestId")]) ||
+        !this.props.list[this.props.navigation.getParam("conversationId")]) ||
       this.props.error
     ) {
-      return <Loader color={this.getColors().primary} />;
+      return <Loader color={COLORS.PRIMARY} />;
     }
 
     const view = (
@@ -110,9 +102,11 @@ class Messages extends Component {
             flex: 1
           }}
           inverted={true}
-          data={this.props.list[this.props.navigation.getParam("requestId")]}
+          data={
+            this.props.list[this.props.navigation.getParam("conversationId")]
+          }
           extraData={
-            this.props.list[this.props.navigation.getParam("requestId")]
+            this.props.list[this.props.navigation.getParam("conversationId")]
           }
           keyExtractor={item => item.date}
           renderItem={({ item }) => (
@@ -127,7 +121,7 @@ class Messages extends Component {
           onEndReachedThreshold={0.2}
           ListFooterComponent={() => {
             return this.props.endReached ? null : (
-              <Loader color={this.getColors().primary} />
+              <Loader color={COLORS.PRIMARY} />
             );
           }}
         />
@@ -146,7 +140,7 @@ class Messages extends Component {
                 if (!this.state.message) return;
                 this.setState({ message: "" });
                 this.props.postMessage(
-                  this.props.navigation.getParam("requestId"),
+                  this.props.navigation.getParam("conversationId"),
                   { text: this.state.message }
                 );
                 let newMessage = {
@@ -157,7 +151,7 @@ class Messages extends Component {
                 store.dispatch({
                   type: ConversationAction.NEW_MESSAGE,
                   message: newMessage,
-                  request: this.props.navigation.getParam("requestId")
+                  request: this.props.navigation.getParam("conversationId")
                 });
               }}
             >

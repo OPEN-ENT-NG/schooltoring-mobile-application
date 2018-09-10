@@ -14,14 +14,14 @@ async function getConversations() {
   }
 }
 
-async function getMessages(requestId, page) {
+async function getMessages(conversationId, page) {
   let pageParameter = page ? `?page=${page}` : "";
   try {
     const request = {
       method: "GET",
       url: `${
         global.config.auth.endpoint
-      }/schooltoring/conversation/${requestId}/messages${pageParameter}`
+      }/schooltoring/conversation/${conversationId}/messages${pageParameter}`
     };
     const { data } = await axios(request);
     return data;
@@ -30,13 +30,13 @@ async function getMessages(requestId, page) {
   }
 }
 
-async function postMessage(requestId, message) {
+async function postMessage(conversationId, message) {
   try {
     const request = {
       method: "POST",
       url: `${
         global.config.auth.endpoint
-      }/schooltoring/conversation/${requestId}/message`,
+      }/schooltoring/conversation/${conversationId}/message`,
       data: message
     };
     await axios(request);

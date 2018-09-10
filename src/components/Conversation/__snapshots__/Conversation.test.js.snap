@@ -63,7 +63,7 @@ exports[`Render Conversation should render without crashing 1`] = `
       >
         <Icon
           allowFontScaling={false}
-          color="#e91e63"
+          color="#17b6b0"
           name="chat"
           size={12}
           style={

@@ -10,10 +10,6 @@ import { COLORS } from "../../styles/common";
 
 import Avatar from "../Avatar/Avatar";
 
-const getColor = state => {
-  return state === "STRENGTH" ? COLORS.SECONDARY : COLORS.PRIMARY;
-};
-
 const Conversation = props => {
   return (
     <Touchable onPress={props.onPress}>
@@ -30,11 +26,7 @@ const Conversation = props => {
           </Text>
 
           <View style={styles.message}>
-            <Icon
-              name="chat"
-              color={getColor(props.state)}
-              style={styles.icon}
-            />
+            <Icon name="chat" color={COLORS.PRIMARY} style={styles.icon} />
             <Text style={styles.text} numberOfLines={1} id="message-field">
               {props.message}
             </Text>
@@ -50,7 +42,6 @@ const Conversation = props => {
 };
 
 Conversation.propTypes = {
-  state: PropTypes.string.isRequired,
   userinfo: PropTypes.shape({
     username: PropTypes.string.isRequired,
     avatar: PropTypes.string.isRequired
