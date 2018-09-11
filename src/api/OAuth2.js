@@ -4,6 +4,8 @@ import Base64 from "base-64";
 import firebase from "react-native-firebase";
 import EventTracker from "./EventTracker";
 
+const accessTokenTimeout = null;
+
 async function getAuth(grantType, authParams) {
   try {
     const body =
@@ -43,13 +45,21 @@ async function getAccessToken(username, password, rememberMe) {
       `username=${username}&password=${password}`
     );
     setDefaultAuthorizationHeader(authData.token_type, authData.access_token);
-    await registerFCM();
+    registerFCM();
     if (rememberMe) {
       storeAuthenticationData(authData);
+      setReconnectTimer(authData.expires_in);
     }
   } catch (err) {
     throw err;
   }
+}
+
+function setReconnectTimer(tokenTimeout) {
+  accessTokenTimeout = setTimeout(async () => {
+    deleteFCM();
+    await reconnectUser();
+  }, (tokenTimeout - 1) * 1000);
 }
 
 async function reconnectUser() {
@@ -63,8 +73,9 @@ async function reconnectUser() {
       refreshData.token_type,
       refreshData.access_token
     );
-    await registerFCM();
+    registerFCM();
     storeAuthenticationData(refreshData);
+    setReconnectTimer(refreshData.expires_in);
   } catch (err) {
     throw err;
   }
@@ -104,7 +115,8 @@ async function storeAuthenticationData(authData) {
 
 async function disconnectUser() {
   try {
-    await deleteFCM();
+    clearTimeout(accessTokenTimeout);
+    deleteFCM();
     AsyncStorage.removeItem("auth@token");
     EventTracker.trackEvent(
       EventTracker.events.AUTHENTICATION.disconnected,
