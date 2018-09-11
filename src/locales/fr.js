@@ -9,10 +9,15 @@ export default {
   badges: "Badges",
   favorites: "Favoris",
   notifications: "Notifications",
-  sent: {
+  helpRequestSent: {
     title: "Demande d'aide envoyée !",
     message:
-      "Si [name] accepte votre demande, il pourra prendre contact avec toi. D'ici là, tu peux continuer ta recherche.\nBon courage !"
+      "Si [name] accepte ta demande, il pourra prendre contact avec toi. D'ici là, tu peux continuer ta recherche.\nBon courage !"
+  },
+  helpOfferSent: {
+    title: "Proposition d'aide envoyée !",
+    message:
+      "Si [name] accepte ta proposition, il pourra prendre contact avec toi. D'ici là, tu peux continuer ta recherche.\nBon courage !"
   },
   locale: {
     monthsShort: [

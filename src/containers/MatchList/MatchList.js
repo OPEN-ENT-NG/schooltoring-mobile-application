@@ -125,9 +125,13 @@ class MatchList extends Component {
             EventTracker.events[category].request,
             EventTracker.category[category]
           );
+          let state =
+            this.props.navigation.state.routeName.toUpperCase() === "STRENGTH"
+              ? "helpRequestSent"
+              : "helpOfferSent";
           this.props.toggleModal(
-            I18n.t("sent.title"),
-            I18n.t("sent.message").replace(
+            I18n.t(`${state}.title`),
+            I18n.t(`${state}.message`).replace(
               "[name]",
               this.props.list[this.state.currentIndex].userinfo.username
             ),
