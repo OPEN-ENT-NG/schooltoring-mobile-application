@@ -38,7 +38,8 @@ async function putRequest(requestId, status) {
         global.config.auth.endpoint
       }/schooltoring/request/${requestId}/${status.toUpperCase()}`
     };
-    await axios(request);
+    const { data } = await axios(request);
+    return data;
   } catch (err) {
     throw err;
   }

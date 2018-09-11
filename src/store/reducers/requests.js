@@ -34,7 +34,7 @@ export default function reducer(state = defaultState, action) {
     case RequestActions.REQUEST_ANSWERED: {
       return {
         ...state,
-        list: state.list.filter(item => item.id != action.conversationId)
+        list: state.list.filter(item => item.id != action.requestId)
       };
     }
     default:

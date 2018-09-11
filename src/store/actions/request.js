@@ -35,22 +35,15 @@ export function postRequest(state, userId) {
   };
 }
 
-export function acceptRequest(requestId) {
-  return updateRequest(requestId, "ACCEPT");
-}
-
-export function refuseRequest(requestId) {
-  return updateRequest(requestId, "CANCEL");
-}
-
-function updateRequest(requestId, status) {
+export function updateRequest(requestId, status) {
   return async dispatch => {
     try {
-      await Request.putRequest(requestId, status);
+      const data = await Request.putRequest(requestId, status);
       dispatch({
         type: actions.REQUEST_ANSWERED,
         requestId
       });
+      return data;
     } catch (err) {
       dispatch({
         type: actions.REQUESTS_ERROR

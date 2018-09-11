@@ -2,13 +2,9 @@ import React, { Component } from "react";
 import { FlatList } from "react-native";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
-import { createStackNavigator, NavigationActions } from "react-navigation";
+import { createStackNavigator } from "react-navigation";
 
-import {
-  fetchRequests,
-  acceptRequest,
-  refuseRequest
-} from "../../store/actions/request";
+import { fetchRequests, updateRequest } from "../../store/actions/request";
 
 import NavigationService from "../../api/Navigation";
 import RequestBadge from "../../components/RequestBadge/RequestBadge";
@@ -54,7 +50,7 @@ class RequestsComponent extends Component {
             loading={this.state[item.id]}
             onAccept={async () => {
               this.toggleLoading(item.id);
-              await this.props.acceptRequest(item.id);
+              let data = await this.props.updateRequest(item.id, "ACCEPT");
               this.toggleLoading(item.id);
               let event =
                 item.state.toUpperCase() === "STRENGTH"
@@ -62,16 +58,16 @@ class RequestsComponent extends Component {
                   : EventTracker.events.REQUEST.OFFER_ACCEPT;
               EventTracker.trackEvent(event, EventTracker.category.REQUEST);
               NavigationService.navigate("Messages", {
-                conversationId: item.id,
-                userinfo: item.userinfo
+                conversationId: data.id,
+                userinfo: data.student
               });
             }}
             onRefuse={async () => {
-              this.toggleLoading(request.id);
-              await this.props.refuseRequest(request.id);
-              this.toggleLoading(request.id);
+              this.toggleLoading(item.id);
+              await this.props.updateRequest(item.id, "CANCEL");
+              this.toggleLoading(item.id);
               let event =
-                request.state.toUpperCase() === "STRENGTH"
+                item.state.toUpperCase() === "STRENGTH"
                   ? EventTracker.events.REQUEST.SEEK_REFUSE
                   : EventTracker.events.REQUEST.OFFER_REFUSE;
               EventTracker.trackEvent(event, EventTracker.category.REQUEST);
@@ -91,10 +87,7 @@ const mapStateToProps = ({ requests, user }) => ({
 });
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators(
-    { fetchRequests, acceptRequest, refuseRequest },
-    dispatch
-  );
+  return bindActionCreators({ fetchRequests, updateRequest }, dispatch);
 }
 
 const Requests = connect(
