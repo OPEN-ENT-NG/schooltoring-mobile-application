@@ -3,7 +3,9 @@ import { NavigationActions, StackActions } from "react-navigation";
 const navigator = {};
 
 function register(navigatorName, navigatorRef) {
-  navigator[navigatorName] = navigatorRef;
+  if (navigatorRef) {
+    navigator[navigatorName] = navigatorRef;
+  }
 }
 
 function navigate(routeName, params) {
