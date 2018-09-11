@@ -151,7 +151,9 @@ class Messages extends Component {
                 store.dispatch({
                   type: ConversationAction.NEW_MESSAGE,
                   message: newMessage,
-                  request: this.props.navigation.getParam("conversationId")
+                  conversationId: this.props.navigation.getParam(
+                    "conversationId"
+                  )
                 });
               }}
             >

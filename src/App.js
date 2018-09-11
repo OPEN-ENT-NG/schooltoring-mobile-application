@@ -13,6 +13,7 @@ import Login from "./containers/Login/Login";
 import Setup from "./containers/Setup/Setup";
 import Error from "./components/Error/Error";
 import store from "./store/store";
+import NavigationService from "./api/Navigation";
 
 import { COLORS } from "./styles/common";
 
@@ -59,6 +60,18 @@ export class App extends Component {
             text: notification._body
           },
           request: notification._data.request
+        });
+      });
+    this.notificationOpenedListener = firebase
+      .notifications()
+      .onNotificationOpened(notification => {
+        data = notification.notification._data;
+        NavigationService.navigate("Messages", {
+          conversationId: data.request,
+          userinfo: {
+            username: data.username,
+            avatar: data.avatar
+          }
         });
       });
   }

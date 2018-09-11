@@ -62,10 +62,8 @@ class RequestsComponent extends Component {
                   : EventTracker.events.REQUEST.OFFER_ACCEPT;
               EventTracker.trackEvent(event, EventTracker.category.REQUEST);
               NavigationService.navigate("Messages", {
-                state: item.state,
-                requestId: item.id,
-                userinfo: item.userinfo,
-                state: item.state
+                conversationId: item.id,
+                userinfo: item.userinfo
               });
             }}
             onRefuse={async () => {
