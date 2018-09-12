@@ -2,19 +2,17 @@ import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    flexDirection: "column"
+    width: "100%",
+    height: "100%"
   },
   imageCritical: {
-    width: 280,
-    height: 301,
+    height: "100%",
     position: "absolute",
     bottom: 0,
     left: -30
   },
   imageUncritical: {
-    width: 262,
-    height: 301,
+    height: "100%",
     position: "absolute",
     bottom: 0,
     right: -30

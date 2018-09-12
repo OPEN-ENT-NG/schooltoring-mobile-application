@@ -43,13 +43,13 @@ export default {
     title: "Mes points forts",
     header: "Ils peuvent t'aider",
     matchError:
-      "Oups, il semblerait que personne ne soit en mesure de t'aider... pour  le moment ! Reviens dans quelques jours."
+      "Oups, il semblerait que personne ne soit en mesure de t'aider... pour  le moment ! Reviens plus tard."
   },
   weakness: {
     title: "Mes points faibles",
     header: "Tu peux les aider",
     matchError:
-      "Oups, il semblerait que personne n'ait besoin de ton aide... pour  le moment ! Reviens dans quelques jours."
+      "Oups, il semblerait que personne n'ait besoin de ton aide... pour  le moment ! Reviens plus tard."
   },
   availability: {
     title: "Mes dispos",
@@ -68,9 +68,15 @@ export default {
   profile: {
     title: "Profil"
   },
-  conversations: "Conversations",
-  requests: "Requêtes",
-  conversation: {
-    placeholder: "Saisissez un message"
+  requests: {
+    title: "Requêtes",
+    error:
+      "Aucune demande ou proposition d'aide pour le moment, mais repasse plus tard."
+  },
+  conversations: {
+    title: "Conversations",
+    placeholder: "Saisissez un message",
+    error:
+      "Pas de conversation ouverte pour le moment. Mais ça ne saurait tarder..."
   }
 };

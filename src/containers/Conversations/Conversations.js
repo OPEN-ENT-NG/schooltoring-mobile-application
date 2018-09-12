@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { FlatList } from "react-native";
+import { ScrollView, Text, RefreshControl, View } from "react-native";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 
@@ -10,6 +10,7 @@ import fr from "moment/locale/fr";
 import I18n from "react-native-i18n";
 import Conversation from "../../components/Conversation/Conversation";
 import Loader from "../../components/Loader/Loader";
+import Error from "../../components/Error/Error";
 
 class Conversations extends Component {
   constructor(props) {
@@ -44,32 +45,79 @@ class Conversations extends Component {
   };
 
   render() {
+    const refreshControl = (
+      <RefreshControl
+        onRefresh={this.props.fetchConversations}
+        refreshing={this.props.loading}
+      />
+    );
+
+    const errorMessage = (
+      <View
+        style={{
+          position: "absolute",
+          bottom: 0,
+          width: "100%",
+          height: "100%"
+        }}
+      >
+        <Error
+          message={
+            <Text
+              style={{
+                width: "80%",
+                alignSelf: "center",
+                fontSize: 20,
+                marginVertical: 100
+              }}
+            >
+              {I18n.t(
+                `${this.props.navigation.state.routeName.toLowerCase()}.error`
+              )}
+            </Text>
+          }
+          critical={false}
+        />
+      </View>
+    );
+
     if (this.props.loading || this.props.error) {
       return <Loader />;
     }
 
     return (
-      <FlatList
-        style={{ flex: 1 }}
-        onRefresh={this.props.fetchConversations}
-        refreshing={this.props.loading}
-        keyExtractor={item => item.id.toString()}
-        data={this.props.list}
-        renderItem={({ item }) => (
-          <Conversation
-            state={item.state}
-            userinfo={item.userinfo}
-            date={this.getDate(item.date)}
-            message={item.message}
-            onPress={() =>
-              this.props.navigation.navigate("Messages", {
-                conversationId: item.id,
-                userinfo: item.userinfo
-              })
-            }
-          />
-        )}
-      />
+      <View
+        style={{
+          height: "100%",
+          width: "100%"
+        }}
+      >
+        {this.props.list.length === 0 && errorMessage}
+        <ScrollView
+          style={{
+            height: "100%",
+            width: "100%",
+            backgroundColor: "transparent"
+          }}
+          refreshControl={refreshControl}
+        >
+          {this.props.list.map(item => (
+            <Conversation
+              key={item.id.toString()}
+              state={item.state}
+              userinfo={item.userinfo}
+              date={this.getDate(item.date)}
+              message={item.message}
+              onPress={() =>
+                this.props.navigation.navigate("Messages", {
+                  conversationId: item.id,
+                  userinfo: item.userinfo
+                })
+              }
+            />
+          ))}
+        </ScrollView>
+      </View>
     );
   }
 }

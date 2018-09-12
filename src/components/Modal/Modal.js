@@ -3,7 +3,7 @@ import { Image, View, Text } from "react-native";
 import Proptypes from "prop-types";
 
 import SecondaryButton from "../SecondaryButton/SecondaryButton";
-import styles from "./style";
+import styles from "./styles";
 
 const Modal = props => (
   <View style={styles.container}>

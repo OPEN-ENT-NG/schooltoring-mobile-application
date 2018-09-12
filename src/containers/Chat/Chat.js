@@ -24,7 +24,9 @@ export default createStackNavigator(
               <Header
                 noBack={true}
                 navigation={navigation}
-                title={I18n.t(navigation.state.routeName.toLowerCase())}
+                title={I18n.t(
+                  `${navigation.state.routeName.toLowerCase()}.title`
+                )}
               />
             );
           }

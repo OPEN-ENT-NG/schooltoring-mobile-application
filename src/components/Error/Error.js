@@ -7,22 +7,28 @@ import styles from "./styles";
 const Error = props => {
   return (
     <View style={styles.container}>
-      {typeof props.message === "string" ? (
-        <Text>{props.message}</Text>
-      ) : (
-        props.message
-      )}
-      {props.critical ? (
-        <Image
-          source={require("../../assets/img/gars1b.png")}
-          style={styles.imageCritical}
-        />
-      ) : (
-        <Image
-          source={require("../../assets/img/fille1.png")}
-          style={styles.imageUncritical}
-        />
-      )}
+      <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+        {typeof props.message === "string" ? (
+          <Text>{props.message}</Text>
+        ) : (
+          props.message
+        )}
+      </View>
+      <View style={{ flex: 1 }}>
+        {props.critical ? (
+          <Image
+            source={require("../../assets/img/gars1b.png")}
+            resizeMode="contain"
+            style={styles.imageCritical}
+          />
+        ) : (
+          <Image
+            source={require("../../assets/img/fille1.png")}
+            resizeMode="contain"
+            style={styles.imageUncritical}
+          />
+        )}
+      </View>
     </View>
   );
 };

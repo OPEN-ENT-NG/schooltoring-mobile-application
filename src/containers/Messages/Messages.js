@@ -127,7 +127,7 @@ class Messages extends Component {
         />
         <View style={styles.inputContainer}>
           <TextInput
-            placeholder={I18n.t("conversation.placeholder")}
+            placeholder={I18n.t("conversations.placeholder")}
             style={styles.input}
             onChangeText={message => this.setState({ message })}
             value={this.state.message}
