@@ -59,7 +59,7 @@ export class App extends Component {
             date: notification._data.date,
             text: notification._body
           },
-          request: notification._data.request
+          conversationId: notification._data.request
         });
       });
     this.notificationOpenedListener = firebase
