@@ -38,7 +38,7 @@ async function getAuth(grantType, authParams) {
   }
 }
 
-async function getAccessToken(username, password, rememberMe) {
+async function getAccessToken(username, password) {
   try {
     const authData = await getAuth(
       "password",
@@ -46,10 +46,8 @@ async function getAccessToken(username, password, rememberMe) {
     );
     setDefaultAuthorizationHeader(authData.token_type, authData.access_token);
     registerFCM();
-    if (rememberMe) {
-      storeAuthenticationData(authData);
-      setReconnectTimer(authData.expires_in);
-    }
+    storeAuthenticationData(authData);
+    setReconnectTimer(authData.expires_in);
   } catch (err) {
     throw err;
   }

@@ -5,7 +5,6 @@ import {
   Text,
   Button,
   ActivityIndicator,
-  Switch,
   Keyboard
 } from "react-native";
 import { connect } from "react-redux";
@@ -20,8 +19,7 @@ import { COLORS } from "../../styles/common";
 class Login extends Component {
   state = {
     username: "",
-    password: "",
-    rememberMe: false
+    password: ""
   };
 
   constructor(props) {
@@ -34,11 +32,7 @@ class Login extends Component {
   login(e) {
     e.preventDefault();
     Keyboard.dismiss();
-    this.props.logUser(
-      this.state.username,
-      this.state.password,
-      this.state.rememberMe
-    );
+    this.props.logUser(this.state.username, this.state.password);
   }
 
   getError() {
@@ -61,39 +55,32 @@ class Login extends Component {
           />
           <Text style={styles.title}>Schooltoring</Text>
         </View>
-        <View>
-          <View style={styles.formContainer}>
-            {this.getError()}
-            <InputText
-              placeholder="Nom d'utilisateur"
-              value={this.state.username}
-              onChangeText={username => this.setState({ username })}
-            />
-            <InputText
-              secureTextEntry={true}
-              placeholder="Mot de passe"
-              value={this.state.password}
-              onChangeText={password => this.setState({ password })}
-            />
-            <View style={styles.remember}>
-              <Switch
-                style={styles.rememberSwitch}
-                value={this.state.rememberMe}
-                onValueChange={rememberMe => this.setState({ rememberMe })}
-              />
-              <Text style={{ marginTop: 5 }}>Se souvenir de moi</Text>
-            </View>
-            {this.props.loading ? (
+        <View style={styles.formContainer}>
+          {this.getError()}
+          <InputText
+            placeholder="Nom d'utilisateur"
+            value={this.state.username}
+            onChangeText={username => this.setState({ username })}
+          />
+          <InputText
+            secureTextEntry={true}
+            placeholder="Mot de passe"
+            value={this.state.password}
+            onChangeText={password => this.setState({ password })}
+          />
+          {this.props.loading ? (
+            <View style={{ marginTop: 10 }}>
               <ActivityIndicator size="large" color={COLORS.PRIMARY} />
-            ) : (
+            </View>
+          ) : (
+            <View style={{ marginTop: 10 }}>
               <Button
-                style={styles.submit}
                 color={COLORS.PRIMARY}
                 title="Se connecter"
                 onPress={this.login}
               />
-            )}
-          </View>
+            </View>
+          )}
         </View>
         <View style={styles.illustrationContainer}>
           <View style={[styles.illustrationPart, styles.centered]}>

@@ -12,12 +12,12 @@ export default {
   helpRequestSent: {
     title: "Demande d'aide envoyée !",
     message:
-      "Si [name] accepte ta demande, il pourra prendre contact avec toi. D'ici là, tu peux continuer ta recherche.\nBon courage !"
+      "Si [name] accepte ta demande, vous pourrez bientôt communiquer. D'ici là, tu peux continuer ta recherche.\nBon courage !"
   },
   helpOfferSent: {
     title: "Proposition d'aide envoyée !",
     message:
-      "Si [name] accepte ta proposition, il pourra prendre contact avec toi. D'ici là, tu peux continuer ta recherche.\nBon courage !"
+      "Si [name] accepte ta proposition, vous pourrez bientôt communiquer. D'ici là, tu peux continuer ta recherche.\nBon courage !"
   },
   locale: {
     monthsShort: [

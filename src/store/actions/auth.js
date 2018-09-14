@@ -4,13 +4,13 @@ import UserInfos from "../../api/UserInfos";
 import Subjects from "../../api/Subjects";
 import Profile from "../../api/Profile";
 
-export function login(username, password, rememberMe) {
+export function login(username, password) {
   return async dispatch => {
     dispatch({
       type: actions.FORM_LOADING
     });
     try {
-      await OAuth2.getAccessToken(username, password, rememberMe);
+      await OAuth2.getAccessToken(username, password);
       let userinfo = await UserInfos.getUser();
       if (userinfo.type.toUpperCase() !== "STUDENT") {
         dispatch({ type: actions.FORBIDDEN });

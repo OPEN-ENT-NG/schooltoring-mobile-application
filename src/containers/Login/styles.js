@@ -1,4 +1,4 @@
-import { StyleSheet, Platform } from "react-native";
+import { StyleSheet } from "react-native";
 
 import { COLORS } from "../../styles/common";
 
@@ -51,16 +51,5 @@ export default StyleSheet.create({
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center"
-  },
-  remember: {
-    marginBottom: 15,
-    flexDirection: "row"
-  },
-  rememberSwitch: {
-    ...Platform.select({
-      ios: {
-        marginRight: 10
-      }
-    })
   }
 });
