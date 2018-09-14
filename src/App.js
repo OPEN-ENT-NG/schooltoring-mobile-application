@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Text, View, StyleSheet } from "react-native";
+import { Text, View, StyleSheet, AppState, Platform } from "react-native";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import firebase from "../node_modules/react-native-firebase/dist/index";
@@ -49,9 +49,25 @@ export class App extends Component {
   }
 
   registerNotificationListener() {
+    if (Platform.OS === "android" && Platform.Version >= 26) {
+      const channel = new firebase.notifications.Android.Channel(
+        "test-channel",
+        "Test Channel",
+        firebase.notifications.Android.Importance.Max
+      ).setDescription("My apps test channel");
+
+      firebase.notifications().android.createChannel(channel);
+    }
+
     this.notificationListener = firebase
       .notifications()
       .onNotification(notification => {
+        notification.android.setChannelId("test-channel");
+
+        if (AppState.currentState === "active") {
+          firebase.notifications().displayNotification(notification);
+        }
+
         store.dispatch({
           type: ConversationAction.NEW_MESSAGE,
           message: {
@@ -62,6 +78,7 @@ export class App extends Component {
           conversationId: notification._data.request
         });
       });
+
     this.notificationOpenedListener = firebase
       .notifications()
       .onNotificationOpened(notification => {
