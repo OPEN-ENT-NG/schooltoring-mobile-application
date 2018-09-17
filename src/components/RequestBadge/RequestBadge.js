@@ -70,9 +70,8 @@ RequestBadge.propTypes = {
   }).isRequired,
   subjects: PropTypes.arrayOf(
     PropTypes.shape({
-      onPress: PropTypes.func,
-      color: PropTypes.string,
-      title: PropTypes.string.isRequired
+      subjectId: PropTypes.string.isRequired,
+      subjectLabel: PropTypes.string.isRequired
     })
   ).isRequired,
   onAccept: PropTypes.func.isRequired,
