@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { ScrollView, View, RefreshControl, Text } from "react-native";
+import { ScrollView, View, RefreshControl, Text, AppState } from "react-native";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 import { createStackNavigator } from "react-navigation";
@@ -19,11 +19,31 @@ class RequestsComponent extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {};
+    this.state = {
+      appState: "active"
+    };
 
     this.toggleLoading = this.toggleLoading.bind(this);
     this.props.fetchRequests();
   }
+
+  componentDidMount() {
+    AppState.addEventListener("change", this.handleAppStateChange);
+  }
+
+  componentWillUnmount() {
+    AppState.removeEventListener("change", this.handleAppStateChange);
+  }
+
+  handleAppStateChange = nextAppState => {
+    if (
+      this.state.appState.match(/inactive|background/) &&
+      nextAppState === "active"
+    ) {
+      this.props.fetchRequests();
+    }
+    this.setState({ appState: nextAppState });
+  };
 
   toggleLoading(requestId) {
     let newState = { ...this.state };

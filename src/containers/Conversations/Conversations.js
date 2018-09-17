@@ -1,5 +1,12 @@
 import React, { Component } from "react";
-import { ScrollView, Text, RefreshControl, View } from "react-native";
+import {
+  ScrollView,
+  Text,
+  RefreshControl,
+  View,
+  Vibration,
+  AppState
+} from "react-native";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 
@@ -16,8 +23,30 @@ class Conversations extends Component {
   constructor(props) {
     super(props);
 
+    this.state = {
+      appState: "active"
+    };
+
     this.props.fetchConversations();
   }
+
+  componentDidMount() {
+    AppState.addEventListener("change", this.handleAppStateChange);
+  }
+
+  componentWillUnmount() {
+    AppState.removeEventListener("change", this.handleAppStateChange);
+  }
+
+  handleAppStateChange = nextAppState => {
+    if (
+      this.state.appState.match(/inactive|background/) &&
+      nextAppState === "active"
+    ) {
+      this.props.fetchConversations();
+    }
+    this.setState({ appState: nextAppState });
+  };
 
   getDate = timestamp => {
     moment.locale(fr, I18n.t("locale"));
