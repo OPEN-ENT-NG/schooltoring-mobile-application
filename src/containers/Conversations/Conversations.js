@@ -4,7 +4,6 @@ import {
   Text,
   RefreshControl,
   View,
-  Vibration,
   AppState
 } from "react-native";
 import { bindActionCreators } from "redux";
@@ -49,9 +48,11 @@ class Conversations extends Component {
   };
 
   getDate = timestamp => {
-    moment.locale(fr, I18n.t("locale"));
+    moment.locale("fr");
+    moment.updateLocale("fr", I18n.t("locale"));
     let now = moment();
-    let date = moment(timestamp);
+    let date = moment.utc(timestamp);
+    date.local();
 
     if (date.isSame(now, "day")) {
       return date.format("HH:mm");
