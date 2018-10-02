@@ -13,14 +13,14 @@ async function getConversations() {
   }
 }
 
-async function getMessages(conversationId, page) {
-  let pageParameter = page ? `?page=${page}` : "";
+async function getMessages(conversationId, lastMessage) {
+  let lastMessageParameter = lastMessage ? `?lastMessage=${lastMessage}` : "";
   try {
     const request = {
       method: "GET",
       url: `${
         global.config.auth.endpoint
-      }/schooltoring/conversation/${conversationId}/messages${pageParameter}`
+      }/schooltoring/conversation/${conversationId}/messages${lastMessageParameter}`
     };
     const { data } = await axios(request);
     return data;

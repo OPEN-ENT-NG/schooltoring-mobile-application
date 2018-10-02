@@ -4,7 +4,7 @@ const defaultState = {
   loading_messages: false,
   error_conversations: false,
   error_messages: false,
-  list: [],
+  conversations: [],
   messages: {}
 };
 
@@ -27,7 +27,7 @@ export default function reducer(state = defaultState, action) {
     case ConversationAction.FETCH_CONVERSATIONS: {
       return {
         ...state,
-        list: action.list,
+        conversations: action.conversations,
         loading_conversations: false,
         error_conversations: false
       };
@@ -42,10 +42,14 @@ export default function reducer(state = defaultState, action) {
         error_messages: false,
         endReached: action.endReached
       };
-      newState.messages[action.conversationId] =
-        action.conversationId in newState.messages
-          ? [...newState.messages[action.conversationId], ...action.list]
-          : action.list;
+      if (action.reset || !(action.conversationId in newState.messages)) {
+        newState.messages[action.conversationId] = action.messages;
+      } else {
+        newState.messages[action.conversationId] = [
+          ...newState.messages[action.conversationId],
+          ...action.messages
+        ];
+      }
       return newState;
     }
     case ConversationAction.CONVERSATIONS_ERROR: {
@@ -71,7 +75,13 @@ export default function reducer(state = defaultState, action) {
       };
       newState.messages[action.conversationId] =
         action.conversationId in newState.messages
-          ? [action.message, ...newState.messages[action.conversationId]]
+          ? newState.messages[action.conversationId].find(
+              message =>
+                message.date === action.message.date &&
+                message.owner === action.message.owner
+            )
+            ? newState.messages[action.conversationId]
+            : [action.message, ...newState.messages[action.conversationId]]
           : [action.message];
       return newState;
     }

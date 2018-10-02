@@ -149,7 +149,7 @@ class Conversations extends Component {
 
 const mapStateToProps = ({ conversations }) => ({
   loading: conversations.loading_conversations,
-  list: conversations.list,
+  list: conversations.conversations,
   error: conversations.error_conversations
 });
 

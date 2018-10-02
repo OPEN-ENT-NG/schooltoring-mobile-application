@@ -5,7 +5,8 @@ import {
   View,
   KeyboardAvoidingView,
   Platform,
-  TouchableWithoutFeedback
+  TouchableWithoutFeedback,
+  AppState
 } from "react-native";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
@@ -28,27 +29,33 @@ class Messages extends Component {
     super(props);
 
     this.state = {
-      page: 0,
-      message: ""
+      message: "",
+      appState: "active",
+      conversationId: this.props.navigation.getParam("conversationId")
     };
 
-    if (
-      !props.list.hasOwnProperty(props.navigation.getParam("conversationId"))
-    ) {
-      props.fetchMessages(props.navigation.getParam("conversationId"));
+    if (!this.props.list) {
+      this.props.fetchMessages(this.state.conversationId);
     }
-
-    this.loadMore = this.loadMore.bind(this);
   }
 
-  loadMore() {
-    this.setState({ page: this.state.page + 1 }, () => {
-      this.props.fetchMessages(
-        this.props.navigation.getParam("conversationId"),
-        this.state.page
-      );
-    });
+  componentDidMount() {
+    AppState.addEventListener("change", this.handleAppStateChange);
   }
+
+  componentWillUnmount() {
+    AppState.removeEventListener("change", this.handleAppStateChange);
+  }
+
+  handleAppStateChange = nextAppState => {
+    if (
+      this.state.appState.match(/inactive|background/) &&
+      nextAppState === "active"
+    ) {
+      this.props.fetchMessages(this.state.conversationId);
+    }
+    this.setState({ appState: nextAppState });
+  };
 
   getOwnerColor(ownerId) {
     return ownerId === this.props.userinfo.userId
@@ -82,11 +89,7 @@ class Messages extends Component {
   }
 
   render() {
-    if (
-      (this.props.loading &&
-        !this.props.list[this.props.navigation.getParam("conversationId")]) ||
-      this.props.error
-    ) {
+    if ((this.props.loading && !this.props.list) || this.props.error) {
       return <Loader color={COLORS.PRIMARY} />;
     }
 
@@ -102,12 +105,8 @@ class Messages extends Component {
             flex: 1
           }}
           inverted={true}
-          data={
-            this.props.list[this.props.navigation.getParam("conversationId")]
-          }
-          extraData={
-            this.props.list[this.props.navigation.getParam("conversationId")]
-          }
+          data={this.props.list}
+          extraData={this.props.list}
           keyExtractor={item => item.date}
           renderItem={({ item }) => (
             <Message
@@ -117,7 +116,15 @@ class Messages extends Component {
               message={item.text}
             />
           )}
-          onEndReached={this.loadMore}
+          onEndReached={() => {
+            return (
+              this.props.endReached ||
+              this.props.fetchMessages(
+                this.state.conversationId,
+                this.props.list[this.props.list.length - 1].date
+              )
+            );
+          }}
           onEndReachedThreshold={0.2}
           ListFooterComponent={() => {
             return this.props.endReached ? null : (
@@ -139,10 +146,9 @@ class Messages extends Component {
               onPress={async () => {
                 if (!this.state.message) return;
                 this.setState({ message: "" });
-                this.props.postMessage(
-                  this.props.navigation.getParam("conversationId"),
-                  { text: this.state.message }
-                );
+                this.props.postMessage(this.state.conversationId, {
+                  text: this.state.message
+                });
                 let newMessage = {
                   text: this.state.message,
                   owner: this.props.userinfo.userId,
@@ -168,10 +174,10 @@ class Messages extends Component {
   }
 }
 
-const mapStateToProps = ({ conversations, user }) => {
+const mapStateToProps = ({ conversations, user }, { navigation }) => {
   return {
     loading: conversations.loading_messages,
-    list: conversations.messages,
+    list: conversations.messages[navigation.getParam("conversationId")],
     error: conversations.error_messages,
     endReached: conversations.endReached,
     userinfo: user.userinfo
