@@ -3,6 +3,8 @@ import OAuth2 from "../../api/OAuth2";
 import UserInfos from "../../api/UserInfos";
 import Subjects from "../../api/Subjects";
 import Profile from "../../api/Profile";
+import Favorite from "../../api/Favorite";
+import EventTracker from "../../api/EventTracker";
 
 export function login(username, password) {
   return async dispatch => {
@@ -18,7 +20,12 @@ export function login(username, password) {
       }
       let subjects = await Subjects.getSubjects(userinfo.structures[0]);
       let profile = await Profile.getProfile();
-      dispatch({ type: actions.LOGIN, userinfo, subjects, profile });
+      let favorite = await Favorite.getFavorite();
+      EventTracker.trackEvent(
+        EventTracker.events.AUTHENTICATION.connected,
+        EventTracker.category.AUTHENTICATION
+      );
+      dispatch({ type: actions.LOGIN, userinfo, subjects, profile, favorite });
     } catch (err) {
       dispatch({
         type: actions.LOGOUT,
@@ -36,6 +43,10 @@ export function logout() {
     });
     try {
       await OAuth2.disconnectUser();
+      EventTracker.trackEvent(
+        EventTracker.events.AUTHENTICATION.disconnected,
+        EventTracker.category.AUTHENTICATION
+      );
       dispatch({
         type: actions.LOGOUT
       });
@@ -64,7 +75,12 @@ export function fetchLogin() {
       }
       let subjects = await Subjects.getSubjects(userinfo.structures[0]);
       let profile = await Profile.getProfile();
-      dispatch({ type: actions.LOGIN, userinfo, subjects, profile });
+      let favorite = await Favorite.getFavorite();
+      EventTracker.trackEvent(
+        EventTracker.events.AUTHENTICATION.connected,
+        EventTracker.category.AUTHENTICATION
+      );
+      dispatch({ type: actions.LOGIN, userinfo, subjects, profile, favorite });
     } else {
       dispatch({
         type: actions.LOGOUT

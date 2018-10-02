@@ -15,19 +15,11 @@ const Error = props => {
         )}
       </View>
       <View style={{ flex: 1 }}>
-        {props.critical ? (
-          <Image
-            source={require("../../assets/img/gars1b.png")}
-            resizeMode="contain"
-            style={styles.imageCritical}
-          />
-        ) : (
-          <Image
-            source={require("../../assets/img/fille1.png")}
-            resizeMode="contain"
-            style={styles.imageUncritical}
-          />
-        )}
+        <Image
+          source={props.imgSrc}
+          resizeMode="contain"
+          style={styles[props.side]}
+        />
       </View>
     </View>
   );
@@ -35,7 +27,8 @@ const Error = props => {
 
 Error.propTypes = {
   message: PropTypes.any.isRequired,
-  critical: PropTypes.bool.isRequired
+  imgSrc: PropTypes.any.isRequired,
+  side: PropTypes.oneOf(["left", "right"])
 };
 
 export default Error;

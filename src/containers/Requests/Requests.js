@@ -5,14 +5,19 @@ import { connect } from "react-redux";
 import { createStackNavigator } from "react-navigation";
 
 import { fetchRequests, updateRequest } from "../../store/actions/request";
+import { addFavorite, deleteFavorite } from "../../store/actions/favorite";
+import { toggleModal } from "../../store/actions/modal";
 
 import NavigationService from "../../api/Navigation";
+import I18n from "../../api/I18n";
+import EventTracker from "../../api/EventTracker";
+
 import RequestBadge from "../../components/RequestBadge/RequestBadge";
+import SecondaryButton from "../../components/SecondaryButton/SecondaryButton";
 import Loader from "../../components/Loader/Loader";
 import Header from "../../components/Header/Header";
 import Error from "../../components/Error/Error";
-import EventTracker from "../../api/EventTracker";
-import I18n from "../../api/I18n";
+
 import { COLORS } from "../../styles/common";
 
 class RequestsComponent extends Component {
@@ -51,6 +56,50 @@ class RequestsComponent extends Component {
     this.setState(newState);
   }
 
+  isFavorite(userId) {
+    return this.props.favoris.some(fav => fav.id === userId);
+  }
+
+  toggleFavorite(user) {
+    if (this.isFavorite(user.id)) {
+      this.toggleModal(user);
+    } else {
+      this.props.addFavorite(user);
+    }
+  }
+
+  toggleModal(user) {
+    this.props.toggleModal({
+      title: I18n.t(`favorite.deleteTitle`),
+      text: I18n.t(`favorite.deleteMessage`).replace(
+        "[name]",
+        user.userinfo.username
+      ),
+      children: (
+        <View
+          style={{
+            flexDirection: "row",
+            justifyContent: "flex-end"
+          }}
+        >
+          <SecondaryButton
+            title={"ANNULER"}
+            onPress={() => {
+              this.props.toggleModal();
+            }}
+          />
+          <SecondaryButton
+            title={"SUPPRIMER"}
+            onPress={async () => {
+              this.props.toggleModal();
+              this.props.deleteFavorite(user.id);
+            }}
+          />
+        </View>
+      )
+    });
+  }
+
   render() {
     const refreshControl = (
       <RefreshControl
@@ -84,7 +133,8 @@ class RequestsComponent extends Component {
               )}
             </Text>
           }
-          critical={true}
+          imgSrc={require("../../assets/img/gars1b.png")}
+          side="left"
         />
       </View>
     );
@@ -115,7 +165,7 @@ class RequestsComponent extends Component {
               subjects={item.features}
               userinfo={item.userinfo}
               state={item.state}
-              loading={this.state[item.id]}
+              loading={!!this.state[item.id]}
               onAccept={async () => {
                 this.toggleLoading(item.id);
                 let data = await this.props.updateRequest(item.id, "ACCEPT");
@@ -140,6 +190,13 @@ class RequestsComponent extends Component {
                     : EventTracker.events.REQUEST.OFFER_REFUSE;
                 EventTracker.trackEvent(event, EventTracker.category.REQUEST);
               }}
+              isFavorite={this.isFavorite(item.userinfo.id)}
+              onFavorite={() =>
+                this.toggleFavorite({
+                  id: item.userinfo.id,
+                  userinfo: { ...item.userinfo }
+                })
+              }
             />
           ))}
         </ScrollView>
@@ -148,15 +205,19 @@ class RequestsComponent extends Component {
   }
 }
 
-const mapStateToProps = ({ requests, user }) => ({
+const mapStateToProps = ({ requests, user, favorite }) => ({
   loading: requests.loading,
   list: requests.list,
   error: requests.error,
-  userStrength: user.profile.strengths
+  userStrength: user.profile.strengths,
+  favoris: favorite.list
 });
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ fetchRequests, updateRequest }, dispatch);
+  return bindActionCreators(
+    { fetchRequests, updateRequest, addFavorite, deleteFavorite, toggleModal },
+    dispatch
+  );
 }
 
 const Requests = connect(

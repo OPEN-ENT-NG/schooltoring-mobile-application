@@ -12,7 +12,8 @@ export default function reducer(state = defaultState, action) {
         isVisible: true,
         title: action.title,
         text: action.text,
-        imageSrc: action.imageSrc
+        imageSrc: action.imageSrc,
+        children: action.children
       };
     }
     case ModalActions.HIDE: {

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { ScrollView, View, Text } from "react-native";
+import { View } from "react-native";
 import Icon from "react-native-vector-icons/MaterialIcons";
 
 import Proptypes from "prop-types";
@@ -103,7 +103,11 @@ class Match extends Component {
                 onPress={this.props.onFavorite}
                 style={styles.roundButton}
               >
-                <Icon name="favorite" style={styles.favoriteButton} />
+                <Icon
+                  name="favorite"
+                  color={this.props.isFavorite ? "red" : COLORS.GREY}
+                  style={styles.favoriteButton}
+                />
               </SecondaryButton>
             </View>
           </View>
@@ -132,7 +136,8 @@ Match.proptypes = {
   state: Proptypes.string.isRequired,
   onClear: Proptypes.func.isRequired,
   onChat: Proptypes.func.isRequired,
-  onFavorite: Proptypes.func.isRequired
+  onFavorite: Proptypes.func.isRequired,
+  isFavorite: Proptypes.bool
 };
 
 export default Match;

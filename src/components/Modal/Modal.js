@@ -14,13 +14,15 @@ const Modal = props => (
         overflow: "hidden"
       }}
     >
-      <View style={styles.image}>
-        <Image
-          style={{ width: "100%" }}
-          resizeMode="contain"
-          source={props.imageSrc}
-        />
-      </View>
+      {props.imageSrc && (
+        <View style={styles.image}>
+          <Image
+            style={{ width: "100%" }}
+            resizeMode="contain"
+            source={props.imageSrc}
+          />
+        </View>
+      )}
       <View style={styles.message}>
         <Text id="title" style={styles.title}>
           {props.title}
@@ -28,10 +30,12 @@ const Modal = props => (
         <Text id="text" style={styles.text}>
           {props.text}
         </Text>
-        <SecondaryButton
-          title={props.buttonText || "OK"}
-          onPress={props.onPress}
-        />
+        {props.children || (
+          <SecondaryButton
+            title={props.buttonText || "OK"}
+            onPress={props.onPress}
+          />
+        )}
       </View>
     </View>
   </View>
@@ -58,5 +62,20 @@ Modal.Proptypes = {
   },
   imageSrc: Proptypes.string.isRequired,
   buttonText: Proptypes.string,
-  onPress: Proptypes.func.isRequired
+  onPress: function(props, propName) {
+    if (
+      props["children"] == true &&
+      (props[propName] == undefined || typeof props[propName] != "func")
+    ) {
+      return new Error("Please provide an onPress function");
+    }
+  },
+  children: function(props, propName) {
+    if (
+      props["onPress"] == true &&
+      (props[propName] == undefined || typeof props[propName] != "element")
+    ) {
+      return new Error("Please provide children elements");
+    }
+  }
 };

@@ -1,9 +1,5 @@
 import React, { Component } from "react";
-import {
-  createStackNavigator,
-  NavigationActions,
-  StackActions
-} from "react-navigation";
+import { createStackNavigator } from "react-navigation";
 
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
@@ -11,6 +7,7 @@ import { connect } from "react-redux";
 import { Profile as ProfileComp } from "../../components/Profile/Profile";
 import StrengthWeakness from "../../components/StrengthWeakness/StrengthWeakness";
 import Availability from "../../components/Availability/Availability";
+import Favorite from "../../containers/Favorite/Favorite";
 import Header from "../../components/Header/Header";
 
 import { logout } from "../../store/actions/auth";
@@ -68,21 +65,21 @@ const getHeader = (navigation, screenProps) => {
         />
       );
     }
-    case "Availability": {
+    case "Profile": {
       return (
         <Header
-          navigation={navigation}
-          noBack={noBack}
+          noBack={true}
           title={I18n.t(`${routeName.toLowerCase()}.title`)}
+          rightActions={rightActions}
         />
       );
     }
     default: {
       return (
         <Header
-          noBack={true}
+          navigation={navigation}
+          noBack={noBack}
           title={I18n.t(`${routeName.toLowerCase()}.title`)}
-          rightActions={rightActions}
         />
       );
     }
@@ -94,7 +91,8 @@ const Stack = createStackNavigator(
     Strength: paramsToProps(StrengthWeakness),
     Weakness: paramsToProps(StrengthWeakness),
     Availability: paramsToProps(Availability),
-    Profile: paramsToProps(ProfileComp)
+    Profile: paramsToProps(ProfileComp),
+    Favorite: paramsToProps(Favorite)
   },
   {
     initialRouteName: "Profile",

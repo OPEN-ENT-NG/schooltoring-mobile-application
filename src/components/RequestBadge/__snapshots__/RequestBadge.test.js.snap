@@ -59,21 +59,42 @@ exports[`Render RequestBadge match should render without crashing 1`] = `
         }
       }
     >
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
-        id="username-field"
+      <Component
         style={
           Object {
-            "color": "#232323",
-            "fontSize": 26,
-            "fontWeight": "bold",
+            "alignItems": "center",
+            "flexDirection": "row",
           }
         }
       >
-        John DOE
-      </Text>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          id="username-field"
+          style={
+            Object {
+              "color": "#232323",
+              "flex": 1,
+              "fontSize": 18,
+              "fontWeight": "bold",
+            }
+          }
+        >
+          John DOE
+        </Text>
+        <SecondaryButton
+          id="favorite-button"
+          onPress={[MockFunction]}
+        >
+          <Icon
+            allowFontScaling={false}
+            color="red"
+            name="favorite"
+            size={20}
+          />
+        </SecondaryButton>
+      </Component>
       <Text
         accessible={true}
         allowFontScaling={true}
@@ -82,7 +103,7 @@ exports[`Render RequestBadge match should render without crashing 1`] = `
         style={
           Object {
             "color": "#232323",
-            "fontSize": 20,
+            "fontSize": 16,
           }
         }
       >
@@ -122,6 +143,7 @@ exports[`Render RequestBadge match should render without crashing 1`] = `
       }
     >
       <SecondaryButton
+        id="refuse-button"
         onPress={[MockFunction]}
         style={
           Object {
@@ -146,6 +168,7 @@ exports[`Render RequestBadge match should render without crashing 1`] = `
         />
       </SecondaryButton>
       <SecondaryButton
+        id="accept-button"
         onPress={[MockFunction]}
         style={
           Object {

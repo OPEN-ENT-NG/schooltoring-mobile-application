@@ -1,9 +1,9 @@
 import React from "react";
 import { shallow } from "enzyme";
 
-import { COLORS } from "../../styles/common";
 import state from "../../jest/state.json";
 import RequestBadge from "./RequestBadge";
+import { ETIME } from "constants";
 
 const request = {
   userinfo: state.userinfo,
@@ -11,11 +11,13 @@ const request = {
     { subjectId: "1474925-1517929209848", subjectLabel: "FRANCAIS" },
     { subjectId: "1480091-1517929209848", subjectLabel: "ALLEMAND LV2" },
     { subjectId: "1474895-1517929209848", subjectLabel: "ANGLAIS LV1" }
-  ]
+  ],
+  loading: false
 };
 
 const onAccept = jest.fn();
 const onRefuse = jest.fn();
+const onFavorite = jest.fn();
 
 const rendered = shallow(
   <RequestBadge
@@ -23,6 +25,9 @@ const rendered = shallow(
     subjects={request.subjects}
     onAccept={onAccept}
     onRefuse={onRefuse}
+    loading={request.loading}
+    isFavorite={true}
+    onFavorite={onFavorite}
   />
 );
 
@@ -82,22 +87,38 @@ describe("Render", () => {
     ).toBeTruthy();
   });
 
-  test("RequestBadge should render 2 SecondaryButtons", () =>
-    expect(rendered.find("SecondaryButton").length).toEqual(2));
+  test("RequestBadge should render 3 SecondaryButtons", () =>
+    expect(rendered.find("SecondaryButton").length).toEqual(3));
 
-  test("RequestBadge should render 2 buttons with respectively 'clear' and 'chat' as Icon", () => {
-    const buttons = rendered.find("SecondaryButton");
-
+  test("RequestBadge favorite icon should be red", () =>
     expect(
-      buttons
-        .at(0)
+      rendered
+        .find('[id="favorite-button"]')
+        .children()
+        .find("Icon")
+        .props().color
+    ).toEqual("red"));
+
+  test("RequestBadge should render 3 buttons with respectively 'clear', 'chat' and 'favorite' as Icon", () => {
+    expect(
+      rendered
+        .find('[id="favorite-button"]')
+        .children()
+        .find("Icon")
+        .props().name
+    ).toEqual("favorite");
+    expect(
+      rendered
+        .find('[id="refuse-button"]')
+
         .children()
         .find("Icon")
         .props().name
     ).toEqual("clear");
     expect(
-      buttons
-        .at(1)
+      rendered
+        .find('[id="accept-button"]')
+
         .children()
         .find("Icon")
         .props().name
@@ -108,7 +129,9 @@ describe("Render", () => {
 describe("Interactions", () => {
   test("On press on clear button should call onRefuse prop function", () => {
     onRefuse.mockReset();
-    const onRefuseButton = rendered.find("SecondaryButton").at(0);
+    const onRefuseButton = rendered
+      .find("SecondaryButton")
+      .find('[id="refuse-button"]');
     onRefuseButton.props().onPress();
 
     expect(onRefuse).toHaveBeenCalled();
@@ -116,9 +139,21 @@ describe("Interactions", () => {
 
   test("On press on chat button should call onAccept prop function", () => {
     onAccept.mockReset();
-    const onAcceptButton = rendered.find("SecondaryButton").at(1);
+    const onAcceptButton = rendered
+      .find("SecondaryButton")
+      .find('[id="accept-button"]');
     onAcceptButton.props().onPress();
 
     expect(onAccept).toHaveBeenCalled();
+  });
+
+  test("On press on favorite button should call onFavorite prop function", () => {
+    onFavorite.mockReset();
+    const onFavoriteButton = rendered
+      .find("SecondaryButton")
+      .find('[id="favorite-button"]');
+    onFavoriteButton.props().onPress();
+
+    expect(onFavorite).toHaveBeenCalled();
   });
 });

@@ -6,6 +6,7 @@ import Touchable from "./Touchable";
 
 const onPressCb = jest.fn();
 const rendered = shallow(<Touchable onPress={onPressCb} />);
+const disabledRendered = shallow(<Touchable disabled onPress={onPressCb} />);
 
 describe("Render", () => {
   test("Touchable should render without crashing", () => {

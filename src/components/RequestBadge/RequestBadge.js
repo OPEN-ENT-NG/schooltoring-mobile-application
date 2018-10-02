@@ -27,9 +27,18 @@ const RequestBadge = props => {
       </View>
       <View style={styles.right}>
         <View style={styles.identity}>
-          <Text style={styles.name} id="username-field">
-            {props.userinfo.username}
-          </Text>
+          <View style={styles.nameContainer}>
+            <Text style={styles.name} id="username-field">
+              {props.userinfo.username}
+            </Text>
+            <SecondaryButton id="favorite-button" onPress={props.onFavorite}>
+              <Icon
+                name="favorite"
+                color={props.isFavorite ? "red" : COLORS.GREY}
+                size={20}
+              />
+            </SecondaryButton>
+          </View>
           <Text style={styles.titleText} id="classname-field">
             {props.userinfo.classNames[0].split("$")[1]}
           </Text>
@@ -45,12 +54,17 @@ const RequestBadge = props => {
         </View>
         <View style={styles.buttons}>
           <SecondaryButton
+            id="refuse-button"
             style={styles.declineButton}
             onPress={props.onRefuse}
           >
             <Icon name="clear" style={styles.roundButtonIcon} />
           </SecondaryButton>
-          <SecondaryButton style={styles.acceptButton} onPress={props.onAccept}>
+          <SecondaryButton
+            id="accept-button"
+            style={styles.acceptButton}
+            onPress={props.onAccept}
+          >
             <Icon name="chat" style={styles.roundButtonIcon} />
           </SecondaryButton>
         </View>
@@ -74,8 +88,11 @@ RequestBadge.propTypes = {
       subjectLabel: PropTypes.string.isRequired
     })
   ).isRequired,
+  loading: PropTypes.bool.isRequired,
   onAccept: PropTypes.func.isRequired,
-  onRefuse: PropTypes.func.isRequired
+  onRefuse: PropTypes.func.isRequired,
+  onFavorite: PropTypes.func.isRequired,
+  isFavorite: PropTypes.bool
 };
 
 export default RequestBadge;

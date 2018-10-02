@@ -74,7 +74,7 @@ export const Profile = props => {
                   </Text>
                 </View>
               </Touchable>
-              <Touchable onPress={() => false}>
+              <Touchable onPress={() => props.navigation.push("Favorite")}>
                 <View style={styles.topRightButton}>
                   <Icon style={styles.titleIcon} name="favorite" size={30} />
                   <Text style={styles.titleText}>{I18n.t("favorites")}</Text>

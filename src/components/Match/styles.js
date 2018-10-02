@@ -38,8 +38,7 @@ export default StyleSheet.create({
     color: COLORS.WHITE
   },
   favoriteButton: {
-    fontSize: 24,
-    color: COLORS.GREY
+    fontSize: 24
   },
   height30: {
     height: "30%"

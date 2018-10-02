@@ -311,11 +311,11 @@ exports[`Render Strength match should render without crashing 1`] = `
         >
           <Icon
             allowFontScaling={false}
+            color="#929292"
             name="favorite"
             size={12}
             style={
               Object {
-                "color": "#929292",
                 "fontSize": 24,
               }
             }
@@ -638,11 +638,11 @@ exports[`Render Weaknesse match should render without crashing 1`] = `
         >
           <Icon
             allowFontScaling={false}
+            color="#929292"
             name="favorite"
             size={12}
             style={
               Object {
-                "color": "#929292",
                 "fontSize": 24,
               }
             }

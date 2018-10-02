@@ -2,7 +2,6 @@ import { AsyncStorage } from "react-native";
 import axios from "axios";
 import Base64 from "base-64";
 import firebase from "react-native-firebase";
-import EventTracker from "./EventTracker";
 
 const accessTokenTimeout = null;
 
@@ -28,10 +27,6 @@ async function getAuth(grantType, authParams) {
       data: body
     };
     const { data } = await axios(request);
-    EventTracker.trackEvent(
-      EventTracker.events.AUTHENTICATION.connected,
-      EventTracker.category.AUTHENTICATION
-    );
     return data;
   } catch (err) {
     throw err;
@@ -116,10 +111,6 @@ async function disconnectUser() {
     clearTimeout(accessTokenTimeout);
     deleteFCM();
     AsyncStorage.removeItem("auth@token");
-    EventTracker.trackEvent(
-      EventTracker.events.AUTHENTICATION.disconnected,
-      EventTracker.category.AUTHENTICATION
-    );
   } catch (err) {
     throw err;
   }

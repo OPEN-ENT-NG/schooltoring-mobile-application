@@ -1,0 +1,119 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render FavoriteBadge should render without crashing 1`] = `
+<Component
+  style={
+    Object {
+      "alignItems": "stretch",
+      "padding": 10,
+      "width": "50%",
+    }
+  }
+>
+  <Component
+    style={
+      Object {
+        "alignItems": "center",
+        "aspectRatio": 1,
+        "backgroundColor": "#e3f2fd",
+        "justifyContent": "center",
+        "shadowColor": "#929292",
+        "shadowOffset": Object {
+          "height": 2,
+          "width": 2,
+        },
+        "shadowOpacity": 0.6,
+        "shadowRadius": 1,
+      }
+    }
+  >
+    <Avatar
+      size={140}
+      src="http://ent3-core.gdapublic.fr/workspace/document/d4ac4110-06d5-4926-9db9-cc5ca3bcede5"
+    />
+  </Component>
+  <Component
+    style={
+      Object {
+        "backgroundColor": "#fafafa",
+        "maxHeight": 120,
+        "shadowColor": "#929292",
+        "shadowOffset": Object {
+          "height": 2,
+          "width": 2,
+        },
+        "shadowOpacity": 0.6,
+        "shadowRadius": 1,
+      }
+    }
+  >
+    <Component
+      style={
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "justifyContent": "space-around",
+          "padding": 5,
+        }
+      }
+    >
+      <SecondaryButton
+        id="on-delete-button"
+        onPress={[MockFunction]}
+      >
+        <Icon
+          allowFontScaling={false}
+          color="red"
+          name="favorite"
+          size={32}
+        />
+      </SecondaryButton>
+      <SecondaryButton
+        disabled={false}
+        id="on-chat-button"
+        onPress={[MockFunction]}
+        style={
+          Object {
+            "backgroundColor": "#17b6b0",
+            "borderRadius": 20,
+            "height": 40,
+            "width": 40,
+          }
+        }
+      >
+        <Icon
+          allowFontScaling={false}
+          color="white"
+          name="chat"
+          size={20}
+        />
+      </SecondaryButton>
+    </Component>
+    <Component
+      style={
+        Object {
+          "paddingBottom": 15,
+          "paddingHorizontal": 10,
+        }
+      }
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        id="username-field"
+        style={
+          Object {
+            "color": "#232323",
+            "fontSize": 16,
+            "fontWeight": "bold",
+            "textAlign": "center",
+          }
+        }
+      >
+        Yanis ALBON
+      </Text>
+    </Component>
+  </Component>
+</Component>
+`;

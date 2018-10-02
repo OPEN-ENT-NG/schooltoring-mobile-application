@@ -1,11 +1,5 @@
 import React, { Component } from "react";
-import {
-  ScrollView,
-  Text,
-  RefreshControl,
-  View,
-  AppState
-} from "react-native";
+import { ScrollView, Text, RefreshControl, View, AppState } from "react-native";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 
@@ -106,7 +100,8 @@ class Conversations extends Component {
               )}
             </Text>
           }
-          critical={false}
+          imgSrc={require("../../assets/img/fille1.png")}
+          side="right"
         />
       </View>
     );

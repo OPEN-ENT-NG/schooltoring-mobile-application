@@ -35,19 +35,6 @@ exports[`Render Error page should render without crashing 1`] = `
   >
     <Image
       resizeMode="contain"
-      source={
-        Object {
-          "process": [Function],
-        }
-      }
-      style={
-        Object {
-          "bottom": 0,
-          "height": "100%",
-          "left": -30,
-          "position": "absolute",
-        }
-      }
     />
   </Component>
 </Component>

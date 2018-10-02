@@ -1,20 +1,22 @@
 import { StyleSheet } from "react-native";
 
+const img = {
+  height: "100%",
+  position: "absolute",
+  bottom: 0
+};
+
 const styles = StyleSheet.create({
   container: {
     width: "100%",
     height: "100%"
   },
-  imageCritical: {
-    height: "100%",
-    position: "absolute",
-    bottom: 0,
+  left: {
+    ...img,
     left: -30
   },
-  imageUncritical: {
-    height: "100%",
-    position: "absolute",
-    bottom: 0,
+  right: {
+    ...img,
     right: -30
   }
 });

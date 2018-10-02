@@ -1,5 +1,6 @@
 import actions from "../definitions/conversation";
 import Conversation from "../../api/Conversation";
+import EventTracker from "../../api/EventTracker";
 
 export function fetchConversations() {
   return async dispatch => {
@@ -48,6 +49,10 @@ export function postMessage(conversationId, message) {
   return async dispatch => {
     try {
       await Conversation.postMessage(conversationId, message);
+      EventTracker.trackEvent(
+        EventTracker.events.MESSAGE.SEND,
+        EventTracker.category.MESSAGE
+      );
     } catch (err) {
       dispatch({
         type: actions.MESSAGES_ERROR

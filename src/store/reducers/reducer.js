@@ -6,6 +6,7 @@ import matches from "./matches";
 import requests from "./requests";
 import conversations from "./conversations";
 import modal from "./modal";
+import favorite from "./favorite";
 
 const rootReducer = combineReducers({
   auth,
@@ -14,7 +15,8 @@ const rootReducer = combineReducers({
   matches,
   requests,
   conversations,
-  modal
+  modal,
+  favorite
 });
 
 export default rootReducer;

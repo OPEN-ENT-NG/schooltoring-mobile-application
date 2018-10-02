@@ -112,7 +112,13 @@ export class App extends Component {
 
     if (this.props.isLoggedIn) {
       if (this.props.forbidden) {
-        return <Error message={this.getForbiddenMessage()} />;
+        return (
+          <Error
+            message={this.getForbiddenMessage()}
+            imgSrc={require("./assets/img/gars1b.png")}
+            side="right"
+          />
+        );
       }
       return this.props.hasProfile ? <Main /> : <Setup />;
     } else {

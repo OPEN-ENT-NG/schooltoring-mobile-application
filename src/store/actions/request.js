@@ -1,5 +1,6 @@
 import actions from "../definitions/request";
 import Request from "../../api/Request";
+import EventTracker from "../../api/EventTracker";
 
 export function fetchRequests() {
   return async dispatch => {
@@ -25,6 +26,14 @@ export function postRequest(state, userId) {
   return async dispatch => {
     try {
       const request = await Request.postRequest(state, userId);
+      let category =
+        state.toUpperCase() === "STRENGTH"
+          ? EventTracker.category.SEEK_HELP
+          : EventTracker.category.OFFER_HELP;
+      EventTracker.trackEvent(
+        EventTracker.events[category].request,
+        EventTracker.category[category]
+      );
       return request;
     } catch (err) {
       dispatch({

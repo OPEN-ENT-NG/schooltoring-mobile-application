@@ -66,14 +66,19 @@ export default StyleSheet.create({
     flex: 4,
     justifyContent: "space-evenly"
   },
+  nameContainer: {
+    alignItems: "center",
+    flexDirection: "row"
+  },
   name: {
     ...text,
     fontWeight: "bold",
-    fontSize: 26
+    fontSize: 18,
+    flex: 1
   },
   titleText: {
     ...text,
-    fontSize: 20
+    fontSize: 16
   },
 
   buttons: {

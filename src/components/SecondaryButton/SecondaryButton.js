@@ -5,6 +5,7 @@ import PropTypes from "prop-types";
 import Touchable from "../Touchable/Touchable";
 
 import styles from "./styles";
+import { COLORS } from "../../styles/common";
 
 const SecondaryButton = props => {
   const children = props.children || (
@@ -12,8 +13,15 @@ const SecondaryButton = props => {
   );
 
   return (
-    <View style={[props.style || {}, styles.button]}>
+    <View
+      style={[
+        props.style || {},
+        styles.button,
+        props.disabled && { backgroundColor: COLORS.GREY }
+      ]}
+    >
       <Touchable
+        disabled={props.disabled}
         onPress={() => props.onPress()}
         hitSlop={{
           top: 10,
@@ -32,7 +40,8 @@ SecondaryButton.propTypes = {
   children: PropTypes.any,
   onPress: PropTypes.func.isRequired,
   style: PropTypes.any,
-  title: PropTypes.string
+  title: PropTypes.string,
+  disabled: PropTypes.bool
 };
 
 export default SecondaryButton;
