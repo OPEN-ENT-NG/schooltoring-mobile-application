@@ -12,3 +12,5 @@ sed -i -e "s/%IOS_REVERSED_CLIENT_ID%/${IOS_REVERSED_CLIENT_ID}/g" 'ios/Schoolto
 sed -i -e "s/%IOS_API_KEY%/${IOS_API_KEY}/g" 'ios/Schooltoring/GoogleService-Info.plist'
 sed -i -e "s/%IOS_PROJECT_ID%/${IOS_PROJECT_ID}/g" 'ios/Schooltoring/GoogleService-Info.plist'
 sed -i -e "s/%IOS_GOOGLE_APP_ID%/${IOS_GOOGLE_APP_ID}/g" 'ios/Schooltoring/GoogleService-Info.plist'
+
+sed -i -e "s/%PLATFORM_ADDRESS%/${PLATFORM_ADDRESS}/g" 'app.json'

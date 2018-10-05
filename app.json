@@ -3,7 +3,7 @@
   "displayName": "Schooltoring",
   "version": "0.0.1",
   "auth": {
-    "endpoint" : "https://ent3-core.gdapublic.fr",
+    "endpoint" : "%PLATFORM_ADDRESS%",
     "client_id": "Schooltoring-App",
     "secret": "secret",
     "scope": "userbook userinfo directory workspace schooltoring timeline"
