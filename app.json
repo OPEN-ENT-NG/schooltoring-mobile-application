@@ -4,8 +4,8 @@
   "version": "1.0.0",
   "auth": {
     "endpoint" : "%PLATFORM_ADDRESS%",
-    "client_id": "Schooltoring-App",
-    "secret": "secret",
-    "scope": "userbook userinfo directory workspace schooltoring timeline"
+    "client_id": "%CLIENT_ID%",
+    "secret": "%CLIENT_SECRET%",
+    "scope": "%CLIENT_SCOPE%"
   }
 }
