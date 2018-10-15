@@ -13,7 +13,7 @@ sed -i -e "s/%IOS_API_KEY%/${IOS_API_KEY}/g" 'ios/Schooltoring/GoogleService-Inf
 sed -i -e "s/%IOS_PROJECT_ID%/${IOS_PROJECT_ID}/g" 'ios/Schooltoring/GoogleService-Info.plist'
 sed -i -e "s/%IOS_GOOGLE_APP_ID%/${IOS_GOOGLE_APP_ID}/g" 'ios/Schooltoring/GoogleService-Info.plist'
 
-sed -i -e "s/%PLATFORM_ADDRESS%/${PLATFORM_ADDRESS}/g" 'app.json'
+sed -i -e "s,%PLATFORM_ADDRESS%,${PLATFORM_ADDRESS},g" 'app.json'
 sed -i -e "s/%CLIENT_ID%/${CLIENT_ID}/g" 'app.json'
 sed -i -e "s/%CLIENT_SECRET%/${CLIENT_SECRET}/g" 'app.json'
 sed -i -e "s/%CLIENT_SCOPE%/${CLIENT_SCOPE}/g" 'app.json'
