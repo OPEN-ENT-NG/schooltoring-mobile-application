@@ -173,14 +173,14 @@ class MatchList extends Component {
             this.props.navigation.state.routeName.toUpperCase() === "STRENGTH"
               ? "helpRequestSent"
               : "helpOfferSent";
-          this.props.toggleModal(
-            I18n.t(`${state}.title`),
-            I18n.t(`${state}.message`).replace(
+          this.props.toggleModal({
+            title: I18n.t(`${state}.title`),
+            text: I18n.t(`${state}.message`).replace(
               "[name]",
               match.userinfo.username
             ),
-            require("../../assets/img/send.png")
-          );
+            imageSrc: require("../../assets/img/send.png")
+          });
           this.skipProfile();
         }}
         isFavorite={this.isFavorite(match.userinfo.id)}
