@@ -73,7 +73,7 @@ export default {
     deleteTitle: "Supprimer Favoris",
     deleteMessage: "Etes-vous sûr de vouloir supprimer [name] de vos favoris ?",
     error:
-      "Ajoute ici tes camarades favoris pour les retrouver plus facilement la prochaine fois."
+      "Ajoute tes camarades favoris pour les retrouver plus facilement la prochaine fois."
   },
   requests: {
     title: "Requêtes",
