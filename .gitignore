@@ -77,5 +77,8 @@ android/build
 .history
 ios/build
 *.xcuserstate
-ios/Schooltoring/GoogleService-Info.plist
+config
+android/app/src/main/assets/appcenter-config.json
 android/app/google-services.json
+ios/Schooltoring/AppCenter-Config.plist
+ios/Schooltoring/GoogleService-Info.plist
