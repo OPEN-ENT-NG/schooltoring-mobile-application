@@ -84,18 +84,18 @@ class Favorite extends Component {
   }
 
   render() {
-    const errorMessage = (
-      <View style={styles.errorContainer}>
+    if (this.props.loading || this.props.error) {
+      return <Loader />;
+    }
+
+    if (this.props.list.length === 0) {
+      return (
         <Error
-          message={<Text style={styles.error}>{I18n.t("favorite.error")}</Text>}
+          message={I18n.t("favorite.error")}
           imgSrc={require("../../assets/img/fille2.png")}
           side="left"
         />
-      </View>
-    );
-
-    if (this.props.loading || this.props.error) {
-      return <Loader />;
+      );
     }
 
     return (
@@ -103,9 +103,7 @@ class Favorite extends Component {
         style={{
           height: "100%",
           width: "100%"
-        }}
-      >
-        {this.props.list.length === 0 && errorMessage}
+        }}>
         <FlatList
           style={styles.list}
           onRefresh={this.props.fetchFavorite}

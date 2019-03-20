@@ -4,7 +4,7 @@ import { createStackNavigator } from "react-navigation";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 
-import I18n from "react-native-i18n";
+import I18n from "../../api/I18n";
 
 import { saveProfile } from "../../store/actions/profile";
 
@@ -81,8 +81,8 @@ const getHeader = navigation => {
         routeName === "Strength"
           ? COLORS.PRIMARY
           : routeName === "Weakness"
-            ? COLORS.SECONDARY
-            : null
+          ? COLORS.SECONDARY
+          : null
       }
       noBack={noBack}
       title={I18n.t(`${routeName.toLowerCase()}.title`)}
@@ -90,8 +90,8 @@ const getHeader = navigation => {
         routeName === "Strength"
           ? "thumb-up"
           : routeName === "Weakness"
-            ? "thumb-down"
-            : null
+          ? "thumb-down"
+          : null
       }
     />
   );

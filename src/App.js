@@ -1,10 +1,17 @@
 import React, { Component } from "react";
-import { Text, View, StyleSheet, AppState, Platform } from "react-native";
+import {
+  Button,
+  Text,
+  View,
+  StyleSheet,
+  AppState,
+  Platform
+} from "react-native";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import firebase from "../node_modules/react-native-firebase/dist/index";
 
-import { fetchLogin } from "./store/actions/auth";
+import { fetchLogin, logout } from "./store/actions/auth";
 import ConversationAction from "./store/definitions/conversation";
 
 import Loader from "./components/Loader/Loader";
@@ -14,12 +21,13 @@ import Setup from "./containers/Setup/Setup";
 import Error from "./components/Error/Error";
 import store from "./store/store";
 import NavigationService from "./api/Navigation";
+import I18n from "./api/I18n";
 
 import { COLORS } from "./styles/common";
 
 const errorStyles = StyleSheet.create({
   container: {
-    width: "90%",
+    width: "80%",
     alignSelf: "center",
     marginVertical: 50
   },
@@ -96,11 +104,19 @@ export class App extends Component {
   getForbiddenMessage() {
     return (
       <View style={errorStyles.container}>
-        <Text style={errorStyles.primaryText}>Oups !</Text>
-        <Text style={errorStyles.secondaryText}>
-          Il semblerait que vous ne soyez pas autorisé à accéder à cette
-          application.
+        <Text style={errorStyles.primaryText}>
+          {I18n.t(`login.error.rightTitle`)}
         </Text>
+        <Text style={errorStyles.secondaryText}>
+          {I18n.t(`login.error.rightMessage`)}
+        </Text>
+        <View style={{ marginTop: 50 }}>
+          <Button
+            color={COLORS.PRIMARY}
+            title="Se déconnecter"
+            onPress={this.props.logout}
+          />
+        </View>
       </View>
     );
   }
@@ -136,7 +152,7 @@ const mapStateToProps = ({ auth, user }) => ({
 });
 
 const mapDispatchToProps = dispatch => {
-  return bindActionCreators({ fetchLogin }, dispatch);
+  return bindActionCreators({ fetchLogin, logout }, dispatch);
 };
 
 export default connect(

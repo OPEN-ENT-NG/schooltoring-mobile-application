@@ -42,7 +42,9 @@ export function logout() {
       type: actions.FORM_LOADING
     });
     try {
+      console.log("logout received");
       await OAuth2.disconnectUser();
+      console.log("logout effective");
       EventTracker.trackEvent(
         EventTracker.events.AUTHENTICATION.disconnected,
         EventTracker.category.AUTHENTICATION
@@ -50,6 +52,7 @@ export function logout() {
       dispatch({
         type: actions.LOGOUT
       });
+      console.log("logout dispatched");
     } catch (err) {
       dispatch({
         type: actions.LOGIN,

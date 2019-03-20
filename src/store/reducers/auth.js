@@ -19,7 +19,8 @@ export default function reducer(state = defaultState, action) {
         loading: {
           fetch: false,
           form: false
-        }
+        },
+        forbidden: false
       };
     }
     case AuthActions.FETCH_LOADING: {

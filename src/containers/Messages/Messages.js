@@ -12,7 +12,7 @@ import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 
 import Icon from "react-native-vector-icons/MaterialIcons";
-import I18n from "react-native-i18n";
+import I18n from "../../api/I18n";
 import moment from "moment";
 
 import { fetchMessages, postMessage } from "../../store/actions/conversation";
@@ -79,8 +79,7 @@ class Messages extends Component {
         <KeyboardAvoidingView
           behavior="padding"
           keyboardVerticalOffset={70}
-          enabled
-        >
+          enabled>
           {children}
         </KeyboardAvoidingView>
       ),
@@ -98,8 +97,7 @@ class Messages extends Component {
         style={{
           width: "100%",
           height: "100%"
-        }}
-      >
+        }}>
         <FlatList
           style={{
             flex: 1
@@ -161,8 +159,7 @@ class Messages extends Component {
                     "conversationId"
                   )
                 });
-              }}
-            >
+              }}>
               <Icon name="send" size={30} />
             </TouchableWithoutFeedback>
           </View>

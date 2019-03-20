@@ -7,10 +7,11 @@ import { fetchConversations } from "../../store/actions/conversation";
 
 import moment from "moment";
 import fr from "moment/locale/fr";
-import I18n from "react-native-i18n";
+import I18n from "../../api/I18n";
 import Conversation from "../../components/Conversation/Conversation";
 import Loader from "../../components/Loader/Loader";
 import Error from "../../components/Error/Error";
+import { COLORS } from "../../styles/common";
 
 class Conversations extends Component {
   constructor(props) {
@@ -83,23 +84,9 @@ class Conversations extends Component {
           bottom: 0,
           width: "100%",
           height: "100%"
-        }}
-      >
+        }}>
         <Error
-          message={
-            <Text
-              style={{
-                width: "80%",
-                alignSelf: "center",
-                fontSize: 20,
-                marginVertical: 100
-              }}
-            >
-              {I18n.t(
-                `${this.props.navigation.state.routeName.toLowerCase()}.error`
-              )}
-            </Text>
-          }
+          message={I18n.t(`conversations.error`)}
           imgSrc={require("../../assets/img/fille1.png")}
           side="right"
         />
@@ -115,8 +102,7 @@ class Conversations extends Component {
         style={{
           height: "100%",
           width: "100%"
-        }}
-      >
+        }}>
         {this.props.list.length === 0 && errorMessage}
         <ScrollView
           style={{
@@ -124,8 +110,7 @@ class Conversations extends Component {
             width: "100%",
             backgroundColor: "transparent"
           }}
-          refreshControl={refreshControl}
-        >
+          refreshControl={refreshControl}>
           {this.props.list.map(item => (
             <Conversation
               key={item.id.toString()}

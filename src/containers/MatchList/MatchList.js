@@ -82,8 +82,7 @@ class MatchList extends Component {
           style={{
             flexDirection: "row",
             justifyContent: "flex-end"
-          }}
-        >
+          }}>
           <SecondaryButton
             title={"ANNULER"}
             onPress={() => {
@@ -119,27 +118,15 @@ class MatchList extends Component {
       this.props.list.length === 0 ||
       this.state.currentIndex >= this.props.list.length
     ) {
-      const message = (
-        <Text
-          style={{
-            width: "80%",
-            alignSelf: "center",
-            fontSize: 20,
-            marginVertical: 100
-          }}
-        >
-          {I18n.t(
-            `${this.props.navigation.state.routeName.toLowerCase()}.matchError`
-          )}
-        </Text>
-      );
       const errorParams =
         this.props.navigation.state.routeName === "Strength"
           ? { imgSrc: require("../../assets/img/gars1b.png"), side: "left" }
           : { imgSrc: require("../../assets/img/fille1.png"), side: "right" };
       return (
         <Error
-          message={message}
+          message={I18n.t(
+            `${this.props.navigation.state.routeName.toLowerCase()}.matchError`
+          )}
           imgSrc={errorParams.imgSrc}
           side={errorParams.side}
         />

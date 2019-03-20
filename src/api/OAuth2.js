@@ -3,7 +3,7 @@ import axios from "axios";
 import Base64 from "base-64";
 import firebase from "react-native-firebase";
 
-const accessTokenTimeout = null;
+var accessTokenTimeout = null;
 
 async function getAuth(grantType, authParams) {
   try {

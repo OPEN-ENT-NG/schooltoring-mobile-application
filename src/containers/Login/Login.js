@@ -14,6 +14,7 @@ import { login } from "../../store/actions/auth";
 
 import InputText from "../../components/InputText/InputText";
 import styles from "./styles";
+import I18n from "../../api/I18n";
 import { COLORS } from "../../styles/common";
 
 class Login extends Component {
@@ -38,9 +39,7 @@ class Login extends Component {
   getError() {
     if (this.props.error) {
       return (
-        <Text style={styles.errorMessage}>
-          Une erreur s'est glissée dans ton identifiant ou ton mot de passe
-        </Text>
+        <Text style={styles.errorMessage}>{I18n.t("login.error.wrong")}</Text>
       );
     }
   }
@@ -58,13 +57,13 @@ class Login extends Component {
         <View style={styles.formContainer}>
           {this.getError()}
           <InputText
-            placeholder="Nom d'utilisateur"
+            placeholder={I18n.t("login.placeholder.username")}
             value={this.state.username}
             onChangeText={username => this.setState({ username })}
           />
           <InputText
             secureTextEntry={true}
-            placeholder="Mot de passe"
+            placeholder={I18n.t("login.placeholder.password")}
             value={this.state.password}
             onChangeText={password => this.setState({ password })}
           />
@@ -76,7 +75,7 @@ class Login extends Component {
             <View style={{ marginTop: 10 }}>
               <Button
                 color={COLORS.PRIMARY}
-                title="Se connecter"
+                title={I18n.t("login.action")}
                 onPress={this.login}
               />
             </View>

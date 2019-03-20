@@ -1,9 +1,9 @@
 import { StyleSheet } from "react-native";
 
-const img = {
-  height: "100%",
-  position: "absolute",
-  bottom: 0
+const image = {
+  flex: 1,
+  flexDirection: "row",
+  alignItems: "flex-end"
 };
 
 const styles = StyleSheet.create({
@@ -11,12 +11,20 @@ const styles = StyleSheet.create({
     width: "100%",
     height: "100%"
   },
+  messageContainer: { flex: 1, justifyContent: "center", alignItems: "center" },
+  message: {
+    width: "80%",
+    alignSelf: "center",
+    fontSize: 20
+  },
   left: {
-    ...img,
+    ...image,
+    justifyContent: "flex-start",
     left: -30
   },
   right: {
-    ...img,
+    ...image,
+    justifyContent: "flex-end",
     right: -30
   }
 });

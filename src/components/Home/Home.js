@@ -2,11 +2,10 @@ import React, { Component } from "react";
 import { View, Text, Image, Dimensions } from "react-native";
 import Proptypes from "prop-types";
 import EventTracker from "../../api/EventTracker";
+import I18n from "../../api/I18n";
 
 import Touchable from "../../components/Touchable/Touchable";
 import styles from "./styles";
-
-import I18n from "react-native-i18n";
 
 const screen = Dimensions.get("screen");
 
@@ -37,8 +36,7 @@ export default class Home extends Component {
               width: event.nativeEvent.layout.width
             }
           });
-        }}
-      >
+        }}>
         <Touchable
           onPress={() => {
             EventTracker.trackEvent(
@@ -46,8 +44,7 @@ export default class Home extends Component {
               EventTracker.category.SEEK_HELP
             );
             this.props.navigation.push("Strength");
-          }}
-        >
+          }}>
           <View
             style={[
               styles.topHalf,
@@ -55,8 +52,7 @@ export default class Home extends Component {
                 width: this.state.view.width,
                 height: this.state.view.height / 2
               }
-            ]}
-          >
+            ]}>
             <Text style={[styles.text, styles.textLeft]}>
               {I18n.t("needHelp")}
             </Text>
@@ -76,8 +72,7 @@ export default class Home extends Component {
               EventTracker.category.OFFER_HELP
             );
             this.props.navigation.push("Weakness");
-          }}
-        >
+          }}>
           <View
             style={[
               styles.bottomHalf,
@@ -85,8 +80,7 @@ export default class Home extends Component {
                 width: this.state.view.width,
                 height: this.state.view.height / 2
               }
-            ]}
-          >
+            ]}>
             <View style={styles.bottomImageContainer}>
               <Image
                 style={{ height: 250, width: 232 }}

@@ -7,25 +7,27 @@ import styles from "./styles";
 const Error = props => {
   return (
     <View style={styles.container}>
-      <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+      <View style={styles.messageContainer}>
         {typeof props.message === "string" ? (
-          <Text>{props.message}</Text>
+          <Text style={props.messageStyle || styles.message}>
+            {props.message}
+          </Text>
         ) : (
           props.message
         )}
       </View>
-      <View style={{ flex: 1 }}>
-        <Image
-          source={props.imgSrc}
-          resizeMode="contain"
-          style={styles[props.side]}
-        />
-      </View>
+
+      {props.side && (
+        <View style={styles[props.side]}>
+          <Image source={props.imgSrc} resizeMode="contain" />
+        </View>
+      )}
     </View>
   );
 };
 
 Error.propTypes = {
+  messageStyle: PropTypes.object,
   message: PropTypes.any.isRequired,
   imgSrc: PropTypes.any.isRequired,
   side: PropTypes.oneOf(["left", "right"])

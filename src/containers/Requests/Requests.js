@@ -80,8 +80,7 @@ class RequestsComponent extends Component {
           style={{
             flexDirection: "row",
             justifyContent: "flex-end"
-          }}
-        >
+          }}>
           <SecondaryButton
             title={"ANNULER"}
             onPress={() => {
@@ -115,24 +114,9 @@ class RequestsComponent extends Component {
           bottom: 0,
           width: "100%",
           height: "100%"
-        }}
-      >
+        }}>
         <Error
-          message={
-            <Text
-              style={{
-                width: "80%",
-                height: "50%",
-                justifyContent: "center",
-                alignSelf: "center",
-                fontSize: 20
-              }}
-            >
-              {I18n.t(
-                `${this.props.navigation.state.routeName.toLowerCase()}.error`
-              )}
-            </Text>
-          }
+          message={I18n.t(`requests.error`)}
           imgSrc={require("../../assets/img/gars1b.png")}
           side="left"
         />
@@ -148,8 +132,7 @@ class RequestsComponent extends Component {
         style={{
           height: "100%",
           width: "100%"
-        }}
-      >
+        }}>
         {this.props.list.length === 0 && errorMessage}
         <ScrollView
           style={{
@@ -157,8 +140,7 @@ class RequestsComponent extends Component {
             width: "100%",
             backgroundColor: "transparent"
           }}
-          refreshControl={refreshControl}
-        >
+          refreshControl={refreshControl}>
           {this.props.list.map(item => (
             <RequestBadge
               key={item.id.toString()}

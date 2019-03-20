@@ -9,6 +9,19 @@ export default {
   badges: "Badges",
   favorites: "Favoris",
   notifications: "Notifications",
+  login: {
+    action: "Se connecter",
+    placeholder: {
+      username: "Nom d'utilisateur",
+      password: "Mot de passe"
+    },
+    error: {
+      rightTitle: "Oups !",
+      rightMessage:
+        "Il semblerait que vous ne soyez pas autorisé à accéder à cette application.",
+      wrong: "Une erreur s'est glissée dans ton identifiant ou ton mot de passe"
+    }
+  },
   helpRequestSent: {
     title: "Demande d'aide envoyée !",
     message:
