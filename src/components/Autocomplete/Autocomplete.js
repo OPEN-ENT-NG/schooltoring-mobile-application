@@ -1,17 +1,57 @@
 import React, { Component } from "react";
-import { View, ScrollView, Dimensions } from "react-native";
+import {
+  View,
+  TextInput,
+  ScrollView,
+  Keyboard,
+  Platform,
+  Dimensions
+} from "react-native";
+
 import PropTypes from "prop-types";
-import InputText from "../InputText/InputText";
 import Touchable from "../Touchable/Touchable";
 
 import styles from "./styles";
+import { COLORS } from "../../styles/common";
 
 export default class Autocomplete extends Component {
   constructor(props) {
     super(props);
-    this.state = { filter: "", output: [] };
+    this.state = {
+      filter: "",
+      output: [],
+      listHeight: Dimensions.get("window").height * 0.6
+    };
     this.updateList = this.updateList.bind(this);
     this.renderItem = this.renderItem.bind(this);
+    this.delta = 200;
+  }
+
+  componentDidMount() {
+    if (Platform.OS === "ios") {
+      this.keyboardWillShowEvent = Keyboard.addListener(
+        "keyboardWillShow",
+        this._updateKeyboardSpace
+      );
+      this.keyboardWillHideEvent = Keyboard.addListener(
+        "keyboardWillHide",
+        this._resetKeyboardSpace
+      );
+    } else if (Platform.OS === "android") {
+      this.keyboardWillShowEvent = Keyboard.addListener(
+        "keyboardDidShow",
+        this._updateKeyboardSpace
+      );
+      this.keyboardWillHideEvent = Keyboard.addListener(
+        "keyboardDidHide",
+        this._resetKeyboardSpace
+      );
+    }
+  }
+
+  componentWillUnmount() {
+    this.keyboardWillShowEvent && this.keyboardWillShowEvent.remove();
+    this.keyboardWillHideEvent && this.keyboardWillHideEvent.remove();
   }
 
   updateList(filter) {
@@ -21,15 +61,25 @@ export default class Autocomplete extends Component {
     this.setState({ filter, output });
   }
 
+  _updateKeyboardSpace = e => {
+    this.setState({
+      listHeight: this.state.listHeight - this.delta
+    });
+  };
+
+  _resetKeyboardSpace = () => {
+    this.setState({ listHeight: this.state.listHeight + this.delta });
+  };
+
   renderItem(item) {
     return (
       <Touchable
-        id={this.props.getItemKey(item)}
+        style={{ backgroundColor: COLORS.SECONDARY }}
+        key={this.props.getItemKey(item)}
         onPress={() => {
           this.props.onItemPress(item);
           this.setState({ filter: "", output: [] });
-        }}
-      >
+        }}>
         <View style={styles.item}>{this.props.renderItem(item)}</View>
       </Touchable>
     );
@@ -37,30 +87,34 @@ export default class Autocomplete extends Component {
 
   render() {
     return (
-      <View style={[this.props.style, styles.container]}>
-        <InputText
+      <View
+        style={[this.props.style, Platform.OS == "ios" ? { zIndex: 100 } : {}]}>
+        <TextInput
           placeholder={this.props.placeholder}
           onChangeText={filter => this.updateList(filter)}
           value={this.state.filter}
           style={styles.input}
           underlineColorAndroid={this.props.underlineColor}
         />
-        <ScrollView
-          style={[
-            styles.list,
-            { maxHeight: Dimensions.get("window").height * 0.7 }
-          ]}
-          keyboardShouldPersistTaps="handled"
-        >
-          {this.state.output.map(item => this.renderItem(item))}
-        </ScrollView>
+        {this.state.output.length > 0 && (
+          <View
+            style={[
+              styles.scrollviewContainer,
+              { height: this.state.listHeight }
+            ]}>
+            <ScrollView
+              style={styles.scrollview}
+              keyboardShouldPersistTaps="handled">
+              {this.state.output.map(item => this.renderItem(item))}
+            </ScrollView>
+          </View>
+        )}
       </View>
     );
   }
 }
 
 Autocomplete.propTypes = {
-  style: PropTypes.object,
   placeholder: PropTypes.string,
   data: PropTypes.array.isRequired,
   filterItem: PropTypes.func.isRequired,
