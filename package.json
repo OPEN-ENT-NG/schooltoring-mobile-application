@@ -3,7 +3,11 @@
   "version": "1.0.1",
   "private": true,
   "devDependencies": {
+    "@babel/core": "7.3.4",
+    "@babel/runtime": "7.3.4",
+    "axios-debug-log": "^0.4.0",
     "babel-eslint": "^8.2.3",
+    "babel-jest": "24.5.0",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "enzyme-to-json": "^3.3.4",
@@ -16,9 +20,10 @@
     "eslint-plugin-react": "^7.9.1",
     "jest": "^23.1.0",
     "jest-react-native": "^18.0.0",
+    "metro-react-native-babel-preset": "0.53.1",
     "prettier": "^1.13.5",
     "react-addons-test-utils": "^15.6.2",
-    "react-dom": "^16.8.4",
+    "react-dom": "^16.8.6",
     "react-test-renderer": "16.3.1",
     "redux-logger": "^3.0.6"
   },
@@ -33,30 +38,18 @@
     "android:dev": "npm run android && npm run android:log"
   },
   "jest": {
-    "preset": "react-native",
-    "setupFiles": [
-      "<rootDir>/node_modules/appcenter/test/AppCenterMock.js",
-      "<rootDir>/node_modules/appcenter-analytics/test/AppCenterAnalyticsMock.js",
-      "<rootDir>/node_modules/appcenter-crashes/test/AppCenterCrashesMock.js",
-      "<rootDir>/src/jest/setup.js"
-    ],
-    "snapshotSerializers": [
-      "enzyme-to-json/serializer"
-    ],
-    "moduleNameMapper": {
-      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/src/jest/assetsTransformer.js"
-    }
+    "preset": "react-native"
   },
   "dependencies": {
-    "appcenter": "^1.8.0",
-    "appcenter-analytics": "^1.8.0",
-    "appcenter-crashes": "^1.8.0",
+    "appcenter": "1.13.0",
+    "appcenter-analytics": "1.13.0",
+    "appcenter-crashes": "1.13.0",
     "axios": "^0.18.0",
     "base-64": "^0.1.0",
     "moment": "^2.22.2",
     "prop-types": "^15.6.2",
-    "react": "^16.8.3",
-    "react-native": "^0.59.1",
+    "react": "16.8.3",
+    "react-native": "0.59.2",
     "react-native-autocomplete-input": "^3.5.0",
     "react-native-firebase": "^4.3.8",
     "react-native-i18n": "^2.0.12",

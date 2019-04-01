@@ -9,6 +9,10 @@ import AppCenter from "./src/AppCenter";
 
 import config from "./app.json";
 
+XMLHttpRequest = GLOBAL.originalXMLHttpRequest
+  ? GLOBAL.originalXMLHttpRequest
+  : GLOBAL.XMLHttpRequest;
+
 global.config = config;
 global.appcenter = new AppCenter();
 

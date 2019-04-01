@@ -5,7 +5,6 @@
 	};
 	objectVersion = 46;
 	objects = {
-
 /* Begin PBXBuildFile section */
 		00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302AC1ABCB8CE00DB3ED1 /* libRCTActionSheet.a */; };
 		00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302BA1ABCB90400DB3ED1 /* libRCTGeolocation.a */; };
@@ -21,12 +20,12 @@
 		13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB11A68108700A75B9A /* LaunchScreen.xib */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		13F6648952AC9E63DA2D650B /* libPods-SchooltoringTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D422D08D980D86FA0ACA54C9 /* libPods-SchooltoringTests.a */; };
 		140ED2AC1D01E1AD002B40FF /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
 		146834051AC3E58100842450 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
 		165079EA213447E900A6E74A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 165079BD213447E900A6E74A /* GoogleService-Info.plist */; };
 		165079EB213447E900A6E74A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 165079BD213447E900A6E74A /* GoogleService-Info.plist */; };
 		280C78D25FCE4304BE797B80 /* libAppCenterReactNative.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CCDB90C2E2A4B97977DB7AB /* libAppCenterReactNative.a */; settings = {ATTRIBUTES = (Required, ); }; };
+		4249F66A6140A04C3180AD76 /* libPods-SchooltoringTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D422D08D980D86FA0ACA54C9 /* libPods-SchooltoringTests.a */; };
 		4595ACA2643A440F92E49C14 /* Entypo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 113FD3861C2F42918F93CBB5 /* Entypo.ttf */; };
 		4DA3E69AE12643EAA1E100BB /* libAppCenterReactNativeAnalytics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 924A8AC54E5F4F7A98374F13 /* libAppCenterReactNativeAnalytics.a */; };
 		51500258DEB84326865062DC /* libRNVectorIcons.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ED15A910EA594587BE071E9E /* libRNVectorIcons.a */; };
@@ -402,13 +401,13 @@
 		3A5454E904F445BCBDD25875 /* Foundation.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Foundation.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Foundation.ttf"; sourceTree = "<group>"; };
 		3CCDB90C2E2A4B97977DB7AB /* libAppCenterReactNative.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libAppCenterReactNative.a; sourceTree = "<group>"; };
 		3D04332A4E41345E7D0B3880 /* libPods-Schooltoring-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Schooltoring-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3DFF6F0852C527C705E8817B /* Pods-SchooltoringTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SchooltoringTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SchooltoringTests/Pods-SchooltoringTests.debug.xcconfig"; sourceTree = "<group>"; };
 		41109EB7AA50493F8C4155F1 /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialCommunityIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf"; sourceTree = "<group>"; };
 		4D5685C9970E49659D9AA7B0 /* AppCenterReactNativeCrashes.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = AppCenterReactNativeCrashes.xcodeproj; path = "../node_modules/appcenter-crashes/ios/AppCenterReactNativeCrashes.xcodeproj"; sourceTree = "<group>"; };
 		54CFD6703B2B754271186E59 /* Pods-Schooltoring.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Schooltoring.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Schooltoring/Pods-Schooltoring.debug.xcconfig"; sourceTree = "<group>"; };
 		5B8BB217C0434A82A6DAF636 /* EvilIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = EvilIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf"; sourceTree = "<group>"; };
 		5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTAnimation.xcodeproj; path = "../node_modules/react-native/Libraries/NativeAnimation/RCTAnimation.xcodeproj"; sourceTree = "<group>"; };
 		61C96D827262758F9FC6089D /* libPods-Schooltoring-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Schooltoring-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		6A20F799A6533232942B07F2 /* Pods-SchooltoringTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SchooltoringTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SchooltoringTests/Pods-SchooltoringTests.release.xcconfig"; sourceTree = "<group>"; };
 		6A93C7C9D7804D589382FCAE /* RNI18n.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNI18n.xcodeproj; path = "../node_modules/react-native-i18n/ios/RNI18n.xcodeproj"; sourceTree = "<group>"; };
 		6AB0B70B8EFA4930AFE45BD2 /* AppCenterReactNative.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = AppCenterReactNative.xcodeproj; path = ../node_modules/appcenter/ios/AppCenterReactNative.xcodeproj; sourceTree = "<group>"; };
 		6B374E7034C74347A82BF1A9 /* Octicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Octicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; };
@@ -422,10 +421,10 @@
 		A5AB56FAD5414AC6BED5D0EF /* Zocial.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Zocial.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; };
 		ADBDB91F1DFEBF0600ED6528 /* RCTBlob.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTBlob.xcodeproj; path = "../node_modules/react-native/Libraries/Blob/RCTBlob.xcodeproj"; sourceTree = "<group>"; };
 		B10769ED9C03E2F1C658E5CF /* libPods-Schooltoring.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Schooltoring.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		C8D96CD7A98CE40ECCD743CC /* Pods-SchooltoringTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SchooltoringTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SchooltoringTests/Pods-SchooltoringTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D422D08D980D86FA0ACA54C9 /* libPods-SchooltoringTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SchooltoringTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8FDB0AC4FC649829DFFB3F8 /* AppCenterReactNativeAnalytics.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = AppCenterReactNativeAnalytics.xcodeproj; path = "../node_modules/appcenter-analytics/ios/AppCenterReactNativeAnalytics.xcodeproj"; sourceTree = "<group>"; };
 		E898FBFAC3BC4F34B8A7695C /* MaterialIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; };
+		EA1D0E71B0508D7264D7D0AA /* Pods-SchooltoringTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SchooltoringTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SchooltoringTests/Pods-SchooltoringTests.release.xcconfig"; sourceTree = "<group>"; };
 		ED15A910EA594587BE071E9E /* libRNVectorIcons.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNVectorIcons.a; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
@@ -438,7 +437,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				140ED2AC1D01E1AD002B40FF /* libReact.a in Frameworks */,
-				13F6648952AC9E63DA2D650B /* libPods-SchooltoringTests.a in Frameworks */,
+				4249F66A6140A04C3180AD76 /* libPods-SchooltoringTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -691,8 +690,8 @@
 			children = (
 				54CFD6703B2B754271186E59 /* Pods-Schooltoring.debug.xcconfig */,
 				0A639D2C4545D2EA07D32C40 /* Pods-Schooltoring.release.xcconfig */,
-				C8D96CD7A98CE40ECCD743CC /* Pods-SchooltoringTests.debug.xcconfig */,
-				6A20F799A6533232942B07F2 /* Pods-SchooltoringTests.release.xcconfig */,
+				3DFF6F0852C527C705E8817B /* Pods-SchooltoringTests.debug.xcconfig */,
+				EA1D0E71B0508D7264D7D0AA /* Pods-SchooltoringTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -792,7 +791,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "SchooltoringTests" */;
 			buildPhases = (
-				2BBD9D48B486DA3CE91DA0DC /* [CP] Check Pods Manifest.lock */,
+				EB2C87E9D00E4A7DE83B670C /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
@@ -1305,24 +1304,6 @@
 			shellPath = /bin/sh;
 			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
 		};
-		2BBD9D48B486DA3CE91DA0DC /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-SchooltoringTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 		999534AE4AC7760CD97C6FB6 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1335,6 +1316,28 @@
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-Schooltoring-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EB2C87E9D00E4A7DE83B670C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SchooltoringTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1386,7 +1389,7 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C8D96CD7A98CE40ECCD743CC /* Pods-SchooltoringTests.debug.xcconfig */;
+			baseConfigurationReference = 3DFF6F0852C527C705E8817B /* Pods-SchooltoringTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -1417,7 +1420,7 @@
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6A20F799A6533232942B07F2 /* Pods-SchooltoringTests.release.xcconfig */;
+			baseConfigurationReference = EA1D0E71B0508D7264D7D0AA /* Pods-SchooltoringTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
@@ -1450,6 +1453,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Schooltoring/Schooltoring.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
@@ -1485,6 +1489,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Schooltoring/Schooltoring.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = UXTTZ8DX45;
