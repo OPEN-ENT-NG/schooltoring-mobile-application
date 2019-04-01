@@ -34,9 +34,7 @@ class Messages extends Component {
       conversationId: this.props.navigation.getParam("conversationId")
     };
 
-    if (!this.props.list) {
-      this.props.fetchMessages(this.state.conversationId);
-    }
+    this.props.fetchMessages(this.state.conversationId);
   }
 
   componentDidMount() {

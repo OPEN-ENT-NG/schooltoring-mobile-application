@@ -59,10 +59,10 @@ export class App extends Component {
   registerNotificationListener() {
     if (Platform.OS === "android" && Platform.Version >= 26) {
       const channel = new firebase.notifications.Android.Channel(
-        "test-channel",
-        "Test Channel",
+        "messages",
+        "Messages",
         firebase.notifications.Android.Importance.Max
-      ).setDescription("My apps test channel");
+      ).setDescription("Channel for messages");
 
       firebase.notifications().android.createChannel(channel);
     }
@@ -70,7 +70,7 @@ export class App extends Component {
     this.notificationListener = firebase
       .notifications()
       .onNotification(notification => {
-        notification.android.setChannelId("test-channel");
+        notification.android.setChannelId("messages");
 
         if (AppState.currentState === "active") {
           firebase.notifications().displayNotification(notification);

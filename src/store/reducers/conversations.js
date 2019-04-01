@@ -71,8 +71,10 @@ export default function reducer(state = defaultState, action) {
         ...state,
         messages: {
           ...state.messages
-        }
+        },
+        conversations: [...state.conversations]
       };
+
       newState.messages[action.conversationId] =
         action.conversationId in newState.messages
           ? newState.messages[action.conversationId].find(
@@ -83,6 +85,18 @@ export default function reducer(state = defaultState, action) {
             ? newState.messages[action.conversationId]
             : [action.message, ...newState.messages[action.conversationId]]
           : [action.message];
+
+      let conversation = newState.conversations.find(elem => {
+        return (
+          action.conversationId == elem.id && elem.date < action.message.date
+        );
+      });
+
+      if (conversation) {
+        conversation.message = action.message.text;
+        conversation.date = action.message.date;
+      }
+
       return newState;
     }
 
