@@ -134,7 +134,6 @@ class Messages extends Component {
             style={styles.input}
             onChangeText={message => this.setState({ message })}
             value={this.state.message}
-            underlineColorAndroid="transparent"
             multiline={true}
           />
           <View style={styles.icon}>

@@ -25,7 +25,6 @@
 		165079EA213447E900A6E74A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 165079BD213447E900A6E74A /* GoogleService-Info.plist */; };
 		165079EB213447E900A6E74A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 165079BD213447E900A6E74A /* GoogleService-Info.plist */; };
 		280C78D25FCE4304BE797B80 /* libAppCenterReactNative.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CCDB90C2E2A4B97977DB7AB /* libAppCenterReactNative.a */; settings = {ATTRIBUTES = (Required, ); }; };
-		4249F66A6140A04C3180AD76 /* libPods-SchooltoringTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D422D08D980D86FA0ACA54C9 /* libPods-SchooltoringTests.a */; };
 		4595ACA2643A440F92E49C14 /* Entypo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 113FD3861C2F42918F93CBB5 /* Entypo.ttf */; };
 		4DA3E69AE12643EAA1E100BB /* libAppCenterReactNativeAnalytics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 924A8AC54E5F4F7A98374F13 /* libAppCenterReactNativeAnalytics.a */; };
 		51500258DEB84326865062DC /* libRNVectorIcons.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ED15A910EA594587BE071E9E /* libRNVectorIcons.a */; };
@@ -43,6 +42,7 @@
 		ACA94488F529415CA8BBD508 /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2FEACFC42BA44DB98670D1BD /* SimpleLineIcons.ttf */; };
 		ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBDB9271DFEBF0700ED6528 /* libRCTBlob.a */; };
 		C4F3048BB9DC44F39F76AC09 /* libRNFirebase.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E1BB7CE2F72448AA41A6E0C /* libRNFirebase.a */; };
+		D7CD24E62FBC442890424363 /* libRNCAsyncStorage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E9AE23CDDD7E4AC9A74EF400 /* libRNCAsyncStorage.a */; };
 		ED297163215061F000B7C4FE /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED297162215061F000B7C4FE /* JavaScriptCore.framework */; };
 		F167A1A14790318B14158C4D /* libPods-Schooltoring.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B10769ED9C03E2F1C658E5CF /* libPods-Schooltoring.a */; settings = {ATTRIBUTES = (Weak, ); }; };
 		FAA0DBEF461C419B84979C47 /* libAppCenterReactNativeCrashes.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C453628CCB24ED5B35F0DFA /* libAppCenterReactNativeCrashes.a */; };
@@ -147,6 +147,13 @@
 			proxyType = 2;
 			remoteGlobalIDString = ED296FEE214C9CF800B7C4FE;
 			remoteInfo = "jsiexecutor-tvOS";
+		};
+		169B707F2253A51A005627B7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 947B09A5856C43A1B4306BDA /* RNCAsyncStorage.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 134814201AA4EA6300B7C361;
+			remoteInfo = RNCAsyncStorage;
 		};
 		16F759392108611B00059581 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -401,7 +408,6 @@
 		3A5454E904F445BCBDD25875 /* Foundation.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Foundation.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Foundation.ttf"; sourceTree = "<group>"; };
 		3CCDB90C2E2A4B97977DB7AB /* libAppCenterReactNative.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libAppCenterReactNative.a; sourceTree = "<group>"; };
 		3D04332A4E41345E7D0B3880 /* libPods-Schooltoring-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Schooltoring-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		3DFF6F0852C527C705E8817B /* Pods-SchooltoringTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SchooltoringTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SchooltoringTests/Pods-SchooltoringTests.debug.xcconfig"; sourceTree = "<group>"; };
 		41109EB7AA50493F8C4155F1 /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialCommunityIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf"; sourceTree = "<group>"; };
 		4D5685C9970E49659D9AA7B0 /* AppCenterReactNativeCrashes.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = AppCenterReactNativeCrashes.xcodeproj; path = "../node_modules/appcenter-crashes/ios/AppCenterReactNativeCrashes.xcodeproj"; sourceTree = "<group>"; };
 		54CFD6703B2B754271186E59 /* Pods-Schooltoring.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Schooltoring.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Schooltoring/Pods-Schooltoring.debug.xcconfig"; sourceTree = "<group>"; };
@@ -416,6 +422,7 @@
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
 		924A8AC54E5F4F7A98374F13 /* libAppCenterReactNativeAnalytics.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libAppCenterReactNativeAnalytics.a; sourceTree = "<group>"; };
+		947B09A5856C43A1B4306BDA /* RNCAsyncStorage.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNCAsyncStorage.xcodeproj; path = "../node_modules/@react-native-community/async-storage/ios/RNCAsyncStorage.xcodeproj"; sourceTree = "<group>"; };
 		95E504A20EE14006B59D7468 /* Ionicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Ionicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
 		9DADDE269D3C4C7781536A8B /* Feather.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Feather.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Feather.ttf"; sourceTree = "<group>"; };
 		A5AB56FAD5414AC6BED5D0EF /* Zocial.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Zocial.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; };
@@ -424,7 +431,7 @@
 		D422D08D980D86FA0ACA54C9 /* libPods-SchooltoringTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SchooltoringTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8FDB0AC4FC649829DFFB3F8 /* AppCenterReactNativeAnalytics.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = AppCenterReactNativeAnalytics.xcodeproj; path = "../node_modules/appcenter-analytics/ios/AppCenterReactNativeAnalytics.xcodeproj"; sourceTree = "<group>"; };
 		E898FBFAC3BC4F34B8A7695C /* MaterialIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; };
-		EA1D0E71B0508D7264D7D0AA /* Pods-SchooltoringTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SchooltoringTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SchooltoringTests/Pods-SchooltoringTests.release.xcconfig"; sourceTree = "<group>"; };
+		E9AE23CDDD7E4AC9A74EF400 /* libRNCAsyncStorage.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNCAsyncStorage.a; sourceTree = "<group>"; };
 		ED15A910EA594587BE071E9E /* libRNVectorIcons.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNVectorIcons.a; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
@@ -437,7 +444,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				140ED2AC1D01E1AD002B40FF /* libReact.a in Frameworks */,
-				4249F66A6140A04C3180AD76 /* libPods-SchooltoringTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -466,6 +472,7 @@
 				FAA0DBEF461C419B84979C47 /* libAppCenterReactNativeCrashes.a in Frameworks */,
 				F167A1A14790318B14158C4D /* libPods-Schooltoring.a in Frameworks */,
 				C4F3048BB9DC44F39F76AC09 /* libRNFirebase.a in Frameworks */,
+				D7CD24E62FBC442890424363 /* libRNCAsyncStorage.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -598,6 +605,14 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		169B707C2253A51A005627B7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				169B70802253A51A005627B7 /* libRNCAsyncStorage.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		16F759322108611B00059581 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -632,6 +647,7 @@
 				924A8AC54E5F4F7A98374F13 /* libAppCenterReactNativeAnalytics.a */,
 				1C453628CCB24ED5B35F0DFA /* libAppCenterReactNativeCrashes.a */,
 				6E1BB7CE2F72448AA41A6E0C /* libRNFirebase.a */,
+				E9AE23CDDD7E4AC9A74EF400 /* libRNCAsyncStorage.a */,
 			);
 			name = "Recovered References";
 			sourceTree = "<group>";
@@ -690,8 +706,6 @@
 			children = (
 				54CFD6703B2B754271186E59 /* Pods-Schooltoring.debug.xcconfig */,
 				0A639D2C4545D2EA07D32C40 /* Pods-Schooltoring.release.xcconfig */,
-				3DFF6F0852C527C705E8817B /* Pods-SchooltoringTests.debug.xcconfig */,
-				EA1D0E71B0508D7264D7D0AA /* Pods-SchooltoringTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -735,6 +749,7 @@
 				D8FDB0AC4FC649829DFFB3F8 /* AppCenterReactNativeAnalytics.xcodeproj */,
 				4D5685C9970E49659D9AA7B0 /* AppCenterReactNativeCrashes.xcodeproj */,
 				0BE7E3268A9C4E9DB3E66322 /* RNFirebase.xcodeproj */,
+				947B09A5856C43A1B4306BDA /* RNCAsyncStorage.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -791,7 +806,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "SchooltoringTests" */;
 			buildPhases = (
-				EB2C87E9D00E4A7DE83B670C /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
@@ -925,6 +939,10 @@
 					ProjectRef = 146833FF1AC3E56700842450 /* React.xcodeproj */;
 				},
 				{
+					ProductGroup = 169B707C2253A51A005627B7 /* Products */;
+					ProjectRef = 947B09A5856C43A1B4306BDA /* RNCAsyncStorage.xcodeproj */;
+				},
+				{
 					ProductGroup = 16060BF62130360D002C0F9A /* Products */;
 					ProjectRef = 0BE7E3268A9C4E9DB3E66322 /* RNFirebase.xcodeproj */;
 				},
@@ -1035,6 +1053,13 @@
 			fileType = archive.ar;
 			path = "libjsiexecutor-tvOS.a";
 			remoteRef = 167FD3172240E8BA009382BA /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		169B70802253A51A005627B7 /* libRNCAsyncStorage.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRNCAsyncStorage.a;
+			remoteRef = 169B707F2253A51A005627B7 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		16F7593A2108611B00059581 /* libAppCenterReactNative.a */ = {
@@ -1322,28 +1347,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		EB2C87E9D00E4A7DE83B670C /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-SchooltoringTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -1389,7 +1392,6 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3DFF6F0852C527C705E8817B /* Pods-SchooltoringTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -1404,11 +1406,15 @@
 					"$(SRCROOT)/../node_modules/appcenter-analytics/ios/AppCenterReactNativeAnalytics",
 					"$(SRCROOT)/../node_modules/appcenter-crashes/ios/AppCenterReactNativeCrashes",
 					"$(SRCROOT)/../node_modules/react-native-firebase/ios/RNFirebase/**",
+					"$(SRCROOT)/../node_modules/@react-native-community/async-storage/ios",
 				);
 				INFOPLIST_FILE = SchooltoringTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-lc++",
@@ -1420,7 +1426,6 @@
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EA1D0E71B0508D7264D7D0AA /* Pods-SchooltoringTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
@@ -1432,11 +1437,15 @@
 					"$(SRCROOT)/../node_modules/appcenter-analytics/ios/AppCenterReactNativeAnalytics",
 					"$(SRCROOT)/../node_modules/appcenter-crashes/ios/AppCenterReactNativeCrashes",
 					"$(SRCROOT)/../node_modules/react-native-firebase/ios/RNFirebase/**",
+					"$(SRCROOT)/../node_modules/@react-native-community/async-storage/ios",
 				);
 				INFOPLIST_FILE = SchooltoringTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-lc++",
@@ -1466,6 +1475,7 @@
 					"$(SRCROOT)/../node_modules/appcenter-analytics/ios/AppCenterReactNativeAnalytics",
 					"$(SRCROOT)/../node_modules/appcenter-crashes/ios/AppCenterReactNativeCrashes",
 					"$(SRCROOT)/../node_modules/react-native-firebase/ios/RNFirebase/**",
+					"$(SRCROOT)/../node_modules/@react-native-community/async-storage/ios",
 				);
 				INFOPLIST_FILE = Schooltoring/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1501,6 +1511,7 @@
 					"$(SRCROOT)/../node_modules/appcenter-analytics/ios/AppCenterReactNativeAnalytics",
 					"$(SRCROOT)/../node_modules/appcenter-crashes/ios/AppCenterReactNativeCrashes",
 					"$(SRCROOT)/../node_modules/react-native-firebase/ios/RNFirebase/**",
+					"$(SRCROOT)/../node_modules/@react-native-community/async-storage/ios",
 				);
 				INFOPLIST_FILE = Schooltoring/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

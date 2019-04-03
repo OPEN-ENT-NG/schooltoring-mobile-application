@@ -18,7 +18,7 @@
     "eslint-plugin-jsx-a11y": "^6.2.1",
     "eslint-plugin-prettier": "^2.6.0",
     "eslint-plugin-react": "^7.9.1",
-    "jest": "^23.1.0",
+    "jest": "^24.7.0",
     "jest-react-native": "^18.0.0",
     "metro-react-native-babel-preset": "0.53.1",
     "prettier": "^1.13.5",
@@ -38,20 +38,30 @@
     "android:dev": "npm run android && npm run android:log"
   },
   "jest": {
-    "preset": "react-native"
+    "preset": "react-native",
+    "setupTestFrameworkScriptFile": "<rootDir>/src/jest/setup.js",
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ],
+    "setupFiles": [
+      "./node_modules/appcenter/test/AppCenterMock.js",
+      "./node_modules/appcenter-analytics/test/AppCenterAnalyticsMock.js",
+      "./node_modules/appcenter-crashes/test/AppCenterCrashesMock.js"
+    ]
   },
   "dependencies": {
-    "appcenter": "1.13.0",
-    "appcenter-analytics": "1.13.0",
-    "appcenter-crashes": "1.13.0",
+    "@react-native-community/async-storage": "^1.2.2",
+    "appcenter": "^1.13.0",
+    "appcenter-analytics": "^1.13.0",
+    "appcenter-crashes": "^1.13.0",
     "axios": "^0.18.0",
     "base-64": "^0.1.0",
     "moment": "^2.22.2",
     "prop-types": "^15.6.2",
     "react": "16.8.3",
-    "react-native": "0.59.2",
+    "react-native": "0.59.3",
     "react-native-autocomplete-input": "^3.5.0",
-    "react-native-firebase": "^4.3.8",
+    "react-native-firebase": "^5.2.3",
     "react-native-i18n": "^2.0.12",
     "react-native-vector-icons": "^4.6.0",
     "react-navigation": "^2.3.1",

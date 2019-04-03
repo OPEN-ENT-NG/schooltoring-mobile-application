@@ -1,11 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Render An error should be logged if no required props are given 1`] = `
-<Component
+<View
   style={
     Array [
       undefined,
-      undefined,
+      Object {
+        "zIndex": 100,
+      },
     ]
   }
 >
@@ -13,35 +15,22 @@ exports[`Render An error should be logged if no required props are given 1`] = `
     onChangeText={[Function]}
     style={
       Object {
-        "backgroundColor": "#ffffff",
+        "paddingVertical": 10,
       }
     }
     value=""
   />
-  <ScrollView
-    keyboardShouldPersistTaps="handled"
-    style={
-      Array [
-        Object {
-          "backgroundColor": "#ffffff",
-          "position": "relative",
-          "zIndex": 10,
-        },
-        Object {
-          "maxHeight": 933.8,
-        },
-      ]
-    }
-  />
-</Component>
+</View>
 `;
 
 exports[`Render Autocomplete should render without crashing 1`] = `
-<Component
+<View
   style={
     Array [
       undefined,
-      undefined,
+      Object {
+        "zIndex": 100,
+      },
     ]
   }
 >
@@ -50,25 +39,10 @@ exports[`Render Autocomplete should render without crashing 1`] = `
     placeholder="placeholder text"
     style={
       Object {
-        "backgroundColor": "#ffffff",
+        "paddingVertical": 10,
       }
     }
     value=""
   />
-  <ScrollView
-    keyboardShouldPersistTaps="handled"
-    style={
-      Array [
-        Object {
-          "backgroundColor": "#ffffff",
-          "position": "relative",
-          "zIndex": 10,
-        },
-        Object {
-          "maxHeight": 933.8,
-        },
-      ]
-    }
-  />
-</Component>
+</View>
 `;

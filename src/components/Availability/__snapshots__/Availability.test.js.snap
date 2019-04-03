@@ -1,14 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Render Availability with save button should render without crashing 1`] = `
-<Component
+<View
   style={
     Object {
       "flex": 1,
     }
   }
 >
-  <Component
+  <View
     style={
       Object {
         "flex": 1,
@@ -19,9 +19,6 @@ exports[`Render Availability with save button should render without crashing 1`]
     }
   >
     <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
       style={
         Object {
           "color": "#232323",
@@ -33,7 +30,7 @@ exports[`Render Availability with save button should render without crashing 1`]
     >
       Les jours où je suis le plus disponible
     </Text>
-    <ScrollView
+    <ScrollViewMock
       contentContainerStyle={
         Object {
           "flex": 1,
@@ -41,7 +38,7 @@ exports[`Render Availability with save button should render without crashing 1`]
         }
       }
     >
-      <Component
+      <View
         key="monday"
         style={
           Object {
@@ -53,7 +50,6 @@ exports[`Render Availability with save button should render without crashing 1`]
         }
       >
         <Switch
-          disabled={false}
           onValueChange={[Function]}
           style={
             Object {
@@ -73,11 +69,8 @@ exports[`Render Availability with save button should render without crashing 1`]
           }
           onPress={[Function]}
         >
-          <Component>
+          <View>
             <Text
-              accessible={true}
-              allowFontScaling={true}
-              ellipsizeMode="tail"
               style={
                 Object {
                   "color": "#232323",
@@ -87,10 +80,10 @@ exports[`Render Availability with save button should render without crashing 1`]
             >
               Lundi
             </Text>
-          </Component>
+          </View>
         </TouchableWithoutFeedback>
-      </Component>
-      <Component
+      </View>
+      <View
         key="tuesday"
         style={
           Object {
@@ -102,7 +95,6 @@ exports[`Render Availability with save button should render without crashing 1`]
         }
       >
         <Switch
-          disabled={false}
           onValueChange={[Function]}
           style={
             Object {
@@ -122,11 +114,8 @@ exports[`Render Availability with save button should render without crashing 1`]
           }
           onPress={[Function]}
         >
-          <Component>
+          <View>
             <Text
-              accessible={true}
-              allowFontScaling={true}
-              ellipsizeMode="tail"
               style={
                 Object {
                   "color": "#232323",
@@ -136,10 +125,10 @@ exports[`Render Availability with save button should render without crashing 1`]
             >
               Mardi
             </Text>
-          </Component>
+          </View>
         </TouchableWithoutFeedback>
-      </Component>
-      <Component
+      </View>
+      <View
         key="wednesday"
         style={
           Object {
@@ -151,7 +140,6 @@ exports[`Render Availability with save button should render without crashing 1`]
         }
       >
         <Switch
-          disabled={false}
           onValueChange={[Function]}
           style={
             Object {
@@ -171,11 +159,8 @@ exports[`Render Availability with save button should render without crashing 1`]
           }
           onPress={[Function]}
         >
-          <Component>
+          <View>
             <Text
-              accessible={true}
-              allowFontScaling={true}
-              ellipsizeMode="tail"
               style={
                 Object {
                   "color": "#232323",
@@ -185,10 +170,10 @@ exports[`Render Availability with save button should render without crashing 1`]
             >
               Mercredi
             </Text>
-          </Component>
+          </View>
         </TouchableWithoutFeedback>
-      </Component>
-      <Component
+      </View>
+      <View
         key="thursday"
         style={
           Object {
@@ -200,7 +185,6 @@ exports[`Render Availability with save button should render without crashing 1`]
         }
       >
         <Switch
-          disabled={false}
           onValueChange={[Function]}
           style={
             Object {
@@ -220,11 +204,8 @@ exports[`Render Availability with save button should render without crashing 1`]
           }
           onPress={[Function]}
         >
-          <Component>
+          <View>
             <Text
-              accessible={true}
-              allowFontScaling={true}
-              ellipsizeMode="tail"
               style={
                 Object {
                   "color": "#232323",
@@ -234,10 +215,10 @@ exports[`Render Availability with save button should render without crashing 1`]
             >
               Jeudi
             </Text>
-          </Component>
+          </View>
         </TouchableWithoutFeedback>
-      </Component>
-      <Component
+      </View>
+      <View
         key="friday"
         style={
           Object {
@@ -249,7 +230,6 @@ exports[`Render Availability with save button should render without crashing 1`]
         }
       >
         <Switch
-          disabled={false}
           onValueChange={[Function]}
           style={
             Object {
@@ -269,11 +249,8 @@ exports[`Render Availability with save button should render without crashing 1`]
           }
           onPress={[Function]}
         >
-          <Component>
+          <View>
             <Text
-              accessible={true}
-              allowFontScaling={true}
-              ellipsizeMode="tail"
               style={
                 Object {
                   "color": "#232323",
@@ -283,10 +260,10 @@ exports[`Render Availability with save button should render without crashing 1`]
             >
               Vendredi
             </Text>
-          </Component>
+          </View>
         </TouchableWithoutFeedback>
-      </Component>
-      <Component
+      </View>
+      <View
         key="saturday"
         style={
           Object {
@@ -298,7 +275,6 @@ exports[`Render Availability with save button should render without crashing 1`]
         }
       >
         <Switch
-          disabled={false}
           onValueChange={[Function]}
           style={
             Object {
@@ -318,11 +294,8 @@ exports[`Render Availability with save button should render without crashing 1`]
           }
           onPress={[Function]}
         >
-          <Component>
+          <View>
             <Text
-              accessible={true}
-              allowFontScaling={true}
-              ellipsizeMode="tail"
               style={
                 Object {
                   "color": "#232323",
@@ -332,10 +305,10 @@ exports[`Render Availability with save button should render without crashing 1`]
             >
               Samedi
             </Text>
-          </Component>
+          </View>
         </TouchableWithoutFeedback>
-      </Component>
-      <Component
+      </View>
+      <View
         key="sunday"
         style={
           Object {
@@ -347,7 +320,6 @@ exports[`Render Availability with save button should render without crashing 1`]
         }
       >
         <Switch
-          disabled={false}
           onValueChange={[Function]}
           style={
             Object {
@@ -367,11 +339,8 @@ exports[`Render Availability with save button should render without crashing 1`]
           }
           onPress={[Function]}
         >
-          <Component>
+          <View>
             <Text
-              accessible={true}
-              allowFontScaling={true}
-              ellipsizeMode="tail"
               style={
                 Object {
                   "color": "#232323",
@@ -381,12 +350,12 @@ exports[`Render Availability with save button should render without crashing 1`]
             >
               Dimanche
             </Text>
-          </Component>
+          </View>
         </TouchableWithoutFeedback>
-      </Component>
-    </ScrollView>
-  </Component>
-  <Component
+      </View>
+    </ScrollViewMock>
+  </View>
+  <View
     style={
       Object {
         "flex": 0,
@@ -400,19 +369,19 @@ exports[`Render Availability with save button should render without crashing 1`]
       onPress={[Function]}
       title="ENREGISTRER"
     />
-  </Component>
-</Component>
+  </View>
+</View>
 `;
 
 exports[`Render Availability without save button should render without crashing 1`] = `
-<Component
+<View
   style={
     Object {
       "flex": 1,
     }
   }
 >
-  <Component
+  <View
     style={
       Object {
         "flex": 1,
@@ -423,9 +392,6 @@ exports[`Render Availability without save button should render without crashing 
     }
   >
     <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
       style={
         Object {
           "color": "#232323",
@@ -437,7 +403,7 @@ exports[`Render Availability without save button should render without crashing 
     >
       Les jours où je suis le plus disponible
     </Text>
-    <ScrollView
+    <ScrollViewMock
       contentContainerStyle={
         Object {
           "flex": 1,
@@ -445,7 +411,7 @@ exports[`Render Availability without save button should render without crashing 
         }
       }
     >
-      <Component
+      <View
         key="monday"
         style={
           Object {
@@ -457,7 +423,6 @@ exports[`Render Availability without save button should render without crashing 
         }
       >
         <Switch
-          disabled={false}
           onValueChange={[Function]}
           style={
             Object {
@@ -477,11 +442,8 @@ exports[`Render Availability without save button should render without crashing 
           }
           onPress={[Function]}
         >
-          <Component>
+          <View>
             <Text
-              accessible={true}
-              allowFontScaling={true}
-              ellipsizeMode="tail"
               style={
                 Object {
                   "color": "#232323",
@@ -491,10 +453,10 @@ exports[`Render Availability without save button should render without crashing 
             >
               Lundi
             </Text>
-          </Component>
+          </View>
         </TouchableWithoutFeedback>
-      </Component>
-      <Component
+      </View>
+      <View
         key="tuesday"
         style={
           Object {
@@ -506,7 +468,6 @@ exports[`Render Availability without save button should render without crashing 
         }
       >
         <Switch
-          disabled={false}
           onValueChange={[Function]}
           style={
             Object {
@@ -526,11 +487,8 @@ exports[`Render Availability without save button should render without crashing 
           }
           onPress={[Function]}
         >
-          <Component>
+          <View>
             <Text
-              accessible={true}
-              allowFontScaling={true}
-              ellipsizeMode="tail"
               style={
                 Object {
                   "color": "#232323",
@@ -540,10 +498,10 @@ exports[`Render Availability without save button should render without crashing 
             >
               Mardi
             </Text>
-          </Component>
+          </View>
         </TouchableWithoutFeedback>
-      </Component>
-      <Component
+      </View>
+      <View
         key="wednesday"
         style={
           Object {
@@ -555,7 +513,6 @@ exports[`Render Availability without save button should render without crashing 
         }
       >
         <Switch
-          disabled={false}
           onValueChange={[Function]}
           style={
             Object {
@@ -575,11 +532,8 @@ exports[`Render Availability without save button should render without crashing 
           }
           onPress={[Function]}
         >
-          <Component>
+          <View>
             <Text
-              accessible={true}
-              allowFontScaling={true}
-              ellipsizeMode="tail"
               style={
                 Object {
                   "color": "#232323",
@@ -589,10 +543,10 @@ exports[`Render Availability without save button should render without crashing 
             >
               Mercredi
             </Text>
-          </Component>
+          </View>
         </TouchableWithoutFeedback>
-      </Component>
-      <Component
+      </View>
+      <View
         key="thursday"
         style={
           Object {
@@ -604,7 +558,6 @@ exports[`Render Availability without save button should render without crashing 
         }
       >
         <Switch
-          disabled={false}
           onValueChange={[Function]}
           style={
             Object {
@@ -624,11 +577,8 @@ exports[`Render Availability without save button should render without crashing 
           }
           onPress={[Function]}
         >
-          <Component>
+          <View>
             <Text
-              accessible={true}
-              allowFontScaling={true}
-              ellipsizeMode="tail"
               style={
                 Object {
                   "color": "#232323",
@@ -638,10 +588,10 @@ exports[`Render Availability without save button should render without crashing 
             >
               Jeudi
             </Text>
-          </Component>
+          </View>
         </TouchableWithoutFeedback>
-      </Component>
-      <Component
+      </View>
+      <View
         key="friday"
         style={
           Object {
@@ -653,7 +603,6 @@ exports[`Render Availability without save button should render without crashing 
         }
       >
         <Switch
-          disabled={false}
           onValueChange={[Function]}
           style={
             Object {
@@ -673,11 +622,8 @@ exports[`Render Availability without save button should render without crashing 
           }
           onPress={[Function]}
         >
-          <Component>
+          <View>
             <Text
-              accessible={true}
-              allowFontScaling={true}
-              ellipsizeMode="tail"
               style={
                 Object {
                   "color": "#232323",
@@ -687,10 +633,10 @@ exports[`Render Availability without save button should render without crashing 
             >
               Vendredi
             </Text>
-          </Component>
+          </View>
         </TouchableWithoutFeedback>
-      </Component>
-      <Component
+      </View>
+      <View
         key="saturday"
         style={
           Object {
@@ -702,7 +648,6 @@ exports[`Render Availability without save button should render without crashing 
         }
       >
         <Switch
-          disabled={false}
           onValueChange={[Function]}
           style={
             Object {
@@ -722,11 +667,8 @@ exports[`Render Availability without save button should render without crashing 
           }
           onPress={[Function]}
         >
-          <Component>
+          <View>
             <Text
-              accessible={true}
-              allowFontScaling={true}
-              ellipsizeMode="tail"
               style={
                 Object {
                   "color": "#232323",
@@ -736,10 +678,10 @@ exports[`Render Availability without save button should render without crashing 
             >
               Samedi
             </Text>
-          </Component>
+          </View>
         </TouchableWithoutFeedback>
-      </Component>
-      <Component
+      </View>
+      <View
         key="sunday"
         style={
           Object {
@@ -751,7 +693,6 @@ exports[`Render Availability without save button should render without crashing 
         }
       >
         <Switch
-          disabled={false}
           onValueChange={[Function]}
           style={
             Object {
@@ -771,11 +712,8 @@ exports[`Render Availability without save button should render without crashing 
           }
           onPress={[Function]}
         >
-          <Component>
+          <View>
             <Text
-              accessible={true}
-              allowFontScaling={true}
-              ellipsizeMode="tail"
               style={
                 Object {
                   "color": "#232323",
@@ -785,12 +723,12 @@ exports[`Render Availability without save button should render without crashing 
             >
               Dimanche
             </Text>
-          </Component>
+          </View>
         </TouchableWithoutFeedback>
-      </Component>
-    </ScrollView>
-  </Component>
-  <Component
+      </View>
+    </ScrollViewMock>
+  </View>
+  <View
     style={
       Object {
         "flex": 0,
@@ -808,6 +746,6 @@ exports[`Render Availability without save button should render without crashing 
       onPress={[Function]}
       title="SUIVANT"
     />
-  </Component>
-</Component>
+  </View>
+</View>
 `;

@@ -60,6 +60,9 @@ class Login extends Component {
             placeholder={I18n.t("login.placeholder.username")}
             value={this.state.username}
             onChangeText={username => this.setState({ username })}
+            autoCapitalize={"none"}
+            autoCorrect={false}
+            autoComplete={"off"}
           />
           <InputText
             secureTextEntry={true}

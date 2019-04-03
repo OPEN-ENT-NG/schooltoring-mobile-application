@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Render FavoriteBadge should render without crashing 1`] = `
-<Component
+<View
   style={
     Object {
       "alignItems": "stretch",
@@ -10,7 +10,7 @@ exports[`Render FavoriteBadge should render without crashing 1`] = `
     }
   }
 >
-  <Component
+  <View
     style={
       Object {
         "alignItems": "center",
@@ -31,8 +31,8 @@ exports[`Render FavoriteBadge should render without crashing 1`] = `
       size={140}
       src="http://ent3-core.gdapublic.fr/workspace/document/d4ac4110-06d5-4926-9db9-cc5ca3bcede5"
     />
-  </Component>
-  <Component
+  </View>
+  <View
     style={
       Object {
         "backgroundColor": "#fafafa",
@@ -47,7 +47,7 @@ exports[`Render FavoriteBadge should render without crashing 1`] = `
       }
     }
   >
-    <Component
+    <View
       style={
         Object {
           "alignItems": "center",
@@ -88,8 +88,8 @@ exports[`Render FavoriteBadge should render without crashing 1`] = `
           size={20}
         />
       </SecondaryButton>
-    </Component>
-    <Component
+    </View>
+    <View
       style={
         Object {
           "paddingBottom": 15,
@@ -98,9 +98,6 @@ exports[`Render FavoriteBadge should render without crashing 1`] = `
       }
     >
       <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
         id="username-field"
         style={
           Object {
@@ -113,7 +110,7 @@ exports[`Render FavoriteBadge should render without crashing 1`] = `
       >
         Yanis ALBON
       </Text>
-    </Component>
-  </Component>
-</Component>
+    </View>
+  </View>
+</View>
 `;

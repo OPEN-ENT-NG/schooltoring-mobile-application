@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Render PopupMenu should render without crashing 1`] = `
-<Component>
+<View>
   <TouchableOpacity
     activeOpacity={0.2}
     onPress={[Function]}
@@ -13,5 +13,5 @@ exports[`Render PopupMenu should render without crashing 1`] = `
       size={24}
     />
   </TouchableOpacity>
-</Component>
+</View>
 `;

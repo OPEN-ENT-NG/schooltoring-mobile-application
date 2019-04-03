@@ -3,19 +3,23 @@
 exports[`Render InputText should render without crashing 1`] = `
 <TextInput
   allowFontScaling={true}
-  onChangeText={[Function]}
+  onChangeText={[MockFunction]}
   placeholder="Placeholder text"
-  secureTextEntry={false}
+  rejectResponderTermination={true}
   style={
-    Object {
-      "borderColor": "#929292",
-      "borderRadius": 3,
-      "borderWidth": 1,
-      "height": 50,
-      "marginBottom": 15,
-      "padding": 10,
-    }
+    Array [
+      Object {
+        "borderColor": "#929292",
+        "borderRadius": 3,
+        "borderWidth": 1,
+        "height": 50,
+        "marginBottom": 15,
+        "padding": 10,
+      },
+      Object {},
+    ]
   }
+  underlineColorAndroid="transparent"
   value=""
 />
 `;

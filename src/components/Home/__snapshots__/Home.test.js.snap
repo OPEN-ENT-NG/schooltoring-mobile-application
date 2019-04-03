@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Render It should render without crashing 1`] = `
-<Component
+<View
   onLayout={[Function]}
   style={
     Object {
@@ -15,7 +15,7 @@ exports[`Render It should render without crashing 1`] = `
   <Touchable
     onPress={[Function]}
   >
-    <Component
+    <View
       style={
         Array [
           Object {
@@ -33,9 +33,6 @@ exports[`Render It should render without crashing 1`] = `
       }
     >
       <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
         style={
           Array [
             Object {
@@ -49,9 +46,9 @@ exports[`Render It should render without crashing 1`] = `
           ]
         }
       >
-        [missing "en.needHelp" translation]
+        J'ai besoin d'aide
       </Text>
-      <Component
+      <View
         style={
           Object {
             "bottom": 0,
@@ -64,7 +61,7 @@ exports[`Render It should render without crashing 1`] = `
           resizeMode="contain"
           source={
             Object {
-              "process": [Function],
+              "testUri": "../../../src/assets/img/gars2b.png",
             }
           }
           style={
@@ -74,13 +71,13 @@ exports[`Render It should render without crashing 1`] = `
             }
           }
         />
-      </Component>
-    </Component>
+      </View>
+    </View>
   </Touchable>
   <Touchable
     onPress={[Function]}
   >
-    <Component
+    <View
       style={
         Array [
           Object {
@@ -97,7 +94,7 @@ exports[`Render It should render without crashing 1`] = `
         ]
       }
     >
-      <Component
+      <View
         style={
           Object {
             "bottom": 0,
@@ -110,7 +107,7 @@ exports[`Render It should render without crashing 1`] = `
           resizeMode="contain"
           source={
             Object {
-              "process": [Function],
+              "testUri": "../../../src/assets/img/fille2.png",
             }
           }
           style={
@@ -120,11 +117,8 @@ exports[`Render It should render without crashing 1`] = `
             }
           }
         />
-      </Component>
+      </View>
       <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
         style={
           Array [
             Object {
@@ -138,9 +132,9 @@ exports[`Render It should render without crashing 1`] = `
           ]
         }
       >
-        [missing "en.offerHelp" translation]
+        Je peux aider
       </Text>
-    </Component>
+    </View>
   </Touchable>
-</Component>
+</View>
 `;

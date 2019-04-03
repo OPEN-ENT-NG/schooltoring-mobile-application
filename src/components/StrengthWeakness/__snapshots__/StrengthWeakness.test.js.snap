@@ -1,14 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Render StrengthWeakness with no save button should render without crashing 1`] = `
-<Component
+<View
   style={
     Object {
       "flex": 1,
     }
   }
 >
-  <Component
+  <View
     style={
       Object {
         "flex": 1,
@@ -310,7 +310,7 @@ exports[`Render StrengthWeakness with no save button should render without crash
       renderItem={[Function]}
       underlineColor="#17b6b0"
     />
-    <ScrollView
+    <ScrollViewMock
       contentContainerStyle={
         Object {
           "flexDirection": "row",
@@ -354,9 +354,9 @@ exports[`Render StrengthWeakness with no save button should render without crash
         }
         title="MATHEMATIQUES"
       />
-    </ScrollView>
-  </Component>
-  <Component
+    </ScrollViewMock>
+  </View>
+  <View
     style={
       Object {
         "flex": 0,
@@ -374,19 +374,19 @@ exports[`Render StrengthWeakness with no save button should render without crash
       onPress={[Function]}
       title="SUIVANT"
     />
-  </Component>
-</Component>
+  </View>
+</View>
 `;
 
 exports[`Render StrengthWeakness with save button should render without crashing 1`] = `
-<Component
+<View
   style={
     Object {
       "flex": 1,
     }
   }
 >
-  <Component
+  <View
     style={
       Object {
         "flex": 1,
@@ -688,7 +688,7 @@ exports[`Render StrengthWeakness with save button should render without crashing
       renderItem={[Function]}
       underlineColor="#17b6b0"
     />
-    <ScrollView
+    <ScrollViewMock
       contentContainerStyle={
         Object {
           "flexDirection": "row",
@@ -732,9 +732,9 @@ exports[`Render StrengthWeakness with save button should render without crashing
         }
         title="MATHEMATIQUES"
       />
-    </ScrollView>
-  </Component>
-  <Component
+    </ScrollViewMock>
+  </View>
+  <View
     style={
       Object {
         "flex": 0,
@@ -748,6 +748,6 @@ exports[`Render StrengthWeakness with save button should render without crashing
       onPress={[Function]}
       title="ENREGISTRER"
     />
-  </Component>
-</Component>
+  </View>
+</View>
 `;

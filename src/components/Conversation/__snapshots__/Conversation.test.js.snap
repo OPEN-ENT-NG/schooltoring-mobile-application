@@ -4,7 +4,7 @@ exports[`Render Conversation should render without crashing 1`] = `
 <Touchable
   onPress={[MockFunction]}
 >
-  <Component
+  <View
     style={
       Object {
         "flexDirection": "row",
@@ -12,7 +12,7 @@ exports[`Render Conversation should render without crashing 1`] = `
       }
     }
   >
-    <Component
+    <View
       style={
         Object {
           "alignItems": "center",
@@ -27,8 +27,8 @@ exports[`Render Conversation should render without crashing 1`] = `
         size={60}
         src="http://ent3-core.gdapublic.fr/workspace/document/49a54de3-51f8-464b-81bb-a377f508f382"
       />
-    </Component>
-    <Component
+    </View>
+    <View
       style={
         Object {
           "borderBottomColor": "#000",
@@ -39,9 +39,6 @@ exports[`Render Conversation should render without crashing 1`] = `
       }
     >
       <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
         id="username-field"
         style={
           Object {
@@ -53,7 +50,7 @@ exports[`Render Conversation should render without crashing 1`] = `
       >
         John DOE
       </Text>
-      <Component
+      <View
         style={
           Object {
             "flexDirection": "row",
@@ -74,9 +71,6 @@ exports[`Render Conversation should render without crashing 1`] = `
           }
         />
         <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
           id="message-field"
           numberOfLines={1}
           style={
@@ -90,7 +84,7 @@ exports[`Render Conversation should render without crashing 1`] = `
         >
           Test message 1
         </Text>
-        <Component
+        <View
           style={
             Object {
               "alignItems": "flex-end",
@@ -99,9 +93,6 @@ exports[`Render Conversation should render without crashing 1`] = `
           }
         >
           <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
             style={
               Object {
                 "color": "#232323",
@@ -110,9 +101,9 @@ exports[`Render Conversation should render without crashing 1`] = `
           >
             20 Aug 2018
           </Text>
-        </Component>
-      </Component>
-    </Component>
-  </Component>
+        </View>
+      </View>
+    </View>
+  </View>
 </Touchable>
 `;

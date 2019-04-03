@@ -1,4 +1,4 @@
-import { AsyncStorage } from "react-native";
+import AsyncStorage from "@react-native-community/async-storage";
 import axios from "axios";
 import Base64 from "base-64";
 import firebase from "react-native-firebase";

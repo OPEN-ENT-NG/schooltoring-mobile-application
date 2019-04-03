@@ -1,5 +1,5 @@
 # Uncomment the next line to define a global platform for your project
-# platform :ios, '9.0'
+platform :ios, '9.0'
 
 target 'Schooltoring' do
   # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
@@ -11,11 +11,5 @@ target 'Schooltoring' do
   pod 'AppCenterReactNativeShared', '~> 1.13.0'
   pod 'Firebase/Core'
   pod 'Firebase/Messaging'
-  
-  platform :ios, '9.0'
-  
-end
-target 'SchooltoringTests' do
-  inherit! :search_paths
-  # Pods for testing
+
 end

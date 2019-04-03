@@ -1,15 +1,9 @@
 import React, { Component } from "react";
-import {
-  View,
-  TextInput,
-  ScrollView,
-  Keyboard,
-  Platform,
-  Dimensions
-} from "react-native";
+import { View, ScrollView, Keyboard, Platform, Dimensions } from "react-native";
 
 import PropTypes from "prop-types";
 import Touchable from "../Touchable/Touchable";
+import InputText from "../InputText/InputText";
 
 import styles from "./styles";
 import { COLORS } from "../../styles/common";
@@ -89,7 +83,7 @@ export default class Autocomplete extends Component {
     return (
       <View
         style={[this.props.style, Platform.OS == "ios" ? { zIndex: 100 } : {}]}>
-        <TextInput
+        <InputText
           placeholder={this.props.placeholder}
           onChangeText={filter => this.updateList(filter)}
           value={this.state.filter}

@@ -1,26 +1,15 @@
-import React, { Component } from "react";
+import React from "react";
 import PropTypes from "prop-types";
-import { TextInput, Platform } from "react-native";
+import { TextInput } from "react-native";
 
 import styles from "./styles";
 
 const InputText = props => {
-  return (
-    <TextInput
-      secureTextEntry={props.secureTextEntry || false}
-      style={styles.input}
-      placeholder={props.placeholder}
-      value={props.value}
-      onChangeText={val => props.onChangeText(val)}
-    />
-  );
+  return <TextInput {...props} style={[styles.input, props.style || {}]} />;
 };
 
 InputText.propTypes = {
-  secureTextEntry: PropTypes.bool,
-  placeholder: PropTypes.string,
-  value: PropTypes.string.isRequired,
-  onChangeText: PropTypes.func.isRequired
+  props: PropTypes.object
 };
 
 export default InputText;

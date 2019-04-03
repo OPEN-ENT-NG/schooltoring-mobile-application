@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Render Header should render without crashing 1`] = `
-<Component
+<View
   style={
     Object {
       "alignItems": "center",
@@ -12,7 +12,7 @@ exports[`Render Header should render without crashing 1`] = `
     }
   }
 >
-  <Component>
+  <View>
     <TouchableWithoutFeedback
       hitSlop={
         Object {
@@ -38,8 +38,8 @@ exports[`Render Header should render without crashing 1`] = `
         }
       />
     </TouchableWithoutFeedback>
-  </Component>
-  <Component
+  </View>
+  <View
     style={
       Object {
         "alignItems": "center",
@@ -50,9 +50,6 @@ exports[`Render Header should render without crashing 1`] = `
     }
   >
     <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
       style={
         Object {
           "color": "#232323",
@@ -63,12 +60,12 @@ exports[`Render Header should render without crashing 1`] = `
     >
       Test
     </Text>
-  </Component>
-</Component>
+  </View>
+</View>
 `;
 
 exports[`Render Header with rightActions should render without crashing 1`] = `
-<Component
+<View
   style={
     Object {
       "alignItems": "center",
@@ -79,7 +76,7 @@ exports[`Render Header with rightActions should render without crashing 1`] = `
     }
   }
 >
-  <Component>
+  <View>
     <TouchableWithoutFeedback
       hitSlop={
         Object {
@@ -105,8 +102,8 @@ exports[`Render Header with rightActions should render without crashing 1`] = `
         }
       />
     </TouchableWithoutFeedback>
-  </Component>
-  <Component
+  </View>
+  <View
     style={
       Object {
         "alignItems": "center",
@@ -117,9 +114,6 @@ exports[`Render Header with rightActions should render without crashing 1`] = `
     }
   >
     <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
       style={
         Object {
           "color": "#232323",
@@ -130,9 +124,9 @@ exports[`Render Header with rightActions should render without crashing 1`] = `
     >
       Test
     </Text>
-  </Component>
+  </View>
   <PopupMenu
     onPress={[MockFunction]}
   />
-</Component>
+</View>
 `;

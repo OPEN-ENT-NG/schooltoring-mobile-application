@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Render Loader should render without crashing 1`] = `
-<Component
+<View
   style={
     Array [
       Object {
@@ -20,5 +20,5 @@ exports[`Render Loader should render without crashing 1`] = `
     hidesWhenStopped={true}
     size="large"
   />
-</Component>
+</View>
 `;

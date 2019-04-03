@@ -4,7 +4,7 @@ exports[`Render Error logged if no title given 1`] = `
 <Touchable
   onPress={[Function]}
 >
-  <Component
+  <View
     style={
       Array [
         Object {
@@ -19,16 +19,13 @@ exports[`Render Error logged if no title given 1`] = `
     }
   >
     <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
       style={
         Object {
           "color": "#ffffff",
         }
       }
     />
-  </Component>
+  </View>
 </Touchable>
 `;
 
@@ -36,7 +33,7 @@ exports[`Render SubjectBadge renders without crashing 1`] = `
 <Touchable
   onPress={[Function]}
 >
-  <Component
+  <View
     style={
       Array [
         Object {
@@ -51,9 +48,6 @@ exports[`Render SubjectBadge renders without crashing 1`] = `
     }
   >
     <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
       style={
         Object {
           "color": "#ffffff",
@@ -62,6 +56,6 @@ exports[`Render SubjectBadge renders without crashing 1`] = `
     >
       Test
     </Text>
-  </Component>
+  </View>
 </Touchable>
 `;

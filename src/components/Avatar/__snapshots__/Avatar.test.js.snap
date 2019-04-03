@@ -1,11 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Render An error should be logged if no size given 1`] = `
-<Component>
+<View>
   <Image
     source={
       Object {
-        "process": [Function],
+        "testUri": "../../../src/assets/img/no-avatar.png",
       }
     }
     style={
@@ -17,11 +17,11 @@ exports[`Render An error should be logged if no size given 1`] = `
       }
     }
   />
-</Component>
+</View>
 `;
 
 exports[`Render Avatar should render with given source and size 1`] = `
-<Component>
+<View>
   <Image
     source={
       Object {
@@ -40,15 +40,15 @@ exports[`Render Avatar should render with given source and size 1`] = `
       }
     }
   />
-</Component>
+</View>
 `;
 
 exports[`Render Avatar should render without crashing 1`] = `
-<Component>
+<View>
   <Image
     source={
       Object {
-        "process": [Function],
+        "testUri": "../../../src/assets/img/no-avatar.png",
       }
     }
     style={
@@ -60,5 +60,5 @@ exports[`Render Avatar should render without crashing 1`] = `
       }
     }
   />
-</Component>
+</View>
 `;

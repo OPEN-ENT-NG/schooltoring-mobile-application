@@ -1,14 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Render Profile should render without crashing 1`] = `
-<Component
+<View
   style={
     Object {
       "flex": 1,
     }
   }
 >
-  <ScrollView
+  <ScrollViewMock
     contentContainerStyle={
       Object {
         "flexGrow": 1,
@@ -38,7 +38,7 @@ exports[`Render Profile should render without crashing 1`] = `
         }
       }
     />
-    <Component
+    <View
       style={
         Object {
           "flex": 1,
@@ -58,7 +58,7 @@ exports[`Render Profile should render without crashing 1`] = `
         renderItem={[Function]}
         title="Mes points forts"
       />
-      <Component
+      <View
         style={
           Object {
             "borderBottomColor": "#ebebeb",
@@ -80,7 +80,7 @@ exports[`Render Profile should render without crashing 1`] = `
         renderItem={[Function]}
         title="Mes points faibles"
       />
-      <Component
+      <View
         style={
           Object {
             "borderBottomColor": "#ebebeb",
@@ -111,9 +111,9 @@ exports[`Render Profile should render without crashing 1`] = `
         renderItem={[Function]}
         title="Mes dispos"
       />
-    </Component>
-  </ScrollView>
-  <Component
+    </View>
+  </ScrollViewMock>
+  <View
     style={
       Object {
         "flex": 0,
@@ -127,6 +127,6 @@ exports[`Render Profile should render without crashing 1`] = `
       onPress={[Function]}
       title="ENREGISTRER"
     />
-  </Component>
-</Component>
+  </View>
+</View>
 `;
