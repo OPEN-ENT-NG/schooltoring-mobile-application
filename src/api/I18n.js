@@ -1,16 +1,17 @@
-import I18n from "react-native-i18n";
-import en from "../locales/en";
-import fr from "../locales/fr";
+import I18n from "i18n-js";
+import * as RNLocalize from "react-native-localize";
 
-I18n.fallbacks = true;
-
-I18n.translations = {
-  en,
-  fr
+const translationGetters = {
+  en: () => require("../locales/en"),
+  fr: () => require("../locales/fr")
 };
 
-I18n.defaultLocale = "fr";
-I18n.locale = "fr";
-I18n.currentLocale();
+const languageTag =
+  RNLocalize.findBestAvailableLanguage(Object.keys(translationGetters))
+    .languageTag || "fr";
+
+// set i18n-js config
+I18n.translations = { [languageTag]: translationGetters[languageTag]() };
+I18n.locale = languageTag;
 
 export default I18n;
