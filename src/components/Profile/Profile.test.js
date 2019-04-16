@@ -2,7 +2,7 @@ import React from "react";
 import { Text } from "react-native";
 import { shallow } from "enzyme";
 
-import { Profile } from "./Profile";
+import Profile from "./Profile";
 import Touchable from "../Touchable/Touchable";
 
 import state from "../../jest/state.json";

@@ -14,7 +14,7 @@ import DayBadge from "../DayBadge/DayBadge";
 import { COLORS } from "../../styles/common";
 import styles from "./styles";
 
-export const Profile = props => {
+const Profile = props => {
   getSubjectsName = data => {
     return props.subjects
       .filter(({ subjectId }) =>
@@ -39,18 +39,28 @@ export const Profile = props => {
     );
   };
 
-  const ProfileItem = props => {
+  const ProfileItem = ({
+    id,
+    title,
+    edit,
+    data,
+    listStyle,
+    renderItem,
+    viewOnly
+  }) => {
     return (
-      <View id={props.id}>
+      <View id={id}>
         <View style={styles.title}>
-          <Text style={styles.titleText}>{props.title}</Text>
-          <Touchable onPress={() => props.edit()}>
-            <Icon style={styles.titleIcon} name="create" />
-          </Touchable>
+          <Text style={styles.titleText}>{title}</Text>
+          {!!edit && !viewOnly && (
+            <Touchable onPress={() => edit()}>
+              <Icon style={styles.titleIcon} name="create" />
+            </Touchable>
+          )}
         </View>
 
-        <View style={[styles.list, props.listStyle]}>
-          {props.data.map(item => props.renderItem(item))}
+        <View style={[styles.list, listStyle]}>
+          {data.map(item => renderItem(item))}
         </View>
       </View>
     );
@@ -63,27 +73,40 @@ export const Profile = props => {
           userinfo={props.userinfo}
           avatar={{ size: 120, src: props.userinfo.avatar }}
         />
-        {props.showTopButtons && (
-          <View style={{ width: "100%", flexDirection: "row" }}>
-            <View style={styles.topRightButtons}>
-              <Touchable onPress={() => false}>
-                <View style={styles.topRightButton}>
-                  <Icon style={styles.titleIcon} name="stars" size={30} />
-                  <Text style={[styles.titleText, { marginRight: 20 }]}>
-                    {I18n.t("badges")}
-                  </Text>
-                </View>
-              </Touchable>
-              <Touchable onPress={() => props.navigation.push("Favorite")}>
-                <View style={styles.topRightButton}>
-                  <Icon style={styles.titleIcon} name="favorite" size={30} />
-                  <Text style={styles.titleText}>{I18n.t("favorites")}</Text>
-                </View>
-              </Touchable>
-            </View>
-          </View>
-        )}
+        <View style={styles.topRightButtons}>
+          {props.showTopButtons && (
+            <Touchable onPress={() => false}>
+              <View style={styles.topRightButton}>
+                <Icon style={styles.titleIcon} name="stars" size={30} />
+                <Text style={[styles.titleText, { marginRight: 20 }]}>
+                  {I18n.t("badges")}
+                </Text>
+              </View>
+            </Touchable>
+          )}
+          {props.showTopButtons && (
+            <Touchable onPress={() => props.navigation.push("Favorite")}>
+              <View style={styles.topRightButton}>
+                <Icon style={styles.titleIcon} name="favorite" size={30} />
+                <Text style={styles.titleText}>{I18n.t("favorites")}</Text>
+              </View>
+            </Touchable>
+          )}
 
+          {!props.showTopButtons && props.viewOnly && (
+            <SecondaryButton
+              style={styles.topRightButton}
+              onPress={props.toggleFavorite}>
+              <Icon
+                style={{ marginRight: 5, marginLeft: 5 }}
+                name="favorite"
+                color={props.isFavorite ? "red" : COLORS.GREY}
+                size={30}
+              />
+              <Text style={styles.titleText}>{I18n.t("favorites")}</Text>
+            </SecondaryButton>
+          )}
+        </View>
         <View style={styles.flex}>
           <ProfileItem
             id="strengths-section"
@@ -91,6 +114,7 @@ export const Profile = props => {
             edit={() => props.navigation.push("Strength")}
             data={getSubjectsName(props.profile.strengths)}
             renderItem={item => renderSubject(item, COLORS.PRIMARY)}
+            viewOnly={props.viewOnly}
           />
 
           <View style={styles.divider} />
@@ -101,6 +125,7 @@ export const Profile = props => {
             edit={() => props.navigation.push("Weakness")}
             data={getSubjectsName(props.profile.weaknesses)}
             renderItem={item => renderSubject(item, COLORS.SECONDARY)}
+            viewOnly={props.viewOnly}
           />
 
           <View style={styles.divider} />
@@ -112,10 +137,11 @@ export const Profile = props => {
             data={Object.keys(props.profile.availabilities)}
             listStyle={{ justifyContent: "space-evenly" }}
             renderItem={item => renderAvailability(item)}
+            viewOnly={props.viewOnly}
           />
         </View>
       </ScrollView>
-      {!props.showTopButtons && (
+      {!props.showTopButtons && !props.viewOnly && (
         <View style={styles.buttonView}>
           <SecondaryButton
             style={styles.button}
@@ -154,7 +180,12 @@ Profile.propTypes = {
     )
   }).isRequired,
   userinfo: PropTypes.object.isRequired,
-  navigation: PropTypes.object.isRequired,
+  navigation: PropTypes.object,
   showTopButtons: PropTypes.bool,
-  saveProfile: PropTypes.func
+  saveProfile: PropTypes.func,
+  isFavorite: PropTypes.bool,
+  toggleFavorite: PropTypes.func,
+  viewOnly: PropTypes.bool
 };
+
+export default Profile;

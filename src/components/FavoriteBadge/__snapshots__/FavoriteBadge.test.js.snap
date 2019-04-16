@@ -10,7 +10,7 @@ exports[`Render FavoriteBadge should render without crashing 1`] = `
     }
   }
 >
-  <View
+  <Touchable
     style={
       Object {
         "alignItems": "center",
@@ -31,7 +31,7 @@ exports[`Render FavoriteBadge should render without crashing 1`] = `
       size={140}
       src="http://ent3-core.gdapublic.fr/workspace/document/d4ac4110-06d5-4926-9db9-cc5ca3bcede5"
     />
-  </View>
+  </Touchable>
   <View
     style={
       Object {

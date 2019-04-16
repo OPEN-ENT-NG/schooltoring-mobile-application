@@ -8,6 +8,7 @@ import Identity from "../Identity/Identity";
 import SubjectBadge from "../SubjectBadge/SubjectBadge";
 import DayBadge from "../DayBadge/DayBadge";
 import SecondaryButton from "../SecondaryButton/SecondaryButton";
+import Touchable from "../Touchable/Touchable";
 
 import I18n from "../../api/I18n";
 
@@ -37,25 +38,28 @@ class Match extends Component {
     return (
       <View>
         <View style={[styles.height30, styles.center]}>
-          <Identity
-            userinfo={this.props.userinfo}
-            avatar={{ size: 100, src: this.props.userinfo.avatar }}
-          />
+          <Touchable
+            style={styles.center}
+            onPress={this.props.viewProfile}
+            hitSlop={{ top: 10, left: 10, bottom: 10, right: 10 }}>
+            <Identity
+              userinfo={this.props.userinfo}
+              avatar={{ size: 100, src: this.props.userinfo.avatar }}
+            />
+          </Touchable>
         </View>
         <View
           style={[
             styles.detail,
             styles.height40,
             { justifyContent: "space-evenly" }
-          ]}
-        >
+          ]}>
           <View
             style={[
               styles.center,
               styles.marginVertical,
               { marginBottom: 40, flexWrap: "wrap" }
-            ]}
-          >
+            ]}>
             {this.props.features.map(feature => (
               <SubjectBadge
                 key={feature.subjectId}
@@ -80,29 +84,25 @@ class Match extends Component {
                 flex: 1,
                 justifyContent: "flex-end"
               }
-            ]}
-          >
+            ]}>
             <View style={[styles.width25, styles.center]}>
               <SecondaryButton
                 onPress={this.props.onClear}
-                style={styles.declineButton}
-              >
+                style={styles.declineButton}>
                 <Icon name="clear" style={styles.roundButtonIcon} />
               </SecondaryButton>
             </View>
             <View style={[styles.width25, styles.center]}>
               <SecondaryButton
                 onPress={this.props.onChat}
-                style={styles.acceptButton}
-              >
+                style={styles.acceptButton}>
                 <Icon name="send" style={styles.roundButtonIcon} />
               </SecondaryButton>
             </View>
             <View style={[styles.width25, styles.center]}>
               <SecondaryButton
                 onPress={this.props.onFavorite}
-                style={styles.roundButton}
-              >
+                style={styles.roundButton}>
                 <Icon
                   name="favorite"
                   color={this.props.isFavorite ? "red" : COLORS.GREY}
@@ -137,7 +137,8 @@ Match.proptypes = {
   onClear: Proptypes.func.isRequired,
   onChat: Proptypes.func.isRequired,
   onFavorite: Proptypes.func.isRequired,
-  isFavorite: Proptypes.bool
+  isFavorite: Proptypes.bool,
+  viewProfile: Proptypes.func.isRequired
 };
 
 export default Match;

@@ -117,6 +117,12 @@ class Favorite extends Component {
                 loading={!!this.state[item.id]}
                 userinfo={item.userinfo}
                 chatDisabled={!item.conversation_id}
+                onAvatarPress={() =>
+                  NavigationService.navigate("ViewProfile", {
+                    userinfo: item.userinfo,
+                    id: item.id
+                  })
+                }
                 onDelete={() => this.toggleModal(item)}
                 onChat={() => {
                   NavigationService.navigate("Messages", {

@@ -4,19 +4,22 @@ import { createStackNavigator } from "react-navigation";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 
-import { Profile as ProfileComp } from "../../components/Profile/Profile";
+import ProfileComp from "../../components/Profile/Profile";
 import StrengthWeakness from "../../components/StrengthWeakness/StrengthWeakness";
 import Availability from "../../components/Availability/Availability";
 import Favorite from "../../containers/Favorite/Favorite";
 import Header from "../../components/Header/Header";
 
-import { logout } from "../../store/actions/auth";
-import { updateProfile } from "../../store/actions/profile";
-import I18n from "../../api/I18n";
-import EventTracker from "../../api/EventTracker";
+import ViewProfile from "../ViewProfile/ViewProfile";
+
 import { COLORS } from "../../styles/common";
 
+import I18n from "../../api/I18n";
+import EventTracker from "../../api/EventTracker";
 import NavigationService from "../../api/Navigation";
+
+import { logout } from "../../store/actions/auth";
+import { updateProfile } from "../../store/actions/profile";
 
 const paramsToProps = SomeComponent => {
   return class extends Component {
@@ -74,6 +77,14 @@ const getHeader = (navigation, screenProps) => {
         />
       );
     }
+    case "ViewProfile": {
+      return (
+        <Header
+          navigation={navigation}
+          title={navigation.getParam("userinfo").username}
+        />
+      );
+    }
     default: {
       return (
         <Header
@@ -92,7 +103,8 @@ const Stack = createStackNavigator(
     Weakness: paramsToProps(StrengthWeakness),
     Availability: paramsToProps(Availability),
     Profile: paramsToProps(ProfileComp),
-    Favorite: paramsToProps(Favorite)
+    Favorite: paramsToProps(Favorite),
+    ViewProfile: paramsToProps(ViewProfile)
   },
   {
     initialRouteName: "Profile",
@@ -104,7 +116,15 @@ const Stack = createStackNavigator(
   }
 );
 
-export class Profile extends Component {
+class Profile extends Component {
+  static router = {
+    ...Stack.router,
+    getStateForAction: (action, lastState) => {
+      // check for custom actions and return a different navigation state.
+      return Stack.router.getStateForAction(action, lastState);
+    }
+  };
+
   constructor(props) {
     super(props);
 
@@ -141,9 +161,7 @@ export class Profile extends Component {
   render() {
     return (
       <Stack
-        ref={navigatorRef =>
-          NavigationService.register("profile", navigatorRef)
-        }
+        navigation={this.props.navigation}
         screenProps={{
           subjects: this.props.subjects,
           profile: this.state.profile,

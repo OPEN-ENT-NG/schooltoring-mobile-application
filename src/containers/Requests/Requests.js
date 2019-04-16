@@ -18,6 +18,8 @@ import Loader from "../../components/Loader/Loader";
 import Header from "../../components/Header/Header";
 import Error from "../../components/Error/Error";
 
+import ViewProfile from "../ViewProfile/ViewProfile";
+
 import { COLORS } from "../../styles/common";
 
 class RequestsComponent extends Component {
@@ -148,6 +150,12 @@ class RequestsComponent extends Component {
               userinfo={item.userinfo}
               state={item.state}
               loading={!!this.state[item.id]}
+              viewProfile={() =>
+                NavigationService.navigate("ViewProfile", {
+                  userinfo: item.userinfo,
+                  id: item.userinfo.id
+                })
+              }
               onAccept={async () => {
                 this.toggleLoading(item.id);
                 let data = await this.props.updateRequest(item.id, "ACCEPT");
@@ -208,7 +216,7 @@ const Requests = connect(
 )(RequestsComponent);
 
 export default createStackNavigator(
-  { Requests },
+  { Requests, ViewProfile },
   {
     cardStyle: {
       backgroundColor: COLORS.BACKGROUND

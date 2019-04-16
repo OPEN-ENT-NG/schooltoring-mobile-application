@@ -3,6 +3,8 @@ import { createStackNavigator } from "react-navigation";
 
 import Home from "../../components/Home/Home";
 import MatchList from "../MatchList/MatchList";
+import ViewProfile from "../ViewProfile/ViewProfile";
+
 import Header from "../../components/Header/Header";
 
 import I18n from "../../api/I18n";
@@ -42,7 +44,8 @@ export default createStackNavigator(
   {
     Home: Home,
     Weakness: MatchList,
-    Strength: MatchList
+    Strength: MatchList,
+    ViewProfile
   },
   {
     initialRouteName: "Home",

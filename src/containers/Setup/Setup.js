@@ -10,7 +10,7 @@ import { saveProfile } from "../../store/actions/profile";
 
 import StrengthWeakness from "../../components/StrengthWeakness/StrengthWeakness";
 import Availability from "../../components/Availability/Availability";
-import { Profile } from "../../components/Profile/Profile";
+import Profile from "../../components/Profile/Profile";
 import Header from "../../components/Header/Header";
 
 import { COLORS } from "../../styles/common";

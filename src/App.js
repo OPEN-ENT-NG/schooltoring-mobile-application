@@ -43,7 +43,7 @@ const errorStyles = StyleSheet.create({
   }
 });
 
-export class App extends Component {
+class App extends Component {
   async componentDidMount() {
     const enabled = await firebase.messaging().hasPermission();
     if (enabled) {

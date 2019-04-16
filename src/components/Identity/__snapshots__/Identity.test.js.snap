@@ -4,8 +4,8 @@ exports[`Render It should render without crashing 1`] = `
 <View
   style={
     Object {
-      "flex": 1,
       "flexDirection": "row",
+      "flexShrink": 1,
     }
   }
 >

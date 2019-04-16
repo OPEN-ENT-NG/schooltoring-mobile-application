@@ -64,21 +64,21 @@ const Navigator = createBottomTabNavigator(
       },
       tabBarOnPress: ({ navigation, defaultHandler }) => {
         defaultHandler();
-        if (navigation.state.routeName != "Profile") {
-          navigation.dispatch(
-            StackActions.reset({
-              index: 0,
-              key: null,
-              actions: [
-                NavigationActions.navigate({
-                  routeName: navigation.state.routes[0].routeName
-                })
-              ]
-            })
-          );
-        } else {
-          NavigationService.resetProfile();
-        }
+        // if (navigation.state.routeName != "Profile") {
+        navigation.dispatch(
+          StackActions.reset({
+            index: 0,
+            key: null,
+            actions: [
+              NavigationActions.navigate({
+                routeName: navigation.state.routes[0].routeName
+              })
+            ]
+          })
+        );
+        // } else {
+        //   NavigationService.resetProfile();
+        // }
       }
     })
   }

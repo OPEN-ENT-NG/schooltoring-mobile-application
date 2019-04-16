@@ -41,6 +41,15 @@ exports[`Render Profile should render without crashing 1`] = `
     <View
       style={
         Object {
+          "flexDirection": "row",
+          "justifyContent": "space-evenly",
+          "marginBottom": 15,
+        }
+      }
+    />
+    <View
+      style={
+        Object {
           "flex": 1,
         }
       }

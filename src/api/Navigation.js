@@ -17,24 +17,7 @@ function navigate(routeName, params) {
   );
 }
 
-function resetProfile() {
-  if ("profile" in navigator) {
-    navigator["profile"].dispatch(
-      StackActions.reset({
-        index: 0,
-        key: null,
-        actions: [
-          NavigationActions.navigate({
-            routeName: "Profile"
-          })
-        ]
-      })
-    );
-  }
-}
-
 export default {
   register,
-  navigate,
-  resetProfile
+  navigate
 };

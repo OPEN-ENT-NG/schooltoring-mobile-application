@@ -1,5 +1,5 @@
 import React from "react";
-import { Text, View } from "react-native";
+import { Text } from "react-native";
 import PropTypes from "prop-types";
 
 import Touchable from "../Touchable/Touchable";
@@ -13,26 +13,22 @@ const SecondaryButton = props => {
   );
 
   return (
-    <View
+    <Touchable
       style={[
-        props.style || {},
         styles.button,
-        props.disabled && { backgroundColor: COLORS.GREY }
+        props.disabled && { backgroundColor: COLORS.GREY },
+        props.style || {}
       ]}
-    >
-      <Touchable
-        disabled={props.disabled}
-        onPress={() => props.onPress()}
-        hitSlop={{
-          top: 10,
-          left: 10,
-          right: 10,
-          bottom: 10
-        }}
-      >
-        {children}
-      </Touchable>
-    </View>
+      disabled={props.disabled}
+      onPress={() => props.onPress()}
+      hitSlop={{
+        top: 10,
+        left: 10,
+        right: 10,
+        bottom: 10
+      }}>
+      {children}
+    </Touchable>
   );
 };
 

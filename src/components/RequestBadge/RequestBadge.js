@@ -11,6 +11,7 @@ import Avatar from "../Avatar/Avatar";
 import SubjectBadge from "../SubjectBadge/SubjectBadge";
 import SecondaryButton from "../SecondaryButton/SecondaryButton";
 import Loader from "../Loader/Loader";
+import Touchable from "../Touchable/Touchable";
 
 const getColor = state => {
   return state === "STRENGTH" ? COLORS.SECONDARY : COLORS.PRIMARY;
@@ -19,18 +20,20 @@ const getColor = state => {
 const RequestBadge = props => {
   return (
     <View style={styles.badge}>
-      <View style={styles.left}>
+      <Touchable style={styles.left} onPress={props.viewProfile}>
         <Avatar
           size={80}
           src={`${global.config.auth.endpoint}${props.userinfo.avatar}`}
         />
-      </View>
+      </Touchable>
       <View style={styles.right}>
         <View style={styles.identity}>
           <View style={styles.nameContainer}>
-            <Text style={styles.name} id="username-field">
-              {props.userinfo.username}
-            </Text>
+            <Touchable onPress={props.viewProfile}>
+              <Text style={styles.name} id="username-field">
+                {props.userinfo.username}
+              </Text>
+            </Touchable>
             <SecondaryButton id="favorite-button" onPress={props.onFavorite}>
               <Icon
                 name="favorite"
@@ -56,15 +59,13 @@ const RequestBadge = props => {
           <SecondaryButton
             id="refuse-button"
             style={styles.declineButton}
-            onPress={props.onRefuse}
-          >
+            onPress={props.onRefuse}>
             <Icon name="clear" style={styles.roundButtonIcon} />
           </SecondaryButton>
           <SecondaryButton
             id="accept-button"
             style={styles.acceptButton}
-            onPress={props.onAccept}
-          >
+            onPress={props.onAccept}>
             <Icon name="chat" style={styles.roundButtonIcon} />
           </SecondaryButton>
         </View>

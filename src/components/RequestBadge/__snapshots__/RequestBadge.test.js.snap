@@ -19,7 +19,7 @@ exports[`Render RequestBadge match should render without crashing 1`] = `
     }
   }
 >
-  <View
+  <Touchable
     style={
       Object {
         "alignItems": "flex-start",
@@ -32,7 +32,7 @@ exports[`Render RequestBadge match should render without crashing 1`] = `
       size={80}
       src="http://ent3-core.gdapublic.fr/workspace/document/49a54de3-51f8-464b-81bb-a377f508f382"
     />
-  </View>
+  </Touchable>
   <View
     style={
       Object {
@@ -67,19 +67,21 @@ exports[`Render RequestBadge match should render without crashing 1`] = `
           }
         }
       >
-        <Text
-          id="username-field"
-          style={
-            Object {
-              "color": "#232323",
-              "flex": 1,
-              "fontSize": 18,
-              "fontWeight": "bold",
+        <Touchable>
+          <Text
+            id="username-field"
+            style={
+              Object {
+                "color": "#232323",
+                "flex": 1,
+                "fontSize": 18,
+                "fontWeight": "bold",
+              }
             }
-          }
-        >
-          John DOE
-        </Text>
+          >
+            John DOE
+          </Text>
+        </Touchable>
         <SecondaryButton
           id="favorite-button"
           onPress={[MockFunction]}

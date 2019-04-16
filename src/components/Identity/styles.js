@@ -7,7 +7,7 @@ const text = { color: COLORS.TEXT };
 export default StyleSheet.create({
   top: {
     flexDirection: "row",
-    flex: 1
+    flexShrink: 1
   },
   topRight: {
     marginLeft: 15,

@@ -1,10 +1,11 @@
 import axios from "axios";
 
-async function getProfile() {
+async function getProfile(userId) {
+  let paramUserId = userId ? `?userid=${userId}` : "";
   try {
     const request = {
       method: "GET",
-      url: `${global.config.auth.endpoint}/schooltoring/profile`
+      url: `${global.config.auth.endpoint}/schooltoring/profile${paramUserId}`
     };
     const { data } = await axios(request);
     return data;

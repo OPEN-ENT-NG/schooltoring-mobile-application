@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Text, View } from "react-native";
+import { View } from "react-native";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 
@@ -7,8 +7,10 @@ import { fetchMatches } from "../../store/actions/match";
 import { postRequest } from "../../store/actions/request";
 import { toggleModal } from "../../store/actions/modal";
 import { addFavorite, deleteFavorite } from "../../store/actions/favorite";
+
 import I18n from "../../api/I18n";
 import EventTracker from "../../api/EventTracker";
+import NavigationService from "../../api/Navigation";
 
 import Match from "../../components/Match/Match";
 import Loader from "../../components/Loader/Loader";
@@ -140,6 +142,12 @@ class MatchList extends Component {
         features={match.features}
         availabilities={match.availabilities}
         state={this.props.navigation.state.routeName}
+        viewProfile={() =>
+          NavigationService.navigate("ViewProfile", {
+            userinfo: match.userinfo,
+            id: match.userinfo.id
+          })
+        }
         onClear={() => {
           this.skipProfile();
           let category =

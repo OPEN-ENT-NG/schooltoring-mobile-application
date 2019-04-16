@@ -1,17 +1,15 @@
 import React, { Component } from "react";
-import { ScrollView, Text, RefreshControl, View, AppState } from "react-native";
+import { ScrollView, RefreshControl, View, AppState } from "react-native";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 
 import { fetchConversations } from "../../store/actions/conversation";
 
 import moment from "moment";
-import fr from "moment/locale/fr";
 import I18n from "../../api/I18n";
 import Conversation from "../../components/Conversation/Conversation";
 import Loader from "../../components/Loader/Loader";
 import Error from "../../components/Error/Error";
-import { COLORS } from "../../styles/common";
 
 class Conversations extends Component {
   constructor(props) {

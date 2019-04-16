@@ -1,10 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Render An error should be logged if no onPress or title given 1`] = `
-<View
+<Touchable
+  hitSlop={
+    Object {
+      "bottom": 10,
+      "left": 10,
+      "right": 10,
+      "top": 10,
+    }
+  }
+  onPress={[Function]}
   style={
     Array [
-      Object {},
       Object {
         "alignItems": "center",
         "flexDirection": "row",
@@ -12,37 +20,34 @@ exports[`Render An error should be logged if no onPress or title given 1`] = `
         "padding": 10,
       },
       undefined,
+      Object {},
     ]
   }
 >
-  <Touchable
-    hitSlop={
+  <Text
+    style={
       Object {
-        "bottom": 10,
-        "left": 10,
-        "right": 10,
-        "top": 10,
+        "color": "#17b6b0",
+        "fontSize": 18,
       }
     }
-    onPress={[Function]}
-  >
-    <Text
-      style={
-        Object {
-          "color": "#17b6b0",
-          "fontSize": 18,
-        }
-      }
-    />
-  </Touchable>
-</View>
+  />
+</Touchable>
 `;
 
 exports[`Render SecondaryButton should render without crashing 1`] = `
-<View
+<Touchable
+  hitSlop={
+    Object {
+      "bottom": 10,
+      "left": 10,
+      "right": 10,
+      "top": 10,
+    }
+  }
+  onPress={[Function]}
   style={
     Array [
-      Object {},
       Object {
         "alignItems": "center",
         "flexDirection": "row",
@@ -50,30 +55,19 @@ exports[`Render SecondaryButton should render without crashing 1`] = `
         "padding": 10,
       },
       undefined,
+      Object {},
     ]
   }
 >
-  <Touchable
-    hitSlop={
+  <Text
+    style={
       Object {
-        "bottom": 10,
-        "left": 10,
-        "right": 10,
-        "top": 10,
+        "color": "#17b6b0",
+        "fontSize": 18,
       }
     }
-    onPress={[Function]}
   >
-    <Text
-      style={
-        Object {
-          "color": "#17b6b0",
-          "fontSize": 18,
-        }
-      }
-    >
-      Test
-    </Text>
-  </Touchable>
-</View>
+    Test
+  </Text>
+</Touchable>
 `;

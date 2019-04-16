@@ -16,24 +16,42 @@ exports[`Render Strength match should render without crashing 1`] = `
       ]
     }
   >
-    <Identity
-      avatar={
+    <Touchable
+      hitSlop={
         Object {
-          "size": 100,
-          "src": "/workspace/document/916c2df5-13d2-48cf-9f54-4402c36d4af0",
+          "bottom": 10,
+          "left": 10,
+          "right": 10,
+          "top": 10,
         }
       }
-      userinfo={
+      style={
         Object {
-          "avatar": "/workspace/document/916c2df5-13d2-48cf-9f54-4402c36d4af0",
-          "classNames": Array [
-            "VERSAILLES-7133$BTS1TPIL",
-          ],
-          "id": "49abe348-0b13-4ce0-ac8c-01fa7b7e8f68",
-          "username": "Amel AMAIRI",
+          "alignItems": "center",
+          "flexDirection": "row",
+          "justifyContent": "center",
         }
       }
-    />
+    >
+      <Identity
+        avatar={
+          Object {
+            "size": 100,
+            "src": "/workspace/document/916c2df5-13d2-48cf-9f54-4402c36d4af0",
+          }
+        }
+        userinfo={
+          Object {
+            "avatar": "/workspace/document/916c2df5-13d2-48cf-9f54-4402c36d4af0",
+            "classNames": Array [
+              "VERSAILLES-7133$BTS1TPIL",
+            ],
+            "id": "49abe348-0b13-4ce0-ac8c-01fa7b7e8f68",
+            "username": "Amel AMAIRI",
+          }
+        }
+      />
+    </Touchable>
   </View>
   <View
     style={
@@ -343,24 +361,42 @@ exports[`Render Weaknesse match should render without crashing 1`] = `
       ]
     }
   >
-    <Identity
-      avatar={
+    <Touchable
+      hitSlop={
         Object {
-          "size": 100,
-          "src": "/workspace/document/916c2df5-13d2-48cf-9f54-4402c36d4af0",
+          "bottom": 10,
+          "left": 10,
+          "right": 10,
+          "top": 10,
         }
       }
-      userinfo={
+      style={
         Object {
-          "avatar": "/workspace/document/916c2df5-13d2-48cf-9f54-4402c36d4af0",
-          "classNames": Array [
-            "VERSAILLES-7133$BTS1TPIL",
-          ],
-          "id": "49abe348-0b13-4ce0-ac8c-01fa7b7e8f68",
-          "username": "Amel AMAIRI",
+          "alignItems": "center",
+          "flexDirection": "row",
+          "justifyContent": "center",
         }
       }
-    />
+    >
+      <Identity
+        avatar={
+          Object {
+            "size": 100,
+            "src": "/workspace/document/916c2df5-13d2-48cf-9f54-4402c36d4af0",
+          }
+        }
+        userinfo={
+          Object {
+            "avatar": "/workspace/document/916c2df5-13d2-48cf-9f54-4402c36d4af0",
+            "classNames": Array [
+              "VERSAILLES-7133$BTS1TPIL",
+            ],
+            "id": "49abe348-0b13-4ce0-ac8c-01fa7b7e8f68",
+            "username": "Amel AMAIRI",
+          }
+        }
+      />
+    </Touchable>
   </View>
   <View
     style={

@@ -20,13 +20,14 @@ export default StyleSheet.create({
   },
   topRightButtons: {
     flexDirection: "row",
+    justifyContent: "space-evenly",
     marginBottom: 15
   },
   topRightButton: {
-    width: (Dimensions.get("screen").width - 60) / 2,
     flexDirection: "row",
     alignItems: "center",
-    padding: 15
+    padding: 15,
+    width: "100%"
   },
   title: {
     flexDirection: "row",
@@ -38,6 +39,10 @@ export default StyleSheet.create({
     fontSize: 25,
     marginRight: 5,
     marginLeft: 5
+  },
+  titleText: {
+    ...text,
+    fontSize: 18
   },
   list: {
     flexGrow: 1,

@@ -7,6 +7,7 @@ import Icon from "react-native-vector-icons/MaterialIcons";
 import PopupMenu from "../../components/PopupMenu/PopupMenu";
 
 import getStyle from "./styles";
+import Touchable from "../Touchable/Touchable";
 
 const Header = props => {
   const dispatchPop = () => {
@@ -27,16 +28,27 @@ const Header = props => {
               bottom: 20
             }}
             onPress={dispatchPop}
-            id="header-back-button"
-          >
+            id="header-back-button">
             <Icon name="arrow-back" style={styles.title} />
           </TouchableWithoutFeedback>
         </View>
       )}
-      <View style={styles.titleContainer}>
-        {props.iconName && <Icon style={styles.title} name={props.iconName} />}
-        <Text style={styles.title}>{props.title}</Text>
-      </View>
+      {props.onTitlePress != undefined && (
+        <Touchable style={styles.titleContainer} onPress={props.onTitlePress}>
+          {props.iconName && (
+            <Icon style={styles.title} name={props.iconName} />
+          )}
+          <Text style={styles.title}>{props.title}</Text>
+        </Touchable>
+      )}
+      {props.onTitlePress == undefined && (
+        <View style={styles.titleContainer}>
+          {props.iconName && (
+            <Icon style={styles.title} name={props.iconName} />
+          )}
+          <Text style={styles.title}>{props.title}</Text>
+        </View>
+      )}
       {props.hasOwnProperty("rightActions") && props.rightActions ? (
         <PopupMenu
           actions={props.rightActions.actions}
@@ -69,7 +81,8 @@ Header.propTypes = {
   rightActions: PropTypes.shape({
     actions: PropTypes.array,
     onPress: PropTypes.func
-  })
+  }),
+  onTitlePress: PropTypes.func
 };
 
 export default Header;

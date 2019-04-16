@@ -9,16 +9,17 @@ import styles from "./styles";
 import Avatar from "../Avatar/Avatar";
 import SecondaryButton from "../SecondaryButton/SecondaryButton";
 import Loader from "../Loader/Loader";
+import Touchable from "../Touchable/Touchable";
 
 const FavoriteBadge = props => {
   return (
     <View style={styles.badge}>
-      <View style={styles.top}>
+      <Touchable style={styles.top} onPress={props.onAvatarPress}>
         <Avatar
           size={140}
           src={`${global.config.auth.endpoint}${props.userinfo.avatar}`}
         />
-      </View>
+      </Touchable>
       <View style={styles.bottom}>
         <View style={styles.buttons}>
           <SecondaryButton id="on-delete-button" onPress={props.onDelete}>
@@ -28,8 +29,7 @@ const FavoriteBadge = props => {
             id="on-chat-button"
             style={styles.chatButton}
             onPress={props.onChat}
-            disabled={!!props.chatDisabled}
-          >
+            disabled={!!props.chatDisabled}>
             <Icon size={20} color={"white"} name={"chat"} />
           </SecondaryButton>
         </View>
@@ -52,7 +52,8 @@ FavoriteBadge.propTypes = {
   loading: PropTypes.bool.isRequired,
   onDelete: PropTypes.func.isRequired,
   onChat: PropTypes.func.isRequired,
-  chatDisabled: PropTypes.bool
+  chatDisabled: PropTypes.bool,
+  onAvatarPress: PropTypes.func
 };
 
 export default FavoriteBadge;

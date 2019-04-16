@@ -12,16 +12,15 @@ const Touchable = props => {
     <TouchableNativeFeedback
       disabled={props.disabled}
       onPress={props.onPress}
-      hitSlop={props.hitSlop}
-    >
-      <View>{props.children}</View>
+      hitSlop={props.hitSlop}>
+      <View style={props.style}>{props.children}</View>
     </TouchableNativeFeedback>
   ) : (
     <TouchableOpacity
+      style={props.style}
       disabled={props.disabled}
       onPress={props.onPress}
-      hitSlop={props.hitSlop}
-    >
+      hitSlop={props.hitSlop}>
       {props.children}
     </TouchableOpacity>
   );
