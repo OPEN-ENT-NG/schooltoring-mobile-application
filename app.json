@@ -1,7 +1,7 @@
 {
   "name": "Schooltoring",
   "displayName": "Schooltoring",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "auth": {
     "endpoint" : "%PLATFORM_ADDRESS%",
     "client_id": "%CLIENT_ID%",
